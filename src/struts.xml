@@ -4,10 +4,90 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 	
 <struts>
-	<package name="board" extends="struts-default">
+	<package name="toy_product" extends="struts-default">
 	
-	<!-- 글로벌 예외 처리 화면 설정 -->
-	<!-- 
+	<!--  관리자 장난감 리스트 액션 -->
+	 	<action name="AdminToyListAction" class="admin.AdminToyListAction">
+			<result>/admin/AdminToyList.jsp</result>
+		</action> 
+	<!-- 관리자 장난감 등록 액션 -->	
+  		<action name="AdminToyWriteForm" class="admin.AdminToyWriteAction" method="form">
+		 	<result>/admin/AdminToyWriteForm.jsp</result>
+		</action>  
+ 	  	<action name="AdminToyWriteAction" class="admin.AdminToyWriteAction">
+			<result type="redirect-action">
+				<param name="actionName">AdminToyListAction</param>
+			</result>
+		</action> 
+		
+		
+	<!-- 관리자 장난감 수정 액션 -->
+		<action name="AdminToyModifyForm" class="admin.AdminToyModifyAction" method="form">
+			<result>/admin/AdminToyModifyForm.jsp</result>
+		</action>
+		
+		<action name="AdminToyModifyAction" class="admin.AdminToyModifyAction">
+			<result type="redirect-action">
+				<param name="actionName">AdminToyListAction</param>
+			</result>
+		</action>
+	
+		
+	<!-- 관리자 장난감 삭제 액션 -->	
+ 		<action name="AdminToyDeleteAction" class="admin.AdminToyDeleteAction">
+			<result type="chain">AdminToyListAction</result>
+		</action>	
+		 
+		 
+		 
+		 
+	<!-- 관리자 대여관리 리스트 액션 -->	
+		<action name="AdminRentListAction" class="admin.AdminRentListAction">
+			<result>/admin/AdminRentList.jsp</result>
+		</action> 
+		
+	<!-- 관리자 대여관리 상태변경창 폼 -->	
+		<action name="AdminRentDetailForm" class="admin.AdminRentDetailAction" method="form">
+			<result>/admin/AdminRentDetail.jsp</result>
+		</action> 		
+		
+	<!-- 관리자 대여관리 상태변경창 액션 -->	
+		<action name="AdminRentDetailAction" class="admin.AdminRentDetailAction">
+			<result type="redirect-action">
+				<param name="actionName">AdminRentListAction</param>
+			</result>
+		</action> 
+		
+		
+		
+	<!-- 장난감 예약하기 액션 -->	
+   		<action name="ToyReserveForm" class="toy.ToyReserveAction" method="form">
+		 	<result>/toy/toyReserve.jsp</result>
+		</action>  	
+	<!-- 장난감 예약하기 액션 -->	
+   		<action name="ToyReserveAction" class="toy.ToyReserveAction">
+   			<result type="redirect-action">
+   				<param name="actionName">ToyListAction</param>
+   			</result>	
+		</action> 
+		
+	<!-- 사용자 장난감 상세보기 액션 -->
+		<action name="ToyDetailAction" class="toy.ToyDetailAction">
+			<result>/toy/toyDetail.jsp</result>
+		</action>
+	<!-- 사용자 장난감 상세보기 액션 -->
+		<action name="ToyListAction" class="toy.ToyListAction">
+			<result>/toy/toyList.jsp</result>
+		</action>
+	
+	 
+	</package>
+
+
+<!-- 	<package name="board" extends="struts-default">
+	
+	글로벌 예외 처리 화면 설정
+	
 		<global-results>
 			<result name="error">/board/pageError.jsp</result>
 		</global-results>
@@ -15,13 +95,13 @@
 		<global-exception-mappings>
 			<exception-mapping result="error" exception="java.lang.Exception"/>
 		</global-exception-mappings>
-	 -->
-	 <!-- 게시판 리스트 액션 -->
+	
+	 게시판 리스트 액션
 		<action name="listAction" class="board.listAction">
 			<result>/board/boardList.jsp</result>
 		</action>
 		
-	 <!-- 게시판 글쓰기 액션 -->
+	 게시판 글쓰기 액션
 	 	<action name="writeForm" class="board.writeAction" method="form">
 	 		<result>/board/boardWrite.jsp</result>
 	 	</action>
@@ -31,11 +111,11 @@
 			</result>
 		</action>
 		
-	<!-- 게시판 상세보기 액션 -->
+	게시판 상세보기 액션
 		<action name="viewAction" class="board.viewAction">
 			<result>/board/boardView.jsp</result>
 		</action>
-	<!-- 파일 다운로드 액션 -->	
+	파일 다운로드 액션	
 		<action name="fileDownloadAction" class="board.viewAction" method="download">
 			<result name="success" type="stream">
 				<param name="contentType">binary/octet-stream</param>
@@ -46,7 +126,7 @@
 			</result>
 		</action>
 	
-	<!-- 비밀번호 체크 액션 -->	
+	비밀번호 체크 액션	
 		<action name="checkForm" class="board.viewAction" method="checkForm">
 			<result>/board/checkPassword.jsp</result>
 		</action>
@@ -56,7 +136,7 @@
 			<result>/board/checkSuccess.jsp</result>
 		</action>
 	
-	<!-- 게시판 수정 액션 -->
+	게시판 수정 액션
 		<action name="modifyForm" class="board.viewAction">
 			<result type="chain">writeForm</result>
 		</action>
@@ -65,12 +145,12 @@
 			<result type="chain">viewAction</result>
 		</action>
 		
-	<!-- 게시판 삭제 액션 -->	
+	게시판 삭제 액션	
 		<action name="deleteAction" class="board.deleteAction">
-			<result type="chain">listAction</result> <!-- 삭제되면 상세하게 볼 글이 없어서 리스트로 넘어간다 -->
+			<result type="chain">listAction</result> 삭제되면 상세하게 볼 글이 없어서 리스트로 넘어간다
 		</action>
 	
 	</package>
 	
-	
+	 -->
 </struts>

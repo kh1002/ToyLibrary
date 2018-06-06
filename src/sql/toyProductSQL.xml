@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN'
+'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+
+<sqlMap>
+	<!-- 자바빈객체를 생성해서 이름을 준다? / alias는 별명 -->
+	<typeAlias alias="admin" type="admin.toyProductVO"/>
+	
+		<!-- resultMap 정의 -->
+		<resultMap id = "toyProductRes" class="admin">
+			<result property="toy_id" column="toy_id"/> 
+			<result property="toy_name" column="toy_name"/> 
+			<result property="toy_image" column="toy_image"/> 
+			<result property="toy_detail" column="toy_detail"/> 
+			<result property="toy_gusung" column="toy_gusung"/> 
+			<result property="toy_age" column="toy_age"/> 
+			<result property="original_zizum" column="original_zizum"/> 
+			<result property="zizum_no" column="zizum_no"/> 
+			<result property="state_code" column="state_code"/> 
+			<result property="toy_reg_date" column="toy_reg_date"/> 
+		</resultMap>
+		
+	<!-- 공통으로 사용 할 select절 정의 -->
+		<sql id="select-all">
+			select * from toy_product
+		</sql>
+		<!-- 공통으로 사용할 where-no절 정의 -->
+		<sql id="where-no">
+			where toy_id = #toy_id#     <!--  ##이 ?를 대신한다  -->
+		</sql>
+		
+	<!-- select 쿼리문 정의 -->
+		
+		<!-- 모든 데이터를 꺼내오는 selectAll -->
+		<select id="selectAll" resultMap="toyProductRes">
+			<include refid="select-all"/>
+			order by toy_id desc		
+		</select>
+		
+		<!-- no에 해당하는 하나의 데이터를 가져오는 selectOne -->
+		<select id="selectOne" resultMap="toyProductRes" parameterClass="int">
+			<include refid="select-all"/>
+			<include refid="where-no"/>
+		</select>
+		
+
+	<!-- insert 쿼리문 정의 -->
+		<insert id="insertToy" parameterClass="admin">
+			insert into toy_product(toy_id, toy_name, toy_detail, toy_gusung, toy_age, zizum_no, original_zizum, state_code, toy_reg_date)
+			values(toy_product_no.NEXTVAL,#toy_name#,#toy_detail#, #toy_gusung#,#toy_age#, 3,3, #state_code#, #toy_reg_date#)
+		</insert>
+	
+
+	<!-- update 쿼리문 정의 -->
+		<!-- 예약 되면 상태코드를 바꾸는 업데이트문 -->
+		
+		<update id="updateToyState" parameterClass="admin">
+			update toy_product set state_code = #state_code#
+			<include refid="where-no"/>
+		</update>
+		
+		<!-- 장난감 내용을 수정하여 반영 -->
+		<update id="updateToy" parameterClass="admin">
+			update toy_product set toy_name = #toy_name#, toy_gusung = #toy_gusung#, 
+											toy_age = #toy_age#, toy_detail = #toy_detail# 
+			<include refid="where-no"/>
+		</update>		
+		
+		
+	<!-- delete 쿼리문 정의 -->
+ 		<delete id="deleteToy" parameterClass="admin">
+			delete from toy_product
+			<include refid="where-no"/>
+		</delete> 
+
+	<!-- update 쿼리문 정의 -->
+	
+		<!-- 수정된 내용이 있으면 수정하여 반영 -->
+<!-- 		<update id="updateBoard" parameterClass="board">
+			update sboard_zzuggumi set subject=#subject#,
+										name=#name#,
+										password=#password#,
+										content=#content#
+			<include refid="where-no"/>
+		</update>
+	 -->	
+		<!-- 첨부파일이 있으면 파일이름들을 세팅 -->
+<!-- 		<update id="updateFile" parameterClass="board">
+			update sboard_zzuggumi set file_orgname = #file_orgname#, 
+										file_savname = #file_savname#
+			<include refid="where-no"/>									
+		</update>
+	 -->	
+		<!-- 조회수변경 -->
+<!-- 		<update id="updateReadHit" parameterClass="board">
+			update sboard_zzuggumi set readhit = readhit+1
+			<include refid="where-no"/>
+		</update>
+	 -->
+	<!-- delete 쿼리문 정의 -->
+<!-- 		<delete id="deleteBoard" parameterClass="board">
+			delete from sboard_zzuggumi
+			<include refid="where-no"/>
+		</delete> -->
+		
+</sqlMap>

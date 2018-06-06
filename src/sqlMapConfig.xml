@@ -24,7 +24,11 @@
 		</dataSource>
 	</transactionManager>
 	
-	<sqlMap resource="/sql/boardSQL.xml"/>
+	<sqlMap resource="/sql/toyProductSQL.xml"/>
+	<sqlMap resource="/sql/zizumSQL.xml"/>
+	<sqlMap resource="/sql/toyReserveSQL.xml"/>
+	<sqlMap resource="/sql/toyRentSQL.xml"/>
+	
 <!--	
 	<sqlMap resource="/sql/basketSQL.xml"/>
 	<sqlMap resource="/sql/boardSQL.xml"/>

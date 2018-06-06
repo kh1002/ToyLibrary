@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN'
+'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+
+<sqlMap>
+   <!-- 자바빈객체를 생성해서 이름을 준다? / alias는 별명 -->
+   <typeAlias alias="reserve" type="toy.toyReserveVO"/>
+   
+      <!-- resultMap 정의 -->
+      <resultMap id = "toyReserveRes" class="reserve">
+      
+         <result property="reserve_no" column="reserve_no"/>
+         <result property="toy_id" column="toy_id"/> 
+         <result property="member_id" column="member_id"/> 
+         <result property="reserve_zizum" column="reserve_zizum"/>
+         <result property="reserve_date" column="reserve_date"/> 
+         <result property="return_date" column="return_date"/> 
+           
+      </resultMap>
+
+   <!-- insert 쿼리문 정의 -->
+      <insert id="insertReserve" parameterClass="reserve">
+         insert into toy_reservation(reserve_no, toy_id, member_id, reserve_zizum, reserve_date, return_date)
+         values(toy_reservation_no.NEXTVAL,#toy_id#, #member_id#, #reserve_zizum#,#reserve_date#,#return_date#)
+      </insert>
+
+</sqlMap>
