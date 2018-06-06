@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC	
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+	<package name="adminToy" extends="struts-default">
+	
+	<!--  관리자 장난감 리스트 액션 -->
+	 	<action name="AdminToyListAction" class="admin.AdminToyListAction">
+			<result>/admin/AdminToyList.jsp</result>
+		</action> 
+	<!-- 관리자 장난감 등록 액션 -->	
+  		<action name="AdminToyWriteForm" class="admin.AdminToyWriteAction" method="form">
+		 	<result>/admin/AdminToyWriteForm.jsp</result>
+		</action>  
+ 	  	<action name="AdminToyWriteAction" class="admin.AdminToyWriteAction">
+			<result type="redirect-action">
+				<param name="actionName">AdminToyListAction</param>
+			</result>
+		</action> 
+		
+		
+	<!-- 관리자 장난감 수정 액션 -->
+		<action name="AdminToyModifyForm" class="admin.AdminToyModifyAction" method="form">
+			<result>/admin/AdminToyModifyForm.jsp</result>
+		</action>
+		
+		<action name="AdminToyModifyAction" class="admin.AdminToyModifyAction">
+			<result type="redirect-action">
+				<param name="actionName">AdminToyListAction</param>
+			</result>
+		</action>
+	
+		
+	<!-- 관리자 장난감 삭제 액션 -->	
+ 		<action name="AdminToyDeleteAction" class="admin.AdminToyDeleteAction">
+			<result type="chain">AdminToyListAction</result>
+		</action>	
+		 
+	<!-- 관리자 대여관리 리스트 액션 -->	
+		<action name="AdminRentListAction" class="admin.AdminRentListAction">
+			<result>/admin/AdminRentList.jsp</result>
+		</action> 
+		
+	<!-- 관리자 대여관리 상태변경창 폼 -->	
+		<action name="AdminRentDetailForm" class="admin.AdminRentDetailAction" method="form">
+			<result>/admin/AdminRentDetail.jsp</result>
+		</action> 		
+		
+	<!-- 관리자 대여관리 상태변경창 액션 -->	
+		<action name="AdminRentDetailAction" class="admin.AdminRentDetailAction">
+			<result type="redirect-action">
+				<param name="actionName">AdminRentListAction</param>
+			</result>
+		</action> 
+		
+	</package>
+
+</struts>

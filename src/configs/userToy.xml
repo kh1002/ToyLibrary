@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC	
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+	<package name="userToy" extends="struts-default">
+			
+	<!-- 장난감 예약하기 액션 -->	
+   		<action name="ToyReserveForm" class="toy.ToyReserveAction" method="form">
+		 	<result>/toy/toyReserve.jsp</result>
+		</action>  	
+	<!-- 장난감 예약하기 액션 -->	
+   		<action name="ToyReserveAction" class="toy.ToyReserveAction">
+   			<result type="redirect-action">
+   				<param name="actionName">ToyListAction</param>
+   			</result>	
+		</action> 
+		
+	<!-- 사용자 장난감 상세보기 액션 -->
+		<action name="ToyDetailAction" class="toy.ToyDetailAction">
+			<result>/toy/toyDetail.jsp</result>
+		</action>
+	<!-- 사용자 장난감 상세보기 액션 -->
+		<action name="ToyListAction" class="toy.ToyListAction">
+			<result>/toy/toyList.jsp</result>
+		</action>
+	
+	</package>
+
+</struts>
