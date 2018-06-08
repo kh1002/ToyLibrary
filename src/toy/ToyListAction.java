@@ -11,6 +11,7 @@ import java.io.IOException;
 
 import toy.pagingAction;
 import admin.toyProductVO;
+//import toy.toyReserveInfoVO;
 
 public class ToyListAction extends ActionSupport {
 
@@ -19,8 +20,12 @@ public class ToyListAction extends ActionSupport {
 	
 	private List<toyProductVO> UPlist = new ArrayList<toyProductVO>();
 	
+	//private List<toyReserveInfoVO> userInfolist = new ArrayList<toyReserveInfoVO>();
+	
 	private int currentPage = 1; //현재 페이지
 	private int totalCount; 	//총 게시물의 수
+
+	private int userInfolistCount; 	//총 게시물의 수
 	private int blockCount = 3; //한 페이지의 게시물의 수
 	private int blockPage = 3; //한 화면에 보여줄 페이지 수
 	private String pagingHtml; //페이징을 구현한 html
@@ -35,11 +40,16 @@ public class ToyListAction extends ActionSupport {
 	
 	public String execute() throws Exception {
 		//모든 글을 가져와서 list에 넣는다
+		
 		UPlist = sqlMapper.queryForList("selectAll");
+		
 		
 		totalCount = UPlist.size(); //전체 글 갯수를 구함
 		
+
 		System.out.println("uplist의 갯수" +totalCount);
+
+		System.out.println("userInfolist의 갯수" +userInfolistCount);
 		
 		//pagingAction 객체 생성
 		page = new pagingAction(currentPage, totalCount, blockCount, blockPage);
@@ -57,11 +67,14 @@ public class ToyListAction extends ActionSupport {
 		
 		//전체 리스트에서 현재 페이지만큼의 리스트만 가져온다
 		UPlist = UPlist.subList(page.getStartCount(), lastCount);
-		
-		
+
+
 		return SUCCESS;
 	}
 
+
+	
+	
 	public List<toyProductVO> getUPlist() {
 		return UPlist;
 	}

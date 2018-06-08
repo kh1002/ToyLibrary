@@ -38,6 +38,9 @@
 			<result type="chain">AdminToyListAction</result>
 		</action>	
 		 
+		 
+		 
+		 
 	<!-- 관리자 대여관리 리스트 액션 -->	
 		<action name="AdminRentListAction" class="admin.AdminRentListAction">
 			<result>/admin/AdminRentList.jsp</result>
@@ -54,6 +57,25 @@
 				<param name="actionName">AdminRentListAction</param>
 			</result>
 		</action> 
+		
+		
+		 
+	<!-- 관리자 반납관리 리스트 액션 -->	
+		<action name="AdminReturnListAction" class="admin.AdminReturnListAction">
+			<result>/admin/AdminReturnList.jsp</result>
+		</action> 
+		
+	<!-- 관리자 반납관리 상태변경창 폼 -->	
+		<action name="AdminReturnDetailForm" class="admin.AdminReturnDetailAction" method="form">
+			<result>/admin/AdminReturnDetail.jsp</result>
+		</action> 		
+		
+	<!-- 관리자 반납관리 상태변경창 액션 -->	
+		<action name="AdminReturnDetailAction" class="admin.AdminReturnDetailAction">
+			<result type="redirect-action">
+				<param name="actionName">AdminReturnListAction</param>
+			</result>
+		</action> 		
 		
 	</package>
 

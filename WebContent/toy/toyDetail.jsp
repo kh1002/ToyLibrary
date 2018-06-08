@@ -34,8 +34,8 @@
 					</tr>
 				<!-- 장난감영역 -->
 					<tr>
-						<td width="100">장난감영역</td>
-						<s:property value="resultClass.no"/>
+						<td width="100">장난감구성</td>
+						<td><s:property value="resultClass.toy_gusung"/></td>
 					</tr>
 				<!-- 사용연령 -->
 					<tr>
@@ -62,11 +62,10 @@
 <table width="600">
 	<tr>
 		<th width="120" scope="col" style="text-align:center">
-		
 			<b>바코드</b>
 		</th>
 		<th width="120"  scope="col" style="text-align:center">
-			<b>대여자성명</b>
+			<b>장난감이름</b>
 		</th>
 		<th width="120"  scope="col" style="text-align:center">
 			<b>대여상태</b>
@@ -89,7 +88,7 @@
 						<s:property value="toy_id" />
 					</s:param>
 					
-					<s:param name="zizum_no">
+			 		<s:param name="zizum_no">
 						<s:property value="zizum_no" />
 					</s:param>
 	
@@ -123,18 +122,6 @@
 		<s:property value="resultClass.return_date"/>
 	</td>
 	
-	
-	<!-- 	<td width="120" align="center" >2
-		</td>
-		<td width="120" align="center" >2
-		</td>
-		<td width="120" align="center" >2
-		</td>
-		<td width="120" align="center" >2
-		</td>
-		<td width="120" align="center" >2
-		</td> -->
-		<!-- 여기는 iterator로 데이터베이스에서 값을출력해야함 -->
 	</tr>
 </table>
 		

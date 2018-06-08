@@ -11,8 +11,7 @@ public class toyReserveVO {
 	private Date reserve_date;
 	private Date return_date;
 	
-	
-	
+
 	public int getReserve_no() {
 		return reserve_no;
 	}

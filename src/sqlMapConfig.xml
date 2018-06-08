@@ -28,6 +28,8 @@
 	<sqlMap resource="/sql/zizumSQL.xml"/>
 	<sqlMap resource="/sql/toyReserveSQL.xml"/>
 	<sqlMap resource="/sql/toyRentSQL.xml"/>
+	<sqlMap resource="/sql/toyReturnSQL.xml"/>
+	<sqlMap resource="/sql/toyUserReserveSQL.xml"/>
 	
 <!--	
 	<sqlMap resource="/sql/basketSQL.xml"/>

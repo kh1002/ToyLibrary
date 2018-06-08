@@ -9,29 +9,28 @@ import java.util.*;
 import java.io.Reader;
 import java.io.IOException;
 
-import admin.pagingAction2;
+import admin.pagingAction3;
 import member.memberVO;
 import toy.toyReserveVO;
 
-public class AdminRentListAction extends ActionSupport {
+public class AdminReturnListAction extends ActionSupport {
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
 	
 	
-	
 	private int currentPage = 1; //현재 페이지
 	private int totalCount; 	//총 게시물의 수
-	private int blockCount = 5; //한 페이지의 게시물의 수
+	private int blockCount = 2; //한 페이지의 게시물의 수
 	private int blockPage = 5; //한 화면에 보여줄 페이지 수
 	private String pagingHtml; //페이징을 구현한 html
-	private pagingAction2 page; //페이징 클래스
+	private pagingAction3 page; //페이징 클래스
 	
 
-	private List<toyRentInfoVO> RentInfolist = new ArrayList<toyRentInfoVO>();
+	private List<toyRentInfoVO> ReturnInfolist = new ArrayList<toyRentInfoVO>();
 	
 	//생성자
-	public AdminRentListAction() throws IOException {
+	public AdminReturnListAction() throws IOException {
 
 		reader = Resources.getResourceAsReader("sqlMapConfig.xml"); // sqlMapConfig.xml 파일의 설정내용을 가져온다. 읽어들여서 리더객체 생성
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);// sqlMapConfig.xml의 내용을 적용한 sqlMapper 객체 생성.
@@ -41,17 +40,15 @@ public class AdminRentListAction extends ActionSupport {
 
 	public String execute() throws Exception {
 		
-		
 		//모든 글을 가져와서 list에 넣는다
-		RentInfolist = sqlMapper.queryForList("rentInfoAll","예약중");
-		
-				
-		totalCount = RentInfolist.size(); //전체 글 갯수를 구함
+		ReturnInfolist = sqlMapper.queryForList("returnInfoAll","대여중");
+
+		totalCount = ReturnInfolist.size(); //전체 글 갯수를 구함
 				
 		System.out.println(totalCount);
 		
 		//pagingAction 객체 생성
-		page = new pagingAction2(currentPage, totalCount, blockCount, blockPage);
+		page = new pagingAction3(currentPage, totalCount, blockCount, blockPage);
 		
 		pagingHtml = page.getPagingHtml().toString(); //페이지 html 생성
 		
@@ -65,11 +62,8 @@ public class AdminRentListAction extends ActionSupport {
 		}
 		
 		//전체 리스트에서 현재 페이지만큼의 리스트만 가져온다
-		RentInfolist = RentInfolist.subList(page.getStartCount(), lastCount);
-		/*zizumlist = zizumlist.subList(page.getStartCount(), lastCount);*/
-				
-		
-	
+		ReturnInfolist = ReturnInfolist.subList(page.getStartCount(), lastCount);
+
 		return SUCCESS;
 	}
 
@@ -114,23 +108,23 @@ public class AdminRentListAction extends ActionSupport {
 	}
 
 
-	public pagingAction2 getPage() {
+	public pagingAction3 getPage() {
 		return page;
 	}
 
 
-	public void setPage(pagingAction2 page) {
+	public void setPage(pagingAction3 page) {
 		this.page = page;
 	}
 
 
-	public List<toyRentInfoVO> getRentInfolist() {
-		return RentInfolist;
+	public List<toyRentInfoVO> getReturnInfolist() {
+		return ReturnInfolist;
 	}
 
 
-	public void setRentInfolist(List<toyRentInfoVO> rentInfolist) {
-		RentInfolist = rentInfolist;
+	public void setReturnInfolist(List<toyRentInfoVO> returnInfolist) {
+		ReturnInfolist = returnInfolist;
 	}
 
 
@@ -142,6 +136,8 @@ public class AdminRentListAction extends ActionSupport {
 	public void setPagingHtml(String pagingHtml) {
 		this.pagingHtml = pagingHtml;
 	}
+	
+	
 	
 
 }

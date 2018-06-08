@@ -9,7 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<title>관리자 대여관리 상세보기</title>
+	<title>관리자 반납관리 상세보기</title>
 	<!-- <link rel="stylesheet" href="/strutsBoard/board/common/css/css.css" type="text/css"> -->
 
 </head>
@@ -18,7 +18,7 @@
 
 <table width="600" border="0" cellspacing="0" cellpadding="2">
 	<tr>
-		<td align="center"><h2>관리자 대여관리</h2></td>
+		<td align="center"><h2>관리자 반납관리</h2></td>
 	</tr>
 	<tr>
 		<td height="20"></td>
@@ -29,7 +29,11 @@
 
 <table width="600" border="1" cellspacing="0" cellpadding="0">
 
-<form action="AdminRentDetailAction.action" method="post" enctype="multipart/form-data">
+
+<!-- 
+<form action="writeAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
+ -->
+<form action="AdminReturnDetailAction.action" method="post" enctype="multipart/form-data">
 <!-- 숨겨서 보내는 데이터?? -->
 	<s:hidden name="toy_id" value="%{resultClass.toy_id}"/>
 	
@@ -90,7 +94,7 @@
 			대여정보수정
 		</td>
 		<td>
-			<s:select name="state_code" list="#{'예약중':'예약중','대여중':'대여'}" 
+			<s:select name="state_code" list="#{'대여중':'대여','대여가능':'반납'}" 
 					  value="%{resultClass.state_code}">
 			</s:select>
 		</td>

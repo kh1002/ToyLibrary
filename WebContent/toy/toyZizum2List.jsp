@@ -34,9 +34,9 @@
 
 <div id="tabmenu">
 <ul>
-	<li class="on"> <a href="ToyListAction.action">전체</a> </li>
-	<li class=""> <a href="ToyZizum1ListAction.action">강남점</a> </li>
-	<li class=""> <a href="ToyZizum2ListAction.action">교대점</a> </li>
+	<li class="on"> <a href="ToyListAction.action" onClick="show_leemocon(0);">전체</a> </li>
+	<li class=""> <a href="ToyZizum1ListAction.action" onClick="show_leemocon(1);">강남점</a> </li>
+	<li class=""> <a href="ToyZizum2ListAction.action" onClick="show_leemocon(2);">교대점</a> </li>
 	<li class=""> <a onClick="show_leemocon(3);">역삼점</a> </li>
 </ul>
 
@@ -47,13 +47,8 @@
 	<li class=""> <a onClick="show_leemocon(2);">교대점</a> </li>
 	<li class=""> <a onClick="show_leemocon(3);">역삼점</a> </li>
 </ul> -->
-
-
-
-
-
 </div>
-	<div id="tabcontent0" style="display:">
+	<div id="tabcontent0" style="display:none;">
 	
 	<table border="0">
 		<tr>	   
@@ -92,7 +87,8 @@
 					<td>전체() | 보유() | 대여()</td>
 					<%-- <td align="center"><s:property value="state_code"/></td> --%>
 				</tr>
-
+			
+			
 			</s:iterator>
 
 		</tr>
@@ -100,7 +96,7 @@
 
 </div>
 	<div id="tabcontent1" style="display:none;">
-<%-- 	 <table border="0">
+	 <table border="0">
 		<tr>	   
 			<s:iterator value="UPZ1list" status="stat">
 			
@@ -120,8 +116,8 @@
 			
 			
 				<tr bgcolor="#ffffff" align="center">
-					<td><s:property value="toy_id"/></td>	
-					<td><s:property value="toy_image"/></td>
+				<%-- 	<td><s:property value="toy_id"/></td>	
+					<td><s:property value="toy_image"/></td> --%>
 					<td><img src="./upload/" width="130" height="130" border="0"/></td>
 					
 				</tr>
@@ -142,9 +138,9 @@
 			</s:iterator>
 
 		</tr>
-	</table>  --%>
+	</table> 
 </div>
-	<div id="tabcontent2" style="display:none;">
+	<div id="tabcontent2" style="display:">
 	<table border="0">
 		<tr>	   
 			<s:iterator value="UPlist" status="stat">
@@ -192,7 +188,7 @@
 	탭메뉴4
 </div>
 
-<%-- <script language="javascript">
+<script language="javascript">
 function show_leemocon(tabnum){
 var i;
 var d = new Array(4);  //메뉴갯수를 넣어주세요
@@ -212,7 +208,7 @@ tm[tabnum].className = "on";
   };
 };
 </script>
- --%>
+
 
 <!-- 탭 적용 전의 원래 소스코드 -->
 <!-- 
@@ -283,61 +279,6 @@ tm[tabnum].className = "on";
 	<input type="text" name="search_key" value="" size="10">
 	<input type="submit" value="검색">
 </form> 	
- 	
- 	
-<!-- 등록되어있는 장난감 이미지를 출력하는 코드. 	 -->
-	
-	
-	<!-- 상품 리스트 -->
-<%-- 		<table border="0">
-		<tr>	   
-		
-			
-			<s:iterator value="UPlist" status="stat">
-			
-				<s:url id = "viewURL" action="ToyDetailAction" >
-					<s:param name="toy_id">
-						<s:property value="toy_id" />
-					</s:param>
-	
-					<s:param name="currentPage">
-						<s:property value="currentPage" />
-					</s:param>
-				</s:url>
-			
-			
-				<tr bgcolor="#ffffff" align="center">
-					<td><s:property value="toy_id"/></td>	
-					<td><s:property value="toy_image"/></td>
-					<td><img src="./upload/" width="130" height="130" border="0"/></td>
-					
-				</tr>
-				<tr>	
-					<td align="left"><s:property value="zizum_no"/>
-					&nbsp;<s:a href="%{viewURL}"><s:property value="toy_name"/></s:a></td>
-								 
-									 
-					</td>
-				</tr>
-				<tr>	
-					<td align="center"><s:property value="toy_age"/></td>
-					<td>전체() | 보유() | 대여()</td>
-					<td align="center"><s:property value="state_code"/></td>
-				</tr>
-			
-			
-			</s:iterator>
-			
-			
-		</tr>
-		</table>
-	 --%>
-
-	<!-- <img src="./upload/푸.gif" width="130" height="130" border="0"> -->
-	
-
-
-		
 
 
 
@@ -349,73 +290,6 @@ tm[tabnum].className = "on";
 
 </body>
 </html>
-
-
-<!-- 
-
-실행URL ::: http://localhost:8080/StrutsBoard/listAction.action
-
-	:listAction ==> execute()  <== selectAll
-			list  과
-			pagingHtml  을 가져다씀???
-	:boardList.jsp로 포워딩해 결과가 나옴
-
- -->
-
-
-
-
-<%--    <c:choose> 
-					
-			<c:otherwise> 
-
-			<c:forEach var="item" items="${requestScope.itemList}">
-			<td width="180" valign="top" >
-			<br>
-				<div align="center">
-				<%if(category.equals("new_item")) { 
-			      	if(price.equals("no")) {
-				%>
-				<a href="Goods_Detail.go?item=${item.GOODS_CATEGORY}
-						&gr_goods_num=${item.GOODS_NUM}&isitem=new">
-				<%	}else{ %>
-				<a href="Goods_Detail.go?item=${item.GOODS_CATEGORY}
-						&gr_goods_num=${item.GOODS_NUM}
-						&isitem=new&price=${price}">
-				<% 	}
-			      }else if (category.equals("hit_item")) { 
-			      	if(price.equals("no")) {
-			 	%>
-				<a href="Goods_Detail.go?item=${item.GOODS_CATEGORY}
-						&gr_goods_num=${item.GOODS_NUM}&isitem=hit">
-				<% 	}else{ %>
-				<a href="Goods_Detail.go?item=${item.GOODS_CATEGORY}
-						&gr_goods_num=${item.GOODS_NUM}
-						&isitem=hit&price=${price}">
-				<%	}
-			      } else { 
-					if(price.equals("no")) {
-				%>
-				<a href="Goods_Detail.go?item=${item.GOODS_CATEGORY}
-						&gr_goods_num=${item.GOODS_NUM}&isitem=other">
-				<% 	}else{ %>
-				<a href="Goods_Detail.go?item=${item.GOODS_CATEGORY}
-						&gr_goods_num=${item.GOODS_NUM}
-						&isitem=other&price=${price}">
-				<%	}
-				 }
-				%>
-			 	
-			 	<img src="./upload/" width="130" height="130" border="0"/>
-			 	<br/>뽀로롱인형        ${item.GOODS_NAME}<br/>
-				</a>
-				<br/><b> 전체()| 보유() | 대여() </b>
-				</div>
-				<br>
-				</td>
-				</c:forEach>
-				</c:otherwise>
-			</c:choose> --%>
 
 
 

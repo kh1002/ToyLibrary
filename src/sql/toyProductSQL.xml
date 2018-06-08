@@ -30,6 +30,13 @@
 			where toy_id = #toy_id#     <!--  ##이 ?를 대신한다  -->
 		</sql>
 		
+		<sql id="where-toy_id">
+			where toy_id = #toy_id#     <!--  ##이 ?를 대신한다  -->
+		</sql>
+		
+		<sql id="where-zizum_no">
+			where zizum_no = #zizum_no#     <!--  ##이 ?를 대신한다  -->
+		</sql>
 	<!-- select 쿼리문 정의 -->
 		
 		<!-- 모든 데이터를 꺼내오는 selectAll -->
@@ -44,11 +51,37 @@
 			<include refid="where-no"/>
 		</select>
 		
+		<!-- 지점1의 장난감들만 보여주는 셀렉트문 -->
+	<!-- 	<select id="selectToyZizum1One" resultMap="toyProductRes" parameterClass="int">
+			<include refid="select-all"/>
+			where zizum_no = 1
+		</select>
+		 -->
+		 
+		 <!-- 지점1의 장난감들만 보여주는 셀렉트문 -->
+		<select id="selectToyZizum1All" resultMap="toyProductRes">
+			<include refid="select-all"/>
+			where zizum_no = 1	
+		</select>
+		
+		<!-- 지점2의 장난감들만 보여주는 셀렉트문 -->
+		<select id="selectToyZizum2All" resultMap="toyProductRes">
+			<include refid="select-all"/>
+			where zizum_no = 2	
+		</select>
+		
+		<!-- 지점3의 장난감들만 보여주는 셀렉트문 -->
+		<select id="selectToyZizum3All" resultMap="toyProductRes">
+			<include refid="select-all"/>
+			where zizum_no = 3	
+		</select>
+			
+		
 
 	<!-- insert 쿼리문 정의 -->
 		<insert id="insertToy" parameterClass="admin">
 			insert into toy_product(toy_id, toy_name, toy_detail, toy_gusung, toy_age, zizum_no, original_zizum, state_code, toy_reg_date)
-			values(toy_product_no.NEXTVAL,#toy_name#,#toy_detail#, #toy_gusung#,#toy_age#, 3,3, #state_code#, #toy_reg_date#)
+			values(toy_product_no.NEXTVAL,#toy_name#,#toy_detail#, #toy_gusung#,#toy_age#, 1,1, #state_code#, #toy_reg_date#)
 		</insert>
 	
 
