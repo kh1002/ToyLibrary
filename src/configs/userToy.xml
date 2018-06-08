@@ -31,11 +31,17 @@
 			<result>/toy/toyZizum1List.jsp</result>
 		</action>
 		
-	<!-- 사용자 장난감 지접1 리스트 액션 -->
+	<!-- 사용자 장난감 지접2 리스트 액션 -->
 		<action name="ToyZizum2ListAction" class="toy.ToyZizum2ListAction">
 			<result>/toy/toyZizum2List.jsp</result>
 			
+		</action> 		
+	<!-- 사용자 장난감 지접3 리스트 액션 -->
+		<action name="ToyZizum3ListAction" class="toy.ToyZizum3ListAction">
+			<result>/toy/toyZizum3List.jsp</result>
+			
 		</action> 
+	
 	
 	</package>
 

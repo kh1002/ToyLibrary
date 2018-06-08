@@ -12,7 +12,7 @@ import java.io.IOException;
 import toy.pagingAction;
 import admin.toyProductVO;
 
-public class ToyZizum2ListAction extends ActionSupport {
+public class ToyZizum3ListAction extends ActionSupport {
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
 	
@@ -28,7 +28,7 @@ public class ToyZizum2ListAction extends ActionSupport {
 	private pagingAction page; //페이징 클래스
 	
 	//생성자
-	public ToyZizum2ListAction() throws IOException {
+	public ToyZizum3ListAction() throws IOException {
 		reader = Resources.getResourceAsReader("sqlMapConfig.xml"); // sqlMapConfig.xml 파일의 설정내용을 가져온다. 읽어들여서 리더객체 생성
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader);// sqlMapConfig.xml의 내용을 적용한 sqlMapper 객체 생성.
 		reader.close();
@@ -37,7 +37,7 @@ public class ToyZizum2ListAction extends ActionSupport {
 	public String execute() throws Exception {
 		//모든 글을 가져와서 list에 넣는다
 		
-		UPlist = sqlMapper.queryForList("selectToyZizum2All");
+		UPlist = sqlMapper.queryForList("selectToyZizum3All");
 		
 		
 		totalCount = UPlist.size(); //전체 글 갯수를 구함

@@ -36,9 +36,9 @@
 <div id="tabmenu">
 <ul>
 	<li class=""> <a href="ToyListAction.action" onClick="show_leemocon(0);">전체</a> </li>
-	<li class="on"> <a href="ToyZizum1ListAction.action" onClick="show_leemocon(1);">강남점</a> </li>
+	<li class=""> <a href="ToyZizum1ListAction.action" onClick="show_leemocon(1);">강남점</a> </li>
 	<li class=""> <a href="ToyZizum2ListAction.action" onClick="show_leemocon(2);">교대점</a> </li>
-	<li class=""> <a href="ToyZizum3ListAction.action" onClick="show_leemocon(3);">역삼점</a> </li>
+	<li class="on"> <a href="ToyZizum3ListAction.action" onClick="show_leemocon(3);">역삼점</a> </li>
 </ul>
 </table>
 
@@ -53,7 +53,7 @@
 
 <table border="0">
 		<tr>	   
-			<s:iterator value="UPZ1list" status="stat">
+			<s:iterator value="UPlist" status="stat">
 			
 				<s:url id = "viewURL" action="ToyDetailAction" >
 					<s:param name="toy_id">

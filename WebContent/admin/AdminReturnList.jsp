@@ -51,10 +51,10 @@
 			<b>대여지점</b>
 		</th>
 		<th width="100" scope="col" style="text-align:center">
-			<b>예약일</b>
+			<b>대여일</b>
 		</th>
 		<th width="100" scope="col" style="text-align:center">
-			<b>대여가능일</b>
+			<b>반납예정일</b>
 		</th>
 		<th width="100" scope="col" style="text-align:center">
 			<b>대여상태</b>
