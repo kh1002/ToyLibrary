@@ -69,6 +69,12 @@
 			where toy_id = #toy_id#
 		</update>
 		
+		<update id="updateRentRRdate" parameterClass="toyRentInfo">
+			update toy_reservation set reserve_date = sysdate, return_date = sysdate+14
+			where toy_id = #toy_id#
+		</update>
+		
+		
 		
 		
 <!-- 		

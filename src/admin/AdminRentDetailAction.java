@@ -49,6 +49,12 @@ public class AdminRentDetailAction extends ActionSupport {
 
 		System.out.println("rentDetail의 exe이 수행?");
 		
+		paramClass.setToy_id(getToy_id());
+		
+		System.out.println("토이아이디 : " + getToy_id());
+		sqlMapper.update("updateRentRRdate",paramClass);
+		
+	/*	
 		paramClass.setState_code(getState_code());
 		paramClass.setToy_id(getToy_id());
 		
@@ -57,9 +63,22 @@ public class AdminRentDetailAction extends ActionSupport {
 		
 		
 		sqlMapper.update("updateRentState", paramClass);
-		
+		*/
 
 		return SUCCESS;	
+	}
+	
+	public String stateModify() throws Exception {
+		System.out.println("rentDetail의 stateModify이 수행?");
+		
+		paramClass.setState_code(getState_code());
+		paramClass.setToy_id(getToy_id());
+		
+		System.out.println("상태코드 : " + getState_code());
+		System.out.println("토이아이디 : " + getToy_id());
+		
+		sqlMapper.update("updateRentState", paramClass);
+		return SUCCESS;
 	}
 
 

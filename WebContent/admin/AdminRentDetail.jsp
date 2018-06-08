@@ -29,7 +29,7 @@
 
 <table width="600" border="1" cellspacing="0" cellpadding="0">
 
-<form action="AdminRentDetailAction.action" method="post" enctype="multipart/form-data">
+<form action="AdminRentDetailStateAction.action" method="post" enctype="multipart/form-data">
 <!-- 숨겨서 보내는 데이터?? -->
 	<s:hidden name="toy_id" value="%{resultClass.toy_id}"/>
 	

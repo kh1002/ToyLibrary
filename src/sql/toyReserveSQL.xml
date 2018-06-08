@@ -22,7 +22,7 @@
    <!-- insert 쿼리문 정의 -->
       <insert id="insertReserve" parameterClass="reserve">
          insert into toy_reservation(reserve_no, toy_id, member_id, reserve_zizum, reserve_date, return_date)
-         values(toy_reservation_no.NEXTVAL,#toy_id#, #member_id#, #reserve_zizum#,#reserve_date#,#return_date#)
+         values(toy_reservation_no.NEXTVAL,#toy_id#, #member_id#, #reserve_zizum#, sysdate, sysdate+7)
       </insert>
 
 </sqlMap>

@@ -48,16 +48,27 @@ public class AdminReturnDetailAction extends ActionSupport {
 
 		System.out.println("returnDetail의 exe이 수행?");
 		
+		paramClass.setToy_id(getToy_id());
+		
+		System.out.println("토이아이디 : " + paramClass.getToy_id());
+		
+		sqlMapper.delete("deleteReturnReserve", paramClass);
+
+		return SUCCESS;	
+	}
+	
+	
+	public String stateModify() throws Exception {
+		System.out.println("returnDetail의 stateModify이 수행?");
+		
 		paramClass.setState_code(getState_code());
 		paramClass.setToy_id(getToy_id());
 		
 		System.out.println("상태코드 : " + getState_code());
-		System.out.println("토이아이디 : " + paramClass.getToy_id());
-		
+		System.out.println("토이아이디 : " + getToy_id());
 		
 		sqlMapper.update("updateReturnState", paramClass);
-
-		return SUCCESS;	
+		return SUCCESS;
 	}
 
 

@@ -33,7 +33,7 @@
 <!-- 
 <form action="writeAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
  -->
-<form action="AdminReturnDetailAction.action" method="post" enctype="multipart/form-data">
+<form action="AdminReturnDetailStateAction.action" method="post" enctype="multipart/form-data">
 <!-- 숨겨서 보내는 데이터?? -->
 	<s:hidden name="toy_id" value="%{resultClass.toy_id}"/>
 	
