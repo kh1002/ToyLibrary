@@ -9,7 +9,7 @@ import java.util.*;
 import java.io.Reader;
 import java.io.IOException;
 
-import toy.pagingAction;
+import toy.pagingActionZ3;
 import admin.toyProductVO;
 
 public class ToyZizum3ListAction extends ActionSupport {
@@ -25,7 +25,7 @@ public class ToyZizum3ListAction extends ActionSupport {
 	private int blockCount = 3; //한 페이지의 게시물의 수
 	private int blockPage = 3; //한 화면에 보여줄 페이지 수
 	private String pagingHtml; //페이징을 구현한 html
-	private pagingAction page; //페이징 클래스
+	private pagingActionZ3 page; //페이징 클래스
 	
 	//생성자
 	public ToyZizum3ListAction() throws IOException {
@@ -48,7 +48,7 @@ public class ToyZizum3ListAction extends ActionSupport {
 		System.out.println("userInfolist의 갯수" +userInfolistCount);
 		
 		//pagingAction 객체 생성
-		page = new pagingAction(currentPage, totalCount, blockCount, blockPage);
+		page = new pagingActionZ3(currentPage, totalCount, blockCount, blockPage);
 		
 		pagingHtml = page.getPagingHtml().toString(); //페이지 html 생성
 		
@@ -124,13 +124,14 @@ public class ToyZizum3ListAction extends ActionSupport {
 		this.pagingHtml = pagingHtml;
 	}
 
-	public pagingAction getPage() {
+	public pagingActionZ3 getPage() {
 		return page;
 	}
 
-	public void setPage(pagingAction page) {
+	public void setPage(pagingActionZ3 page) {
 		this.page = page;
 	}
-	
+
+
 	
 }
