@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 	
 <struts>
-	<package name="userToy" extends="struts-default">
+	<package name="userToy" extends="struts-default, tiles-default">
 			
 	<!-- 장난감 예약하기 액션 -->	
    		<action name="ToyReserveForm" class="toy.ToyReserveAction" method="form">

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="main" template="/tiles/layout.jsp">
+		<put-attribute name="title" value="11장난감도서관" />
+		<put-attribute name="header" value="/tiles/header/header.jsp" />
+		<put-attribute name="body" value="/tiles/body/body.jsp" />	
+		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+	</definition>		 
+	 
+<!-- 	 <definition name="introduce" template="/tiles/layout-left.jsp"> 
+	 	<put-attribute name="title" value="SS Library" />
+		<put-attribute name="header" value="/tiles/header/header.jsp" />
+		<put-attribute name="lefter" value="/tiles/lefter/lefter-introduce.jsp" />
+		<put-attribute name="body" value="/tiles/body/introduce.jsp" />
+		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />	
+	</definition>	
+	
+	<definition name="history" extends="introduce">
+		<put-attribute name="body" value="/tiles/body/history.jsp" />
+	</definition>
+	
+	<definition name="map" extends="introduce">
+		<put-attribute name="body" value="/tiles/body/map.jsp" />
+	</definition>
+	 -->
+	
+</tiles-definitions>
+
+

@@ -5,7 +5,12 @@
 	
 <struts>
 	
-	
+	<package name="main" extends="struts-default, tiles-default">
+		<action name="mainAction" class="main.MainAction">
+			<result name="success" type="tiles">main</result>
+		</action>
+
+	</package>
 	
 	<include file="/configs/adminToy.xml" />
 	<include file="/configs/userToy.xml" />
