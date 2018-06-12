@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=euc-kr"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
 <!DOCTYPE HTML>
@@ -10,7 +10,7 @@
 </head>
 
 <style>
-#tabmenu{ position:relative; height:29px; background:url(images/tab_menu.gif) repeat-x 0 100%; font-family:'µ¸¿ò',dotum; font-size:12px }
+#tabmenu{ position:relative; height:29px; background:url(images/tab_menu.gif) repeat-x 0 100%; font-family:'ë‹ì›€',dotum; font-size:12px }
 #tabmenu ul,#tabmenu ul li{margin:0;padding:0}
 #tabmenu ul li{list-style:none}
 #tabmenu ul li,#tabmenu ul li a{background:url(images/bg_tab2_off.gif) no-repeat}
@@ -49,16 +49,16 @@
                            <td align="right">
                            		<a href="mainAction.action">home</a> 
                            		<s:if test="${ session_id == null }">
-                                	 <a href="loginForm.action">·Î±×ÀÎ</a>
+                                	 <a href="loginForm.action">ë¡œê·¸ì¸</a>
                              	</s:if> 
                              	 <s:else>
 	                                 <s:if test="${ session_admin_tp == 1 }">
-	                                    <a href="admin.action">°ü¸®ÀÚÆäÀÌÁö</a>
+	                                    <a href="admin.action">ê´€ë¦¬ìí˜ì´ì§€</a>
 	                                 </s:if>
 	                                 <s:else>
-	                                    <a href="myPage.action">¸¶ÀÌÆäÀÌÁö</a>
+	                                    <a href="myPage.action">ë§ˆì´í˜ì´ì§€</a>
 	                                 </s:else>
-	                                 <a href="logout.action">·Î±×¾Æ¿ô (${ session_id })</a>
+	                                 <a href="logout.action">ë¡œê·¸ì•„ì›ƒ (${ session_id })</a>
                               	</s:else>
                            </td>
 
@@ -67,26 +67,26 @@
 
                      <ul>
                      
-                        <li><a href="AdminToyListAction.action">Àå³­°¨</a>
+                        <li><a href="AdminToyListAction.action">ì¥ë‚œê°</a>
                          <!--  <ul>
-                              <li><a href="bookSearchForm.action">Àå³­°¨¸ñ·Ï</a></li>
-                              <li><a href="bookSearch.action?searchNum=0&searchKeyword=">´ë¿©°ü¸®</a></li>
-                              <li><a href="bookSearch.action?searchNum=0&searchKeyword=">¹İ³³°ü¸®</a></li>
+                              <li><a href="bookSearchForm.action">ì¥ë‚œê°ëª©ë¡</a></li>
+                              <li><a href="bookSearch.action?searchNum=0&searchKeyword=">ëŒ€ì—¬ê´€ë¦¬</a></li>
+                              <li><a href="bookSearch.action?searchNum=0&searchKeyword=">ë°˜ë‚©ê´€ë¦¬</a></li>
                            </ul>  -->
                         </li>
                         
-                        <li><a href="AdminNoticeBoardList.action">°Ô½ÃÆÇ</a>
+                        <li><a href="noticeListAction.action">ê²Œì‹œíŒ</a>
                            <!-- <ul>
-                              <li><a href="noticeList.action">°øÁö»çÇ×</a></li>
-                              <li><a href="boardListFree.action">¹®ÀÇ°Ô½ÃÆÇ</a></li>
+                              <li><a href="noticeList.action">ê³µì§€ì‚¬í•­</a></li>
+                              <li><a href="boardListFree.action">ë¬¸ì˜ê²Œì‹œíŒ</a></li>
                               <li><a href="boardListQna.action">FAQ</a></li>
-                              <li><a href="boardListBookOrder.action">Çà»çÀÏÁ¤</a></li>
+                              <li><a href="boardListBookOrder.action">í–‰ì‚¬ì¼ì •</a></li>
                            </ul> -->
                         </li>
                         
-                        <li><a href="introduce.action">È¸¿ø°ü¸®</a>
+                        <li><a href="introduce.action">íšŒì›ê´€ë¦¬</a>
                           <!--  <ul>
-                              <li><a href="history.action">È¸¿ø¸ñ·Ï</a></li>
+                              <li><a href="history.action">íšŒì›ëª©ë¡</a></li>
                            </ul> -->
                         </li>
                      </ul>
@@ -115,27 +115,27 @@
                               	
                               	
                         <%--    
-                        	´«¿¡´Â Àß º¸ÀÌÁö¸¸ Áßº¹µÇ´Â°Ô ³Ê¹« ¸¹Àº ÄÚµå   	
+                        	ëˆˆì—ëŠ” ì˜ ë³´ì´ì§€ë§Œ ì¤‘ë³µë˜ëŠ”ê²Œ ë„ˆë¬´ ë§ì€ ì½”ë“œ   	
 				          <div class="fr">
 								<ul class="clr gnb">
 									<s:if test="#session.session_ID == null ">
-										<li><a href="javascript:location.href='Login.action'">·Î±×ÀÎ</a></li>
-										<li><a href="javascript:location.href='UserAddForm.action'">È¸¿ø°¡ÀÔ</a></li>
-										<li><a href="javascript:location.href='FAQ_listAction.action'">°í°´¼¾ÅÍ</a></li>
-										<li><a href="javascript:location.href='NOTICE_listAction.action'">°øÁö»çÇ×</a></li>
+										<li><a href="javascript:location.href='Login.action'">ë¡œê·¸ì¸</a></li>
+										<li><a href="javascript:location.href='UserAddForm.action'">íšŒì›ê°€ì…</a></li>
+										<li><a href="javascript:location.href='FAQ_listAction.action'">ê³ ê°ì„¼í„°</a></li>
+										<li><a href="javascript:location.href='NOTICE_listAction.action'">ê³µì§€ì‚¬í•­</a></li>
 										
 									</s:if>
 									<s:ifelse test="${session.admin_id != null }">
-										<li>${session_admin_id}´ÔÈ¯¿µÇÕ´Ï´Ù.</li>
+										<li>${session_admin_id}ë‹˜í™˜ì˜í•©ë‹ˆë‹¤.</li>
 										<li><a href="javascript:location.href='FAQ_listAction.action'">home</a></li>
-										<li><a href="javascript:location.href='Logout.action'">·Î±×¾Æ¿ô</a></li>
+										<li><a href="javascript:location.href='Logout.action'">ë¡œê·¸ì•„ì›ƒ</a></li>
 									</s:ifelse>
 									
 									<s:else>
-										<li>${session_ID}´ÔÈ¯¿µÇÕ´Ï´Ù.</li>
-										<li><a href="javascript:location.href='FAQ_listAction.action'">°í°´¼¾ÅÍ</a></li>
-										<li><a href="javascript:location.href='NOTICE_listAction.action'">°øÁö»çÇ×</a></li>
-										<li><a href="javascript:location.href='Logout.action'">·Î±×¾Æ¿ô</a></li>
+										<li>${session_ID}ë‹˜í™˜ì˜í•©ë‹ˆë‹¤.</li>
+										<li><a href="javascript:location.href='FAQ_listAction.action'">ê³ ê°ì„¼í„°</a></li>
+										<li><a href="javascript:location.href='NOTICE_listAction.action'">ê³µì§€ì‚¬í•­</a></li>
+										<li><a href="javascript:location.href='Logout.action'">ë¡œê·¸ì•„ì›ƒ</a></li>
 									
 									</s:else>
 				

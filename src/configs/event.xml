@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache software Foundation//DTD struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="event" extends="struts-default">
+
+		<action name="eventListAction" class="board.Event.eventListAction">
+			<result>/admin/Event/eventList.jsp</result>
+		</action>
+
+		<action name="eventWriteForm" class="board.Event.eventWriteAction"
+			method="form">
+			<result>/admin/Event/eventWrite.jsp</result>
+		</action>
+
+		<action name="eventWriteAction" class="board.Event.eventWriteAction">
+			<result type="redirect-action">
+				<param name="actionName">eventListAction</param>
+			</result>
+		</action>
+
+		<action name="eventViewAction" class="board.Event.eventViewAction">
+			<result>/admin/Event/eventView.jsp</result>
+		</action>
+
+		<action name="eventModifyForm" class="board.Event.eventViewAction">
+			<result type="chain">eventWriteForm</result>
+		</action>
+
+		<action name="eventModifyAction" class="board.Event.eventModifyAction">
+			<result type="chain">
+				<param name="actionName">eventViewAction</param>
+			</result>
+		</action>
+							<!-- 어쩔수없음 -->
+		<action name="eventDeleteAction" class="board.Event.eventDeleteAction">
+			<result type="redirect-action">
+				<param name="actionName">eventListAction</param>
+			</result>
+		</action>
+
+	</package>
+</struts>

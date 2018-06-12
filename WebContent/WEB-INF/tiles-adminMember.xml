@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="adminMember" template="/tiles/layout-left.jsp">
+		<put-attribute name="title" value="관리자 회원목록" />
+		<put-attribute name="header" value="/tiles/header/header.jsp" />
+		<put-attribute name="lefter" value="/tiles/lefter/lefter-AdminMember.jsp" />
+		<put-attribute name="body" value="/admin/.jsp" />
+		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+	</definition>
+
+<!--  
+
+	<definition name="bookRentForm" extends="bookSearch">
+		<put-attribute name="title" value="도서 목록" />
+		<put-attribute name="body" value="/book/bookRentForm.jsp" />
+	</definition>
+-->
+
+
+
+</tiles-definitions>

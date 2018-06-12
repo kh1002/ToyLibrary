@@ -20,8 +20,20 @@
 		<put-attribute name="body" value="/book/bookRentForm.jsp" />
 	</definition>
 -->
-	<definition name="AdminNoticeBoardList" extends="adminBoard">
-		<put-attribute name="body" value="/noticeBoard/board.jsp" />
+	<definition name="noticeListAction" extends="adminBoard">
+		<put-attribute name="body" value="/admin/Notice/noticeList.jsp" />
+	</definition>	
+	
+	<definition name="faqListAction" extends="adminBoard">
+		<put-attribute name="body" value="/admin/Faq/faqList.jsp" />
+	</definition>	
+	
+	<definition name="eventListAction" extends="adminBoard">
+		<put-attribute name="body" value="/admin/Event/eventList.jsp" />
+	</definition>	
+	
+	<definition name="qnaListAction" extends="adminBoard">
+		<put-attribute name="body" value="/admin/Qna/qnaList.jsp" />
 	</definition>	
 
 </tiles-definitions>

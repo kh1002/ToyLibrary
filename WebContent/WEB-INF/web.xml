@@ -18,6 +18,10 @@
   	<filter-class>
   		org.apache.struts2.dispatcher.FilterDispatcher
   	</filter-class>
+  	<init-param>
+		<param-name>struts.i18n.encoding</param-name>
+		<param-value>utf-8</param-value>
+	</init-param>
   </filter>
   
   <filter-mapping>
@@ -33,7 +37,7 @@
 				org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG
 			</param-name>
 			<param-value>
-			/WEB-INF/tiles-main.xml,/WEB-INF/tiles-adminToy.xml,/WEB-INF/tiles-adminBoard.xml
+			/WEB-INF/tiles-main.xml,/WEB-INF/tiles-adminToy.xml,/WEB-INF/tiles-adminBoard.xml,/WEB-INF/tiles-adminMember.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>

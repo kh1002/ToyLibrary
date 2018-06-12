@@ -12,7 +12,7 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.opensymphony.xwork2.ActionSupport;
 
 
-public class MainAction extends ActionSupport {
+public class MainAction2 extends ActionSupport {
 
 	public String execute() {
 		return SUCCESS;

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="faq" type="board.Faq.faqVO"/>
+
+	
+	<resultMap class="faq" id="faqRes">
+		<result property="faq_no" column="faq_no"/>
+		<result property="faq_subject" column="faq_subject"/>
+		<result property="faq_content" column="faq_content"/>
+	</resultMap>
+
+	
+
+	<sql id="Faq-select-all">
+		select * from FAQ
+	</sql>
+	
+
+
+	<sql id="Faq-where-no">
+		where faq_no = #faq_no#
+	</sql>
+	
+
+	
+	
+	
+	
+	<select id="Faq-selectAll" resultMap="faqRes">
+		<include refid="Faq-select-all"/>
+		order by faq_no desc
+	</select>
+	
+	
+	
+	<select id="Faq-selectOne" resultMap="faqRes" parameterClass="int">
+		<include refid="Faq-select-all"/>
+		<include refid="Faq-where-no"/>
+	</select>
+	
+
+	
+	
+	
+	
+	
+
+	
+	
+
+	<select id="Faq-selectSearchS" resultMap="faqRes" parameterClass="string">
+		<include refid="Faq-select-all" />
+		 WHERE faq_subject like #searchKeyword#
+		 ORDER BY faq_no DESC
+	</select>
+	<select id="Faq-selectSearchC" resultMap="faqRes" parameterClass="string">
+		<include refid="Faq-select-all" />
+		 WHERE faq_content like #searchKeyword#
+		 ORDER BY faq_no DESC
+	</select>
+	
+	
+	<select id="Faq-selectLastNo" resultClass="faq">
+		select max(faq_no) as faq_no from FAQ
+	</select>
+
+	
+	<insert id="Faq-insert" parameterClass="faq">
+		insert into FAQ (faq_no, faq_subject, faq_content)
+		values (faq_no_seq.NEXTVAL, #faq_subject#, #faq_content#)
+	</insert>
+	
+
+	
+	<update id="Faq-update" parameterClass="faq">
+		update FAQ set faq_subject = #faq_subject#, faq_content = #faq_content#
+		<include refid="Faq-where-no"/>
+	</update>
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<delete id="Faq-delete" parameterClass="faq">
+		delete from FAQ
+		<include refid="Faq-where-no"/>
+	</delete>
+	
+
+	
+</sqlMap>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

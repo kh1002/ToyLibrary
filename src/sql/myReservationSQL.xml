@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN'
+'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+
+ 	<typeAlias alias="myReservation" type="my.MyRentVO"/>
+		<resultMap id = "myReservationRes" class="myReservation">
+			<result property="toy_id" column="toy_id"/> 
+			<result property="toy_name" column="toy_name"/> 
+			<result property="toy_image" column="toy_image"/> 
+			<result property="toy_detail" column="toy_detail"/> 
+			<result property="toy_gusung" column="toy_gusung"/> 
+			<result property="toy_age" column="toy_age"/> 
+			<result property="original_zizum" column="original_zizum"/> 
+			<result property="zizum_no" column="zizum_no"/> 
+			<result property="state_code" column="state_code"/> 
+			<result property="toy_reg_date" column="toy_reg_date"/> 
+			
+		<!-- 	<result property="zizum_no" column="zizum_no"/>  -->
+			<result property="zizum_name" column="zizum_name"/> 
+			<result property="admin_no" column="admin_no"/> 
+			
+			<result property="reserve_no" column="reserve_no"/>
+        	<result property="toy_id" column="toy_id"/> 
+         	<result property="member_id" column="member_id"/> 
+         	<result property="reserve_zizum" column="reserve_zizum"/>
+       		<result property="reserve_date" column="reserve_date"/> 
+       		<result property="return_date" column="return_date"/> 
+       		
+      <!--  		<result property="member_id" column="member_id"/> -->
+			<result property="member_pw" column="member_pw"/>
+			<result property="member_name" column="member_name"/>
+			<result property="member_jumin1" column="member_jumin1"/>
+			<result property="member_jumin2" column="member_jumin2"/>
+			<result property="member_mail" column="member_mail"/>
+			<result property="member_phone" column="member_phone"/>
+			<result property="member_zipcode" column="member_zipcode"/>
+			<result property="member_addr1" column="member_addr2"/>
+			<result property="member_join_date" column="member_join_date"/>
+			
+		</resultMap>	
+	
+
+		 
+		<sql id="myreservationselect-all">
+			select * from toy_product p, toy_reservation r, zizum i, toy_member m
+		</sql>
+		
+		<sql id="myreservationwhere-no">
+			where p.toy_id = r.toy_id and r.member_id = m.member_id and p.zizum_no = i.zizum_no 
+		</sql>
+		
+		<select id="myreservationInfoAll" resultMap="myReservationRes">
+			<include refid="myrentselect-all"/>
+			<include refid="myrentwhere-no"/> and p.state_code=#state_code#
+			order by reserve_date asc
+		</select>
+		
+		<select id="myreservationInfoOne" resultMap="myReservationRes">
+			<include refid="myrentselect-all"/>
+			<include refid="myrentwhere-no"/> and p.toy_id=#toy_id#
+		</select>
+		
+		
+		<!-- update 쿼리문 정의 -->	
+		<update id="myReservationStateUpdate" parameterClass="myReservation">
+			update toy_product set state_code = #state_code#
+			where toy_id = #toy_id#
+		</update>
+		
+		<!-- delete 쿼리문 정의 -->
+		<delete id="myReservationDelete" parameterClass="myReservation">
+			delete from toy_reservation 
+			where toy_id = #toy_id# and member_id = #member_id#
+		</delete>
+		
+
+		
+
+</sqlMap>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC	
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+	<package name="member" extends="struts-default">
+		
+		<action name="joinModify" class="member.joinAction" method="modify">
+				<result>/member/join_modify.jsp</result>
+		</action>
+		
+				
+		<action name="joinMain" class="member.joinAction" method="form">
+				<result>/member/join_main.jsp</result>
+		</action>
+		
+		<action name="joinMainInsert" class="member.joinAction" method="execute">
+				<result>/member/login_main.jsp</result>
+		</action>
+		
+		<action name="idSearch" class="member.loginAction" method="form">
+				<result>/member/login_idsearch.jsp</result>
+		</action>
+		
+		<action name="pwSearch" class="member.loginAction" method="form">
+				<result>/member/login_pwsearch.jsp</result>
+		</action>
+		
+		<action name="login" class ="member.loginAction">
+			<result name ="success">/member/join_delete.jsp</result>
+			<result name ="login">/member/join_main.jsp</result>
+		</action>
+		
+		<action name="joinDelete" class="member.joinAction" method="delete">
+			<result name = "success">/member/join_main.jsp</result>
+			<result name = "error">/member/login_main.jsp</result>
+		</action>
+		
+		<action name="zipCheck" class="member.zipCheckAction" method="execute">
+				<result>/member/join_zipcheck.jsp</result>
+		</action>
+		
+		<action name="idCheck" class="member.idCheckAction" method="execute">
+				<result>/member/join_idcheck.jsp</result>
+		</action>
+		
+		<action name="loginIdSearch" class="member.loginAction" method="idSearch">
+				<result name="success">/member/login_idsearch_success.jsp</result>
+				<result name="error">/member/login_idsearch_error.jsp</result>
+		</action>
+		
+		<action name="loginPwSearch" class="member.loginAction" method="pwSearch">
+				<result name="success">/member/login_pwsearch_success.jsp</result>
+				<result name="error">/member/login_pwsearch_error.jsp</result>
+		</action>
+		
+	</package>
+</struts>

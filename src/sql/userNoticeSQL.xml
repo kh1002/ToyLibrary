@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="userNotice" type="user.Notice.userNoticeVO" />
+
+
+	<resultMap class="userNotice" id="userNoticeRes">
+		<result property="notice_no" column="notice_no" />
+		<result property="notice_subject" column="notice_subject" />
+		<result property="notice_content" column="notice_content" />
+		<result property="notice_readcount" column="notice_readcount" />
+		<result property="notice_regdate" column="notice_regdate" />
+	</resultMap>
+
+
+
+
+	<sql id="userNotice-select-all">
+		select * from NOTICE
+	</sql>
+
+
+	<sql id="userNotice-where-no">
+		where notice_no = #notice_no#
+	</sql>
+
+
+
+
+
+	<select id="userNotice-selectAll" resultMap="userNoticeRes">
+		<include refid="userNotice-select-all" />
+		order by notice_no desc
+	</select>
+
+
+
+
+	<select id="userNotice-selectOne" resultMap="userNoticeRes"
+		parameterClass="int">
+		<include refid="userNotice-select-all" />
+		<include refid="userNotice-where-no" />
+	</select>
+
+
+
+
+
+
+
+	<select id="userNotice-selectSearchS" resultMap="userNoticeRes"
+		parameterClass="string">
+		<include refid="userNotice-select-all" />
+		WHERE notice_subject like #searchKeyword#
+		ORDER BY notice_no DESC
+	</select>
+	<select id="userNotice-selectSearchC" resultMap="userNoticeRes"
+		parameterClass="string">
+		<include refid="userNotice-select-all" />
+		WHERE notice_content like #searchKeyword#
+		ORDER BY notice_no DESC
+	</select>
+
+
+
+
+
+	<select id="userNotice-selectLastNo" resultClass="userNotice">
+		select
+		max(notice_no) as notice_no from NOTICE
+	</select>
+
+
+
+
+
+	<insert id="userNotice-insert" parameterClass="userNotice">
+		insert into NOTICE
+		(notice_no, notice_subject, notice_content, notice_regdate)
+		values
+		(notice_no_seq.NEXTVAL, #notice_subject#, #notice_content#,
+		#notice_regdate#)
+	</insert>
+
+
+
+
+
+	<update id="userNotice-update" parameterClass="userNotice">
+		update NOTICE set notice_subject = #notice_subject#, notice_content =
+		#notice_content#
+		<include refid="userNotice-where-no" />
+	</update>
+
+
+
+
+
+
+	<update id="userNotice-updateReadCount" parameterClass="userNotice">
+		update NOTICE set notice_readcount = notice_readcount +1
+		<include refid="userNotice-where-no" />
+	</update>
+
+
+
+
+
+
+
+
+	<delete id="userNotice-delete" parameterClass="userNotice">
+		delete from NOTICE
+		<include refid="userNotice-where-no" />
+	</delete>
+
+
+
+
+</sqlMap>
+

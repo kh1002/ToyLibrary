@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -23,9 +22,9 @@
 </table>
 <div class="leftMenu">
 <ul>
-<li><a href="AdminToyListAction.action">Àå³­°¨¸ñ·Ï</a></li>
-<li><a href="AdminRentListAction.action">´ë¿©°ü¸®</a></li>
-<li><a href="AdminReturnListAction.action">¹Ý³³°ü¸®</a></li>
+<li><a href="AdminToyListAction.action">ìž¥ë‚œê°ëª©ë¡</a></li>
+<li><a href="AdminRentListAction.action">ëŒ€ì—¬ê´€ë¦¬</a></li>
+<li><a href="AdminReturnListAction.action">ë°˜ë‚©ê´€ë¦¬</a></li>
 </ul>
 </div>
 </body>

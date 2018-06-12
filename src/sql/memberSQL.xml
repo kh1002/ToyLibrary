@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap namespace="member">
+
+	<typeAlias alias="member" type="member.MemberVO" />
+	
+	<resultMap id="memberRes" class="member">
+		<result property="member_id" column="member_id"/>
+		<result property="member_pw" column="member_pw"/>
+		<result property="member_name" column="member_name"/>
+		<result property="member_jumin1" column="member_jumin1"/>
+		<result property="member_jumin2" column="member_jumin2"/>
+		<result property="member_mail" column="member_mail"/>
+		<result property="member_phone" column="member_phone"/>
+		<result property="member_zipcode" column="member_zipcode"/>
+		<result property="member_addr1" column="member_addr1"/>
+		<result property="member_addr2" column="member_addr2"/>
+		<result property="member_join_date" column="member_join_date"/>
+	</resultMap>
+
+	<insert id="joinInsert"  parameterClass="member">
+	insert into TOY_MEMBER (
+	MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_JUMIN1, MEMBER_JUMIN2, MEMBER_MAIL, 
+	MEMBER_PHONE, MEMBER_ZIPCODE, MEMBER_ADDR1, MEMBER_ADDR2, MEMBER_JOIN_DATE
+	) values(
+	#member_id#, #member_pw#, #member_name#, #member_jumin1#, #member_jumin2#, #member_mail#, 
+	#member_phone#, #member_zipcode#, #member_addr1#, #member_addr2#, #member_join_date#
+	)
+	</insert>
+	
+	
+	<select id="idSelect" resultMap="memberRes" parameterClass="string">
+	SELECT * FROM TOY_MEMBER WHERE MEMBER_ID=#member_id#
+	</select>
+	
+	<delete id="joinDelete" parameterClass="member">
+		DELETE FROM TOY_MEMBER WHERE MEMBER_ID = #member_id#
+	</delete>
+
+	<select id="idCheck" resultMap="memberRes" parameterClass="String"> 
+		SELECT * from TOY_MEMBER WHERE member_id = #member_id# 
+	</select>
+	
+	<select id="idSearch" resultMap="memberRes" parameterClass="member">				
+		select * 
+		from TOY_MEMBER 
+		where member_name=#member_name# 
+		and member_jumin1=#member_jumin1# 
+		and member_jumin2=#member_jumin2#
+	</select>
+	
+	<select id="pwSearch" resultMap="memberRes" parameterClass="member">				
+		select * 
+		from TOY_MEMBER 
+		where member_id=#member_id# 
+		and member_name=#member_name# 
+		and member_jumin1=#member_jumin1# 
+		and member_jumin2=#member_jumin2#
+	</select>
+	
+	<update id="joinModify" parameterClass="member">
+		UPDATE TOY_MEMBER 
+		SET MEMBER_PW = #member_pw#, MEMBER_NAME = #member_name#,
+		  MEMBER_JUMIN1 = #member_jumin1#, MEMBER_JUMIN2 = #member_jumin2#,
+		  MEMBER_ZIPCODE = #member_zipcode#, MEMBER_ADDR1 = #member_addr1#, MEMBER_ADDR2 = #member_addr2#,
+		  MEMBER_PHONE = #member_phone#, MEMBER_MAIL = #member_mail#, 
+		WHERE MEMBER_ID = #member_id#
+	</update>
+
+
+
+</sqlMap>

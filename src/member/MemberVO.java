@@ -1,19 +1,19 @@
 package member;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
-public class memberVO {
+public class MemberVO {
 	private String member_id;
 	private String member_pw;
 	private String member_name;
-	private String member_jumin1;
-	private String member_jumin2;
+	private int member_jumin1;
+	private int member_jumin2;
 	private String member_mail;
 	private String member_phone;
 	private String member_zipcode;
 	private String member_addr1;
 	private String member_addr2;
-	private Date member_join_date;
+	private Timestamp member_join_date;
 	
 	
 	public String getMember_id() {
@@ -34,16 +34,16 @@ public class memberVO {
 	public void setMember_name(String member_name) {
 		this.member_name = member_name;
 	}
-	public String getMember_jumin1() {
+	public int getMember_jumin1() {
 		return member_jumin1;
 	}
-	public void setMember_jumin1(String member_jumin1) {
+	public void setMember_jumin1(int member_jumin1) {
 		this.member_jumin1 = member_jumin1;
 	}
-	public String getMember_jumin2() {
+	public int getMember_jumin2() {
 		return member_jumin2;
 	}
-	public void setMember_jumin2(String member_jumin2) {
+	public void setMember_jumin2(int member_jumin2) {
 		this.member_jumin2 = member_jumin2;
 	}
 	public String getMember_mail() {
@@ -76,13 +76,12 @@ public class memberVO {
 	public void setMember_addr2(String member_addr2) {
 		this.member_addr2 = member_addr2;
 	}
-	public Date getMember_join_date() {
+	public Timestamp getMember_join_date() {
 		return member_join_date;
 	}
-	public void setMember_join_date(Date member_join_date) {
+	public void setMember_join_date(Timestamp member_join_date) {
 		this.member_join_date = member_join_date;
 	}
-	
 	
 	
 }

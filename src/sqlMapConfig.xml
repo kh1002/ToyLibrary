@@ -29,7 +29,25 @@
 	<sqlMap resource="/sql/toyReserveSQL.xml"/>
 	<sqlMap resource="/sql/toyRentSQL.xml"/>
 	<sqlMap resource="/sql/toyReturnSQL.xml"/>
+	<sqlMap resource="/sql/myRentSQL.xml"/>
+	<sqlMap resource="/sql/myReservationSQL.xml"/>
 	<sqlMap resource="/sql/toyUserReserveSQL.xml"/>
+	<sqlMap resource="/sql/memberSQL.xml"/>
+	
+	<sqlMap resource="/sql/noticeSQL.xml"/>
+	<sqlMap resource="/sql/eventSQL.xml"/>
+	<sqlMap resource="/sql/faqSQL.xml"/>
+	<sqlMap resource="/sql/qnaSQL.xml"/>
+	<sqlMap resource="/sql/reviewSQL.xml"/>
+	
+	<sqlMap resource="/sql/userEventSQL.xml"/>
+	<sqlMap resource="/sql/userQnaSQL.xml"/>
+	<sqlMap resource="/sql/userNoticeSQL.xml"/>
+	<sqlMap resource="/sql/userFaqSQL.xml"/>
+	<sqlMap resource="/sql/userReviewSQL.xml"/>
+	
+		
+	
 	
 <!--	
 	<sqlMap resource="/sql/basketSQL.xml"/>

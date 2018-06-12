@@ -10,7 +10,7 @@ import java.io.Reader;
 import java.io.IOException;
 
 import admin.pagingAction2;
-import member.memberVO;
+import member.MemberVO;
 import toy.toyReserveVO;
 
 public class AdminRentListAction extends ActionSupport {

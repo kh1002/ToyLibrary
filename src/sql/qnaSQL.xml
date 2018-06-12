@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN'
+	'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap>
+	<typeAlias alias="qna" type="board.Qna.qnaVO"/>
+	
+	<resultMap class="qna" id="qnaRes" >
+		<result property="qna_no" column="qna_no" />
+		<result property="qna_subject" column="qna_subject" />
+		<result property="qna_name" column="qna_name" />
+		<result property="qna_password" column="qna_password" />
+		<result property="qna_content" column="qna_content" />
+		<result property="qna_readcount" column="qna_readcount" />
+		<result property="qna_regdate" column="qna_regdate" />
+		<result property="qna_ref" column="qna_ref" />
+		<result property="qna_re_step" column="qna_re_step" />
+		<result property="qna_re_level" column="qna_re_level" />
+	</resultMap>
+	
+	<!-- 공통으로 사용할 select 절 정의 -->
+	<sql id="Qna-select-all">
+		SELECT * FROM QNA
+	</sql>
+	
+	
+	<!-- 공통으로 사용할 where-no 절 정의 -->
+	<sql id="Qna-where-no">
+		WHERE qna_no = #qna_no#
+	</sql>
+	
+	
+	<!-- select 쿼리문 정의 -->	
+	<!-- 답변글 로직으로 수정시작 -->
+	<select id="Qna-selectAll" resultMap="qnaRes" parameterClass="int">
+		<include refid="Qna-select-all" />
+		 ORDER BY qna_ref DESC, qna_re_step ASC
+	</select>
+	<!-- 답변글 로직으로 수정끝 -->
+
+	<select id="Qna-selectOne" resultMap="qnaRes" parameterClass="int">
+		<include refid="Qna-select-all" />
+		<include refid="Qna-where-no" />
+	</select>
+	<!-- 검색로직 추가시작 -->
+	
+	<select id="Qna-selectSearchW" resultMap="qnaRes" parameterClass="string">
+		<include refid="Qna-select-all" />
+		 WHERE qna_name like #searchKeyword#
+		 ORDER BY qna_no DESC
+	</select>
+	<select id="Qna-selectSearchS" resultMap="qnaRes" parameterClass="string">
+		<include refid="Qna-select-all" />
+		 WHERE qna_subject like #searchKeyword#
+		 ORDER BY qna_no DESC
+	</select>
+	<select id="Qna-selectSearchC" resultMap="qnaRes" parameterClass="string">
+		<include refid="Qna-select-all" />
+		 WHERE qna_content like #searchKeyword#
+		 ORDER BY qna_no DESC
+	</select>
+	<!-- 검색로직 끝 -->
+	<select id="Qna-selectLastNo" resultClass="qna" parameterClass="int">
+		SELECT max(qna_no) as qna_no FROM QNA
+	</select>
+	
+	<select id="Qna-selectPassword" resultMap="qnaRes">
+		<include refid="Qna-select-all"/>
+		<include refid="Qna-where-no" />
+		AND qna_password = #qna_password#
+	</select>
+	
+	
+	<!-- insert 쿼리문 정의 -->
+	<insert id="Qna-insert" parameterClass="qna">
+		INSERT INTO QNA(qna_no, qna_subject, qna_name, qna_password, qna_content, qna_regdate,qna_re_step,qna_re_level,qna_ref)
+		VALUES (QNA_NO_SEQ.NEXTVAL, #qna_subject#, #qna_name#, #qna_password#, #qna_content#, #qna_regdate#, #qna_re_step#, #qna_re_level#,QNA_NO_SEQ.CURRVAL)
+	</insert>
+	
+	<insert id="Qna-insertReply" parameterClass="qna">
+		INSERT INTO QNA(qna_no, qna_subject, qna_name, qna_password, qna_content, qna_regdate,qna_re_step,qna_re_level,qna_ref)
+		VALUES (QNA_NO_SEQ.NEXTVAL, #qna_subject#, #qna_name#, #qna_password#, #qna_content#, #qna_regdate#, #qna_re_step#, #qna_re_level#,#qna_ref#)
+	</insert>
+	
+	
+	<!-- update 쿼리문 정의 -->
+	<update id="Qna-update" parameterClass="qna">
+	UPDATE QNA SET qna_subject = 	#qna_subject#, 
+					qna_name = #qna_name#,
+					qna_password = #qna_password#,
+					qna_content = #qna_content#
+	<include refid = "Qna-where-no" />
+	</update>
+	
+
+	<update id="Qna-updateReadCount" parameterClass="qna">
+		UPDATE QNA SET qna_readcount = qna_readcount + 1
+		<include refid="Qna-where-no" />
+	</update>
+	
+	<update id="Qna-updateReplyStep" parameterClass="qna">
+		UPDATE QNA SET qna_re_step=qna_re_step+1 WHERE qna_ref=#qna_ref# AND qna_re_step>#qna_re_step#
+		
+	</update>
+	
+	
+	
+	<!-- delete 쿼리문 정의 -->
+	<delete id="Qna-delete" parameterClass="qna">
+		DELETE FROM QNA where qna_no = #qna_no#
+	</delete>
+	
+	<delete id="Qna-deleteR" parameterClass="qna">
+		DELETE FROM QNA where qna_ref = #qna_no#
+	</delete>
+	
+	
+</sqlMap>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="notice" type="board.Notice.noticeVO"/>
+	
+	
+	<resultMap class="notice" id="noticeRes">
+		<result property="notice_no" column="notice_no"/>
+		<result property="notice_subject" column="notice_subject"/>
+		<result property="notice_content" column="notice_content"/>
+		<result property="notice_readcount" column="notice_readcount"/>
+		<result property="notice_regdate" column="notice_regdate"/>
+	</resultMap>
+	
+	
+	
+	
+	<sql id="Notice-select-all">
+		select * from NOTICE
+	</sql>
+
+	
+	<sql id="Notice-where-no">
+		where notice_no = #notice_no#
+	</sql>
+
+	
+	
+	
+	
+	<select id="Notice-selectAll" resultMap="noticeRes">
+		<include refid="Notice-select-all"/>
+		order by notice_no desc
+	</select>
+	
+
+	
+	
+	<select id="Notice-selectOne" resultMap="noticeRes" parameterClass="int">
+		<include refid="Notice-select-all"/>
+		<include refid="Notice-where-no"/>
+	</select>
+	
+
+	
+	
+	
+	
+
+	<select id="Notice-selectSearchS" resultMap="noticeRes" parameterClass="string">
+		<include refid="Notice-select-all" />
+		 WHERE notice_subject like #searchKeyword#
+		 ORDER BY notice_no DESC
+	</select>
+	<select id="Notice-selectSearchC" resultMap="noticeRes" parameterClass="string">
+		<include refid="Notice-select-all" />
+		 WHERE notice_content like #searchKeyword#
+		 ORDER BY notice_no DESC
+	</select>
+	
+	
+	
+	
+	
+	<select id="Notice-selectLastNo" resultClass="notice">
+		select max(notice_no) as notice_no from NOTICE
+	</select>
+	
+
+	
+	
+	
+	<insert id="Notice-insert" parameterClass="notice">
+		insert into NOTICE (notice_no, notice_subject, notice_content, notice_regdate)
+		values (notice_no_seq.NEXTVAL, #notice_subject#, #notice_content#, #notice_regdate#)
+	</insert>
+	
+
+	
+	
+	
+	<update id="Notice-update" parameterClass="notice">
+		update NOTICE set notice_subject = #notice_subject#, notice_content = #notice_content#
+		<include refid="Notice-where-no"/>
+	</update>
+	
+
+	
+	
+	
+	
+	<update id="Notice-updateReadCount" parameterClass="notice">
+		update NOTICE set notice_readcount = notice_readcount +1
+		<include refid="Notice-where-no"/>
+	</update>
+	
+
+	
+	
+	
+	
+	
+	
+	<delete id="Notice-delete" parameterClass="notice">
+		delete from NOTICE
+		<include refid="Notice-where-no"/>
+	</delete>
+	
+
+	
+	
+</sqlMap>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

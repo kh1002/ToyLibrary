@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="event" type="board.Event.eventVO"/>
+	
+	<resultMap class="event" id="eventRes">
+		<result property="event_no" column="event_no"/>
+		<result property="event_subject" column="event_subject"/>
+		<result property="event_content" column="event_content"/>
+		<result property="event_startday" column="event_startday"/>
+		<result property="event_endday" column="event_endday"/>
+		<result property="file_orgname" column="file_orgname"/>
+		<result property="file_savname" column="file_savname"/>
+		<result property="event_position" column="event_position"/>
+		<result property="event_readcount" column="event_readcount"/>
+	</resultMap>
+	
+	
+	<sql id="Event-select-all">
+		select * from EVENT
+	</sql>
+	
+	<sql id="Event-where-no">
+		where event_no = #event_no#
+	</sql>
+	
+	
+	
+	<select id="Event-selectAll" resultMap="eventRes">
+		<include refid="Event-select-all"/>
+		order by event_no desc
+	</select>
+	
+	
+	
+	<select id="Event-selectOne" resultMap="eventRes" parameterClass="int">
+		<include refid="Event-select-all"/>
+		<include refid="Event-where-no"/>
+	</select>
+	
+	
+	
+	
+	
+	
+	<select id="Event-selectSearchS" resultMap="eventRes" parameterClass="string">
+		<include refid="Event-select-all" />
+		 WHERE event_subject like #searchKeyword#
+		 ORDER BY event_no DESC
+	</select>
+	<select id="Event-selectSearchC" resultMap="eventRes" parameterClass="string">
+		<include refid="Event-select-all" />
+		 WHERE event_content like #searchKeyword#
+		 ORDER BY event_no DESC
+	</select>
+	
+	
+	
+	
+	
+	<select id="Event-selectLastNo" resultClass="event">
+		select max(event_no) as event_no from EVENT
+	</select>
+	
+	
+
+	
+	<insert id="Event-insert" parameterClass="event">
+		insert into EVENT (event_no, event_subject, event_content, event_startday, event_endday, event_position)
+		values (event_no_seq.NEXTVAL, #event_subject#, #event_content#, #event_startday#, #event_endday#, #event_position#)
+	</insert>
+	<update id="Event-updateFile" parameterClass="event">
+			UPDATE EVENT SET file_orgname = #file_orgname#
+				,file_savname = #file_savname#
+			<include refid="Event-where-no" />
+	</update>
+	
+	
+	
+	<update id="Event-update" parameterClass="event">
+		update EVENT set event_subject = #event_subject#, event_content = #event_content#, event_startday = #event_startday#, event_endday = #event_endday#, event_position = #event_position#
+		<include refid="Event-where-no"/>
+	</update>
+	
+	
+	
+	
+	
+	<update id="Event-updateReadCount" parameterClass="event">
+		update EVENT set event_readcount = event_readcount +1
+		<include refid="Event-where-no"/>
+	</update>
+	
+	
+	
+	
+	
+	
+	<delete id="Event-delete" parameterClass="event">
+		delete from EVENT
+		<include refid="Event-where-no"/>
+	</delete>
+	
+	
+</sqlMap>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN'
+	'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap>
+	<typeAlias alias="userQna" type="user.Qna.userQnaVO"/>
+	
+	<resultMap class="userQna" id="userQnaRes" >
+		<result property="qna_no" column="qna_no" />
+		<result property="qna_subject" column="qna_subject" />
+		<result property="qna_name" column="qna_name" />
+		<result property="qna_password" column="qna_password" />
+		<result property="qna_content" column="qna_content" />
+		<result property="qna_readcount" column="qna_readcount" />
+		<result property="qna_regdate" column="qna_regdate" />
+		<result property="qna_ref" column="qna_ref" />
+		<result property="qna_re_step" column="qna_re_step" />
+		<result property="qna_re_level" column="qna_re_level" />
+	</resultMap>
+	
+	<!-- 공통으로 사용할 select 절 정의 -->
+	<sql id="userQna-select-all">
+		SELECT * FROM QNA
+	</sql>
+	
+	
+	<!-- 공통으로 사용할 where-no 절 정의 -->
+	<sql id="userQna-where-no">
+		WHERE qna_no = #qna_no#
+	</sql>
+	
+	
+	<!-- select 쿼리문 정의 -->	
+	<!-- 답변글 로직으로 수정시작 -->
+	<select id="userQna-selectAll" resultMap="userQnaRes" parameterClass="int">
+		<include refid="userQna-select-all" />
+		 ORDER BY qna_ref DESC, qna_re_step ASC
+	</select>
+	<!-- 답변글 로직으로 수정끝 -->
+
+	<select id="userQna-selectOne" resultMap="userQnaRes" parameterClass="int">
+		<include refid="userQna-select-all" />
+		<include refid="userQna-where-no" />
+	</select>
+	<!-- 검색로직 추가시작 -->
+	
+	<select id="userQna-selectSearchW" resultMap="userQnaRes" parameterClass="string">
+		<include refid="userQna-select-all" />
+		 WHERE qna_name like #searchKeyword#
+		 ORDER BY qna_no DESC
+	</select>
+	<select id="userQna-selectSearchS" resultMap="userQnaRes" parameterClass="string">
+		<include refid="userQna-select-all" />
+		 WHERE qna_subject like #searchKeyword#
+		 ORDER BY qna_no DESC
+	</select>
+	<select id="userQna-selectSearchC" resultMap="userQnaRes" parameterClass="string">
+		<include refid="userQna-select-all" />
+		 WHERE qna_content like #searchKeyword#
+		 ORDER BY qna_no DESC
+	</select>
+	<!-- 검색로직 끝 -->
+	<select id="userQna-selectLastNo" resultClass="userQna" parameterClass="int">
+		SELECT max(qna_no) as qna_no FROM QNA
+	</select>
+	
+	<select id="userQna-selectPassword" resultMap="userQnaRes">
+		<include refid="userQna-select-all"/>
+		<include refid="userQna-where-no" />
+		AND qna_password = #qna_password#
+	</select>
+	
+	
+	<!-- insert 쿼리문 정의 -->
+	<insert id="userQna-insert" parameterClass="userQna">
+		INSERT INTO QNA(qna_no, qna_subject, qna_name, qna_password, qna_content, qna_regdate,qna_re_step,qna_re_level,qna_ref)
+		VALUES (QNA_NO_SEQ.NEXTVAL, #qna_subject#, #qna_name#, #qna_password#, #qna_content#, #qna_regdate#, #qna_re_step#, #qna_re_level#,QNA_NO_SEQ.CURRVAL)
+	</insert>
+	
+	<insert id="userQna-insertReply" parameterClass="userQna">
+		INSERT INTO QNA(qna_no, qna_subject, qna_name, qna_password, qna_content, qna_regdate,qna_re_step,qna_re_level,qna_ref)
+		VALUES (QNA_NO_SEQ.NEXTVAL, #qna_subject#, #qna_name#, #qna_password#, #qna_content#, #qna_regdate#, #qna_re_step#, #qna_re_level#,#qna_ref#)
+	</insert>
+	
+	
+	<!-- update 쿼리문 정의 -->
+	<update id="userQna-update" parameterClass="userQna">
+	UPDATE QNA SET qna_subject = 	#qna_subject#, 
+					qna_name = #qna_name#,
+					qna_password = #qna_password#,
+					qna_content = #qna_content#
+	<include refid = "userQna-where-no" />
+	</update>
+
+
+	<update id="userQna-updateReadCount" parameterClass="userQna">
+		UPDATE QNA SET qna_readcount = qna_readcount + 1
+		<include refid="userQna-where-no" />
+	</update>
+	
+	<update id="userQna-updateReplyStep" parameterClass="userQna">
+		UPDATE QNA SET qna_re_step=qna_re_step+1 WHERE qna_ref=#qna_ref# AND qna_re_step>#qna_re_step#
+		
+	</update>
+	
+	
+	
+	<!-- delete 쿼리문 정의 -->
+	<delete id="userQna-delete" parameterClass="userQna">
+		DELETE FROM QNA where qna_no = #qna_no#
+	</delete>
+	
+	<delete id="userQna-deleteR" parameterClass="userQna">
+		DELETE FROM QNA where qna_ref = #qna_no#
+	</delete>
+	
+	
+</sqlMap>

@@ -5,7 +5,7 @@
 
 <tiles-definitions>
 
-	<definition name="main" template="/tiles/layout.jsp">
+	<definition name="main2" template="/tiles/layout.jsp">
 		<put-attribute name="title" value="11장난감도서관" />
 		<put-attribute name="header" value="/tiles/header/header.jsp" />
 		<put-attribute name="body" value="/tiles/body/body.jsp" />	
@@ -27,7 +27,7 @@
 	<definition name="map" extends="introduce">
 		<put-attribute name="body" value="/tiles/body/map.jsp" />
 	</definition>
-	 -->
+-->
 	
 </tiles-definitions>
 

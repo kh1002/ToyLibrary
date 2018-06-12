@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC	
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+	<package name="myToy" extends="struts-default">
+	
+		 
+
+		<action name="MyRentListAction" class="my.MyRentListAction">
+			<result>/my/MyRentList.jsp</result>
+		</action> 
+	
+		<action name="MyReservationListAction" class="my.MyReservationListAction">
+			<result>/my/MyReservationList.jsp</result>
+		</action> 	
+		
+		<action name="MyReservationModifyStateAction" class="my.MyReservationDeleteAction" method="stateModify">
+			<result type="chain">MyReservationDeleteAction</result>
+		</action> 
+
+		<action name="MyReservationDeleteAction" class="my.MyReservationDeleteAction">
+			<!-- <result type="chain">MyReservationListAction</result> -->
+			<result type="redirect-action">
+				<param name="actionName">MyReservationListAction</param>
+			</result>
+		</action>
+		
+	</package>
+
+</struts>

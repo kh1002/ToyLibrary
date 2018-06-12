@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="userFaq" type="user.Faq.userFaqVO"/>
+
+	
+	<resultMap class="userFaq" id="userFaqRes">
+		<result property="faq_no" column="faq_no"/>
+		<result property="faq_subject" column="faq_subject"/>
+		<result property="faq_content" column="faq_content"/>
+	</resultMap>
+
+	
+
+	<sql id="userFaq-select-all">
+		select * from FAQ
+	</sql>
+	
+
+
+	<sql id="userFaq-where-no">
+		where faq_no = #faq_no#
+	</sql>
+	
+
+	
+	
+	
+	
+	<select id="userFaq-selectAll" resultMap="userFaqRes">
+		<include refid="userFaq-select-all"/>
+		order by faq_no desc
+	</select>
+	
+	
+	
+	<select id="userFaq-selectOne" resultMap="userFaqRes" parameterClass="int">
+		<include refid="userFaq-select-all"/>
+		<include refid="userFaq-where-no"/>
+	</select>
+	
+
+	
+	
+	
+	
+	
+
+	
+	
+
+	<select id="userFaq-selectSearchS" resultMap="userFaqRes" parameterClass="string">
+		<include refid="userFaq-select-all" />
+		 WHERE faq_subject like #searchKeyword#
+		 ORDER BY faq_no DESC
+	</select>
+	<select id="userFaq-selectSearchC" resultMap="userFaqRes" parameterClass="string">
+		<include refid="userFaq-select-all" />
+		 WHERE faq_content like #searchKeyword#
+		 ORDER BY faq_no DESC
+	</select>
+	
+	
+	<select id="userFaq-selectLastNo" resultClass="userFaq">
+		select max(faq_no) as faq_no from FAQ
+	</select>
+
+	
+	<insert id="userFaq-insert" parameterClass="userFaq">
+		insert into FAQ (faq_no, faq_subject, faq_content)
+		values (faq_no_seq.NEXTVAL, #faq_subject#, #faq_content#)
+	</insert>
+	
+
+	
+	<update id="userFaq-update" parameterClass="userFaq">
+		update FAQ set faq_subject = #faq_subject#, faq_content = #faq_content#
+		<include refid="userFaq-where-no"/>
+	</update>
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<delete id="userFaq-delete" parameterClass="userFaq">
+		delete from FAQ
+		<include refid="userFaq-where-no"/>
+	</delete>
+	
+
+	
+</sqlMap>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

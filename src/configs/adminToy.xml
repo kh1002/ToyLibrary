@@ -10,9 +10,12 @@
 		<action name="AdminToyListAction" class="admin.AdminToyListAction">
 			<result type="tiles">AdminToyListAction</result>
 		</action> 
+		
+		
 	<!-- 관리자 장난감 등록 액션 -->	
   		<action name="AdminToyWriteForm" class="admin.AdminToyWriteAction" method="form">
-		 	<result>/admin/AdminToyWriteForm.jsp</result>
+		 	<!-- <result>/admin/AdminToyWriteForm.jsp</result> -->
+		 	<result type="tiles">AdminToyWriteForm</result>
 		</action>  
  	  	<action name="AdminToyWriteAction" class="admin.AdminToyWriteAction">
 			<result type="redirect-action">
@@ -23,7 +26,8 @@
 		
 	<!-- 관리자 장난감 수정 액션 -->
 		<action name="AdminToyModifyForm" class="admin.AdminToyModifyAction" method="form">
-			<result>/admin/AdminToyModifyForm.jsp</result>
+			<!--  <result>/admin/AdminToyModifyForm.jsp</result> -->
+			<result type="tiles">AdminToyModifyForm</result>
 		</action>
 		
 		<action name="AdminToyModifyAction" class="admin.AdminToyModifyAction">
@@ -48,7 +52,8 @@
 		
 	<!-- 관리자 대여관리 상태변경창 폼 -->	
 		<action name="AdminRentDetailForm" class="admin.AdminRentDetailAction" method="form">
-			<result>/admin/AdminRentDetail.jsp</result>
+			<!-- <result>/admin/AdminRentDetail.jsp</result> -->
+			<result type="tiles">AdminRentDetailForm</result>
 		</action> 		
 		
 	<!-- 관리자 대여관리 상태변경창 액션 -->	
@@ -74,7 +79,8 @@
 		
 	<!-- 관리자 반납관리 상태변경창 폼 -->	
 		<action name="AdminReturnDetailForm" class="admin.AdminReturnDetailAction" method="form">
-			<result>/admin/AdminReturnDetail.jsp</result>
+			<!-- <result>/admin/AdminReturnDetail.jsp</result> -->
+			<result type="tiles">AdminReturnDetailForm</result>	
 		</action> 		
 		
 	<!-- 관리자 반납관리 상태변경창 액션 -->	

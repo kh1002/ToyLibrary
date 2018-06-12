@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN'
+	'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap>
+	<typeAlias alias="userReview" type="user.Review.userReviewVO"/>
+	<typeAlias alias="userCreview" type="user.Review.userCreviewVO"/>
+	
+	<resultMap id="userReviewRes" class="userReview">
+		<result property="review_no" column="review_no" />
+		<result property="review_subject" column="review_subject" />
+		<result property="review_name" column="review_name" />
+		<result property="review_password" column="review_password" />
+		<result property="review_content" column="review_content" />
+		<result property="file_orgname" column="file_orgname" />
+		<result property="file_savname" column="file_savname" />
+		<result property="review_readcount" column="review_readcount" />
+		<result property="review_regdate" column="review_regdate" />
+
+	</resultMap>
+	
+	<resultMap id="userCreviewRes" class="userCreview">
+		<result property="creview_no" column="creview_no" />
+		<result property="review_no" column="review_no" />
+		<result property="creview_name" column="creview_name" />
+		<result property="creview_password" column="creview_password" />
+		<result property="creview_content" column="creview_content" />
+		<result property="creview_regdate" column="creview_regdate" />
+	</resultMap>
+	
+	<!-- 공통으로 사용할 select 절 정의 -->
+	<sql id="userReview-select-all">
+		SELECT * FROM REVIEW
+	</sql>
+	
+	<sql id="userCreview-select-all">
+		SELECT * FROM CREVIEW
+	</sql>
+	
+	<!-- 공통으로 사용할 where-no 절 정의 -->
+	<sql id="userReview-where-no">
+		WHERE review_no = #review_no#
+	</sql>
+	
+	<sql id="userCreview-where-no">
+		WHERE creview_no = #creview_no#
+	</sql>
+	
+	
+	<!-- select 쿼리문 정의 -->	
+	
+	<select id="userReview-selectAll" resultMap="userReviewRes" parameterClass="int">
+		<include refid="userReview-select-all" />
+		 ORDER BY review_no DESC
+	</select>
+	
+	<select id="userCreview-selectAll" resultMap="userCreviewRes" parameterClass="int">
+		<include refid="userCreview-select-all" />
+		 ORDER BY creview_no DESC
+	</select>
+	
+	
+	
+	<select id="userCommentSelectAll" resultMap="userCreviewRes" parameterClass="int">
+		SELECT * FROM CREVIEW
+		 WHERE review_no = #review_no#
+		 ORDER BY creview_no DESC
+	</select>
+	
+	
+	<select id="userReview-selectOne" resultMap="userReviewRes" parameterClass="int">
+		<include refid="userReview-select-all" />
+		<include refid="userReview-where-no" />
+	</select>
+	
+		<select id="userCreview-selectOne" resultMap="userCreviewRes" parameterClass="int">
+		<include refid="userCreview-select-all" />
+		<include refid="userCreview-where-no" />
+	</select>
+	
+	
+	
+	<!-- 검색로직 추가시작 -->
+	<select id="userReview-selectSearchW" resultMap="userReviewRes" parameterClass="string">
+		<include refid="userReview-select-all" />
+		 WHERE review_name like #searchKeyword#
+		 ORDER BY review_no DESC
+	</select>
+	<select id="userReview-selectSearchS" resultMap="userReviewRes" parameterClass="string">
+		<include refid="userReview-select-all" />
+		 WHERE review_subject like #searchKeyword#
+		 ORDER BY review_no DESC
+	</select>
+	<select id="userReview-selectSearchC" resultMap="userReviewRes" parameterClass="string">
+		<include refid="userReview-select-all" />
+		 WHERE review_content like #searchKeyword#
+		 ORDER BY review_no DESC
+	</select>
+	<!-- 검색로직 끝 -->
+	
+	
+	<select id="userReview-selectLastNo" resultClass="userReview" parameterClass="int">
+		SELECT max(review_no) as review_no FROM REVIEW
+	</select>
+	
+	
+	
+	
+	
+	
+	<select id="userReview-selectPassword" resultMap="userReviewRes">
+		<include refid="userReview-select-all"/>
+		<include refid="userReview-where-no" />
+		AND review_password = #review_password#
+	</select>
+	
+	<select id="userCreview-selectPassword" resultMap="userCreviewRes">
+		<include refid="userCreview-select-all"/>
+		<include refid="userCreview-where-no" />
+		AND creview_password = #creview_password#
+	</select>
+	
+	
+	
+	
+	<!-- insert 쿼리문 정의 -->
+	<insert id="userReview-insert" parameterClass="userReview">
+		INSERT INTO REVIEW(REVIEW_NO, REVIEW_SUBJECT, REVIEW_NAME, REVIEW_PASSWORD, REVIEW_CONTENT, REVIEW_REGDATE)
+		VALUES (REVIEW_NO_SEQ.NEXTVAL, #review_subject#, #review_name#, #review_password#, #review_content#, #review_regdate#)
+	</insert>
+	
+
+	
+	<insert id="userCreview-insert" parameterClass="userCreview">
+		INSERT INTO CREVIEW(CREVIEW_NO, REVIEW_NO, CREVIEW_NAME, CREVIEW_PASSWORD, CREVIEW_CONTENT, CREVIEW_REGDATE)
+		VALUES (CREVIEW_NO_SEQ.NEXTVAL, #review_no#, #creview_name#, #creview_password#, #creview_content#, #creview_regdate#)
+	</insert>
+	
+	
+	
+	
+	<!-- update 쿼리문 정의 -->
+	<update id="userReview-update" parameterClass="userReview">
+	UPDATE REVIEW SET REVIEW_SUBJECT = 	#review_subject#, 
+					REVIEW_NAME = #review_name#,
+					REVIEW_PASSWORD = #review_password#,
+					REVIEW_CONTENT = #review_content#
+	<include refid = "userReview-where-no" />
+	</update>
+	
+	
+	<update id="userReview-updateFile" parameterClass="userReview">
+			UPDATE REVIEW SET FILE_ORGNAME = #file_orgname#
+				,FILE_SAVNAME = #file_savname#
+			<include refid="userReview-where-no" />
+	</update>
+	
+	<update id="userReview-updateReadCount" parameterClass="userReview">
+		UPDATE REVIEW SET REVIEW_READCOUNT = review_readcount + 1
+		<include refid="userReview-where-no" />
+	</update>
+	
+	
+	
+	
+	<!-- delete 쿼리문 정의 -->
+	<delete id="userReview-delete" parameterClass="userReview">
+		DELETE FROM REVIEW
+		<include refid="userReview-where-no" />
+	</delete>
+	
+	<delete id="userCreview-delete" parameterClass="userCreview">
+		DELETE FROM CREVIEW
+		<include refid="userCreview-where-no" />
+	</delete>
+	
+</sqlMap>
