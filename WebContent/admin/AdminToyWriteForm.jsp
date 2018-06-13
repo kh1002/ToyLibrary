@@ -99,7 +99,7 @@
 			제품이미지
 		</td>
 		<td>
-			<input type="file" name="file1">
+			<input type="file" name="upload">
 		</td>
 	</tr>
 </table>	

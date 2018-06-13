@@ -27,7 +27,11 @@ public class AdminRentListAction extends ActionSupport {
 	private String pagingHtml; //페이징을 구현한 html
 	private pagingAction2 page; //페이징 클래스
 	
+	private String searchKeyword;
+	private int searchNum;
+	private int num = 0;
 
+	
 	private List<toyRentInfoVO> RentInfolist = new ArrayList<toyRentInfoVO>();
 	
 	//생성자
@@ -41,6 +45,10 @@ public class AdminRentListAction extends ActionSupport {
 
 	public String execute() throws Exception {
 		
+		if(getSearchKeyword() != null)
+		{
+			return search();
+		}
 		
 		//모든 글을 가져와서 list에 넣는다
 		RentInfolist = sqlMapper.queryForList("rentInfoAll","예약중");
@@ -51,7 +59,7 @@ public class AdminRentListAction extends ActionSupport {
 		System.out.println(totalCount);
 		
 		//pagingAction 객체 생성
-		page = new pagingAction2(currentPage, totalCount, blockCount, blockPage);
+		page = new pagingAction2(currentPage, totalCount, blockCount, blockPage, num, "");
 		
 		pagingHtml = page.getPagingHtml().toString(); //페이지 html 생성
 		
@@ -70,6 +78,32 @@ public class AdminRentListAction extends ActionSupport {
 				
 		
 	
+		return SUCCESS;
+	}
+	
+	public String search() throws Exception {
+		
+		//searchKeyword = new String(searchKeyword.getBytes("iso-8859-1"),"euc-kr") ;
+		System.out.println(searchKeyword);
+		System.out.println(searchNum);
+		System.out.println(getSearchKeyword());
+		
+		if(searchNum == 0){
+			RentInfolist = sqlMapper.queryForList("Rent-selectSearchN", "%"+getSearchKeyword()+"%");
+		}
+
+		
+		totalCount = RentInfolist.size();
+		page = new pagingAction2(currentPage, totalCount, blockCount, blockPage, searchNum, getSearchKeyword());
+		pagingHtml = page.getPagingHtml().toString();
+		
+		int lastCount = totalCount;
+		
+		if(page.getEndCount() < totalCount)
+			lastCount = page.getEndCount() + 1;
+		
+		RentInfolist = RentInfolist.subList(page.getStartCount(), lastCount);
+		
 		return SUCCESS;
 	}
 
@@ -141,6 +175,36 @@ public class AdminRentListAction extends ActionSupport {
 
 	public void setPagingHtml(String pagingHtml) {
 		this.pagingHtml = pagingHtml;
+	}
+
+
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+
+
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
+	}
+
+
+	public int getSearchNum() {
+		return searchNum;
+	}
+
+
+	public void setSearchNum(int searchNum) {
+		this.searchNum = searchNum;
+	}
+
+
+	public int getNum() {
+		return num;
+	}
+
+
+	public void setNum(int num) {
+		this.num = num;
 	}
 	
 

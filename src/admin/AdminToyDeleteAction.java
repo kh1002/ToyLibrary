@@ -22,6 +22,11 @@ public class AdminToyDeleteAction extends ActionSupport {
 	
 	private int toy_id;
 	
+	//이미지 경로는 자기의 webcontent의 image경로
+	private String fileUploadPath="C:\\javaP\\ToyLibrary\\WebContent\\image\\";
+	//private String fileUploadPath="C:\\Users\\황의겸\\Desktop\\Java\\ToyLibraryA\\WebContent\\image\\";
+	
+	
 	//생성자
 	public AdminToyDeleteAction() throws IOException {
 		reader = Resources.getResourceAsReader("sqlMapConfig.xml"); //sqlMapConfig.xml 파일의 설정내용을 가져온다
@@ -36,16 +41,22 @@ public class AdminToyDeleteAction extends ActionSupport {
 		resultClass = new toyProductVO();
 		
 		
-		//해당 번호의 글을 가져온다
-		//resultClass = (boardVO) sqlMapper.queryForObject("selectOne", getNo());
+		//해당 번호의 장난감을 가져온다
+		resultClass = (toyProductVO) sqlMapper.queryForObject("selectOne", getToy_id());
 		
 		//삭제할 항목 설정
 		paramClass.setToy_id(getToy_id());
 		
 		//삭제 쿼리 수행
+		
+		
+		if(resultClass.getToy_image() != null)
+		{
+			File deleteFile = new File(fileUploadPath + resultClass.getToy_image());
+			deleteFile.delete();
+		}
+		
 		sqlMapper.delete("deleteToy", paramClass);
-		
-		
 		
 		return SUCCESS;
 		
@@ -73,6 +84,14 @@ public class AdminToyDeleteAction extends ActionSupport {
 
 	public void setToy_id(int toy_id) {
 		this.toy_id = toy_id;
+	}
+
+	public String getFileUploadPath() {
+		return fileUploadPath;
+	}
+
+	public void setFileUploadPath(String fileUploadPath) {
+		this.fileUploadPath = fileUploadPath;
 	}
 	
 	

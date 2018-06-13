@@ -61,6 +61,16 @@
 		</select>
 		
 		
+		
+		<select id="Rent-selectSearchN" resultMap="toyRentRes" parameterClass="string">
+			<include refid="rentselect-all"/>
+			<include refid="rentwhere-no"/> and p.state_code=#예약중#
+			and p.toy_name like #searchKeyword#
+		</select>
+		
+		
+		
+		
 		<!-- update 쿼리문 정의 -->
 		<!-- 예약에서 대여, 대여에서 반납으로 상태코드를 바꾸는 업데이트문 -->
 		
@@ -73,58 +83,6 @@
 			update toy_reservation set reserve_date = sysdate, return_date = sysdate+14
 			where toy_id = #toy_id#
 		</update>
-		
-		
-		
-		
-<!-- 		
-		한번에 묶기 전 주석처리한 코드
-		<sql id="rentselect-all">
-			select * from toy_product p, toy_reservation r, zizum i, toy_member m
-		</sql>
-		
-		<sql id="rentwhere-no">
-			where p.toy_id = r.toy_id and r.member_id = m.member_id and p.zizum_no = i.zizum_no     ##이 ?를 대신한다 
-		</sql>
-		
-		
-		<select id="rentTPAll" resultMap="RentTPRes">
-			<include refid="rentselect-all"/>
-			<include refid="rentwhere-no"/>
-		</select>
-		
-		<select id="rentTPOne" resultMap="RentTPRes">
-			<include refid="rentselect-all"/>
-			<include refid="rentwhere-no"/> and p.toy_id=#toy_id#
-		</select>
-		
-		 -->
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<!-- 
-		<select id="rentTRAll" resultMap="RentTRRes">
-			<include refid="rentselect-all"/>
-			<include refid="rentwhere-no"/>
-		</select>
-			
-		<select id="rentZAll" resultMap="RentZRes">
-			<include refid="rentselect-all"/>
-			<include refid="rentwhere-no"/>
-		</select>
-		
-		<select id="rentTMAll" resultMap="RentTMRes">
-			<include refid="rentselect-all"/>
-			<include refid="rentwhere-no"/>
-		</select> -->
 		
 		
 

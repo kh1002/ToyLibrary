@@ -27,10 +27,10 @@
 <!-- 이미지가 나타나는 코드 -->
 	<tr align="center">
 		<td width="303" height="223" align="center" valign="middle">
-		<img src="./upload/}" 
+		<img id="imglink" src="/ToyLibrary/image/<s:property value="TresultClass.toy_image"/>" 
 			width="300" height="300"/>
 		</td>
-		
+
 	</tr>
 	<p></p>	
 </table>		

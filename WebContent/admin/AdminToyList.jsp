@@ -19,32 +19,25 @@
 <!-- 검색창을 보여주는 jsp코드 -->
 
 <table align="center">
-<form name="search">
-<!-- <form name="search" action="AdminToylistAction" method="post"> -->
 		<tr>															
 			<td>
-				<select name="goods_category" size="1" value="">
-					<option value="toyname">이름</option>
-					<option value="toyzizum">현재지점</option>
-					<option value="toystate">현재상태</option>
-				</select>
 			
-				<s:textfield name="searchKeyword" theme="simple" value=""
-				cssStyle="width:120px" maxlength="20"/>
-				<input name="submit" type="submit" value="검색" class="inputb"></input>	
+			<form method="post">
+					<select name="searchNum" >
+						<option value="0">이름</option>
+						<option value="1">현재지점</option>
+						<option value="2">현재상태</option>
+					</select>
+					
+					<s:textfield name="searchKeyword" theme="simple" value="" cssStyle="width:120px" maxlength="20"/>
+					<input name="submit" type="submit" value="검색" class="inputb"/>
+				</form>
 				
 			</td>
-			
-			<!-- 
-			<td>
-				<input type="text" name="search_key" value="" size="10">
-			</td>
-			<td>
-				<input type="submit" value="검색">
-			</td> -->
 		</tr>
 		
-	</form>
+		
+	
 </table>
 <!-- 장난감 등록한 리스트들을 출력하는 코드.
 반복을 이용하여 출력해야 한다. -->
@@ -96,7 +89,8 @@
 			
 			<tr bgcolor="#ffffff" align="center">
 				<td><s:property value="toy_id"/></td>	
-				<td><s:property value="toy_image"/></td>
+				<td><img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" width="150" border="0"/></td>
+				
 				<td align="left"><s:property value="toy_name"/></td>
 				<td align="center"><s:property value="toy_age"/></td>
 				<td align="center"><s:property value="state_code"/></td>

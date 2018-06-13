@@ -64,7 +64,7 @@
 				<tr bgcolor="#ffffff" align="center">
 					<%-- <td><s:property value="toy_id"/></td>	 --%>
 					<%-- <td><s:property value="toy_image"/></td> --%>
-					<td><img src="./upload/" width="130" height="130" border="0"/></td>
+					<td><img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" width="150" border="0"/></td>
 					
 				</tr>
 				<tr>	

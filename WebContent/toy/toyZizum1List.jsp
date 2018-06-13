@@ -73,8 +73,10 @@
 				<tr bgcolor="#ffffff" align="center">
 					<%-- <td><s:property value="toy_id"/></td>	 --%>
 					<%-- <td><s:property value="toy_image"/></td> --%>
-					<td><img src="./upload/" width="130" height="130" border="0"/></td>
+					<!-- <td><img src="./upload/" width="130" height="130" border="0"/></td> -->
 					
+					<td><img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" width="150" border="0"/></td>				
+			
 				</tr>
 				<tr>	
 					<td align="left"><s:property value="zizum_no"/>
@@ -99,7 +101,7 @@
  <!-- 검색창을 보여주는 jsp코드 -->
 <form name="search" action="list.jsp" method="post">
 
-	<tr>										
+	<tr>							
 		<td>
 			<select name="goods_category" size="1" value="">
 				<option value="zizum">호점</option>
@@ -107,7 +109,7 @@
 				<option value="tshirts">역삼점</option>
 				<option value="shirts">교대점</option>
 			</select>
-		</td>									
+		</td>
 		<td>
 			<select name="goods_category" size="1" value="">
 				<option value="smallclass">소분류</option>

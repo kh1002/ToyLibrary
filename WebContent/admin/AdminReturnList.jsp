@@ -16,24 +16,27 @@
 
 <body>
 
+
 <table align="center">
-<form name="search">
-<!-- <form name="search" action="AdminToylistAction" method="post"> -->
 		<tr>															
 			<td>
-				<select name="goods_category" size="1" value="">
-					<option value="toyname">이름</option>
-					<option value="toyzizum">현재지점</option>
-					<option value="toystate">현재상태</option>
-				</select>
 			
-				<s:textfield name="searchKeyword" theme="simple" value=""
-				cssStyle="width:120px" maxlength="20"/>
-				<input name="submit" type="submit" value="검색" class="inputb"></input>	
+			<form method="post">
+					<select name="searchNum" >
+						<option value="0">이름</option>
+						<option value="1">현재지점</option>
+						<option value="2">현재상태</option>
+					</select>
+					
+					<s:textfield name="searchKeyword" theme="simple" value="" cssStyle="width:120px" maxlength="20"/>
+					<input name="submit" type="submit" value="검색" class="inputb"/>
+				</form>
 				
 			</td>
 		</tr>
-	</form>
+		
+		
+	
 </table>
 
 <table width="800">

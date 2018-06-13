@@ -32,6 +32,9 @@ public class AdminToyListAction extends ActionSupport {
 	
 	private int zizum_no;
 	
+	private String searchKeyword;
+	private int searchNum;
+	private int num = 0;
 	
 	//생성자
 	public AdminToyListAction() throws IOException {
@@ -41,6 +44,12 @@ public class AdminToyListAction extends ActionSupport {
 	}
 	
 	public String execute() throws Exception {
+		
+		if(getSearchKeyword() != null)
+		{
+			return search();
+		}
+		
 		//모든 글을 가져와서 list에 넣는다
 		list = sqlMapper.queryForList("selectAll");
 		
@@ -52,7 +61,7 @@ public class AdminToyListAction extends ActionSupport {
 		/*System.out.println("지점수" + zizumlist.size());*/
 		
 		//pagingAction 객체 생성
-		page = new pagingAction(currentPage, totalCount, blockCount, blockPage);
+		page = new pagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
 		
 		pagingHtml = page.getPagingHtml().toString(); //페이지 html 생성
 		
@@ -70,6 +79,85 @@ public class AdminToyListAction extends ActionSupport {
 		/*zizumlist = zizumlist.subList(page.getStartCount(), lastCount);*/
 		
 		
+		return SUCCESS;
+	}
+
+public String search() throws Exception {
+		
+		//searchKeyword = new String(searchKeyword.getBytes("iso-8859-1"),"euc-kr") ;
+		//System.out.println(searchKeyword);
+		System.out.println(searchNum);
+		if(searchNum == 0){
+			list = sqlMapper.queryForList("selectSearchN", "%"+getSearchKeyword()+"%");
+		}
+		if(searchNum == 1){
+			if(searchKeyword.equals("강남점") || searchKeyword.equals("1"))
+			{
+				searchKeyword = "1";
+				list = sqlMapper.queryForList("selectSearchZ", "%"+getSearchKeyword()+"%");
+			}
+			if(searchKeyword.equals("역삼점") || searchKeyword.equals("2"))
+			{
+				searchKeyword = "2";
+				list = sqlMapper.queryForList("selectSearchZ", "%"+getSearchKeyword()+"%");
+			}
+			if(searchKeyword.equals("교대점") || searchKeyword.equals("3"))
+			{
+				searchKeyword = "3";
+				list = sqlMapper.queryForList("selectSearchZ", "%"+getSearchKeyword()+"%");
+			}
+		}
+		if(searchNum == 2){
+			
+			if(searchKeyword.equals("대여가능") || searchKeyword.equals("1"))
+			{
+				if(searchKeyword.equals("1"))
+				{
+					searchKeyword = "대여가능";
+					
+				}
+				list = sqlMapper.queryForList("selectSearchS", "%"+getSearchKeyword()+"%");	
+
+				searchKeyword = "1";
+			}
+			
+			if(searchKeyword.equals("대여중") || searchKeyword.equals("2"))
+			{
+				if(searchKeyword.equals("2"))
+				{
+					searchKeyword = "대여중";
+					
+				}
+				list = sqlMapper.queryForList("selectSearchS", "%"+getSearchKeyword()+"%");	
+
+				searchKeyword = "2";
+			}
+			
+			if(searchKeyword.equals("예약중") || searchKeyword.equals("3"))
+			{
+				if(searchKeyword.equals("3"))
+				{
+					searchKeyword = "예약중";
+					
+				}
+				list = sqlMapper.queryForList("selectSearchS", "%"+getSearchKeyword()+"%");	
+					
+				searchKeyword = "1";
+			}
+
+			
+		}
+		
+		totalCount = list.size();
+		page = new pagingAction(currentPage, totalCount, blockCount, blockPage, searchNum, getSearchKeyword());
+		pagingHtml = page.getPagingHtml().toString();
+		
+		int lastCount = totalCount;
+		
+		if(page.getEndCount() < totalCount)
+			lastCount = page.getEndCount() + 1;
+		
+		list = list.subList(page.getStartCount(), lastCount);
 		return SUCCESS;
 	}
 
@@ -148,6 +236,50 @@ public class AdminToyListAction extends ActionSupport {
 	public void setPage(pagingAction page) {
 		this.page = page;
 	}
+
+	public zizumVO getParamClass() {
+		return paramClass;
+	}
+
+	public void setParamClass(zizumVO paramClass) {
+		this.paramClass = paramClass;
+	}
+
+	public zizumVO getResultClass() {
+		return resultClass;
+	}
+
+	public void setResultClass(zizumVO resultClass) {
+		this.resultClass = resultClass;
+	}
+
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
+	}
+
+	public int getSearchNum() {
+		return searchNum;
+	}
+
+	public void setSearchNum(int searchNum) {
+		this.searchNum = searchNum;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+
+
+
 	
 	
 }

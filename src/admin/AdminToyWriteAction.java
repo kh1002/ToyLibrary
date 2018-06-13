@@ -6,7 +6,11 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 import java.util.*;
+
+import org.apache.commons.io.FileUtils;
+
 import java.io.Reader;
+import java.io.File;
 import java.io.IOException;
 
 //import admin.toyProductVO;
@@ -30,6 +34,13 @@ public class AdminToyWriteAction extends ActionSupport {
 	private String state_code; 
 	/*private Date toy_reg_date; //오늘 날짜 구하기*/	
 	Calendar today = Calendar.getInstance();
+	
+	private File upload;
+	private String uploadContentType;
+	private String uploadFileName;
+	private String fileUploadPath="C:\\javaP\\ToyLibrary\\WebContent\\image\\";
+	
+	
 	
 	//생성자
 	public AdminToyWriteAction() throws IOException {
@@ -67,6 +78,22 @@ public class AdminToyWriteAction extends ActionSupport {
 		
 		//등록 쿼리 수행
 		sqlMapper.insert("insertToy",paramClass); //(함수이름?, 자바빈) //9개중 7개의 변수 세팅
+		
+		if(getUpload() != null)
+		{
+			resultClass = (toyProductVO) sqlMapper.queryForObject("selectLastNo");
+			
+			
+			File destFile = new File(fileUploadPath + getUploadFileName());
+			FileUtils.copyFile(getUpload(), destFile);
+			
+			paramClass.setToy_id(resultClass.getToy_id());
+			paramClass.setToy_image(getUploadFileName());
+			
+			sqlMapper.update("updateToyFile", paramClass);
+		}
+		
+		System.out.println(resultClass.getToy_image());
 		
 		return SUCCESS;	
 	}
@@ -163,6 +190,46 @@ public class AdminToyWriteAction extends ActionSupport {
 		this.state_code = state_code;
 	}
 
+	public Calendar getToday() {
+		return today;
+	}
+
+	public void setToday(Calendar today) {
+		this.today = today;
+	}
+
+	public File getUpload() {
+		return upload;
+	}
+
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+
+	public String getUploadContentType() {
+		return uploadContentType;
+	}
+
+	public void setUploadContentType(String uploadContentType) {
+		this.uploadContentType = uploadContentType;
+	}
+
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
+	}
+
+	public String getFileUploadPath() {
+		return fileUploadPath;
+	}
+
+	public void setFileUploadPath(String fileUploadPath) {
+		this.fileUploadPath = fileUploadPath;
+	}
+
 /*	public Date getToy_reg_date() {
 		return toy_reg_date;
 	}
@@ -171,6 +238,9 @@ public class AdminToyWriteAction extends ActionSupport {
 		this.toy_reg_date = toy_reg_date;
 	}
 	*/
+	
+	
+	
 	
 
 }

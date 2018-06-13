@@ -6,7 +6,11 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 import java.util.*;
+
+import org.apache.commons.io.FileUtils;
+
 import java.io.Reader;
+import java.io.File;
 import java.io.IOException;
 
 public class AdminToyModifyAction extends ActionSupport {
@@ -24,6 +28,10 @@ public class AdminToyModifyAction extends ActionSupport {
 	private String toy_gusung;
 	private String toy_age;
 
+	private File upload;
+	private String uploadContentType;
+	private String uploadFileName;
+	private String fileUploadPath="C:\\javaP\\ToyLibrary\\WebContent\\image\\";
 	
 	//생성자
 	public AdminToyModifyAction() throws IOException {
@@ -60,7 +68,30 @@ public class AdminToyModifyAction extends ActionSupport {
 		paramClass.setToy_age(getToy_age());
 		paramClass.setToy_gusung(getToy_gusung());
 		
+		resultClass = (toyProductVO) sqlMapper.queryForObject("selectOne", getToy_id());
+		
 		System.out.println("toy_id : "+paramClass.getToy_id());
+		System.out.println("image : "+resultClass.getToy_image());
+		
+		if(getUpload() != null)
+		{
+			if(resultClass.getToy_image() != null)
+			{
+				File deleteFile = new File(fileUploadPath + resultClass.getToy_image());
+				deleteFile.delete();
+			}
+
+			
+			File destFile = new File(fileUploadPath + getUploadFileName());
+			FileUtils.copyFile(getUpload(), destFile);
+			
+			paramClass.setToy_image(getUploadFileName());
+			
+			sqlMapper.update("updateToyFile", paramClass);
+						
+			
+		}
+		
 		
 		sqlMapper.update("updateToy",paramClass); //(함수이름?, 자바빈) //9개중 7개의 변수 세팅
 		
@@ -129,6 +160,38 @@ public class AdminToyModifyAction extends ActionSupport {
 
 	public void setToy_age(String toy_age) {
 		this.toy_age = toy_age;
+	}
+
+	public File getUpload() {
+		return upload;
+	}
+
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+
+	public String getUploadContentType() {
+		return uploadContentType;
+	}
+
+	public void setUploadContentType(String uploadContentType) {
+		this.uploadContentType = uploadContentType;
+	}
+
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
+	}
+
+	public String getFileUploadPath() {
+		return fileUploadPath;
+	}
+
+	public void setFileUploadPath(String fileUploadPath) {
+		this.fileUploadPath = fileUploadPath;
 	}
 	
 

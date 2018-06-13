@@ -22,7 +22,7 @@
 	</tr>
 		<tr>
 			<td width="303" height="223" align="center" valign="middle">
-			<img src="./upload/}" width="300" height="300"/>
+			<img src="/ToyLibrary/image/<s:property value="resultClass.toy_image"/>" width="300" height="300"/>.
 			</td>
 			<td width="500" align="center" valign="middle">
 				<table width="500" height="200" border="0">

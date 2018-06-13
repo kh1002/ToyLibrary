@@ -59,6 +59,12 @@
 			<include refid="returnwhere-no"/> and p.toy_id=#toy_id#
 		</select>
 		
+		<select id="Return-selectSearchN" resultMap="toyRentRes" parameterClass="string">
+			<include refid="rentselect-all"/>
+			<include refid="rentwhere-no"/> and p.state_code=#대여중#
+			and p.toy_name like #searchKeyword#
+		</select>
+		
 		
 		<!-- update 쿼리문 정의 -->
 		<!-- 예약에서 대여, 대여에서 반납으로 상태코드를 바꾸는 업데이트문 -->

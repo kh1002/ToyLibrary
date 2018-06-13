@@ -61,27 +61,54 @@
 		 <!-- 지점1의 장난감들만 보여주는 셀렉트문 -->
 		<select id="selectToyZizum1All" resultMap="toyProductRes">
 			<include refid="select-all"/>
-			where zizum_no = 1	
+			where zizum_no = 1	order by toy_id desc
 		</select>
 		
 		<!-- 지점2의 장난감들만 보여주는 셀렉트문 -->
 		<select id="selectToyZizum2All" resultMap="toyProductRes">
 			<include refid="select-all"/>
-			where zizum_no = 2	
+			where zizum_no = 2	order by toy_id desc
 		</select>
 		
 		<!-- 지점3의 장난감들만 보여주는 셀렉트문 -->
 		<select id="selectToyZizum3All" resultMap="toyProductRes">
 			<include refid="select-all"/>
-			where zizum_no = 3	
+			where zizum_no = 3	order by toy_id desc
 		</select>
 			
+			
+		<select id="selectLastNo" resultClass="admin" parameterClass="int">
+		SELECT max(toy_id) as toy_id FROM toy_product
+	</select>
+	
+	
+	
+	<select id="selectSearchN" resultMap="toyProductRes" parameterClass="string">
+			<include refid="select-all" />
+			 WHERE toy_name like #searchKeyword#
+			 ORDER BY toy_id DESC
+		</select>
+		
+		<select id="selectSearchZ" resultMap="toyProductRes" parameterClass="string">
+			<include refid="select-all" />
+			  WHERE zizum_no like #searchKeyword#
+			 ORDER BY toy_id DESC
+		</select>
+		
+		<select id="selectSearchS" resultMap="toyProductRes" parameterClass="string">
+			<include refid="select-all" />
+			 WHERE state_code like #searchKeyword#
+			 ORDER BY toy_id DESC
+		</select>
+		
+		
+		
 		
 
 	<!-- insert 쿼리문 정의 -->
 		<insert id="insertToy" parameterClass="admin">
 			insert into toy_product(toy_id, toy_name, toy_detail, toy_gusung, toy_age, zizum_no, original_zizum, state_code, toy_reg_date)
-			values(toy_product_no.NEXTVAL,#toy_name#,#toy_detail#, #toy_gusung#,#toy_age#, 2,2, #state_code#, #toy_reg_date#)
+			values(toy_product_no.NEXTVAL,#toy_name#,#toy_detail#, #toy_gusung#,#toy_age#, 1,1, #state_code#, #toy_reg_date#)
 		</insert>
 	
 
@@ -100,12 +127,18 @@
 			<include refid="where-no"/>
 		</update>		
 		
-		
+		<update id="updateToyFile" parameterClass="admin">
+			UPDATE toy_product SET toy_image = #toy_image#
+			<include refid="where-no" />
+		</update>
+	
 	<!-- delete 쿼리문 정의 -->
  		<delete id="deleteToy" parameterClass="admin">
 			delete from toy_product
 			<include refid="where-no"/>
 		</delete> 
+		
+		
 
 	<!-- update 쿼리문 정의 -->
 	
@@ -124,6 +157,8 @@
 										file_savname = #file_savname#
 			<include refid="where-no"/>									
 		</update>
+		
+		
 	 -->	
 		<!-- 조회수변경 -->
 <!-- 		<update id="updateReadHit" parameterClass="board">
@@ -136,5 +171,7 @@
 			delete from sboard_zzuggumi
 			<include refid="where-no"/>
 		</delete> -->
+		
+
 		
 </sqlMap>

@@ -79,9 +79,18 @@
 			제품이미지
 		</td>
 		<td>
-			<input type="file" name="file1">
+			<input type="file" name="upload"/>
+			<s:if test="resultClass.toy_image != NULL">
+					&nbsp; * 
+					<s:property value="resultClass.toy_image"/>
+					파일이 등록되어 있어 새로운파일 등록시 수정됩니다.
+				</s:if>
+				<s:else>
+					등록되어 있는 파일이 없습니다.
+				</s:else>
 		</td>
 	</tr>
+	
 </table>	
 
 <!-- 등록과 다시쓰기의 버튼 폼 코드 -->
