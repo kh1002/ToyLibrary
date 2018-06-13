@@ -28,8 +28,8 @@
 		</action>
 		
 		<action name="login" class ="member.loginAction">
-			<result name ="success">/member/join_delete.jsp</result>
-			<result name ="login">/member/join_main.jsp</result>
+			<result name ="success">/main.jsp</result>
+			<result name ="login">/member/login_main.jsp</result>
 		</action>
 		
 		<action name="joinDelete" class="member.joinAction" method="delete">

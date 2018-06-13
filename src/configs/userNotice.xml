@@ -4,14 +4,16 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 	
 	<struts>
-		<package name="userNotice" extends="struts-default">
+		<package name="userNotice" extends="struts-default, tiles-default">
 		
 		<action name="userNoticeListAction" class="board.Notice.noticeListAction">
-			<result>/user/Notice/userNoticeList.jsp</result>
+			<!-- <result>/user/Notice/userNoticeList.jsp</result> -->
+			<result type="tiles">userNoticeListAction</result>
 		</action>
 		
 		<action name="userNoticeViewAction" class="board.Notice.noticeViewAction">
-			<result>/user/Notice/userNoticeView.jsp</result>
+			<!-- <result>/user/Notice/userNoticeView.jsp</result> -->
+			<result type="tiles">userNoticeViewAction</result>
 		</action>
 				
 	</package>

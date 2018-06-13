@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="userToy" template="/tiles/layout-left.jsp">
+		<put-attribute name="title" value="장난감목록" />
+		<put-attribute name="header" value="/tiles/header/header.jsp" />
+		<put-attribute name="lefter" value="/tiles/lefter/lefter-userToy.jsp" />
+		<put-attribute name="body" value="/toy/toyList.jsp" />
+		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+	</definition>
+	
+	<!-- 사용자 장난감 리스트를 출력하는 타일즈 -->
+	<definition name="ToyListAction" extends="userToy">
+		<put-attribute name="title" value="전체 장난감목록" />
+		<put-attribute name="body" value="/toy/toyList.jsp" />
+	</definition>	
+	
+	<!-- 지점1 장난감 리스트를 출력하는 타일즈 -->
+	<definition name="ToyZizum1ListAction" extends="userToy">
+		<put-attribute name="title" value="강남점 장난감목록" />
+		<put-attribute name="body" value="/toy/toyZizum1List.jsp" />
+	</definition>
+	
+	<!-- 지점2 장난감 리스트를 출력하는 타일즈 -->
+	<definition name="ToyZizum2ListAction" extends="userToy">
+		<put-attribute name="title" value="역삼점 장난감목록" />
+		<put-attribute name="body" value="/toy/toyZizum2List.jsp" />
+	</definition>
+	
+	<!-- 지점3 장난감 리스트를 출력하는 타일즈 -->
+	<definition name="ToyZizum3ListAction" extends="userToy">
+		<put-attribute name="title" value="교대점 장난감목록" />
+		<put-attribute name="body" value="/toy/toyZizum3List.jsp" />
+	</definition>	
+	
+	<!-- 장난감 상세보기를 출력하는 타일즈 -->
+	<definition name="ToyDetailAction" extends="userToy">
+		<put-attribute name="title" value="장난감 상세보기" />
+		<put-attribute name="body" value="/toy/toyDetail.jsp" />
+	</definition>
+	
+	<!-- 장난감 예약하기를 출력하는 타일즈 -->
+ 	<definition name="ToyReserveForm" extends="userToy">
+		<put-attribute name="title" value="장난감 예약하기" />
+		<put-attribute name="body" value="/toy/toyReserve.jsp" />
+	</definition>	
+	
+	<!-- 예약을 누르면 마이페이지의 예약내역으로 goto -->
+		<!-- 	<definition name="" extends="userToy">
+		<put-attribute name="title" value="이용안내" />
+		<put-attribute name="body" value="/use/useInfoView.jsp" />
+	</definition> -->
+
+</tiles-definitions>

@@ -5,17 +5,18 @@
 
 <struts>
 
-	<package name="userQna" extends="struts-default">
+	<package name="userQna" extends="struts-default, tiles-default">
 
 
 		<!-- 게시판 리스트 액션 -->
 		<action name="userQnaListAction" class="user.Qna.userQnaListAction">
-			<result>/user/Qna/userQnaList.jsp</result>
+			<!-- <result>/user/Qna/userQnaList.jsp</result> -->
+			<result type="tiles">userQnaListAction</result>
 		</action>
 		<!-- 게시판 글쓰기 액션 -->
-		<action name="userQnaWriteForm" class="user.Qna.userQnaWriteAction"
-			method="form">
-			<result>/user/Qna/userQnaWrite.jsp</result>
+		<action name="userQnaWriteForm" class="user.Qna.userQnaWriteAction" method="form">
+			<!-- <result>/user/Qna/userQnaWrite.jsp</result> -->
+			<result type="tiles">userQnaWriteForm</result>
 		</action>
 
 		<action name="userQnaWriteAction" class="user.Qna.userQnaWriteAction">
@@ -27,9 +28,8 @@
 
 		<!-- 게시판 글 읽기 액션 -->
 		<action name="userQnaViewAction" class="user.Qna.userQnaViewAction">
-			<result>
-				/user/Qna/userQnaView.jsp
-			</result>
+			<!-- <result>/user/Qna/userQnaView.jsp</result> -->
+			<result type="tiles">userQnaViewAction</result>
 		</action>
 
 		<!-- 게시판 수정 액션 -->

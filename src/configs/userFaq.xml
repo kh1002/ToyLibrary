@@ -4,14 +4,16 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<package name="userFaq" extends="struts-default">
+	<package name="userFaq" extends="struts-default, tiles-default">
 
 		<action name="userFaqListAction" class="user.Faq.userFaqListAction">
-			<result>/user/Faq/userFaqList.jsp</result>
+		<!-- 	<result>/user/Faq/userFaqList.jsp</result> -->
+			<result type="tiles">userFaqListAction</result>
 		</action>
 
 		<action name="userFaqViewAction" class="user.Faq.userFaqViewAction">
-			<result>/user/Faq/userFaqView.jsp</result>
+		<!-- 	<result>/user/Faq/userFaqView.jsp</result> -->
+			<result type="tiles">userFaqViewAction</result>
 		</action>
 
 	</package>

@@ -95,12 +95,12 @@
                            <td align="right">
                            <a href="mainAction.action">home</a> 
                            <s:if test="${ session_id == null }">
-                                 <a href="joinAgree.action">회원가입</a>
-                                 <a href="loginForm.action">로그인</a>
+                                 <a href="joinMain.action">회원가입</a>
+                                 <a href="login.action">로그인</a>
                               </s:if> 
                               <s:else>
                                  <s:if test="${ session_admin_tp == 1 }">
-                                    <a href="admin.action">관리자페이지</a>
+                                    <a href="mainAction2.action">관리자페이지</a>
                                  </s:if>
                                  <s:else>
                                     <a href="myPage.action">마이페이지</a>
@@ -111,7 +111,7 @@
                         </tr>
                      </table>
                      <ul>
-                        <li><a href="mainAction.action" class="selected">Home</a></li>
+                       <!--  <li><a href="mainAction.action" class="selected">Home</a></li> -->
                         <li><a href="useIntroView.action">이용 안내</a>
                            <ul>
                               <li><a href="useIntroView.action">소개</a></li>
@@ -119,17 +119,17 @@
                               <li><a href="useFacilityView.action">시설 현황</a></li>
                               <li><a href="useLocationView.action">찾아오시는 길</a></li>
                            </ul></li>
-                        <li><a href="boardList.action">장난감 검색/예약</a>
+                        <li><a href="ToyListAction.action">장난감목록</a>
                            <ul>
-                              <li><a href="noticeList.action">장난감 검색</a></li>
+                              <li><a href="ToyListAction.action">장난감목록</a></li>
                            </ul></li>
                         <li><a href="noticeListAction.action">아이꿈 놀이나라</a>
                            <ul>
                               <li><a href="noticeListAction.action">행사</a></li>
                            </ul></li>
-                        <li><a href="noticeListAction.action">커뮤니티</a>
+                        <li><a href="userNoticeListAction.action">커뮤니티</a>
                            <ul>
-                              <li><a href="noticeListAction.action">공지사항</a></li>
+                              <li><a href="userNoticeListAction.action">공지사항</a></li>
                               <li><a href="qnaListAction.action">QNA</a></li>
                               <li><a href="bookSearch.action?searchNum=0&searchKeyword=">고객 문의</a></li>
                               <li><a href="bookSearch.action?searchNum=0&searchKeyword=">자주 묻는 질문</a></li> 

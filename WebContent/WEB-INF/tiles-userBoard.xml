@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="userBoard" template="/tiles/layout-left.jsp">
+		<put-attribute name="title" value="장난감도서관 게시판" />
+		<put-attribute name="header" value="/tiles/header/header.jsp" />
+		<put-attribute name="lefter" value="/tiles/lefter/lefter-userBoard.jsp" />
+		<put-attribute name="body" value="/user/Notice/userNoticeList.jsp" />
+		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+	</definition>
+	
+	<!-- 사용자 공지사항 타일즈 -->
+	<definition name="userNoticeListAction" extends="userBoard">
+		<put-attribute name="title" value="공지사항" />
+		<put-attribute name="body" value="/user/Notice/userNoticeList.jsp" />
+	</definition>
+	
+	<definition name="userNoticeViewAction" extends="userBoard">
+		<put-attribute name="title" value="공지사항" />
+		<put-attribute name="body" value="/user/Notice/userNoticeView.jsp" />
+	</definition>
+	
+	<!-- 사용자 faq 타일즈 -->
+	<definition name="userFaqListAction" extends="userBoard">
+		<put-attribute name="title" value="자주묻는질문" />
+		<put-attribute name="body" value="/user/Faq/userFaqList.jsp" />
+	</definition>
+	
+	<definition name="userFaqViewAction" extends="userBoard">
+		<put-attribute name="title" value="자주묻는질문" />
+		<put-attribute name="body" value="/user/Faq/userFaqView.jsp" />
+	</definition>	 
+	
+	<!-- 사용자 이용후기 타일즈 -->
+	<definition name="userReviewListAction" extends="userBoard">
+		<put-attribute name="title" value="이용후기" />
+		<put-attribute name="body" value="/user/Review/userReviewList.jsp" />
+	</definition>
+	
+	<definition name="userReviewViewAction" extends="userBoard">
+		<put-attribute name="title" value="이용후기" />
+		<put-attribute name="body" value="/user/Review/userReviewView.jsp" />
+	</definition>	
+	
+	<definition name="userReviewWriteForm" extends="userBoard">
+		<put-attribute name="title" value="이용후기 작성하기" />
+		<put-attribute name="body" value="/user/Review/userReviewWrite.jsp" />
+	</definition>	
+		
+	
+	
+	<!-- 사용자 qna 타일즈 -->
+	<definition name="userQnaListAction" extends="userBoard">
+		<put-attribute name="title" value="고객문의" />
+		<put-attribute name="body" value="/user/Qna/userQnaList.jsp" />
+	</definition>
+	
+	<definition name="userQnaViewAction" extends="userBoard">
+		<put-attribute name="title" value="고객문의" />
+		<put-attribute name="body" value="/user/Qna/userQnaView.jsp" />
+	</definition>	
+
+	<definition name="userQnaWriteForm" extends="userBoard">
+		<put-attribute name="title" value="고객문의 작성하기" />
+		<put-attribute name="body" value="/user/Qna/userQnaWrite.jsp" />
+	</definition>	
+	
+	 	
+</tiles-definitions>

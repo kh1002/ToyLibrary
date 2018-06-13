@@ -8,7 +8,8 @@
 			
 	<!-- 장난감 예약하기 액션 -->	
    		<action name="ToyReserveForm" class="toy.ToyReserveAction" method="form">
-		 	<result>/toy/toyReserve.jsp</result>
+		 	 <!-- <result>/toy/toyReserve.jsp</result> -->
+		 	<result type="tiles">ToyReserveForm</result>
 		</action>  	
 	<!-- 장난감 예약하기 액션 -->	
    		<action name="ToyReserveAction" class="toy.ToyReserveAction">
@@ -19,27 +20,30 @@
 		
 	<!-- 사용자 장난감 상세보기 액션 -->
 		<action name="ToyDetailAction" class="toy.ToyDetailAction">
-			<result>/toy/toyDetail.jsp</result>
+			<!-- <result>/toy/toyDetail.jsp</result> -->
+			<result type="tiles">ToyDetailAction</result>
 		</action>
 	<!-- 사용자 장난감 리스트 액션 -->
 		<action name="ToyListAction" class="toy.ToyListAction">
-			<result>/toy/toyList.jsp</result>
+			<!-- <result>/toy/toyList.jsp</result> -->
+			<result type="tiles">ToyListAction</result>
 		</action>
 		
 	<!-- 사용자 장난감 지접1 리스트 액션 -->
 		<action name="ToyZizum1ListAction" class="toy.ToyZizum1ListAction">
-			<result>/toy/toyZizum1List.jsp</result>
+			<!-- <result>/toy/toyZizum1List.jsp</result> -->
+			<result type="tiles">ToyZizum1ListAction</result>
 		</action>
 		
 	<!-- 사용자 장난감 지접2 리스트 액션 -->
 		<action name="ToyZizum2ListAction" class="toy.ToyZizum2ListAction">
-			<result>/toy/toyZizum2List.jsp</result>
-			
+			<!-- <result>/toy/toyZizum2List.jsp</result> -->
+			<result type="tiles">ToyZizum2ListAction</result>
 		</action> 		
 	<!-- 사용자 장난감 지접3 리스트 액션 -->
 		<action name="ToyZizum3ListAction" class="toy.ToyZizum3ListAction">
-			<result>/toy/toyZizum3List.jsp</result>
-			
+			<!-- <result>/toy/toyZizum3List.jsp</result> -->
+			<result type="tiles">ToyZizum3ListAction</result>
 		</action> 
 	
 	
