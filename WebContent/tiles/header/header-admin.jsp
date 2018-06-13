@@ -47,7 +47,7 @@
  							</td>
  					
                            <td align="right">
-                           		<a href="mainAction.action">home</a> 
+                           		<a href="mainAction2.action">home</a> 
                            		<s:if test="${ session_id == null }">
                                 	 <a href="loginForm.action">로그인</a>
                              	</s:if> 

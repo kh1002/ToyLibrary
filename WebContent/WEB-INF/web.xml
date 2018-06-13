@@ -37,7 +37,7 @@
 				org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG
 			</param-name>
 			<param-value>
-			/WEB-INF/tiles-main.xml,/WEB-INF/tiles-adminToy.xml,/WEB-INF/tiles-adminBoard.xml,/WEB-INF/tiles-adminMember.xml
+			/WEB-INF/tiles-main.xml,/WEB-INF/tiles-adminToy.xml,/WEB-INF/tiles-adminBoard.xml,/WEB-INF/tiles-adminMember.xml,/WEB-INF/tiles-use.xml 
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>

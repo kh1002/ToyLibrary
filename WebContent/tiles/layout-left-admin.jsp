@@ -5,18 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title><tiles:getAsString name="title" /></title>
+<title><tiles:getAsString name="title-admin" /></title>
 </head>
 <body>
 	<table width="1000" cellpadding="0" cellspacing="0">
 		<tr>
-			<td colspan="2" class="boardListTd"><tiles:insertAttribute name="header" /></td>
+			<td colspan="2" class="boardListTd"><tiles:insertAttribute name="header-admin" /></td>
 		</tr>
 		<tr>
 			<td colspan="2" height="10"></td>
 		</tr>
 		<tr>
-			<td valign="top"><tiles:insertAttribute name="lefter" /></td>
+			<td valign="top"><tiles:insertAttribute name="lefter-admin" /></td>
 			<td valign="top" width="770">
 			
 			<table width="1000" cellpadding="0" cellspacing="0">
@@ -31,10 +31,10 @@
 				</tr>
 			</table>
 			
-			<tiles:insertAttribute name="body" /></td>
+			<tiles:insertAttribute name="body-admin" /></td>
 		</tr>
 		<tr>
-			<td colspan="2"><tiles:insertAttribute name="footer" /></td>
+			<td colspan="2"><tiles:insertAttribute name="footer-admin" /></td>
 		</tr>
 	</table>
 </body>

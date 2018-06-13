@@ -5,40 +5,40 @@
 
 <tiles-definitions>
 
-	<definition name="adminToy" template="/tiles/layout-left.jsp">
-		<put-attribute name="title" value="관리자 장난감목록" />
-		<put-attribute name="header" value="/tiles/header/header.jsp" />
-		<put-attribute name="lefter" value="/tiles/lefter/lefter-AdminToy.jsp" />
-		<put-attribute name="body" value="/admin/AdminToyDetail.jsp" />
-		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+	<definition name="adminToy" template="/tiles/layout-left-admin.jsp">
+		<put-attribute name="title-admin" value="관리자 장난감목록" />
+		<put-attribute name="header-admin" value="/tiles/header/header-admin.jsp" />
+		<put-attribute name="lefter-admin" value="/tiles/lefter/lefter-AdminToy.jsp" />
+		<put-attribute name="body-admin" value="/admin/AdminToyDetail.jsp" />
+		<put-attribute name="footer-admin" value="/tiles/footer/footer-admin.jsp" />
 	</definition>
 
 
 <!-- 장난감 목록 타일즈 연결 -->
 
 	<definition name="AdminToyListAction" extends="adminToy">
-		<put-attribute name="body" value="/admin/AdminToyList.jsp" />
+		<put-attribute name="body-admin" value="/admin/AdminToyList.jsp" />
 	</definition>	
 	
 	<definition name="AdminToyWriteForm" extends="adminToy">
-		<put-attribute name="body" value="/admin/AdminToyWriteForm.jsp" />
+		<put-attribute name="body-admin" value="/admin/AdminToyWriteForm.jsp" />
 	</definition>	
 	
 	<definition name="AdminToyModifyForm" extends="adminToy">
-		<put-attribute name="body" value="/admin/AdminToyModifyForm.jsp" />
+		<put-attribute name="body-admin" value="/admin/AdminToyModifyForm.jsp" />
 	</definition>	
 	
 	
 <!-- 장난감 대여관리 타일즈 연결 -->	
 	
 	<definition name="AdminRentListAction" extends="adminToy">
-		<put-attribute name="title" value="장난감 대여관리" />
-		<put-attribute name="body" value="/admin/AdminRentList.jsp" />
+		<put-attribute name="title-admin" value="장난감 대여관리" />
+		<put-attribute name="body-admin" value="/admin/AdminRentList.jsp" />
 	</definition>
 	
 	<definition name="AdminRentDetailForm" extends="adminToy">
-		<put-attribute name="title" value="장난감 대여관리" />
-		<put-attribute name="body" value="/admin/AdminRentDetail.jsp" />
+		<put-attribute name="title-admin" value="장난감 대여관리" />
+		<put-attribute name="body-admin" value="/admin/AdminRentDetail.jsp" />
 	</definition>
 	
 	
@@ -46,13 +46,13 @@
 <!-- 장난감 반납관리 타일즈 연결 -->	
 
 	<definition name="AdminReturnListAction" extends="adminToy">
-		<put-attribute name="title" value="장난감 반납관리" />
-		<put-attribute name="body" value="/admin/AdminReturnList.jsp" />
+		<put-attribute name="title-admin" value="장난감 반납관리" />
+		<put-attribute name="body-admin" value="/admin/AdminReturnList.jsp" />
 	</definition>
 	
 	<definition name="AdminReturnDetailForm" extends="adminToy">
-		<put-attribute name="title" value="장난감 반납관리" />
-		<put-attribute name="body" value="/admin/AdminReturnDetail.jsp" />
+		<put-attribute name="title-admin" value="장난감 반납관리" />
+		<put-attribute name="body-admin" value="/admin/AdminReturnDetail.jsp" />
 	</definition>
 
 

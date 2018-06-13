@@ -6,11 +6,11 @@
 <tiles-definitions>
 
 	<definition name="adminBoard" template="/tiles/layout-left.jsp">
-		<put-attribute name="title" value="관리자 장난감목록" />
-		<put-attribute name="header" value="/tiles/header/header.jsp" />
-		<put-attribute name="lefter" value="/tiles/lefter/lefter-AdminBoard.jsp" />
-		<put-attribute name="body" value="/admin/AdminToyDetail.jsp" />
-		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+		<put-attribute name="title-admin" value="관리자 장난감목록" />
+		<put-attribute name="header-admin" value="/tiles/header/header-admin.jsp" />
+		<put-attribute name="lefter-admin" value="/tiles/lefter/lefter-AdminBoard.jsp" />
+		<put-attribute name="body-admin" value="/admin/AdminToyDetail.jsp" />
+		<put-attribute name="footer-admin" value="/tiles/footer/footer-admin.jsp" />
 	</definition>
 
 <!--  
@@ -21,19 +21,19 @@
 	</definition>
 -->
 	<definition name="noticeListAction" extends="adminBoard">
-		<put-attribute name="body" value="/admin/Notice/noticeList.jsp" />
+		<put-attribute name="body-admin" value="/admin/Notice/noticeList.jsp" />
 	</definition>	
 	
 	<definition name="faqListAction" extends="adminBoard">
-		<put-attribute name="body" value="/admin/Faq/faqList.jsp" />
+		<put-attribute name="body-admin" value="/admin/Faq/faqList.jsp" />
 	</definition>	
 	
 	<definition name="eventListAction" extends="adminBoard">
-		<put-attribute name="body" value="/admin/Event/eventList.jsp" />
+		<put-attribute name="body-admin" value="/admin/Event/eventList.jsp" />
 	</definition>	
 	
 	<definition name="qnaListAction" extends="adminBoard">
-		<put-attribute name="body" value="/admin/Qna/qnaList.jsp" />
+		<put-attribute name="body-admin" value="/admin/Qna/qnaList.jsp" />
 	</definition>	
 
 </tiles-definitions>

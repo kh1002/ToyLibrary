@@ -4,18 +4,26 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 	
 <struts>
+	<!-- 사용자 타일즈 메인 -->
+	<package name="main" extends="struts-default, tiles-default">
+		<action name="mainAction" class="main.MainAction">
+			<result name="success" type="tiles">main</result>
+		</action>
+	</package>
 	
+	<!-- 관리자 타일즈 메인. 이거는 세션기능이 완료되면 헤더를 바꾸는 방법으로 해야해서 나중에 없어질 코드 -->
 	<package name="main2" extends="struts-default, tiles-default">
 		<action name="mainAction2" class="main.MainAction2">
 			<result name="success" type="tiles">main2</result>
 		</action>
-
 	</package>
 	
 	<include file="/configs/adminToy.xml"/>
 	<include file="/configs/userToy.xml"/>
 	<include file="/configs/myToy.xml"/>
 	<include file="/configs/member.xml"/>
+	
+	<include file="/configs/use.xml" /> 
 	
 	<include file="/configs/notice.xml" />
 	<include file="/configs/faq.xml" />
@@ -28,6 +36,5 @@
 	<include file="/configs/userNotice.xml" />
 	<include file="/configs/userQna.xml" />
 	<include file="/configs/userReview.xml" />
-	
 	
 </struts>

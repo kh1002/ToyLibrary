@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<package name="use" extends="struts-default, tiles-default">
+
+		<!-- 이용안내 뷰 액션. -->
+		<action name="useFacilityView" class="use.useFacilityAction">
+			<result type="tiles">useFacility</result>
+		</action>
+		
+		<action name="useInfoView" class="use.useInfoAction">
+			<result type="tiles">useInfo</result>
+		</action>
+		
+		<action name="useIntroView" class="use.useIntroAction">
+			<result type="tiles">useIntro</result>
+		</action>
+		
+		<action name="useLocationView" class="use.useLocationAction">
+			<result type="tiles">useLocation</result>
+		</action>		
+	</package>
+</struts>
+ 
