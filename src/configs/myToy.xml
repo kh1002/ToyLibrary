@@ -4,16 +4,18 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 	
 <struts>
-	<package name="myToy" extends="struts-default">
+	<package name="myToy" extends="struts-default, tiles-default">
 	
 		 
 
 		<action name="MyRentListAction" class="my.MyRentListAction">
-			<result>/my/MyRentList.jsp</result>
+			<!-- <result>/my/MyRentList.jsp</result> -->
+			<result type="tiles">MyRentListAction</result>
 		</action> 
 	
 		<action name="MyReservationListAction" class="my.MyReservationListAction">
-			<result>/my/MyReservationList.jsp</result>
+			<!-- <result>/my/MyReservationList.jsp</result> -->
+			<result type="tiles">MyReservationListAction</result>
 		</action> 	
 		
 		<action name="MyReservationModifyStateAction" class="my.MyReservationDeleteAction" method="stateModify">
@@ -26,6 +28,7 @@
 				<param name="actionName">MyReservationListAction</param>
 			</result>
 		</action>
+		
 		
 	</package>
 

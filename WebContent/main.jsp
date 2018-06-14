@@ -11,6 +11,5 @@
 	{
 		System.out.println("mainAction 실행");
 		response.sendRedirect("mainAction.action"); 
-		
 	}
 %>

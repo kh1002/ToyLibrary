@@ -103,7 +103,7 @@
                                     <a href="mainAction2.action">관리자페이지</a>
                                  </s:if>
                                  <s:else>
-                                    <a href="myPage.action">마이페이지</a>
+                                    <a href="MyReservationListAction.action">마이페이지</a>
                                  </s:else>
                                  <a href="logout.action">로그아웃 (${ session_id })</a>
                               </s:else>
