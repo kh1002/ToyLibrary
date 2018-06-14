@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="userEvent" template="/tiles/layout-left.jsp">
+		<put-attribute name="title" value="아이꿈놀이나라" />
+		<put-attribute name="header" value="/tiles/header/header.jsp" />
+		<put-attribute name="lefter" value="/tiles/lefter/lefter-userEvent.jsp" />
+		<put-attribute name="body" value="/user/Event/userEventList.jsp" />
+		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+	</definition>
+	
+	<definition name="userEventListAction" extends="userEvent">
+		<put-attribute name="title" value="아이꿈놀이나라" />
+		<put-attribute name="body" value="/user/Event/userEventList.jsp" />
+	</definition>
+	
+	<definition name="userEventViewAction" extends="userEvent">
+		<put-attribute name="title" value="아이꿈놀이나라" />
+		<put-attribute name="body" value="/user/Event/userEventView.jsp" />
+	</definition>
+		
+
+</tiles-definitions>

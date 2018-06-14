@@ -123,7 +123,7 @@
                            <ul>
                               <li><a href="ToyListAction.action">장난감목록</a></li>
                            </ul></li>
-                        <li><a href="noticeListAction.action">아이꿈 놀이나라</a>
+                        <li><a href="userEventListAction.action">아이꿈 놀이나라</a>
                            <ul>
                               <li><a href="noticeListAction.action">행사</a></li>
                            </ul></li>

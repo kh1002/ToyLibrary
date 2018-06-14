@@ -4,15 +4,16 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<package name="event" extends="struts-default">
+	<package name="event" extends="struts-default , tiles-default">
 
 		<action name="eventListAction" class="board.Event.eventListAction">
-			<result>/admin/Event/eventList.jsp</result>
+			<!-- <result>/admin/Event/eventList.jsp</result> -->
+			<result type="tiles">eventListAction</result>
 		</action>
 
-		<action name="eventWriteForm" class="board.Event.eventWriteAction"
-			method="form">
-			<result>/admin/Event/eventWrite.jsp</result>
+		<action name="eventWriteForm" class="board.Event.eventWriteAction" method="form">
+			<!-- <result>/admin/Event/eventWrite.jsp</result> -->
+			<result type="tiles">eventWriteForm</result>
 		</action>
 
 		<action name="eventWriteAction" class="board.Event.eventWriteAction">
@@ -22,7 +23,8 @@
 		</action>
 
 		<action name="eventViewAction" class="board.Event.eventViewAction">
-			<result>/admin/Event/eventView.jsp</result>
+			<!-- <result>/admin/Event/eventView.jsp</result> -->
+			<result type="tiles">eventViewAction</result>
 		</action>
 
 		<action name="eventModifyForm" class="board.Event.eventViewAction">

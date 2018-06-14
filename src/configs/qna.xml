@@ -5,16 +5,16 @@
 
 <struts>
 
-	<package name="qna" extends="struts-default">
+	<package name="qna" extends="struts-default, tiles-default">
 
 
 		<!-- 게시판 리스트 액션 -->
 		<action name="qnaListAction" class="board.Qna.qnaListAction">
-			<result>/admin/Qna/qnaList.jsp</result>
+			<result>/admin/Qna/qnaList.jsp</result> 
+			<!-- <result type="tiles">qnaListAction</result> -->
 		</action>
 		<!-- 게시판 글쓰기 액션 -->
-		<action name="qnaWriteForm" class="board.Qna.qnaWriteAction"
-			method="form">
+		<action name="qnaWriteForm" class="board.Qna.qnaWriteAction" method="form">
 			<result>/admin/Qna/qnaWrite.jsp</result>
 		</action>
 
@@ -24,8 +24,7 @@
 			</result>
 		</action>
 		<!-- 게시판 답변글쓰기 액션 -->
-		<action name="qnaReplyForm" class="board.Qna.qnaWriteAction"
-			method="reply">
+		<action name="qnaReplyForm" class="board.Qna.qnaWriteAction" method="reply">
 			<result type="chain">qnaWriteForm</result>
 		</action>
 		<action name="qnaReplyAction" class="board.Qna.qnaWriteAction">
@@ -35,9 +34,7 @@
 		</action>
 		<!-- 게시판 글 읽기 액션 -->
 		<action name="qnaViewAction" class="board.Qna.qnaViewAction">
-			<result>
-				/admin/Qna/qnaView.jsp
-			</result>
+			<result>/admin/Qna/qnaView.jsp</result>
 		</action>
 
 		<!-- 게시판 수정 액션 -->
@@ -50,13 +47,11 @@
 		</action>
 
 		<!-- 비밀번호 체크 액션 -->
-		<action name="qnaCheckForm" class="board.Qna.qnaViewAction"
-			method="checkForm">
+		<action name="qnaCheckForm" class="board.Qna.qnaViewAction" method="checkForm">
 			<result>/admin/Qna/qnaCheckPassword.jsp</result>
 		</action>
 
-		<action name="qnaCheckAction" class="board.Qna.qnaViewAction"
-			method="checkAction">
+		<action name="qnaCheckAction" class="board.Qna.qnaViewAction" method="checkAction">
 			<result name="error">/admin/Qna/qnaCheckError.jsp</result>
 			<result>/admin/Qna/qnaCheckSuccess.jsp</result>
 		</action>

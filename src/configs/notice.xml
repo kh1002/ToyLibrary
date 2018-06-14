@@ -12,7 +12,8 @@
 		</action>
 
 		<action name="noticeWriteForm" class="board.Notice.noticeWriteAction" method="form">
-			<result>/admin/Notice/noticeWrite.jsp</result>
+			<!-- <result>/admin/Notice/noticeWrite.jsp</result> -->
+			<result type="tiles">noticeWriteForm</result>
 		</action>
 
 		<action name="noticeWriteAction" class="board.Notice.noticeWriteAction">
@@ -22,7 +23,8 @@
 		</action>
 
 		<action name="noticeViewAction" class="board.Notice.noticeViewAction">
-			<result>/admin/Notice/noticeView.jsp</result>
+			<!-- <result>/admin/Notice/noticeView.jsp</result> -->
+			<result type="tiles">noticeViewAction</result>
 		</action>
 
 		<action name="noticeModifyForm" class="board.Notice.noticeViewAction">

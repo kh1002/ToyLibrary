@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -22,11 +22,7 @@
 </table>
 <div class="leftMenu">
 <ul>
-<li><a href="noticeListAction.action">공지사항</a></li>
-<li><a href="qnaListAction.action">문의게시판</a></li>
-<li><a href="faqListAction.action">FAQ</a></li>
-<li><a href="eventListAction.action">행사일정</a></li>
-<li><a href="reviewListAction.action">이용후기</a></li>
+<li><a href="userEventListAction.action">행사목록</a></li>
 </ul>
 </div>
 </body>

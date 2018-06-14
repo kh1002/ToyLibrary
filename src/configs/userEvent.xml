@@ -4,14 +4,16 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<package name="userEvent" extends="struts-default">
+	<package name="userEvent" extends="struts-default, tiles-default">
 
 		<action name="userEventListAction" class="user.Event.userEventListAction">
-			<result>/user/Event/userEventList.jsp</result>
+			<!-- <result>/user/Event/userEventList.jsp</result> -->
+			<result type="tiles">userEventListAction</result>
 		</action>
 
 		<action name="userEventViewAction" class="user.Event.userEventViewAction">
-			<result>/user/Event/userEventView.jsp</result>
+			<!-- <result>/user/Event/userEventView.jsp</result> -->
+			<result type="tiles">userEventViewAction</result>
 		</action>
 		
 	</package>

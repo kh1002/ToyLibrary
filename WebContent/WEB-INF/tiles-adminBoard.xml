@@ -5,35 +5,83 @@
 
 <tiles-definitions>
 
-	<definition name="adminBoard" template="/tiles/layout-left.jsp">
-		<put-attribute name="title-admin" value="관리자 장난감목록" />
+	<definition name="adminBoard" template="/tiles/layout-left-admin.jsp">
+		<put-attribute name="title-admin" value="공지사항" />
 		<put-attribute name="header-admin" value="/tiles/header/header-admin.jsp" />
 		<put-attribute name="lefter-admin" value="/tiles/lefter/lefter-AdminBoard.jsp" />
 		<put-attribute name="body-admin" value="/admin/AdminToyDetail.jsp" />
 		<put-attribute name="footer-admin" value="/tiles/footer/footer-admin.jsp" />
 	</definition>
 
-<!--  
 
-	<definition name="bookRentForm" extends="bookSearch">
-		<put-attribute name="title" value="도서 목록" />
-		<put-attribute name="body" value="/book/bookRentForm.jsp" />
-	</definition>
--->
+	<!-- 관리자 타일즈 공지사항 -->
 	<definition name="noticeListAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="공지사항" />
 		<put-attribute name="body-admin" value="/admin/Notice/noticeList.jsp" />
 	</definition>	
 	
+	<definition name="noticeViewAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="공지사항" />
+		<put-attribute name="body-admin" value="/admin/Notice/noticeView.jsp" />
+	</definition>	
+	
+	<definition name="noticeWriteForm" extends="adminBoard">
+		<put-attribute name="title-admin" value="공지사항 작성하기" />
+		<put-attribute name="body-admin" value="/admin/Notice/noticeWrite.jsp" />
+	</definition>	
+	
+	<!-- 관리자 타일즈 자주묻는질문 -->
 	<definition name="faqListAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="자주묻는질문" />
 		<put-attribute name="body-admin" value="/admin/Faq/faqList.jsp" />
 	</definition>	
 	
+	<definition name="faqViewAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="자주묻는질문" />
+		<put-attribute name="body-admin" value="/admin/Faq/faqView.jsp" />
+	</definition>
+	
+	<definition name="faqWriteForm" extends="adminBoard">
+		<put-attribute name="title-admin" value="자주묻는질문 작성하기" />
+		<put-attribute name="body-admin" value="/admin/Faq/faqWrite.jsp" />
+	</definition>		
+	
+	<!-- 관리자 타일즈 행사 -->
 	<definition name="eventListAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="행사목록" />
 		<put-attribute name="body-admin" value="/admin/Event/eventList.jsp" />
 	</definition>	
 	
+	<definition name="eventViewAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="행사목록" />
+		<put-attribute name="body-admin" value="/admin/Event/eventView.jsp" />
+	</definition>	
+
+	<definition name="eventWriteForm" extends="adminBoard">
+		<put-attribute name="title-admin" value="행사목록 작성하기" />
+		<put-attribute name="body-admin" value="/admin/Event/eventWrite.jsp" />
+	</definition>	
+	
+	<!-- 관리자 타일즈 고객문의 --> <!-- 여기는 지금 오류가 난다 -->
 	<definition name="qnaListAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="행사목록" />
 		<put-attribute name="body-admin" value="/admin/Qna/qnaList.jsp" />
 	</definition>	
+	
+	<!-- 관리자 타일즈 이용후기 -->
+	<definition name="reviewListAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="이용후기" />
+		<put-attribute name="body-admin" value="/admin/Review/reviewList.jsp" />
+	</definition>	
+	
+	<definition name="reviewViewAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="이용후기" />
+		<put-attribute name="body-admin" value="/admin/Review/reviewView.jsp" />
+	</definition>	
+	
+	<definition name="reviewWriteForm" extends="adminBoard">
+		<put-attribute name="title-admin" value="이용후기 작성하기" />
+		<put-attribute name="body-admin" value="/admin/Review/reviewWrite.jsp" />
+	</definition>			
 
 </tiles-definitions>

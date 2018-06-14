@@ -4,14 +4,16 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 	
 	<struts>
-		<package name="faq" extends="struts-default">
+		<package name="faq" extends="struts-default, tiles-default">
 		
 		<action name="faqListAction" class="board.Faq.faqListAction">
-			<result>/admin/Faq/faqList.jsp</result>
+			<!-- <result>/admin/Faq/faqList.jsp</result> -->
+			<result type="tiles">faqListAction</result>
 		</action>
 		
 		<action name="faqWriteForm" class="board.Faq.faqWriteAction" method="form">
-			<result>/admin/Faq/faqWrite.jsp</result>
+			<!-- <result>/admin/Faq/faqWrite.jsp</result> -->
+			<result type="tiles">faqWriteForm</result>
 		</action>
 		
 		<action name="faqWriteAction" class="board.Faq.faqWriteAction">
@@ -21,7 +23,8 @@
 		</action>
 		
 		<action name="faqViewAction" class="board.Faq.faqViewAction">
-			<result>/admin/Faq/faqView.jsp</result>
+			<!-- <result>/admin/Faq/faqView.jsp</result> -->
+			<result type="tiles">faqViewAction</result>
 		</action>
 			
 		<action name="faqModifyForm" class="board.Faq.faqViewAction">
