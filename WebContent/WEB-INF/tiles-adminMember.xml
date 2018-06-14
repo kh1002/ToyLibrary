@@ -5,12 +5,21 @@
 
 <tiles-definitions>
 
-	<definition name="adminMember" template="/tiles/layout-left.jsp">
-		<put-attribute name="title" value="관리자 회원목록" />
-		<put-attribute name="header" value="/tiles/header/header.jsp" />
-		<put-attribute name="lefter" value="/tiles/lefter/lefter-AdminMember.jsp" />
-		<put-attribute name="body" value="/admin/.jsp" />
-		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+	<definition name="adminMember" template="/tiles/layout-left-admin.jsp">
+		<put-attribute name="title-admin" value="관리자 회원목록" />
+		<put-attribute name="header-admin" value="/tiles/header/header-admin.jsp" />
+		<put-attribute name="lefter-admin" value="/tiles/lefter/lefter-AdminMember.jsp" />
+		<put-attribute name="body-admin" value="/admin/AdminMemberList.jsp" />
+		<put-attribute name="footer-admin" value="/tiles/footer/footer-admin.jsp" />
+	</definition>
+
+
+	<definition name="adminMemberList" extends="adminMember">
+		<put-attribute name="body-admin" value="/admin/AdminMemberList.jsp" />
+	</definition>
+	
+	<definition name="adminMemberDetail" extends="adminMember">
+		<put-attribute name="body-admin" value="/admin/AdminMemberDetail.jsp" />
 	</definition>
 
 <!--  

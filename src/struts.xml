@@ -37,4 +37,6 @@
 	<include file="/configs/userQna.xml" />
 	<include file="/configs/userReview.xml" />
 	
+	<include file="/configs/adminMember.xml" />
+	
 </struts>

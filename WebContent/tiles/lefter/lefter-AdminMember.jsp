@@ -24,7 +24,8 @@
 
 <div class="leftMenu">
 	<ul>
-		<li><a href="bookSearchForm.action">회원목록</a></li>
+		<li><a href="adminMemberListForm.action">회원목록</a></li>
+		<!-- <li><a href="adminMemberListForm.action">회원정보</a></li> -->
 	</ul>
 </div>
 

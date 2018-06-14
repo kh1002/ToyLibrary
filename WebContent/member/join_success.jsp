@@ -21,7 +21,7 @@
 			
 				<tr>
 					<td height="30" colspan="6" align="right">	
-						<input type="button" value="로그인" onclick="javascript:window.location='./MemberJoin.me'">
+						<input type="button" value="로그인" onclick="javascript:window.location='./login.action'">
 					</td>
 				</tr>
 			

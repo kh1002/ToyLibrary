@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC	
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+<struts>
+
+	<package name="adminMember" extends="struts-default, tiles-default">
+
+	<action name="adminMemberListForm" class="admin.AdminMemberList" method="form">
+			<result type="tiles">adminMemberList</result>
+	</action>
+	
+	<action name="adminMemberDetailForm" class="admin.AdminMemberList" method="detail">
+			<result type="tiles">adminMemberDetail</result>
+	</action>
+	
+	<action name="adminMemberDeleteAction" class="admin.AdminMemberList" method="delete">
+			<result type="redirect-action">
+				<param name="actionName">adminMemberListForm</param>
+			</result>
+	</action>
+	
+	</package>
+	
+</struts>

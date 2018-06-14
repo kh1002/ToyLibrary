@@ -56,9 +56,9 @@
 	                                    <a href="admin.action">관리자페이지</a>
 	                                 </s:if>
 	                                 <s:else>
-	                                    <a href="myPage.action">마이페이지</a>
+	                                    <a href="MyReservationListAction.action">마이페이지</a>
 	                                 </s:else>
-	                                 <a href="logout.action">로그아웃 (${ session_id })</a>
+	                                 <a href="logoutMain.action">로그아웃 (${ session_id })</a>
                               	</s:else>
                            </td>
 
@@ -84,11 +84,7 @@
                            </ul> -->
                         </li>
                         
-                        <li><a href="introduce.action">회원관리</a>
-                          <!--  <ul>
-                              <li><a href="history.action">회원목록</a></li>
-                           </ul> -->
-                        </li>
+                        <li><a href="adminMemberListForm.action">회원관리</a></li>
                      </ul>
        
                   </div>
