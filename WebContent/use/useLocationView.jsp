@@ -175,38 +175,38 @@ ul.panel li{
 		});
 	</script>
 	<br>● 주소 및 연락처<br>
-	＊ 주소 : 서울시 강남구<br>
+	＊ 주소 : 서울시 강남구 서초4동 강남대로61길<br>
 	＊ 연락처 : 02) 012-3456<br><br>
 	● 교통 안내<br>
-	＊ 버스 : 1번타셈<br>
-	＊ 지하철 : 1호선 이용하삼<br><br>
+	＊ 버스 : 470번, 471번, 740번, 360번<br>
+	＊ 지하철 : 2호선<br><br>
 	● 주차 안내<br>
-	안됨
+	불가
 	
 
 				</li>
 				<li id="tab2">
-<img src="location.png" width="550" height="300"><br>
+<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png" width="550" height="200"><br>
 	<br>● 주소 및 연락처<br>
-	＊ 주소 : 서울시 강남구<br>
+	＊ 주소 : 서울시 강남구 역삼1동 논현로 93길<br>
 	＊ 연락처 : 02) 012-3456<br><br>
 	● 교통 안내<br>
-	＊ 버스 : 1번타셈<br>
-	＊ 지하철 : 1호선 이용하삼<br><br>
+	＊ 버스 : 146번, 	240번, 243번<br>
+	＊ 지하철 : 2호선<br><br>
 	● 주차 안내<br>
-	안됨
+	불가
 
 				</li>
 				<li id="tab3">
-<img src="location.png" width="550" height="300"><br>
+<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png" width="550" height="200"><br>
 	<br>● 주소 및 연락처<br>
-	＊ 주소 : 서울시 강남구<br>
+	＊ 주소 : 위치 : 서울시 서초구 서초3동 법원로2길<br>
 	＊ 연락처 : 02) 012-3456<br><br>
 	● 교통 안내<br>
-	＊ 버스 : 1번타셈<br>
-	＊ 지하철 : 1호선 이용하삼<br><br>
+	＊ 버스 : 340번, 341번, 342번<br>
+	＊ 지하철 : 2호선, 3호선<br><br>
 	● 주차 안내<br>
-	안됨		
+	불가		
 				</li>
 	</body>
 </html>
