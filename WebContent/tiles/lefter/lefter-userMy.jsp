@@ -24,8 +24,8 @@
 <ul>
 <li><a href="MyReservationListAction.action">예약목록</a></li>
 <li><a href="MyRentListAction.action">대여목록</a></li>
-<li><a href=".action">회원정보</a></li>
-<li><a href=".action">회원정보수정?</a></li>
+<li><a href="myMemberModify.action">회원정보수정</a></li>
+<li><a href="joinDeleteForm.action">회원탈퇴</a></li>
 </ul>
 </div>
 </body>

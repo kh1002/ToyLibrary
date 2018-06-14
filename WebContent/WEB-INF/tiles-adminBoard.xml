@@ -37,7 +37,7 @@
 	</definition>	
 	
 	<definition name="faqViewAction" extends="adminBoard">
-		<put-attribute name="title-admin" value="자주묻는질문" />
+		<put-attribute name="title-admin" value="자주묻는질문 상세보기" />
 		<put-attribute name="body-admin" value="/admin/Faq/faqView.jsp" />
 	</definition>
 	
@@ -53,7 +53,7 @@
 	</definition>	
 	
 	<definition name="eventViewAction" extends="adminBoard">
-		<put-attribute name="title-admin" value="행사목록" />
+		<put-attribute name="title-admin" value="행사목록 상세보기" />
 		<put-attribute name="body-admin" value="/admin/Event/eventView.jsp" />
 	</definition>	
 
@@ -64,9 +64,19 @@
 	
 	<!-- 관리자 타일즈 고객문의 --> <!-- 여기는 지금 오류가 난다 -->
 	<definition name="qnaListAction" extends="adminBoard">
-		<put-attribute name="title-admin" value="행사목록" />
+		<put-attribute name="title-admin" value="문의게시판" />
 		<put-attribute name="body-admin" value="/admin/Qna/qnaList.jsp" />
 	</definition>	
+	
+	<definition name="qnaViewAction" extends="adminBoard">
+		<put-attribute name="title-admin" value="문의게시판 상세보기" />
+		<put-attribute name="body-admin" value="/admin/Qna/qnaView.jsp" />
+	</definition>	
+	
+	<definition name="qnaWriteForm" extends="adminBoard">
+		<put-attribute name="title-admin" value="문의게시판 답변하기" />
+		<put-attribute name="body-admin" value="/admin/Qna/qnaWrite.jsp" />
+	</definition>			
 	
 	<!-- 관리자 타일즈 이용후기 -->
 	<definition name="reviewListAction" extends="adminBoard">
@@ -75,7 +85,7 @@
 	</definition>	
 	
 	<definition name="reviewViewAction" extends="adminBoard">
-		<put-attribute name="title-admin" value="이용후기" />
+		<put-attribute name="title-admin" value="이용후기 상세보기" />
 		<put-attribute name="body-admin" value="/admin/Review/reviewView.jsp" />
 	</definition>	
 	

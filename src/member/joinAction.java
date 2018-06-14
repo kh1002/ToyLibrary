@@ -92,6 +92,23 @@ public class joinAction extends ActionSupport implements SessionAware {
 		}
 	}
 	
+	public String modifyForm() throws Exception {
+		
+		paramClass = new MemberVO();
+		resultClass = new MemberVO();
+		
+		paramClass.setMember_id(session.get("member_id").toString());
+		
+		System.out.println(member_id);
+		System.out.println("member_id");
+		
+		resultClass = (MemberVO) sqlMapper.queryForObject("member.modifySelectOne", paramClass);
+		
+		
+		return SUCCESS;
+	}
+	
+	
 	public String modify() throws Exception {
 		
 		paramClass = new MemberVO();

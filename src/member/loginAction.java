@@ -47,9 +47,10 @@ public class loginAction extends ActionSupport implements SessionAware{
 	public String logout() throws Exception {
 		if (session.get("member_id") != null) {
 			session.remove("member_id");
-			session.remove("passwd");
-			session.remove("member_admin_tp");
+			session.remove("member_pw");
+			
 		}
+		System.out.println("세션 삭제");
 		return SUCCESS;
 	}
 	
@@ -60,13 +61,15 @@ public class loginAction extends ActionSupport implements SessionAware{
 		boolean result = loginChk(member_id, member_pw);
 		
 		if (result) {
-			session.put("member_id", member_id);
-			session.put("member_pw",member_pw );
 			
-			if(session.get("member_id").equals("admin1") || session.get("member_id").equals("admin2") || session.get("member_id").equals("admin3"))
-			{
-				return INPUT;
-			}
+			
+			
+			session.put("member_id", member_id);
+			System.out.println("세션id");
+			System.out.println(member_id);
+			session.put("member_pw",member_pw );
+			System.out.println("세션pw");
+			System.out.println(member_pw);
 			return SUCCESS; //로그인 성공 했을때
 		} else {
 			return LOGIN; //로그인 실패 했을때

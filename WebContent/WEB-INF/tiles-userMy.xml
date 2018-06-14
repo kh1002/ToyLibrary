@@ -24,4 +24,16 @@
 		<put-attribute name="body" value="/my/MyRentList.jsp" />
 	</definition>	
 	
+	<!-- 마이페이지 회원정보수정 -->
+	<definition name="myMemberModify" extends="userMy">
+		<put-attribute name="title" value="회원정보수정" />
+		<put-attribute name="body" value="/member/join_modify.jsp" />
+	</definition>	
+	
+	<!-- 마이페이지 회원탈퇴 -->
+	<definition name="joinDeleteForm" extends="userMy">
+		<put-attribute name="title" value="회원탈퇴" />
+		<put-attribute name="body" value="/member/join_delete.jsp" />
+	</definition>		
+	
 </tiles-definitions>

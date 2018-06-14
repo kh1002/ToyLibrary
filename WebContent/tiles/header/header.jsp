@@ -106,7 +106,6 @@
                         </tr>
                      </table>
                      <ul>
-                       <!--  <li><a href="mainAction.action" class="selected">Home</a></li> -->
                         <li><a href="useIntroView.action">이용 안내</a>
                            <ul>
                               <li><a href="useIntroView.action">소개</a></li>
@@ -125,9 +124,9 @@
                         <li><a href="userNoticeListAction.action">커뮤니티</a>
                            <ul>
                               <li><a href="userNoticeListAction.action">공지사항</a></li>
-                              <li><a href="qnaListAction.action">QNA</a></li>
-                              <li><a href="bookSearch.action?searchNum=0&searchKeyword=">고객 문의</a></li>
-                              <li><a href="bookSearch.action?searchNum=0&searchKeyword=">자주 묻는 질문</a></li> 
+                              <li><a href="userQnaListAction.action">QNA</a></li>
+                              <li><a href="userReviewListAction.action">이용후기</a></li>
+                              <li><a href="userFaqListAction.action">자주 묻는 질문</a></li> 
                            </ul></li>
                      </ul>
                   </div>

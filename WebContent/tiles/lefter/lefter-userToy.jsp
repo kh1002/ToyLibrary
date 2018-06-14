@@ -23,7 +23,7 @@
 <div class="leftMenu">
 <ul>
 <li><a href="ToyListAction.action">장난감목록</a></li>
-<li><a href=".action">장난감예약</a></li>
+<li><a href="MyReservationListAction.action">장난감예약</a></li>
 </ul>
 </div>
 </body>

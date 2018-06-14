@@ -22,7 +22,7 @@ $(function(){
 		</script>
 		<table>
 			<tr><center><h1>찾아오시는 길</h1></center></tr>
-		</table>
+		</table>	
 		<style type="text/css">
 *{
 	margin:0;

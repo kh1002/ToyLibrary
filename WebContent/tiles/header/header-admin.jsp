@@ -33,7 +33,7 @@
             <!-- Begin Header -->
             <div id="header">
                <div id="logo">
-                  <a href="mainAction.action"><img src="./style/image/logo.png" alt="logo img" width="200" height="60" /></a>
+                  <a href="mainAction2.action"><img src="./style/image/logo.png" alt="logo img" width="200" height="60" /></a>
                </div>
                <!-- Logo -->
                <!-- Begin Menu -->

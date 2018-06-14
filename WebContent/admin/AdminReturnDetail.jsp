@@ -111,7 +111,7 @@
 		<td>
 			<input type="submit" value="확인">
 			&nbsp;&nbsp;
-			<input type="" value="취소">
+			<input type="button" value="취소" onclick="javascript:window.location='./AdminReturnListAction.action'">	
 		</td>
 	</tr>
 </table>

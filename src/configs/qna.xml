@@ -15,7 +15,8 @@
 		</action>
 		<!-- 게시판 글쓰기 액션 -->
 		<action name="qnaWriteForm" class="board.Qna.qnaWriteAction" method="form">
-			<result>/admin/Qna/qnaWrite.jsp</result>
+			<!-- <result>/admin/Qna/qnaWrite.jsp</result> -->
+			<result type="tiles">qnaWriteForm</result>
 		</action>
 
 		<action name="qnaWriteAction" class="board.Qna.qnaWriteAction">
@@ -34,7 +35,8 @@
 		</action>
 		<!-- 게시판 글 읽기 액션 -->
 		<action name="qnaViewAction" class="board.Qna.qnaViewAction">
-			<result>/admin/Qna/qnaView.jsp</result>
+			<!-- <result>/admin/Qna/qnaView.jsp</result> -->
+			<result type="tiles">qnaViewAction</result>
 		</action>
 
 		<!-- 게시판 수정 액션 -->

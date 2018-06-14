@@ -61,7 +61,7 @@
 				</s:url>
 			
 			
-				<tr bgcolor="#ffffff" align="center">
+				<tr bgcolor="#ffffff" align="left">
 					<%-- <td><s:property value="toy_id"/></td>	 --%>
 					<%-- <td><s:property value="toy_image"/></td> --%>
 					<!-- <td><img src="./upload/" width="130" height="130" border="0"/></td> -->

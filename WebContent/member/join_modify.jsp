@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <title>회원정보수정</title>
 <script language="javascript">
 
 function check() {
-   var f = document.joinMain;
+   var f = document.joinModify;
    
    if(f.member_id.value == ""){
       alert("아이디를 입력해주십시오.");
@@ -119,14 +118,21 @@ function pwCheck(){
 	   }
 	}
 
-function openZipCheck() {   
-	   
-	   var zipUrl = 'http://localhost:8080/testToyLibrary/zipCheck.action';
-	   window.open(
-	         zipUrl, 
-	         "confirm",
-	         "toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=no, width=603, height=236");
+function postcode() {
+    
+    new daum.Postcode({
+    	oncomplete: function(data) {
+			
+    		
+    		document.getElementById("member_zipcode").value = data.postcode;
+    		document.getElementById("member_addr1").value = data.address;
+    		document.getElementById("member_addr2").focus();
+   
+        }
+    }).open();
+
 }
+
 
 function openIdCheck(){
 
@@ -155,7 +161,7 @@ function openIdCheck(){
 					<td width="23" height="30">아이디</td>
 					<td width="5" height="30">:</td>
 					<td width="200" height="30">
-						<input type="text" name="member_id" id="member_id" size="13" value="${mresultClass.member_id }"/>
+						<input type="text" name="member_id" id="member_id" size="13" value="${resultClass.member_id }"/>
 					</td>
 					<td width="1" height="30" align="reft">
 						<input type="button" name="idCheck" value="중복확인" onClick="javascript:openIdCheck(this.form)" class="btn_small3"/>
@@ -179,46 +185,46 @@ function openIdCheck(){
 					<td width="40" height="30">이름</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
-						<input type="text" name="member_name" size="14" maxlength="20" value="${mresultClass.member_name }"/>
+						<input type="text" name="member_name" size="14" maxlength="20" value="${resultClass.member_name }"/>
 					</td>
 				</tr>
 				<tr>
 					<td width="40" height="30">휴대폰번호</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
-						<input type="text" name="member_phone" size="4" maxlength="3">
+						<input type="text" name="member_phone" size="14" maxlength="11" value="${resultClass.member_phone }"/>
 					</td>
 				</tr>
 				<tr>
 					<td width="40" height="30">주민번호</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
-						<input type="text" name="member_jumin1" size="8" maxlength="6" value="${mresultClass.member_jumin1 }"/>&nbsp;&nbsp;-&nbsp;&nbsp;
-						<input type="text" name="member_jumin2" size="8" maxlength="7" value="${mresultClass.member_jumin2 }"/>
+						<input type="text" name="member_jumin1" size="8" maxlength="6" value="${resultClass.member_jumin1 }"/>&nbsp;&nbsp;-&nbsp;&nbsp;
+						<input type="text" name="member_jumin2" size="8" maxlength="7" value="${resultClass.member_jumin2 }"/>
 					</td>
 				</tr>
 				<tr>
 					<td width="40" height="30">이메일</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
-						<input type="text" name="member_mail" size="14" maxlength="20" value="${mresultClass.member_mail }"/>
+						<input type="text" name="member_mail" size="14" maxlength="20" value="${resultClass.member_mail }"/>
 					</td>
 				</tr>
 				<tr>
 					<td width="40" height="30">우편번호</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
-						<input type="text" name="member_zipcode" size="7" value="${mresultClass.member_zipcode }" readonly/>
+						<input type="text" id="member_zipcode" name="member_zipcode" size="10" value="${resultClass.member_zipcode }" readonly/>
 					</td>
 					<td width="1" height="30" align="reft">
-						<input type="button" name="zipcode" value="우편번호찾기" onClick="javascript:openZipCheck(this.form)" class="btn_small3"/>
+						<input type="button" value="우편번호찾기" class="btn btn-primary" onClick="javascript:postcode()"/>
 					</td>
 				</tr>
 				<tr>
 					<td width="23" height="30">주소</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
-						<input type="text" name="member_addr1" size="13" maxlength="20" value="${mresultClass.member_addr1 }"/>
+						<input type="text" id="member_addr1" name="member_addr1" size="35" maxlength="35" value="${resultClass.member_addr1 }"/>
 					</td>
 				
 				</tr>
@@ -226,7 +232,7 @@ function openIdCheck(){
 					<td width="40" height="30">상세주소</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
-						<input type="text" name="member_addr2" size="14" maxlength="20" value="${mresultClass.member_addr2 }"/>
+						<input type="text" id="member_addr2" name="member_addr2" size="35" maxlength="35" value="${resultClass.member_addr2 }"/>
 					</td>
 				</tr>
 				<tr>
@@ -234,7 +240,7 @@ function openIdCheck(){
 				</tr>
 				<tr>
 					<td height="30" colspan="6" align="right">
-						<input type="button" value="취소" onclick="javascript:window.location='./MemberJoin.me'">	
+						<input type="button" value="취소" onclick="javascript:window.location='mainAction.action'">	
 						<input type="submit" value="정보수정" onClick="return check();">
 					</td>
 			</tr>

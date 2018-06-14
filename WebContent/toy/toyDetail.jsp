@@ -111,7 +111,14 @@
 	<!-- 이부분에서 if문으로 상태값을 판별하여 예약중과 대여중일때에는 링크를 막아야 함. -->
 	
 	<td width="120" scope="col" style="text-align:center">
-		<s:a href="%{viewURL}"><s:property value="resultClass.state_code"/></s:a>
+	<!-- 대여가능한 상태면 링크가 활성화된다. -->
+		<s:if test="(resultClass.state_code).equals('대여가능')">
+			<s:a href="%{viewURL}"><s:property value="resultClass.state_code"/></s:a>
+		</s:if>
+	<!-- 대여블가한 상태면 링크가 비활성화된다.(예약중, 대여중) -->	
+		<s:else>
+			<s:property value="resultClass.state_code"/>
+		</s:else>
 	</td>
 	<!-- 이부분까지 -->
 	

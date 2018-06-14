@@ -61,12 +61,17 @@
 	
 	<update id="joinModify" parameterClass="member">
 		UPDATE TOY_MEMBER 
-		SET MEMBER_PW = #member_pw#, MEMBER_NAME = #member_name#,
-		  MEMBER_JUMIN1 = #member_jumin1#, MEMBER_JUMIN2 = #member_jumin2#,
-		  MEMBER_ZIPCODE = #member_zipcode#, MEMBER_ADDR1 = #member_addr1#, MEMBER_ADDR2 = #member_addr2#,
-		  MEMBER_PHONE = #member_phone#, MEMBER_MAIL = #member_mail#, 
-		WHERE MEMBER_ID = #member_id#
+		SET MEMBER_PW=#member_pw#, MEMBER_NAME=#member_name#, 
+		  MEMBER_JUMIN1=#member_jumin1#, MEMBER_JUMIN2 =#member_jumin2#, 
+		  MEMBER_ZIPCODE=#member_zipcode#, MEMBER_ADDR1=#member_addr1#, MEMBER_ADDR2=#member_addr2#, 
+		  MEMBER_PHONE=#member_phone#, MEMBER_MAIL=#member_mail# 
+		WHERE MEMBER_ID=#member_id#
 	</update>
+	
+	<select id="modifySelectOne" resultMap="memberRes" parameterClass="member">
+		SELECT * FROM TOY_MEMBER
+		WHERE member_id = #member_id#			
+	</select>
 
 
 
