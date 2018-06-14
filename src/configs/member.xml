@@ -29,7 +29,12 @@
 		
 		<action name="login" class ="member.loginAction">
 			<result name ="success">/main.jsp</result>
+			<result name ="input">/adminMain.jsp</result>
 			<result name ="login">/member/login_main.jsp</result>
+		</action>
+		
+		<action name="logout" class ="member.loginAction" method="logout">
+			<result name ="success">/main.jsp</result>
 		</action>
 		
 		<action name="joinDelete" class="member.joinAction" method="delete">

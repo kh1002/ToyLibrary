@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -48,18 +49,8 @@
  					
                            <td align="right">
                            		<a href="mainAction2.action">home</a> 
-                           		<s:if test="${ session_id == null }">
-                                	 <a href="loginForm.action">로그인</a>
-                             	</s:if> 
-                             	 <s:else>
-	                                 <s:if test="${ session_admin_tp == 1 }">
-	                                    <a href="admin.action">관리자페이지</a>
-	                                 </s:if>
-	                                 <s:else>
-	                                    <a href="myPage.action">마이페이지</a>
-	                                 </s:else>
-	                                 <a href="logout.action">로그아웃 (${ session_id })</a>
-                              	</s:else>
+                           		<a href="admin.action">관리자페이지</a>
+	                          	<a href="logout.action">로그아웃 ${session.member_id}님</a>
                            </td>
 
                         </tr>

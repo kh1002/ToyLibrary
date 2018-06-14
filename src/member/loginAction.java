@@ -62,6 +62,11 @@ public class loginAction extends ActionSupport implements SessionAware{
 		if (result) {
 			session.put("member_id", member_id);
 			session.put("member_pw",member_pw );
+			
+			if(session.get("member_id").equals("admin1") || session.get("member_id").equals("admin2") || session.get("member_id").equals("admin3"))
+			{
+				return INPUT;
+			}
 			return SUCCESS; //로그인 성공 했을때
 		} else {
 			return LOGIN; //로그인 실패 했을때
