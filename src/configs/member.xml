@@ -9,7 +9,34 @@
 		<action name="joinModify" class="member.joinAction" method="modify">
 				<result>/member/join_modify.jsp</result>
 		</action>
+		
 				
+		<action name="joinMain" class="member.joinAction" method="form">
+				<result>/member/join_main.jsp</result>
+		</action>
+		
+		<action name="joinMainInsert" class="member.joinAction" method="execute">
+				<result>/member/login_main.jsp</result>
+		</action>
+		
+		<action name="idSearch" class="member.loginAction" method="form">
+				<result>/member/login_idsearch.jsp</result>
+		</action>
+		
+		<action name="pwSearch" class="member.loginAction" method="form">
+				<result>/member/login_pwsearch.jsp</result>
+		</action>
+		
+		<action name="login" class ="member.loginAction">
+			<result name ="success">/main.jsp</result>
+			<result name ="input">/adminMain.jsp</result>
+			<result name ="login">/member/login_main.jsp</result>
+		</action>
+		
+		<action name="logout" class ="member.loginAction" method="logout">
+			<result name ="success">/main.jsp</result>
+		</action>
+		
 		<action name="joinDelete" class="member.joinAction" method="delete">
 			<result name = "success">/member/join_main.jsp</result>
 			<result name = "error">/member/login_main.jsp</result>
@@ -23,47 +50,14 @@
 				<result>/member/join_idcheck.jsp</result>
 		</action>
 		
-	
-		
-		
-		
-		<action name="loginMain" class="member.loginAction" method="form">
-				<result name="success" type="tiles">memberLoginMain</result>
-		</action>
-		
-		<action name="idSearch" class="member.loginAction" method="form">
-				<result name="success" type="tiles">memberIdSearch</result>
-		</action>
-		
 		<action name="loginIdSearch" class="member.loginAction" method="idSearch">
-				<result name="success" type="tiles">memberIdSearchSuccess</result>
-				<result name="error" type="tiles">memberIdSearchErorr</result>
-		</action>
-		
-		<action name="pwSearch" class="member.loginAction" method="form">
-				<result name="success" type="tiles">memberPwSearch</result>
+				<result name="success">/member/login_idsearch_success.jsp</result>
+				<result name="error">/member/login_idsearch_error.jsp</result>
 		</action>
 		
 		<action name="loginPwSearch" class="member.loginAction" method="pwSearch">
-				<result name="success" type="tiles">memberPwSearchSuccess</result>
-				<result name="error" type="tiles">memberPwSearchErorr</result>
-		</action>
-		
-		<action name="joinMain" class="member.joinAction" method="form">
-				<result name="success" type="tiles">memberJoinMain</result>
-		</action>
-		
-		<action name="joinMainInsert" class="member.joinAction" method="execute">
-				<result name="success" type="tiles">memberJoinMainInsert</result>
-		</action>
-		
-		<action name="logoutMain" class="member.loginAction" method="logout">
-				<result name="success" type="tiles">memberLoginMain</result>
-		</action>
-		
-		<action name="login" class ="member.loginAction">
-			<result name ="success" type="tiles">main</result>
-			<result name ="login" type="tiles">memberLoginMain</result>
+				<result name="success">/member/login_pwsearch_success.jsp</result>
+				<result name="error">/member/login_pwsearch_error.jsp</result>
 		</action>
 		
 	</package>
