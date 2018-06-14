@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap namespace="adminMember">
+
+	<typeAlias alias="adminMember" type="admin.AdminMemberVO" />
+	
+	<resultMap id="adminMemberRes" class="adminMember">
+		<result property="member_id" column="member_id"/>
+		<result property="member_pw" column="member_pw"/>
+		<result property="member_name" column="member_name"/>
+		<result property="member_jumin1" column="member_jumin1"/>
+		<result property="member_jumin2" column="member_jumin2"/>
+		<result property="member_mail" column="member_mail"/>
+		<result property="member_phone" column="member_phone"/>
+		<result property="member_zipcode" column="member_zipcode"/>
+		<result property="member_addr1" column="member_addr1"/>
+		<result property="member_addr2" column="member_addr2"/>
+		<result property="member_join_date" column="member_join_date"/>
+	</resultMap>
+	
+	<sql id="adminMemberSelect-all">
+		SELECT * FROM TOY_MEMBER
+	</sql>
+
+	<sql id="adminMemberWhere-no">
+		where member_id=#member_id#
+	</sql>
+
+	<select id="adminMemberSelectAll" resultMap="adminMemberRes">
+		<include refid="adminMemberSelect-all"></include>
+		ORDER BY member_name ASC
+	</select>
+
+	<select id="adminMemberSelectOne" resultMap="adminMemberRes" parameterClass="String">
+		<include refid="adminMemberSelect-all" />
+		<include refid="adminMemberWhere-no" />
+	</select>
+	
+	<!-- 검색 -->
+	<select id="adminMemberSearchId" resultMap="adminMemberRes" parameterClass="string">
+		<include refid="adminMemberSelect-all" />
+		WHERE MEMBER_ID like #searchKeyword#
+		ORDER BY member_name ASC
+	</select>
+
+	<select id="adminMemberSearchName" resultMap="adminMemberRes" parameterClass="string">
+		<include refid="adminMemberSelect-all" />
+		WHERE MEMBER_NAME like #searchKeyword#
+		ORDER BY member_name ASC
+	</select>
+
+	<select id="adminMemberSearchDate" resultMap="adminMemberRes" parameterClass="string">
+		<include refid="adminMemberSelect-all" />
+		WHERE MEMBER_JOIN_DATE like #searchKeyword#
+		ORDER BY member_name ASC
+	</select>
+	
+	<delete id="adminMemberDeleteMember" parameterClass="adminMember">
+		DELETE FROM TOY_MEMBER
+		<include refid="adminMemberWhere-no" />
+	</delete>
+	
+</sqlMap>

@@ -105,7 +105,7 @@
                                  <s:else>
                                     <a href="MyReservationListAction.action">마이페이지</a>
                                  </s:else>
-                                 <a href="logout.action">로그아웃 (${ session_id })</a>
+                                 <a href="logoutMain.action">로그아웃 (${ session_id })</a>
                               </s:else>
                            </td>
                         </tr>

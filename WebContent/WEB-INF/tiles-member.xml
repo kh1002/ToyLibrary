@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="memberLoginMain" template="/tiles/layout.jsp">
+		<put-attribute name="title" value="로그인" />
+		<put-attribute name="header" value="/tiles/header/header.jsp" />
+		<put-attribute name="body" value="/member/login_main.jsp" />	
+		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+	</definition>	
+	
+	<definition name="memberIdSearch" extends="memberLoginMain">
+		<put-attribute name="body" value="/member/login_idsearch.jsp" />
+	</definition>
+	
+	<definition name="memberIdSearchSuccess" extends="memberLoginMain">
+		<put-attribute name="body" value="/member/login_idsearch_success.jsp" />
+	</definition>
+	
+	<definition name="memberIdSearchErorr" extends="memberLoginMain">
+		<put-attribute name="body" value="/member/login_idsearch_error.jsp" />
+	</definition>
+	
+	<definition name="memberPwSearch" extends="memberLoginMain">
+		<put-attribute name="body" value="/member/login_pwsearch.jsp" />
+	</definition>
+	
+	<definition name="memberPwSearchSuccess" extends="memberLoginMain">
+		<put-attribute name="body" value="/member/login_pwsearch_success.jsp" />
+	</definition>
+	
+	<definition name="memberPwSearchErorr" extends="memberLoginMain">
+		<put-attribute name="body" value="/member/login_pwsearch_error.jsp" />
+	</definition>
+	
+	<definition name="memberJoinMain" extends="memberLoginMain">
+		<put-attribute name="body" value="/member/join_main.jsp" />
+	</definition>
+	
+	<definition name="memberJoinMainInsert" extends="memberLoginMain">
+		<put-attribute name="body" value="/member/join_success.jsp" />
+	</definition>
+	
+</tiles-definitions>
