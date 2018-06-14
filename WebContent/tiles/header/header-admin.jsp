@@ -48,8 +48,7 @@
  							</td>
  					
                            <td align="right">
-                           		<a href="mainAction2.action">home</a> 
-                           		<a href="admin.action">관리자페이지</a>
+                           		<a href="mainAction2.action">home</a>
 	                          	<a href="logoutMain.action">로그아웃 ${session.member_id}님</a>
                            </td>
 
@@ -75,7 +74,7 @@
                            </ul> -->
                         </li>
                         
-                        <li><a href="introduce.action">회원관리</a>
+                        <li><a href="adminMemberListForm.action">회원관리</a>
                           <!--  <ul>
                               <li><a href="history.action">회원목록</a></li>
                            </ul> -->
