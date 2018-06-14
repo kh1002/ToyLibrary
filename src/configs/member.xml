@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.0.dtd">
 	
 <struts>
-	<package name="member" extends="struts-default">
+	<package name="member" extends="struts-default, tiles-default">
 		
 		<action name="joinModify" class="member.joinAction" method="modify">
 				<result>/member/join_modify.jsp</result>

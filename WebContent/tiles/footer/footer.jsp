@@ -51,10 +51,10 @@ $(function() {
       <!-- Begin Copyright -->
       <div id="copyright">
         <p><h5> 사업자등록번호 : 101-33-50485 &nbsp;&nbsp;&nbsp;통신판매업신고번호 : 제 2009-서울강남-33호&nbsp;&nbsp;&nbsp; <br>
-           공동대표 : 김민철 박노근 &nbsp;&nbsp;&nbsp; 대표전화 : 02-6901-3333 &nbsp;&nbsp;&nbsp; 개인정보책임자 : 안내
+           공동대표 : 윤가연 &nbsp;&nbsp;&nbsp; 대표전화 : 02-6901-3333 &nbsp;&nbsp;&nbsp; 개인정보책임자 : 안내
              &nbsp;&nbsp;&nbsp;<br>
-           주소 : 서울시 강남구 역삼동 33-33 삼삼빌딩 3층 SS LIBRARY &nbsp;&nbsp;&nbsp;<br> 
-             Copyright SSLIBRARY Corp. All right reserved.</h5></p>
+           주소 : 서울시 강남구 서초4동 강남대로61길 ToyLibrary &nbsp;&nbsp;&nbsp;<br> 
+             Copyright ToyLibrary Corp. All right reserved.</h5></p>
             <br><br>
       </div>
       <!-- End Copyright --> 

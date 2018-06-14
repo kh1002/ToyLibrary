@@ -81,17 +81,17 @@ ul.panel li{
 		
 		<table>
 		<tr>
-			<td> 위치 : 강남구 </td>
+			<td> 위치 : 서울시 강남구 서초4동 강남대로61길 </td>
 		</tr>
 		<tr>
-			<td> 면적 : 100평 </td>
+			<td> 면적 : 80평 </td>
 		</tr>
 		<tr>
-			<td> 수용 인원 : 50명 </td>
+			<td> 수용 인원 : 30명 </td>
 		</tr>
 		</table>		
 		
-		<img src="030100_07.gif">
+		<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\030100_07.gif" width="550" height="300">
 
 	
 
@@ -99,32 +99,32 @@ ul.panel li{
 				<li id="tab2">
 		<table>
 		<tr>
-			<td> 위치 : 강남구 </td>
+			<td> 위치 : 서울시 강남구 역삼1동 논현로 93길 </td>
 		</tr>
 		<tr>
-			<td> 면적 : 100평 </td>
+			<td> 면적 : 70평 </td>
 		</tr>
 		<tr>
-			<td> 수용 인원 : 50명 </td>
+			<td> 수용 인원 : 20명 </td>
 		</tr>
 		</table>		
 		
-		<img src="030100_07.gif">
+		<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\030100_07.gif" width="550" height="300">
 				</li>
 				<li id="tab3">
 				<table>
 		<tr>
-			<td> 위치 : 강남구 </td>
+			<td> 위치 : 서울시 서초구 서초3동 법원로2길 </td>
 		</tr>
 		<tr>
-			<td> 면적 : 100평 </td>
+			<td> 면적 : 90평 </td>
 		</tr>
 		<tr>
-			<td> 수용 인원 : 50명 </td>
+			<td> 수용 인원 : 30명 </td>
 		</tr>
 		</table>		
 		
-		<img src="030100_07.gif">
+		<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\030100_07.gif">
 				</li>
 	</body>
 </html>

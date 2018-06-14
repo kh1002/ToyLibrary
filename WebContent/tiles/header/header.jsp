@@ -99,8 +99,8 @@
                                  <a href="login.action">로그인</a>
                               </s:if> 
                               <s:else>
-                                 <a href="myPage.action">마이페이지</a>
-                                 <a href="logout.action">로그아웃 ${session.member_id}님</a>
+                                 <a href="MyReservationListAction.action">마이페이지</a>
+                                 <a href="logoutMain.action">로그아웃 ${session.member_id}님</a>
                               </s:else>
                            </td>
                         </tr>

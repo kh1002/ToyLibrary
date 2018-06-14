@@ -6,13 +6,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>스트럿츠2 게시판</title>
+<title>이용후기</title>
 </head>
 
 <body>
 	<table width="600" border="1">
 		<tr>
-			<td align="center"><h2>스트럿츠 게시판</h2></td>
+			<td align="center"><h2>이용후기</h2></td>
 		</tr>
 	</table>
 	

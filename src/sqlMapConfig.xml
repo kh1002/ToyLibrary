@@ -47,6 +47,7 @@
 	<sqlMap resource="/sql/userReviewSQL.xml"/>
 	
 		
+	<sqlMap resource="/sql/adminMemberSQL.xml"/>
 	
 	
 <!--	

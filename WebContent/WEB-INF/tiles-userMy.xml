@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="userMy" template="/tiles/layout-left.jsp">
+		<put-attribute name="title" value="내예약목록" />
+		<put-attribute name="header" value="/tiles/header/header.jsp" />
+		<put-attribute name="lefter" value="/tiles/lefter/lefter-userMy.jsp" />
+		<put-attribute name="body" value="/toy/toyList.jsp" />
+		<put-attribute name="footer" value="/tiles/footer/footer.jsp" />
+	</definition>
+	
+	<!-- 마이페이지 예약목록 타일즈 -->
+	<definition name="MyReservationListAction" extends="userMy">
+		<put-attribute name="title" value="내 예약목록" />
+		<put-attribute name="body" value="/my/MyReservationList.jsp" />
+	</definition>	
+	
+	<definition name="MyRentListAction" extends="userMy">
+		<put-attribute name="title" value="내 대여목록" />
+		<put-attribute name="body" value="/my/MyRentList.jsp" />
+	</definition>	
+	
+</tiles-definitions>
