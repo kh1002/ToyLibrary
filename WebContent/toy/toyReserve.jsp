@@ -66,7 +66,7 @@
 				<td>
 					<%-- <s:textfield name="member_id" theme="simple" value="%{ZresultClass.zizum_no}" cssStyle="width:100px" maxlength="20"/>
 				 --%>	
-					<s:property value="ZresultClass.zizum_no"/>
+					<s:property value="%{mresultClass.member_id}"/>
 						
 				</td>
 			</tr>
@@ -74,7 +74,7 @@
 			<tr>
 				<td>대여자명</td>
 						<!-- 	<td>상세한 설명을 db에서 어떻게 받아와야할까</td> -->
-				<td><s:property value="ZresultClass.zizum_name"/></td> 
+				<td><s:property value="%{mresultClass.member_name}"/></td> 
 			</tr>
 		<!-- 대여지점 -->
 			<tr>
