@@ -53,7 +53,7 @@
 		
 		<select id="myreservationInfoAll" resultMap="myReservationRes">
 			<include refid="myrentselect-all"/>
-			<include refid="myrentwhere-no"/> and p.state_code=#state_code#
+			<include refid="myrentwhere-no"/> and p.state_code=#state_code# and m.member_id=#member_id# 
 			order by reserve_date asc
 		</select>
 		

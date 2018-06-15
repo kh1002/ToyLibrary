@@ -6,6 +6,9 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 import java.util.*;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import java.io.Reader;
 import java.io.IOException;
 
@@ -14,13 +17,30 @@ import member.MemberVO;
 import toy.toyReserveVO;
 import my.MyRentVO;
 
-public class MyReservationListAction extends ActionSupport {
+
+import member.MemberVO;
+import org.apache.struts2.interceptor.SessionAware;
+import java.sql.Timestamp;
+
+public class MyReservationListAction extends ActionSupport implements SessionAware {
 	
 	public static Reader reader;
+	
+
+
 	public static SqlMapClient sqlMapper;
 	
+	private  MyRentVO mparamClass = new MyRentVO();
+	private  MyRentVO mresultClass = new MyRentVO();
+	
+	private String member_id;
+	private Map session;
 	
 	
+	
+
+
+
 /*	private int currentPage = 1; //현재 페이지
 */	private int totalCount; 	//총 게시물의 수
 /*	private int blockCount = 5; //한 페이지의 게시물의 수
@@ -42,10 +62,12 @@ public class MyReservationListAction extends ActionSupport {
 
 	public String execute() throws Exception {
 		
+		mparamClass.setState_code("예약중");		
+		mparamClass.setMember_id(session.get("member_id").toString());
 		
 		//모든 글을 가져와서 list에 넣는다
-		MyReservationlist = sqlMapper.queryForList("myrentInfoAll","예약중");
-		
+		MyReservationlist = sqlMapper.queryForList("myreservationInfoAll", mparamClass);
+					
 				
 		totalCount = MyReservationlist.size(); //전체 글 갯수를 구함
 				
@@ -95,7 +117,42 @@ public class MyReservationListAction extends ActionSupport {
 	}
 
 
+	public MyRentVO getMparamClass() {
+		return mparamClass;
+	}
 
+
+	public void setMparamClass(MyRentVO mparamClass) {
+		this.mparamClass = mparamClass;
+	}
+
+
+	public MyRentVO getMresultClass() {
+		return mresultClass;
+	}
+
+
+	public void setMresultClass(MyRentVO mresultClass) {
+		this.mresultClass = mresultClass;
+	}
+
+
+	public String getMember_id() {
+		return member_id;
+	}
+
+
+	public void setMember_id(String member_id) {
+		this.member_id = member_id;
+	}
+	public Map getSession() {
+		return session;
+	}
+
+
+	public void setSession(Map session) {
+		this.session = session;
+	}
 
 
 
