@@ -94,10 +94,50 @@ public class ToyReserveAction extends ActionSupport implements SessionAware {
 		System.out.println(member_id);
 		System.out.println("member_id");
 		
+		System.out.println("TZ"+TresultClass.getZizum_no());
+		System.out.println("ZZ"+ZresultClass.getZizum_no());
+		
 		mresultClass = (MemberVO) sqlMapper.queryForObject("member.boardSelectOne", mparamClass);
 		
 		return SUCCESS;
 	}
+	
+	
+	public String execute() throws Exception {
+			
+			System.out.println("exe이 수행?");
+			
+			paramClass = new toyReserveVO();
+			resultClass = new toyReserveVO();
+			
+			paramClass.setToy_id(getToy_id());
+			paramClass.setMember_id("11");
+			paramClass.setReserve_zizum(getZizum_no());
+			paramClass.setReserve_date(today.getTime());
+			paramClass.setReturn_date(today.getTime());
+			
+	/*		테스트 다 해서 지워도 됨
+			System.out.println("토이아이디 : "+paramClass.getToy_id());
+			System.out.println("리턴지점 : "+paramClass.getReserve_zizum());
+			System.out.println("멤버아이디 : "+paramClass.getMember_id());
+			System.out.println("예약일 : "+paramClass.getReserve_date());
+			System.out.println("대여가능일 : "+paramClass.getReturn_date());*/
+			
+				
+			sqlMapper.insert("insertReserve", paramClass);
+			
+			TparamClass = new toyProductVO();
+			TresultClass = new toyProductVO();
+			
+			TparamClass.setToy_id(getToy_id());
+			TparamClass.setState_code("예약중");
+			
+			sqlMapper.update("updateToyState",TparamClass);
+	
+			return SUCCESS;
+	
+	}	
+	
 	
 	public MemberVO getMparamClass() {
 		return mparamClass;
@@ -202,44 +242,6 @@ public class ToyReserveAction extends ActionSupport implements SessionAware {
 	public void setMember_join_date(Timestamp member_join_date) {
 		this.member_join_date = member_join_date;
 	}
-
-	public String execute() throws Exception {
-		
-		System.out.println("exe이 수행?");
-		
-		paramClass = new toyReserveVO();
-		resultClass = new toyReserveVO();
-		
-		paramClass.setToy_id(getToy_id());
-		paramClass.setMember_id("11");
-		paramClass.setReserve_zizum(getZizum_no());
-		paramClass.setReserve_date(today.getTime());
-		paramClass.setReturn_date(today.getTime());
-		
-/*		테스트 다 해서 지워도 됨
-		System.out.println("토이아이디 : "+paramClass.getToy_id());
-		System.out.println("리턴지점 : "+paramClass.getReserve_zizum());
-		System.out.println("멤버아이디 : "+paramClass.getMember_id());
-		System.out.println("예약일 : "+paramClass.getReserve_date());
-		System.out.println("대여가능일 : "+paramClass.getReturn_date());*/
-		
-			
-		sqlMapper.insert("insertReserve", paramClass);
-		
-		TparamClass = new toyProductVO();
-		TresultClass = new toyProductVO();
-		
-		TparamClass.setToy_id(getToy_id());
-		TparamClass.setState_code("예약중");
-		
-		sqlMapper.update("updateToyState",TparamClass);
-		
-		
-		
-		return SUCCESS;
-
-}
-
 
 	public int getReserve_no() {
 		return reserve_no;
