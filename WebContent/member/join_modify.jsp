@@ -90,7 +90,6 @@ function check() {
 	      alert("주소를 입력해주세요.");
 	      f.member_addr1.focus();
 	      return false;
-	      
 	   }
    
    else if (f.member_addr2.value == ""){
@@ -158,45 +157,42 @@ function openIdCheck(){
 			<tr>
 			<form name="joinModify" action="joinModify.action" method="post"  onsubmit="return check()">
 				<tr>
-					<td width="23" height="30">아이디</td>
+					<td width="100" height="30">아이디</td>
 					<td width="5" height="30">:</td>
 					<td width="200" height="30">
-						<input type="text" name="member_id" id="member_id" size="13" value="${resultClass.member_id }"/>
-					</td>
-					<td width="1" height="30" align="reft">
-						<input type="button" name="idCheck" value="중복확인" onClick="javascript:openIdCheck(this.form)" class="btn_small3"/>
+						<input type="text" name="member_id" id="member_id" size="13" value="${resultClass.member_id }" readonly/>
 					</td>
 				</tr>
 				<tr>
-					<td width="20" height="30">비밀번호</td>
+					<td width="100" height="30">비밀번호</td>
 					<td width="5" height="30">:</td>
 					<td width="103" height="30">
 						<input type=password name="member_pw" id="member_pw" size="14" maxlength="20">
 					</td>
 				</tr>
 				<tr>
-					<td width="40" height="30">비밀번호확인</td>
+					<td width="100" height="30">비밀번호확인</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
 						<input type=password name="pwcheck" id="pwcheck" size="14" maxlength="20" onkeyup="pwCheck();"/>&nbsp;<span id="passwordCheckText"></span>
 					</td>
 				</tr>
 				<tr>
-					<td width="40" height="30">이름</td>
+					<td width="100" height="30">이름</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
 						<input type="text" name="member_name" size="14" maxlength="20" value="${resultClass.member_name }"/>
 					</td>
 				</tr>
 				<tr>
-					<td width="40" height="30">휴대폰번호</td>
+					<td width="100" height="30">휴대폰번호</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
 						<input type="text" name="member_phone" size="14" maxlength="11" value="${resultClass.member_phone }"/>
 					</td>
 				</tr>
 				<tr>
-					<td width="40" height="30">주민번호</td>
+					<td width="100" height="30">주민번호</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
 						<input type="text" name="member_jumin1" size="8" maxlength="6" value="${resultClass.member_jumin1 }"/>&nbsp;&nbsp;-&nbsp;&nbsp;
@@ -204,14 +200,14 @@ function openIdCheck(){
 					</td>
 				</tr>
 				<tr>
-					<td width="40" height="30">이메일</td>
+					<td width="100" height="30">이메일</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
 						<input type="text" name="member_mail" size="14" maxlength="20" value="${resultClass.member_mail }"/>
 					</td>
 				</tr>
 				<tr>
-					<td width="40" height="30">우편번호</td>
+					<td width="100" height="30">우편번호</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
 						<input type="text" id="member_zipcode" name="member_zipcode" size="10" value="${resultClass.member_zipcode }" readonly/>
@@ -221,7 +217,7 @@ function openIdCheck(){
 					</td>
 				</tr>
 				<tr>
-					<td width="23" height="30">주소</td>
+					<td width="100" height="30">주소</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
 						<input type="text" id="member_addr1" name="member_addr1" size="35" maxlength="35" value="${resultClass.member_addr1 }"/>
@@ -229,18 +225,15 @@ function openIdCheck(){
 				
 				</tr>
 				<tr>
-					<td width="40" height="30">상세주소</td>
+					<td width="100" height="30">상세주소</td>
 					<td width="5" height="30">:</td>
 					<td width="120" height="30">
 						<input type="text" id="member_addr2" name="member_addr2" size="35" maxlength="35" value="${resultClass.member_addr2 }"/>
 					</td>
 				</tr>
 				<tr>
-					<td height="200" align="center" colspan="4">이용약관</td>
-				</tr>
-				<tr>
 					<td height="30" colspan="6" align="right">
-						<input type="button" value="취소" onclick="javascript:window.location='mainAction.action'">	
+						<input type="button" value="취소" onclick="javascript:window.location='MyReservationListAction.action'">	
 						<input type="submit" value="정보수정" onClick="return check();">
 					</td>
 			</tr>

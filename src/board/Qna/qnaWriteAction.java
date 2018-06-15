@@ -78,6 +78,7 @@ public class qnaWriteAction extends ActionSupport{
 		resultClass = new qnaVO();
 		
 		
+		
 		if(qna_ref == 0)
 		{
 			paramClass.setQna_re_step(0);
@@ -109,7 +110,6 @@ public class qnaWriteAction extends ActionSupport{
 			sqlMapper.insert("Qna-insert", paramClass);
 		else
 			sqlMapper.insert("Qna-insertReply", paramClass);
-		
 		
 
 		return SUCCESS;

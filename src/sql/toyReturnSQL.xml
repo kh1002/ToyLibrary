@@ -70,9 +70,10 @@
 		<!-- 예약에서 대여, 대여에서 반납으로 상태코드를 바꾸는 업데이트문 -->
 		
 		<update id="updateReturnState" parameterClass="toyReturnInfo">
-			update toy_product set state_code = #state_code#
+			update toy_product set state_code = #state_code#, zizum_no = #zizum_no#
 			where toy_id = #toy_id#
 		</update>
+		
 		
 		
 		<!-- delete 쿼리문 정의 -->

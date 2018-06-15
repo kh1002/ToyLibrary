@@ -28,8 +28,8 @@ $(function(){
 	margin:0;
 	padding:0;
 }
-#container{
-	width:600px;
+#containContent{
+	width:1040px;
 	margin:30px auto;
 }
 ul.tab{
@@ -70,7 +70,7 @@ ul.panel li{
 		</style>
 	</head>
 	<body>
-		<div id="container">
+		<div id="containerContent">
 			<ul class="tab">
 				<li><a href="#tab1" class="selected">강남점</a></li>
 				<li><a href="#tab2">역삼점</a></li>
@@ -79,52 +79,59 @@ ul.panel li{
 			<ul class="panel">
 				<li id="tab1">
 		
-		<table>
-		<tr>
-			<td> 위치 : 서울시 강남구 서초4동 강남대로61길 </td>
-		</tr>
-		<tr>
-			<td> 면적 : 80평 </td>
-		</tr>
-		<tr>
-			<td> 수용 인원 : 30명 </td>
-		</tr>
-		</table>		
-		
-		<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\030100_07.gif" width="550" height="300">
-
+					<table>
+						<tr>
+							<td> 위치 : 서울시 강남구 서초4동 강남대로61길 </td>
+						</tr>
+						<tr>
+							<td> 면적 : 80평 </td>
+						</tr>
+						<tr>
+							<td> 수용 인원 : 30명 </td>
+						</tr>
+							
+						<img src="/ToyLibrary/use/030100_07.gif" width="550" height="300">
 	
+					</table>
 
 				</li>
 				<li id="tab2">
-		<table>
-		<tr>
-			<td> 위치 : 서울시 강남구 역삼1동 논현로 93길 </td>
-		</tr>
-		<tr>
-			<td> 면적 : 70평 </td>
-		</tr>
-		<tr>
-			<td> 수용 인원 : 20명 </td>
-		</tr>
-		</table>		
-		
-		<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\030100_07.gif" width="550" height="300">
+					<table>
+						<tr>
+							<td> 위치 : 서울시 강남구 역삼1동 논현로 93길 </td>
+						</tr>
+						<tr>
+							<td> 면적 : 70평 </td>
+						</tr>
+						<tr>
+							<td> 수용 인원 : 20명 </td>
+						</tr>
+					
+						<img src="/ToyLibrary/use/030100_07.gif" width="550" height="300">
+					</table>	
 				</li>
+				
+				
 				<li id="tab3">
 				<table>
-		<tr>
-			<td> 위치 : 서울시 서초구 서초3동 법원로2길 </td>
-		</tr>
-		<tr>
-			<td> 면적 : 90평 </td>
-		</tr>
-		<tr>
-			<td> 수용 인원 : 30명 </td>
-		</tr>
-		</table>		
-		
-		<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\030100_07.gif">
+					<tr>
+						<td> 위치 : 서울시 서초구 서초3동 법원로2길 </td>
+					</tr>
+					<tr>
+						<td> 면적 : 90평 </td>
+					</tr>
+					<tr>
+						<td> 수용 인원 : 30명 </td>
+					</tr>
+						
+					<img src="/ToyLibrary/use/030100_07.gif" width="550" height="300">
+				</table>
 				</li>
+				
+		</ul>
+<!-- 		</div> -->
+		
+			
+				
 	</body>
 </html>
