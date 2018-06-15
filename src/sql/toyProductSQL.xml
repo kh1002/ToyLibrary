@@ -108,7 +108,7 @@
 	<!-- insert 쿼리문 정의 -->
 		<insert id="insertToy" parameterClass="admin">
 			insert into toy_product(toy_id, toy_name, toy_detail, toy_gusung, toy_age, zizum_no, original_zizum, state_code, toy_reg_date)
-			values(toy_product_no.NEXTVAL,#toy_name#,#toy_detail#, #toy_gusung#,#toy_age#, 1,1, #state_code#, #toy_reg_date#)
+			values(toy_product_no.NEXTVAL,#toy_name#,#toy_detail#, #toy_gusung#,#toy_age#, #zizum_no#, #original_zizum#, #state_code#, #toy_reg_date#)
 		</insert>
 	
 

@@ -82,7 +82,7 @@
 					<table>
 						<tr>
 							<td width="170">
-								이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;름 <s:textfield name="creview_name" theme="simple" value="" maxlength="20" /><br>
+								이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;름 <s:textfield name="creview_name" theme="simple" value="관리자" maxlength="20" /><br>
 								비밀번호 <s:textfield name="creview_password" theme="simple" value="" maxlength="20" />
 							</td>
 							<s:hidden name="review_no" value="%{resultClass.review_no}" />
