@@ -38,14 +38,14 @@ function check() {
 			<tr>
 			<form name="joinDelete" id="joinform" method="post" onsubmit="return check()">
 				<tr>
-					<td width="23" height="30">아이디</td>
+					<td width="100" height="30">아이디</td>
 					<td width="5" height="30">:</td>
 					<td width="103" height="30" colspan="3">
 						<input type="text" name="member_id" id="member_id" size="13" maxlength="20">
 					</td>
 				</tr>
 				<tr>
-					<td width="23" height="30">비밀번호</td>
+					<td width="100" height="30">비밀번호</td>
 					<td width="5" height="30">:</td>
 					<td width="103" height="30" colspan="3">
 						<input type="text" name="member_pw" id="member_pw" size="13" maxlength="20">
@@ -53,7 +53,7 @@ function check() {
 				</tr>
 				<tr>
 					<td height="30" colspan="6" align="right">	
-					<input type="button" value="정보수정" onClick="javascript:location.href='joinModify.action';">
+						<input type="button" value="취소" onClick="javascript:location.href='joinModify.action';">
 						<input type="submit" value="회원탈퇴" onClick="return check();">
 					</td>
 			</tr>

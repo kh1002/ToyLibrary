@@ -314,7 +314,13 @@ function openIdCheck(){
 						 
 					</textarea>
 				</td>
-			</tr>			
+			</tr>
+			<tr>
+				<td align="right">
+					<input type="checkbox"> 개인정보 수집 및 이용에 동의합니다. 
+				</td>
+				
+			</tr>
 		</table>	
 		
 		

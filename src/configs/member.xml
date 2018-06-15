@@ -7,7 +7,8 @@
 	<package name="member" extends="struts-default, tiles-default">
 		
 	 	<action name="joinModify" class="member.joinAction" method="modify">
-				<result>/member/join_modify.jsp</result>
+				<!-- <result>/member/join_modify.jsp</result> -->
+				<result type="tiles">main</result>
 		</action>
 
 	 	<action name="joinMain" class="member.joinAction" method="form">
@@ -15,7 +16,7 @@
 		</action>
 		
 	 	<action name="joinMainInsert" class="member.joinAction" method="execute">
-				<result name="success" type="tiles">memberJoinMainInsert</result>
+				<result name="success" type="tiles">memberLoginMain</result>
 		</action>
 		
 	 	<action name="idSearch" class="member.loginAction" method="form">
@@ -77,6 +78,7 @@
 		<action name="myMemberModify" class="member.joinAction" method="modifyForm">
 				<!-- <result>/member/join_modify.jsp</result> -->
 				<result type="tiles">myMemberModify</result>
+				
 		</action>	
 	</package>
 </struts>

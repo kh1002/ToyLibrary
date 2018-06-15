@@ -79,11 +79,21 @@
 		<!-- 대여지점 -->
 			<tr>
 				<td>대여지점</td>
-				<td>
-						<%-- <s:textfield name="reserve_zizum" theme="simple" value="%{resultClass.reserve_zizum}" cssStyle="width:100px" maxlength="20"/>
-					 --%>
-				 <s:property value="ZresultClass.admin_no"/>
-				 </td>
+				 <td>
+	
+				 <%-- <s:property value="ZresultClass.admin_no"/> --%>
+							 
+					<s:if test="(ZresultClass.zizum_no)==1)">
+						<s:property value="강남점"/> 
+					</s:if>
+					<s:elseif test="(ZresultClass.zizum_no)==2)">
+						<s:property value="역삼점"/> 
+					</s:elseif>
+					<s:elseif test="(ZresultClass.zizum_no)==3)">
+						<s:property value="교대점"/>
+					</s:elseif>
+							 
+				</td> 
 			</tr>
 
 </table>
