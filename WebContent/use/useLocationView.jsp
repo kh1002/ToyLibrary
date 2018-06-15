@@ -28,10 +28,10 @@ $(function(){
 	margin:0;
 	padding:0;
 }
-#container{
+/* #container{
 	width:600px;
 	margin:30px auto;
-}
+} */
 ul.tab{
 	padding:0;
 }
