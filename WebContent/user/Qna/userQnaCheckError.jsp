@@ -11,7 +11,7 @@
 	<script type="text/javascript">
 			
 			function ErrorMessage(){
-					alert("응 아니야");
+					alert("비밀번호가 틀립니다.");
 					history.back(-1);
 			}
 	</script>
