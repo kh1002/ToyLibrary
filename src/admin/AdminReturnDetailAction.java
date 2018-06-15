@@ -9,12 +9,15 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 import java.util.*;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import java.io.Reader;
 import java.io.IOException;
 
 
 
-public class AdminReturnDetailAction extends ActionSupport {
+public class AdminReturnDetailAction extends ActionSupport implements SessionAware{
 
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -22,8 +25,11 @@ public class AdminReturnDetailAction extends ActionSupport {
 	private toyRentInfoVO paramClass = new toyRentInfoVO(); //파라미터를 저장할 객체
 	private toyRentInfoVO resultClass = new toyRentInfoVO(); //쿼리 결과 값을 저장할 객체
 	
+	
 	private int toy_id;
 	private String state_code;
+	private int zizum_no;
+	private Map session;
 	
 	//생성자
 	public AdminReturnDetailAction() throws IOException {
@@ -49,10 +55,13 @@ public class AdminReturnDetailAction extends ActionSupport {
 		System.out.println("returnDetail의 exe이 수행?");
 		
 		paramClass.setToy_id(getToy_id());
+	
 		
 		System.out.println("토이아이디 : " + paramClass.getToy_id());
 		
 		sqlMapper.delete("deleteReturnReserve", paramClass);
+		
+		
 
 		return SUCCESS;	
 	}
@@ -63,6 +72,18 @@ public class AdminReturnDetailAction extends ActionSupport {
 		
 		paramClass.setState_code(getState_code());
 		paramClass.setToy_id(getToy_id());
+		if(session.get("member_id").equals("admin1"))
+		{
+			paramClass.setZizum_no(1);
+		}
+		else if(session.get("member_id").equals("admin2"))
+		{
+			paramClass.setZizum_no(2);
+		}
+		else if(session.get("member_id").equals("admin3"))
+		{
+			paramClass.setZizum_no(3);
+		}
 		
 		System.out.println("상태코드 : " + getState_code());
 		System.out.println("토이아이디 : " + getToy_id());
@@ -113,7 +134,23 @@ public class AdminReturnDetailAction extends ActionSupport {
 	}
 
 
+	public int getZizum_no() {
+		return zizum_no;
+	}
 
+
+	public void setZizum_no(int zizum_no) {
+		this.zizum_no = zizum_no;
+	}
+
+
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
 	
 	
 

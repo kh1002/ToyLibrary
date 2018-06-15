@@ -80,7 +80,7 @@
         <tr>
           <td>이름 </td>
           <td>
-            <s:textfield name="qna_name" theme="simple" value="%{resultClass.qna_name}" maxlength="20"/>
+            <s:textfield name="qna_name" theme="simple" value="관리자" maxlength="20"/>
           </td>
         </tr>
 

@@ -85,6 +85,8 @@ public class AdminToyWriteAction extends ActionSupport implements SessionAware{
 			original_zizum = 3;
 		}
 		
+		System.out.println("오리지날지점번호 : "+original_zizum);
+		
 		//지점컬럼2개는 자동으로 입력되는 방법 찾아야함. 관라자가 어쩌구젂=쩌구.....
 		paramClass.setZizum_no(original_zizum);
 		paramClass.setOriginal_zizum(original_zizum);
