@@ -15,7 +15,11 @@ import java.io.IOException;
 
 import toy.toyReserveVO;
 
-public class ToyReserveAction extends ActionSupport {
+import member.MemberVO;
+import org.apache.struts2.interceptor.SessionAware;
+import java.sql.Timestamp;
+
+public class ToyReserveAction extends ActionSupport implements SessionAware {
 	
 	public static Reader reader; //파일 스트림을 위한 reader
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체
@@ -39,6 +43,24 @@ public class ToyReserveAction extends ActionSupport {
 	private String member_id;
 	private int reserve_zizum;
 	Calendar today = Calendar.getInstance();
+	
+	private MemberVO mparamClass = new MemberVO();
+	private MemberVO mresultClass = new MemberVO();
+	
+		
+	private Map session;
+	
+
+	private String member_pw;
+	private String member_name;
+	private int member_jumin1;
+	private int member_jumin2;
+	private String member_mail;
+	private String member_phone;
+	private String member_zipcode;
+	private String member_addr1;
+	private String member_addr2;
+	private Timestamp member_join_date;
 	
 	//생성자
 	public ToyReserveAction() throws IOException {
@@ -64,9 +86,123 @@ public class ToyReserveAction extends ActionSupport {
 		TresultClass = (toyProductVO) sqlMapper.queryForObject("selectOne", getToy_id());
 		ZresultClass = (zizumVO) sqlMapper.queryForObject("zizumselectOne", getZizum_no());
 		
+		mparamClass = new MemberVO();
+		mresultClass = new MemberVO();
+		
+		mparamClass.setMember_id(session.get("member_id").toString());
+		
+		System.out.println(member_id);
+		System.out.println("member_id");
+		
+		mresultClass = (MemberVO) sqlMapper.queryForObject("member.boardSelectOne", mparamClass);
+		
 		return SUCCESS;
 	}
 	
+	public MemberVO getMparamClass() {
+		return mparamClass;
+	}
+
+	public void setMparamClass(MemberVO mparamClass) {
+		this.mparamClass = mparamClass;
+	}
+
+	public MemberVO getMresultClass() {
+		return mresultClass;
+	}
+
+	public void setMresultClass(MemberVO mresultClass) {
+		this.mresultClass = mresultClass;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public String getMember_pw() {
+		return member_pw;
+	}
+
+	public void setMember_pw(String member_pw) {
+		this.member_pw = member_pw;
+	}
+
+	public String getMember_name() {
+		return member_name;
+	}
+
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
+	}
+
+	public int getMember_jumin1() {
+		return member_jumin1;
+	}
+
+	public void setMember_jumin1(int member_jumin1) {
+		this.member_jumin1 = member_jumin1;
+	}
+
+	public int getMember_jumin2() {
+		return member_jumin2;
+	}
+
+	public void setMember_jumin2(int member_jumin2) {
+		this.member_jumin2 = member_jumin2;
+	}
+
+	public String getMember_mail() {
+		return member_mail;
+	}
+
+	public void setMember_mail(String member_mail) {
+		this.member_mail = member_mail;
+	}
+
+	public String getMember_phone() {
+		return member_phone;
+	}
+
+	public void setMember_phone(String member_phone) {
+		this.member_phone = member_phone;
+	}
+
+	public String getMember_zipcode() {
+		return member_zipcode;
+	}
+
+	public void setMember_zipcode(String member_zipcode) {
+		this.member_zipcode = member_zipcode;
+	}
+
+	public String getMember_addr1() {
+		return member_addr1;
+	}
+
+	public void setMember_addr1(String member_addr1) {
+		this.member_addr1 = member_addr1;
+	}
+
+	public String getMember_addr2() {
+		return member_addr2;
+	}
+
+	public void setMember_addr2(String member_addr2) {
+		this.member_addr2 = member_addr2;
+	}
+
+	public Timestamp getMember_join_date() {
+		return member_join_date;
+	}
+
+	public void setMember_join_date(Timestamp member_join_date) {
+		this.member_join_date = member_join_date;
+	}
+
 	public String execute() throws Exception {
 		
 		System.out.println("exe이 수행?");

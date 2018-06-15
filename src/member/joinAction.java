@@ -82,6 +82,8 @@ public class joinAction extends ActionSupport implements SessionAware {
 			if(resultClass.getMember_pw().equals(getMember_pw())) {
 				
 				sqlMapper.delete("member.joinDelete", resultClass);
+				session.remove("member_id");
+				session.remove("member_pw");
 			return SUCCESS;
 			}
 			else {
