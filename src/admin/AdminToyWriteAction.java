@@ -8,6 +8,7 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import java.util.*;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.struts2.interceptor.SessionAware;
 
 import java.io.Reader;
 import java.io.File;
@@ -15,13 +16,15 @@ import java.io.IOException;
 
 //import admin.toyProductVO;
 
-public class AdminToyWriteAction extends ActionSupport {
+public class AdminToyWriteAction extends ActionSupport implements SessionAware{
 	
 	public static Reader reader; //파일 스트림을 위한 reader
 	public static SqlMapClient sqlMapper; //SqlMapClient API를 사용하기 위한 sqlMapper 객체
 	
 	private toyProductVO paramClass; //파라미터를 저장할 객체. ibatis로 보내기 위함
 	private toyProductVO resultClass; //쿼리 결과 값을 저장할 객체. ibatis에서 실행된 결과를 가져오려고
+
+	private Map session;
 		
 	private int toy_id;
 	private String toy_name;
@@ -48,6 +51,7 @@ public class AdminToyWriteAction extends ActionSupport {
 		sqlMapper = SqlMapClientBuilder.buildSqlMapClient(reader); //sqlMapConfig.xml의 내용을 적용한 sqlMapper객체생성
 		reader.close();
 		
+		
 	}
 	
 	//등록 폼
@@ -60,7 +64,7 @@ public class AdminToyWriteAction extends ActionSupport {
 		//파라미터와 리절트 객체 생성(자바빈 객체 생성)
 		paramClass = new toyProductVO();
 		resultClass = new toyProductVO();
-		
+	
 		//장난감의 등록할 항목 설정
 	/*	paramClass.setToy_id(resultClass.getToy_id());*/
 		paramClass.setToy_name(getToy_name());
@@ -68,13 +72,27 @@ public class AdminToyWriteAction extends ActionSupport {
 		paramClass.setToy_age(getToy_age());
 		paramClass.setToy_gusung(getToy_gusung());
 		
+		if(session.get("member_id").equals("admin1"))
+		{
+			original_zizum = 1;
+		}
+		else if(session.get("member_id").equals("admin2"))
+		{
+			original_zizum = 2;
+		}
+		else if(session.get("member_id").equals("admin3"))
+		{
+			original_zizum = 3;
+		}
+		
 		//지점컬럼2개는 자동으로 입력되는 방법 찾아야함. 관라자가 어쩌구젂=쩌구.....
-		paramClass.setZizum_no(getZizum_no());
-		paramClass.setOriginal_zizum(getOriginal_zizum());
+		paramClass.setZizum_no(original_zizum);
+		paramClass.setOriginal_zizum(original_zizum);
 		
 		
 		paramClass.setState_code("대여가능");
 		paramClass.setToy_reg_date(today.getTime());
+		
 		
 		//등록 쿼리 수행
 		sqlMapper.insert("insertToy",paramClass); //(함수이름?, 자바빈) //9개중 7개의 변수 세팅
@@ -229,6 +247,17 @@ public class AdminToyWriteAction extends ActionSupport {
 	public void setFileUploadPath(String fileUploadPath) {
 		this.fileUploadPath = fileUploadPath;
 	}
+
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+	
+	
+
 
 /*	public Date getToy_reg_date() {
 		return toy_reg_date;
