@@ -28,7 +28,7 @@
        		<result property="reserve_date" column="reserve_date"/> 
        		<result property="return_date" column="return_date"/> 
        		
-      <!--  		<result property="member_id" column="member_id"/> -->
+      <!--  	<result property="member_id" column="member_id"/> -->
 			<result property="member_pw" column="member_pw"/>
 			<result property="member_name" column="member_name"/>
 			<result property="member_jumin1" column="member_jumin1"/>
@@ -52,14 +52,14 @@
 		</sql>
 		
 		<select id="myreservationInfoAll" resultMap="myReservationRes">
-			<include refid="myrentselect-all"/>
-			<include refid="myrentwhere-no"/> and p.state_code=#state_code# and m.member_id=#member_id# 
+			<include refid="myreservationselect-all"/>
+			<include refid="myreservationwhere-no"/> and p.state_code=#state_code# and m.member_id=#member_id# 
 			order by reserve_date asc
 		</select>
 		
 		<select id="myreservationInfoOne" resultMap="myReservationRes">
-			<include refid="myrentselect-all"/>
-			<include refid="myrentwhere-no"/> and p.toy_id=#toy_id#
+			<include refid="myreservationselect-all"/>
+			<include refid="myreservationwhere-no"/> and p.toy_id=#toy_id#
 		</select>
 		
 		
