@@ -102,8 +102,9 @@
 		SELECT max(review_no) as review_no FROM REVIEW
 	</select>
 	
-	
-	
+<!-- 	<select id="Creview-count" resultClass="creview" parameterClass="int">
+		select (select count(*) from CREVIEW where review_no = A.review_no) from REVIEW A  ORDER BY review_no DESC
+	</select> -->
 	
 	
 	
@@ -119,7 +120,11 @@
 		AND creview_password = #creview_password#
 	</select>
 	
+	<select id="commentCount" resultClass="review" parameterClass="int">
+		<include refid="Creview-select-all"/>
+		 where review_no=#review_no#
 	
+	</select>
 	
 	
 	<!-- insert Äõ¸®¹® Á¤ÀÇ -->

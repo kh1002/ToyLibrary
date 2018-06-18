@@ -39,7 +39,7 @@
 		<tr>
 			<td><s:property value="review_no" /></td>
 			<td align="left">
- 				<s:a href="%{viewURL}"><s:property value="review_subject" /></s:a>
+ 				<s:a href="%{viewURL}"><s:property value="review_subject" />(<s:property value="commentCountList[#stat.index]"/>)</s:a>
  			</td>
 			<td><s:property value="review_name" /></td>
 			<td><s:property value="review_regdate" /></td>

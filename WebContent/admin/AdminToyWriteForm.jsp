@@ -11,6 +11,30 @@
 <head>
 	<title>관리자 장난감 등록폼</title>
 	<!-- <link rel="stylesheet" href="/strutsBoard/board/common/css/css.css" type="text/css"> -->
+	<script type="text/javascript">
+		function validation()
+		{
+			var frm = document.forms(0);
+			
+			if(frm.toy_name.value == "") 
+			{
+				alert("이름을 입력해주세요.");
+				return false;
+			} 
+			else if(frm.toy_gusung.value == "") 
+			{
+				alert("구성을 입력해주세요.");
+				return false;			
+			} 
+			else if(frm.toy_detail.value == "") 
+			{
+				alert("설명을 입력해주세요.");
+				return false;			
+			}
+			return true;
+		}
+	</script>
+	
 
 </head>
 
@@ -32,7 +56,7 @@
 <!-- 
 <form action="writeAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
  -->
-<form action="AdminToyWriteAction.action" method="post" enctype="multipart/form-data">
+<form action="AdminToyWriteAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
 <!-- 숨겨서 보내는 데이터?? -->
 <!-- 장난감번호, 상태, 등록지점, 반납마다 바뀔 지점이 히든으로 값이 전달되야 하지 않을까 -->
 <!-- <input type="hidden" name="" value="0"> -->

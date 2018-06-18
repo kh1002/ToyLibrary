@@ -20,7 +20,7 @@
 		</sql>
 		<!-- 공통으로 사용할 where-no절 정의 -->
 		<sql id="zizumwhere-no">
-			where zizum_no = #zizum_no#     <!--  ##이 ?를 대신한다  -->
+			where admin_no = #admin_no#     <!--  ##이 ?를 대신한다  -->
 		</sql>
 		
 	<!-- select 쿼리문 정의 -->
@@ -28,7 +28,7 @@
 		<!-- 모든 데이터를 꺼내오는 selectAll -->
 		<select id="zizumselectAll" resultMap="zizumRes">
 			<include refid="zizumselect-all"/>
-			order by zizum_no desc		
+			order by admin_no desc		
 		</select>
 		
 		<!-- no에 해당하는 하나의 데이터를 가져오는 selectOne -->

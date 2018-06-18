@@ -18,6 +18,7 @@ public class reviewListAction extends ActionSupport{
 
 	
 	private List<reviewVO> list = new ArrayList<reviewVO>();
+	private List commentCountList = new ArrayList();
 	
 	
 	private String searchKeyword;
@@ -51,6 +52,7 @@ public class reviewListAction extends ActionSupport{
 		
 		list = sqlMapper.queryForList("Review-selectAll");
 		
+		
 		totalCount = list.size();
 		page = new reviewPagingAction(currentPage, totalCount, blockCount, blockPage, num, "");
 		pagingHtml = page.getPagingHtml().toString();
@@ -61,6 +63,18 @@ public class reviewListAction extends ActionSupport{
 			lastCount = page.getEndCount() + 1;
 		
 		list = list.subList(page.getStartCount(), lastCount);
+		
+		for(int i=0; i<list.size(); i++) {
+			List<reviewVO> listMap = list;
+			int count = listMap.get(i).getReview_no();
+			
+			List<creviewVO> cList = sqlMapper.queryForList("commentCount",count);
+			
+			System.out.println("아아아아아123123 : "+cList.size());
+			commentCountList.add(cList.size());
+			
+			
+		}
 		return SUCCESS;
 	}
 	
@@ -89,6 +103,19 @@ public class reviewListAction extends ActionSupport{
 			lastCount = page.getEndCount() + 1;
 		
 		list = list.subList(page.getStartCount(), lastCount);
+		
+		for(int i=0; i<list.size(); i++) {
+			List<reviewVO> listMap = list;
+			int count = listMap.get(i).getReview_no();
+			
+			List<creviewVO> cList = sqlMapper.queryForList("commentCount",count);
+			
+			System.out.println("아아아아아123123 : "+cList.size());
+			commentCountList.add(cList.size());
+			
+			
+		}
+		
 		return SUCCESS;
 	}
 
@@ -170,6 +197,14 @@ public class reviewListAction extends ActionSupport{
 
 	public void setNum(int num) {
 		this.num = num;
+	}
+
+	public List getCommentCountList() {
+		return commentCountList;
+	}
+
+	public void getCommentCountList(List commentCountList) {
+		this.commentCountList = commentCountList;
 	}
 
 
