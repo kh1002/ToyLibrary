@@ -52,7 +52,7 @@
 		
 		<select id="rentInfoAll" resultMap="toyRentRes">
 			<include refid="rentselect-all"/>
-			<include refid="rentwhere-no"/> and p.state_code=#state_code#
+			<include refid="rentwhere-no"/> and p.state_code=#state_code# and i.zizum_name = #zizum_name#
 		</select>
 		
 		<select id="rentInfoOne" resultMap="toyRentRes">

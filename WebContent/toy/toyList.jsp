@@ -45,7 +45,11 @@
 <table border="0">
 		<tr>	   
 			<s:iterator value="UPlist" status="stat">
-			
+				
+				<s:if test="#stat.index % 3 eq 0">
+               		<tr></tr>
+           	 	</s:if>
+            
 				<s:url id = "viewURL" action="ToyDetailAction" >
 					<s:param name="toy_id">
 						<s:property value="toy_id" />
@@ -59,26 +63,14 @@
 						<s:property value="currentPage" />
 					</s:param>
 				</s:url>
-			
-			
-				<tr bgcolor="#ffffff" align="left">
-					<%-- <td><s:property value="toy_id"/></td>	 --%>
-					<%-- <td><s:property value="toy_image"/></td> --%>
-					<td><img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" width="150" border="0"/></td>
-					
-				</tr>
-				<tr>	
-					<td align="left"><s:property value="zizum_no"/>
-					&nbsp;<s:a href="%{viewURL}"><s:property value="toy_name"/></s:a>				 
+
+					<td>
+						<s:a href="%{viewURL}"><img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" width="150" border="0"/></s:a>
+						<br/>
+						<s:property value="zizum_no"/>&nbsp;<s:a href="%{viewURL}"><s:property value="toy_name"/></s:a>
+						<br/>
 					</td>
-				</tr>
-				<tr>	
-					<%-- <td align="center"><s:property value="toy_age"/></td> --%>
-					<td>전체() | 보유() | 대여()</td>
-					<%-- <td align="center"><s:property value="state_code"/></td> --%>
-				</tr>
-			
-			
+
 			</s:iterator>
 
 		</tr>

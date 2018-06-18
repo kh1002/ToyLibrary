@@ -118,15 +118,20 @@
 					</s:elseif>  
 				
 				 <td>
-					<s:a href="%{modifyURL}">수정</s:a>
-					/
-					<s:a href="%{deleteURL}">삭제</s:a>
-				</td>
-			</tr>
-			
-			<tr bgcolor="#777777">
-				<td height="1" colspan="5"></td>
-			</tr>					
+				 	<s:if test="zresultClass.admin_no == zizum_no">
+				 		<s:a href="%{modifyURL}">수정</s:a>
+						/
+						<s:a href="%{deleteURL}">삭제</s:a>
+				 	</s:if>
+				 	<s:else>
+				 		수정
+				 		/
+				 		삭제
+				 	</s:else>
+				 	
+					
+				</td> 
+					
 		</s:iterator>
 		
 		<s:if test="list.size() <=0">

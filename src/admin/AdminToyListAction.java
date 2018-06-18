@@ -6,6 +6,9 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 import java.util.*;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import java.io.Reader;
 import java.io.IOException;
 
@@ -13,7 +16,7 @@ import admin.pagingAction;
 
 //import admin.toyProductVO;
 
-public class AdminToyListAction extends ActionSupport {
+public class AdminToyListAction extends ActionSupport implements SessionAware{
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -23,9 +26,14 @@ public class AdminToyListAction extends ActionSupport {
 	private zizumVO paramClass = new zizumVO(); 
 	private zizumVO resultClass = new zizumVO(); 
 	
+	private zizumVO zparamClass;
+	private zizumVO zresultClass;
+	
+	private Map session;
+	
 	private int currentPage = 1; //현재 페이지
 	private int totalCount; 	//총 게시물의 수
-	private int blockCount = 10; //한 페이지의 게시물의 수
+	private int blockCount = 3; //한 페이지의 게시물의 수
 	private int blockPage = 3; //한 화면에 보여줄 페이지 수
 	private String pagingHtml; //페이징을 구현한 html
 	private pagingAction page; //페이징 클래스
@@ -45,6 +53,10 @@ public class AdminToyListAction extends ActionSupport {
 	
 	public String execute() throws Exception {
 		
+		zparamClass = new zizumVO();
+		zresultClass = new zizumVO();
+		
+		
 		if(getSearchKeyword() != null)
 		{
 			return search();
@@ -53,7 +65,15 @@ public class AdminToyListAction extends ActionSupport {
 		//모든 글을 가져와서 list에 넣는다
 		list = sqlMapper.queryForList("selectAll");
 		
-		resultClass=(zizumVO) sqlMapper.queryForObject("zizumselectOne",getZizum_no());
+		for(int i=1; i<=3; i++)
+		{
+			if(session.get("member_id").equals("admin"+i))
+			{
+				zparamClass.setAdmin_no(i);
+			}
+		}
+		
+		zresultClass = (zizumVO) sqlMapper.queryForObject("zizumselectOne",zparamClass.getAdmin_no());
 		
 		totalCount = list.size(); //전체 글 갯수를 구함
 		
@@ -275,6 +295,30 @@ public String search() throws Exception {
 
 	public void setNum(int num) {
 		this.num = num;
+	}
+
+	public zizumVO getZparamClass() {
+		return zparamClass;
+	}
+
+	public void setZparamClass(zizumVO zparamClass) {
+		this.zparamClass = zparamClass;
+	}
+
+	public zizumVO getZresultClass() {
+		return zresultClass;
+	}
+
+	public void setZresultClass(zizumVO zresultClass) {
+		this.zresultClass = zresultClass;
+	}
+
+	public Map getSession() {
+		return session;
+	}
+
+	public void setSession(Map session) {
+		this.session = session;
 	}
 
 
