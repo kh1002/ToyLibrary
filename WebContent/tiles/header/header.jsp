@@ -62,9 +62,9 @@
                                         <a href="404-page.html">404</a>                                       
                                     </div>
                                 </li>
-                                <li style="margin-right : 130px;" class="dropdown"><a href="contact.html" class="flip-animate"><span data-hover="Contact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;게시판</span></a>
+                                <li style="margin-right : 130px;" class="dropdown"><a href="userFaqListAction.action" class="flip-animate"><span data-hover="Contact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;게시판</span></a>
                                     <div class="dropdown-content">
-                                        <a href="#">자유게시판</a>  
+                                        <a href="userFaqListAction.action">faq</a>  
                                         <a href="#">공지사항</a>  
                                         <a href="#">문의게시판</a> 
                                         <a href="#">자주묻는질문</a> 

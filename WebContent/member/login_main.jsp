@@ -55,6 +55,8 @@ function check(){
 						<input type="password" name="member_pw" size="14" maxlength="20">
 					</td>
 				</tr>
+				
+				
 				<tr>
 					<td height="30" colspan="6" align="right">	
 						<input type="button" value="아이디찾기" onClick="javascript:location.href='idSearch.action';">
@@ -62,7 +64,7 @@ function check(){
 						<input type="button" value="회원가입" onClick="javascript:location.href='joinMain.action';">
 						<input type="submit" value="로그인" onClick="return check();">
 					</td>
-			</tr>
+				</tr>
 			</form>
 			</tr>
 		</table>
