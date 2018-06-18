@@ -43,7 +43,7 @@
 		
 		
 	 	<action name="logoutMain" class="member.loginAction" method="logout">
-				<result name="success" type="tiles">memberLoginMain</result>
+				<result name="success" type="tiles">main</result>
 		</action>
 		
 	 	<action name="joinDeleteForm" class="member.joinAction" method="form">
