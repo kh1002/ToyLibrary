@@ -5,7 +5,6 @@
 <html>
 <head>
 
-<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
 
 
 </head>
