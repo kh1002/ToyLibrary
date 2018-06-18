@@ -8,6 +8,11 @@
 <html>
 <head>
 <title>로그인</title>
+
+
+<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+
+
 <script>
 
 function check(){
@@ -35,40 +40,65 @@ function check(){
 </script>
 </head>
 <body>
-<table width="960" cellspacing="0" cellpadding="10" border="2" align="center">
-	<tr>
-		<td colspan="2" align="center">
-		<table border="1" cellpadding="5" cellspacing="5" width="500">
-			<tr>
+
 			<form action="login.action" method="post" name="login" onsubmit="return check()">
-				<tr>
-					<td width="23" height="30">아이디</td>
-					<td width="5" height="30">:</td>
-					<td width="103" height="30">
-						<input type="text" name="member_id" size="13" maxlength="20">
-					</td>
-				</tr>
-				<tr>
-					<td width="20" height="30">비밀번호</td>
-					<td width="5" height="30">:</td>
-					<td width="103" height="30">
-						<input type="password" name="member_pw" size="14" maxlength="20">
-					</td>
-				</tr>
-				<tr>
-					<td height="30" colspan="6" align="right">	
-						<input type="button" value="아이디찾기" onClick="javascript:location.href='idSearch.action';">
-						<input type="button" value="비밀번호찾기" onClick="javascript:location.href='pwSearch.action';">
-						<input type="button" value="회원가입" onClick="javascript:location.href='joinMain.action';">
-						<input type="submit" value="로그인" onClick="return check();">
-					</td>
-			</tr>
-			</form>
-			</tr>
-		</table>
-		</td>
-	</tr>
-</table>
+			
+           <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="login-content">
+                                                    <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+
+                           <h4><span class="jua" style="font-size:24pt;">로그인</h4></span>
+                           
+			<form action="login.action" method="post" name="login" onsubmit="return check()">
+			
+                                <div class="form-group">
+                                    <label for="input-email" class="control-label">아이디<span>*</span></label>
+                                    <input type="text" class="form-control" id="input-email" value="" name="member_id" required="" style="width:150px;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input-password" class="control-label">비밀번호<span>*</span></label>
+                                    <input type="password" class="form-control" id="input-password" value="" name="member_pw" required="" style="width:150px;">
+                                    <br>
+                                </div>
+                                <div class="site-btn">
+                                    <button class="btn btn-1" type="submit">                                 
+                                        <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">로그인</span>
+                                        <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+                                    </button>
+                                    
+                                </div>
+                                <div class="site-btn">
+                                    <button class="btn btn-1">                                   
+                                        <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">회원가입</span>
+                                        <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+                                    </button>
+                                    </div>
+<br>
+<br>
+                                <a class="forgot-psw" href="idSearch.action">아이디 찾기</a>
+                                <a class="forgot-psw" href="pwSearch.action">비밀번호 찾기</a>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                            </form>
+                        </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
 
 </body>
 </html>
