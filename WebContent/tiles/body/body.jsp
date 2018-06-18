@@ -5,6 +5,9 @@
 <html>
 <head>
 
+<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+
+
 </head>
 
 
@@ -35,7 +38,8 @@
 						<img src="/ToyLibrary/style/images/blog1.jpg" alt="blog" class="img-responsive    ">
 					</div>
 					<div class="blog-details">
-						<a class="post-title" href="single-blog.html">강남점</a>
+						<a class="post-title" href="single-blog.html">
+						<span class="jua">강남점</a></span>
 							<ul class="post-meta">
 								<li>
 									<span class="fa fa-calendar"></span>
@@ -58,7 +62,12 @@
 							<img src="/ToyLibrary/style/images/blog2.jpg" alt="blog" class="img-responsive    ">
 						</div>
 						<div class="blog-details">
-							<a class="post-title" href="single-blog.html">역삼점</a>
+						                          <style type="text/css">
+						.jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+
+					
+							<a class="post-title" href="single-blog.html">
+													<span class="jua">역삼점</a></span>
 								<ul class="post-meta">	
 									<li>
 										<span class="fa fa-calendar"></span>
@@ -81,7 +90,8 @@
 							<img src="/ToyLibrary/style/images/blog3.jpg" alt="blog" class="img-responsive    ">
 						</div>
 						<div class="blog-details">
-							<a class="post-title" href="single-blog.html">교대점</a>
+							<a class="post-title" href="single-blog.html">
+							<span class="jua">교대점</a></span>
 								<ul class="post-meta">
 									<li>
 										<span class="fa fa-calendar"></span>
