@@ -72,7 +72,7 @@ function check(){
                                     
                                 </div>
                                 <div class="site-btn">
-                                    <button class="btn btn-1">                                   
+                                    <button class="btn btn-1" type="button" onclick="javascript:window.location='./joinMain.action'">                                   
                                         <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">회원가입</span>
                                         <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
                                     </button>

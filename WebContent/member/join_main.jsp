@@ -3,10 +3,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
+
+
+
+
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
+
+
+
+
 <script language="javascript" >
 
 function check() {
@@ -153,104 +162,152 @@ function openIdCheck(){
 
 
 
-
 </script>
 </head>
 <body>
-<table width="960" cellspacing="0" cellpadding="10" border="2" align="center">
-	<tr>
-		<td colspan="2" align="center">
-		<table border="1" cellpadding="5" cellspacing="5" width="650">
-			<tr>
-			<form name="joinMain" action="joinMainInsert.action" method="post"  onsubmit="return check()">
-				<tr>
-					<td width="70" height="30">아이디</td>
-					<td width="5" height="30">:</td>
-					<td width="200" height="30">
-						<input type="text" name="member_id" id="member_id" size="13">
-					</td>
-					<td width="1" height="30" align="reft">
-						<input type="button" name="idCheck" value="중복확인" onClick="javascript:openIdCheck(this.form)" class="btn_small3"/>
-					</td>
-				</tr>
-				<tr>
-					<td width="20" height="30">비밀번호</td>
-					<td width="5" height="30">:</td>
-					<td width="103" height="30">
-						<input type=password name="member_pw" id="member_pw" size="14" maxlength="20">
-					</td>
-				</tr>
-				<tr>
-					<td width="40" height="30">비밀번호확인</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type=password name="pwcheck" id="pwcheck" size="14" maxlength="20" onkeyup="pwCheck();"/>&nbsp;<span id="passwordCheckText"></span>
-					</td>
-				</tr>
-				<tr>
-					<td width="40" height="30">이름</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" name="member_name" size="14" maxlength="20">
-					</td>
-				</tr>
-				<tr>
-					<td width="40" height="30">휴대폰번호</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" name="member_phone" size="14" maxlength="11">
-					</td>
-				</tr>
-				<tr>
-					<td width="40" height="30">주민번호</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" name="member_jumin1" size="8" maxlength="6">&nbsp;&nbsp;-&nbsp;&nbsp;
-						<input type="text" name="member_jumin2" size="8" maxlength="7">
-					</td>
-				</tr>
-				<tr>
-					<td width="40" height="30">이메일</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" name="member_mail" size="14" maxlength="20">
-					</td>
-				</tr>
-				<tr>
-					<td width="40" height="30">우편번호</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" id="member_zipcode" name="member_zipcode" size="10">
-					</td>
-					<td width="1" height="30" align="reft">
-						<input type="button" value="우편번호찾기" class="btn btn-primary" onClick="javascript:postcode()"/>
-						
-					</td>
-				</tr>
-				<tr>
-					<td width="23" height="30">주소</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" id="member_addr1" name="member_addr1" size="35" maxlength="35">
-					</td>
-				
-				</tr>
-				<tr>
-					<td width="40" height="30">상세주소</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" id="member_addr2" name="member_addr2" size="35" maxlength="35">
-					</td>
-				</tr>
 
-		<table width="1000" height="450">	
-			<tr>
+			<form name="joinMain" action="joinMainInsert.action" method="post"  onsubmit="return check()">
+
+
+                                    
+
+        <section class="padding-top100">
+            <div class="container">
+    <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <form>
+                            <div class="cart-table table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"  colspan="2">회원가입</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+
+                                    
+                                    
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>아이디</b>
+                                            </td>
+                                            <td>               
+                                                <input type="text" name="member_id" id="member_id" size="13">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     
+                                    
+                                    <button class="btn" type="button" onclick="javascript:openIdCheck(this.form)" class="btn_small3" style="background-color: #87df2d;">                                   
+                                        <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">중복 확인</span>
+                                        <span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+                                    </button>
+                                   
+                                            </td>
+                                        </tr>
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>비밀번호</b>
+                                            </td>
+                                            <td><input type=password name="member_pw" id="member_pw" size="14" maxlength="20">
+                                            </td>
+                                            </tr>
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>비밀번호 확인</b>
+                                            </td>
+                                            <td><input type=password name="pwcheck" id="pwcheck" size="14" maxlength="20" onkeyup="pwCheck();"/>&nbsp;<span id="passwordCheckText"></span>
+                                            </td>
+                                            </tr>
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>이름</b>      
+                                         </td>
+                                         <td><input type="text" name="member_name" size="14" maxlength="20">
+                                         </td>
+                                         </tr>
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>휴대폰 번호</b>      
+                                         </td>
+                                         <td><input type="text" name="member_phone" size="14" maxlength="11">
+                                         </td>
+                                         </tr>
+                          				<tr class="text-left">
+                                         <td>
+                                         <b>주민번호</b>      
+                                         </td>
+                                         <td>
+<input type="text" name="member_jumin1" size="8" maxlength="6">&nbsp;&nbsp;-&nbsp;&nbsp;
+						<input type="text" name="member_jumin2" size="8" maxlength="7">
+					</td>                                                                                                              
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>이메일</b>      
+                                         </td>
+                                         <td><input type="text" name="member_mail" size="14" maxlength="20">
+                                         </td>
+                                         </tr>
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>우편번호</b>      
+                                         </td>
+                                         <td>
+<input type="text" id="member_zipcode" name="member_zipcode" size="10">
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <button class="btn" type="button" onclick="javascript:postcode()" class="btn_small3" style="background-color: #87df2d;">                                   
+                                        <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">우편번호 찾기</span>
+                                        <span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+                                    </button>
+                                    
+					</td>
+					</tr>
+					<tr class="text-left">
+                                         <td>
+                                         <b>주소</b>      
+                                         </td>
+                                         <td><input type="text" id="member_addr1" name="member_addr1" size="35" maxlength="35">
+                                         </td>
+                                         </tr> 
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>상세 주소</b>      
+                                         </td>
+                                         <td><input type="text" id="member_addr2" name="member_addr2" size="35" maxlength="35">
+                                         </td>
+                                         </tr>                                                                              
+                                            
+    
+
+                                         
+                                                                                   
+                                     
+                                    </tbody>
+                                </table>
+ 
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                                       <div class="col-md-6 col-md-offset-3">
+                        <form>
+                            <div class="cart-table table-responsive">
+                                <table class="table">
+                                
+                                                                  <thead>
+                                        <tr>
+                                            <th class="text-center"  colspan="2">이용약관</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>  
+	<tr>
 				<td align="center">		
 								
 				
-					<center><h3>이용약관</h3></center>	
+					
 					<p><p><p>
-					<textarea rows="20" cols="150" readonly >
+					<textarea rows="20" cols="70" readonly >
 									
 									제1장 총칙
 
@@ -319,19 +376,28 @@ function openIdCheck(){
 				<td align="right">
 					<input type="checkbox"> 개인정보 수집 및 이용에 동의합니다. 
 				</td>
-				
-			</tr>
-		</table>	
-		
-		
-<!-- </td>
-
-</tr> -->
-			
-		<tr>
+	                                
+                                
+                                
+  		<tr>
 			<td height="30" colspan="6" align="right">
-				<input type="button" value="취소" onclick="javascript:window.location='./mainAction.action'">	
-				<input type="submit" value="회원가입" onClick="return check();">
+			
+
+
+        <button class="btn" type="button" onclick="return check();" style="background-color: #87df2d;">                                   
+       <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">회원가입</span>
+       <span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+       </button>      
+       
+       <button class="btn" type="button" onclick="javascript:window.location='./mainAction.action'" style="background-color: #87df2d;">                                   
+       <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">취소</span>
+       <span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+       </button>
+			
+			
+			
+			
+
 			</td>
 			</tr>
 			</form>
@@ -339,7 +405,45 @@ function openIdCheck(){
 		</table>
 		</td>
 	</tr>
-</table>
+	                              
+                                
+                          
+                                </div>
+                                </form>
+                                
+
+ 
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+
+			
 
 </body>
 </html>

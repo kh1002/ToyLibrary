@@ -150,99 +150,88 @@ function openIdCheck(){
 </script>
 </head>
 <body>
-<table width="960" cellspacing="0" cellpadding="10" border="2" align="center">
-	<tr>
-		<td colspan="2" align="center">
-		<table border="1" cellpadding="5" cellspacing="5" width="650">
-			<tr>
-			<form name="joinModify" action="joinModify.action" method="post"  onsubmit="return check()">
-				<tr>
-					<td width="100" height="30">아이디</td>
-					<td width="5" height="30">:</td>
-					<td width="200" height="30">
-						<input type="text" name="member_id" id="member_id" size="13" value="${resultClass.member_id }" readonly/>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" height="30">비밀번호</td>
-					<td width="5" height="30">:</td>
-					<td width="103" height="30">
-						<input type=password name="member_pw" id="member_pw" size="14" maxlength="20">
-					</td>
-				</tr>
-				<tr>
-					<td width="100" height="30">비밀번호확인</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type=password name="pwcheck" id="pwcheck" size="14" maxlength="20" onkeyup="pwCheck();"/>&nbsp;<span id="passwordCheckText"></span>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" height="30">이름</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" name="member_name" size="14" maxlength="20" value="${resultClass.member_name }"/>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" height="30">휴대폰번호</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" name="member_phone" size="14" maxlength="11" value="${resultClass.member_phone }"/>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" height="30">주민번호</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" name="member_jumin1" size="8" maxlength="6" value="${resultClass.member_jumin1 }"/>&nbsp;&nbsp;-&nbsp;&nbsp;
-						<input type="text" name="member_jumin2" size="8" maxlength="7" value="${resultClass.member_jumin2 }"/>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" height="30">이메일</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" name="member_mail" size="14" maxlength="20" value="${resultClass.member_mail }"/>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" height="30">우편번호</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" id="member_zipcode" name="member_zipcode" size="10" value="${resultClass.member_zipcode }" readonly/>
-					</td>
-					<td width="1" height="30" align="reft">
-						<input type="button" value="우편번호찾기" class="btn btn-primary" onClick="javascript:postcode()"/>
-					</td>
-				</tr>
-				<tr>
-					<td width="100" height="30">주소</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" id="member_addr1" name="member_addr1" size="35" maxlength="35" value="${resultClass.member_addr1 }"/>
-					</td>
-				
-				</tr>
-				<tr>
-					<td width="100" height="30">상세주소</td>
-					<td width="5" height="30">:</td>
-					<td width="120" height="30">
-						<input type="text" id="member_addr2" name="member_addr2" size="35" maxlength="35" value="${resultClass.member_addr2 }"/>
-					</td>
-				</tr>
-				<tr>
-					<td height="30" colspan="6" align="right">
-						<input type="button" value="취소" onclick="javascript:window.location='MyReservationListAction.action'">	
-						<input type="submit" value="정보수정" onClick="return check();">
-					</td>
-			</tr>
+
+
+
+	<section class="padding-top100">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<form>
+					<div class="cart-table table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th class="text-center" colspan="2">회원 정보 수정</th>
+
+
+								</tr>
+							</thead>
+							<s:iterator value="list" status="stat">
+								<s:url id="viewURL" action="userFaqViewAction">
+									<s:param name="faq_no">
+										<s:property value="faq_no" />
+									</s:param>
+
+									<s:param name="currentPage">
+										<s:property value="currentPage" />
+									</s:param>
+
+								</s:url>
+								<tbody>
+									<tr>
+										<td class="text-left"></td>
+										<td class="text-left cart-product-title"><br><a
+												href="single-details.html"><s:property value="faq_no" /></a>
+												<hr></td>
+										<td class="text-left"><br><s:a href="%{viewURL}">
+													<s:property value="faq_subject" />
+												</s:a></td>
+										<td class="text-left"><br><div
+													style="max-width: 200px;" class="input-group btn-block">
+												</div></td>
+									</tr>
+								</tbody>
+							</s:iterator>
+						</table>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</section>
+
+	<s:if test="list.size() <= 0">
+		<tr align="center">
+			<td colspan="5">등록된 게시물이 없습니다.</td>
+		</tr>
+	</s:if>
+
+	<tr align="center">
+		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
+	</tr>
+
+	<tr align="right">
+		<td colspan="5"></td>
+	</tr>
+
+	<tr align="center">
+		<td colspan="5">
+			<form>
+				<select name="searchNum">
+					<option value="0">제목</option>
+					<option value="1">내용</option>
+				</select>
+				<s:textfield name="searchKeyword" theme="simple" value=""
+					maxlength="20" />
+				<input name="submit" type="submit" value="검색">
 			</form>
-			</tr>
-		</table>
 		</td>
 	</tr>
-</table>
+
+
+	</table>
+
 
 </body>
 </html>
