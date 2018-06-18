@@ -1,79 +1,135 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
     
-<!--     이게 원본코드임 -->
-    
-    
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-	<title>사용자 장난감 예약하기</title>
-<!-- 	<link rel="stylesheet" href="/strutsBoard/board/common/css/css.css" type="text/css"> -->
-
+	<title>스트러츠2 게시판</title><!-- 
+	<link rel="stylesheet" href="/StrutsBoard/board/common/css/css.css" type="text/css"> -->
 </head>
 
-<body>
+<!-- 탭메뉴를 위한 css소스코드 -->
+<style>
+#tabmenu{ position:relative; height:29px; background:url(images/tab_menu.gif) repeat-x 0 100%; font-family:'돋움',dotum; font-size:12px }
+#tabmenu ul,#tabmenu ul li{margin:0;padding:0}
+#tabmenu ul li{list-style:none}
+#tabmenu ul li,#tabmenu ul li a{background:url(images/bg_tab2_off.gif) no-repeat}
+#tabmenu ul li{float:left;margin-right:-1px;line-height:26px}
+#tabmenu ul li a{display:inline-block;padding:2px 16px 1px;_padding:3px 16px 0;background-position: 100% 0;font-weight:bold;color:#666;cursor:pointer;text-decoration:none !important}
+#tabmenu ul li a:hover{color:#000}
+#tabmenu ul li.on,#tabmenu ul li.on a{background-image:url(images/bg_tab2_on.gif)}
+#tabmenu ul li.on a{color:#3376b8}
 
+#tabcontent1{}
+#tabcontent2{}
+</style>
+
+<!-- 탭을 적용한 소스코드 -->
+<body>
+<!-- 아마도 css를 입혀서 홈페이지에서 탭처럼 보이게 하는게 아닐까?? -->
 <table>
-	<tr>
-		<td height="60" colspan="2">상 세 보 기</td>
-	</tr>
+<div id="tabmenu">
+<ul>
+	<li class="on"> <a href="ToyListAction.action" onClick="show_leemocon(0);">전체</a> </li>
+	<li class=""> <a href="ToyZizum1ListAction.action" onClick="show_leemocon(1);">강남점</a> </li>
+	<li class=""> <a href="ToyZizum2ListAction.action" onClick="show_leemocon(2);">역삼점</a> </li>
+	<li class=""> <a href="ToyZizum3ListAction.action" onClick="show_leemocon(3);">교대점</a> </li>
+</ul>
+
+</table>
+
+<table border="0">
+		<tr>	   
+			<s:iterator value="UPlist" status="stat">
+				
+				<s:if test="#stat.index % 3 eq 0">
+               		<tr></tr>
+           	 	</s:if>
+            
+				<s:url id = "viewURL" action="ToyDetailAction" >
+					<s:param name="toy_id">
+						<s:property value="toy_id" />
+					</s:param>
+					
+					<s:param name="zizum_no">
+						<s:property value="zizum_no" />
+					</s:param>
 	
-<!-- 이미지가 나타나는 코드 -->
-	<tr>
-		<td width="303" height="223" align="center" valign="middle">
-		<img src="./upload/}" 
-			width="300" height="300"/>
+					<s:param name="currentPage">
+						<s:property value="currentPage" />
+					</s:param>
+				</s:url>
+
+					<td>
+						<s:a href="%{viewURL}"><img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" width="600" border="0"/></s:a>
+						<br/>
+						<s:property value="zizum_no"/>&nbsp;<s:a href="%{viewURL}"><s:property value="toy_name"/></s:a>
+						<br/>
+					</td>
+
+			</s:iterator>
+
+		</tr>
+	</table>
+
+
+ <!-- 검색창을 보여주는 jsp코드 -->
+<form name="search" action="list.jsp" method="post">
+<table>
+	<tr>										
+		<td>
+			<select name="goods_category" size="1" value="">
+				<option value="zizum">호점</option>
+				<option value="1">강남점</option>
+				<option value="2">역삼점</option>
+				<option value="3">교대점</option>
+			</select>
+		</td>									
+		<td>
+			<select name="goods_category" size="1" value="">
+				<option value="smallclass">소분류</option>
+				<option value="class1">역할놀이</option>
+				<option value="class2">언어/숫자 학습</option>
+				<option value="class3">음악/악기 완구</option>
+				<option value="class4">스포츠 완구</option>
+				<option value="class5">블록/퍼즐/게임</option>
+			</select>
+		</td>							
+		<td>
+			<select name="goods_category" size="1" value="">
+				<option value="toy_age">추천연령</option>
+				<option value="1to6">1개월~6개월</option>
+				<option value="7to12">7개월~12개월</option>
+				<option value="13to18">13개월~18개월</option>
+				<option value="19to24">19개월~24개월</option>
+				<option value="25to36">25개월~36개월</option>
+				<option value="37to48">37개월~48개월</option>
+			</select>
+		</td>
+		<td>
+			<input type="text" name="search_key" value="" size="10">
+		</td>
+		<td>
+			<input type="submit" value="검색">
 		</td>
 	</tr>
-		
-<!-- 이미지가 나타나는 코드 -->
-	<tr>
-		<td width="500" align="center" valign="middle">
-			<table width="500" height="200" border="0">
-			<!-- 장난감코드 -->
-				<tr>
-					<td>장난감코드</td>
-					<td>db연동</td>
-				</tr>
-			<!-- 장난감이름 -->
-				<tr>
-					<td bgcolor="#777777">장난감이름</td>
-					<td>db에서 어떻게 받아와야할까</td>
-				</tr>
-			<!-- 대여자ID -->
-				<tr>
-					<td>대여자ID</td>
-					<td> db에서 추천연령을 어떻게 받아와야할까</td>
-				</tr>
-			<!-- 대여자명 -->
-				<tr>
-					<td>대여자명</td>
-					<td>상세한 설명을 db에서 어떻게 받아와야할까</td>
-				</tr>
-			<!-- 대여지점 -->
-				<tr>
-					<td>대여지점</td>
-					<td>상세한 설명을 db에서 어떻게 받아와야할까</td>
-				</tr>
-			</table>
-			<!-- 2번째 td의 테이블의 끝 -->
-		</td>
-	</tr>
+</form> 	
 </table>
 
 
-<form name="" action="" method="">
-	<input type="button" value="예약하기" onClick="">
-	<input type="button" value="취소" onClick="">
-</form>
-
+<!-- 링크 리스트 1|2|3|4|5 가 나타나는 코드 -->
+	<tr align="center">
+		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
+	</tr>
+		
 
 </body>
-
 </html>
+
+
+
+

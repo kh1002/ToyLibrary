@@ -42,15 +42,6 @@
 </ul>
 </table>
 
-<!-- 탭메뉴 판별의 변경전 코드 -->
-<!-- <ul>
-	<li class="on"> <a onClick="show_leemocon(0);">전체</a> </li>
-	<li class=""> <a onClick="show_leemocon(1);">강남점</a> </li>
-	<li class=""> <a onClick="show_leemocon(2);">교대점</a> </li>
-	<li class=""> <a onClick="show_leemocon(3);">역삼점</a> </li>
-</ul> -->
-
-
 <table border="0">
 		<tr>	   
 			<s:iterator value="UPZ1list" status="stat">
@@ -71,10 +62,6 @@
 			
 			
 				<tr bgcolor="#ffffff" align="left">
-					<%-- <td><s:property value="toy_id"/></td>	 --%>
-					<%-- <td><s:property value="toy_image"/></td> --%>
-					<!-- <td><img src="./upload/" width="130" height="130" border="0"/></td> -->
-					
 					<td><img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" width="150" border="0"/></td>				
 			
 				</tr>

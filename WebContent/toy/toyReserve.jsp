@@ -9,102 +9,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<title>사용자 장난감 예약하기</title>
-<!-- 	<link rel="stylesheet" href="/strutsBoard/board/common/css/css.css" type="text/css"> -->
-
 </head>
 
 <body>
-<table width="600" border="0" cellspacing="0" cellpadding="0">
 
-
-
-<!-- 장난감 예약하기 타이틀 -->
-	<tr align="center">
-		<td height="60" align="center" colspan="2"><h2>장난감 예약하기</h2></td>
-	</tr>
-	
-<!-- 이미지가 나타나는 코드 -->
-	<tr align="center">
-		<td width="303" height="223" align="center" valign="middle">
-		<img id="imglink" src="/ToyLibrary/image/<s:property value="TresultClass.toy_image"/>" 
-			width="300" height="300"/>
-		</td>
-
-	</tr>
-	<p></p>	
-</table>		
-	
-<!-- 장난감과 사용자, 대여지점 정보가 나타나는 소스코드 -->		
-<table width="600" border="0" cellspacing="0" cellpadding="0">
-	
 <form action="ToyReserveAction.action" method="post" enctype="multipart/form-data">
+    <s:hidden name="toy_id" value="%{toy_id}"/>
+    <s:hidden name="zizum_no" value="%{zizum_no}"/>
+    <section class="padding-top30">
+            <div class="container">
+                <div class="row">
+                    <ul class="col-md-9 col-xs-12 blog-block">
+                        <li class="blog-box">
+                            <div class="in-stock">
+                                <div class="blog-title">
+                                    <h2><a href="blog-single.html">장난감 예약하기</a></h2>
+                                </div>
+                                <div class="blog-img">
+                                    <img id="imglink" src="/ToyLibrary/image/<s:property value="TresultClass.toy_image"/>" width="600" height="300"/>
+                                </div>
+                                <div class="blog-desc">
+                                    <div class="col-md-9 product-reservation">
+                                        <div class="col-md-3" style="margin-left: 200px">
+                                            <p>장난감 번호</p>
+                                            <p>장난감 이름</p>
+                                            <p>대여자 ID</p>
+                                            <p>대여자 이름</p>
+                                            <p>대여 지점</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p><s:property value="TresultClass.toy_id"/></p>
+                                            <p><s:property value="TresultClass.toy_name"/></p>
+                                            <p><s:property value="%{mresultClass.member_id}"/></p>
+                                            <p><s:property value="%{mresultClass.member_name}"/></p>
+                                            <p><s:property value="TresultClass.zizum_no"/></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 product-reservation" > 
+                                <div class="site-btn">
+                                	<button class="btn btn-2" type="submit"> 
+										<div class="stock-btn">예약하기</div>
+                                    </button>
+                                   
+                                    <button class="btn btn-2" type="button" onclick="javascript:window.location='./mainAction.action'"> 
+										<div class="stock-btn">취소</div> 
+                                    </button>
+                                </div>     
+                                </div>
+                            </div>    
+                        </li> 
+                    </ul>      
+                </div>
+            </div>
+        </section>
 
-   <s:hidden name="toy_id" value="%{toy_id}"/>
-   <s:hidden name="member_id" value=""/>
-   <s:hidden name="zizum_no" value="%{zizum_no}"/>
-		
-		<!-- 장난감코드 -->
-			<tr>
-				<td>장난감코드</td>
-				<td>
-			 	<%-- <s:textfield name="toy_id" theme="simple" value="%{TresultClass.toy_id}" cssStyle="width:100px" maxlength="20"/>
-				 --%>
-					<s:property value="TresultClass.toy_id"/> 
-				</td>
-			</tr>
-		<!-- 장난감이름 -->
- 			<tr>
-				<td>장난감이름</td>
-				<td>
-					<s:property value="TresultClass.toy_name"/>
-				</td>
-			</tr> 
-		<!-- 대여자ID -->
-			<tr>
-				<td>대여자ID</td>
-				<td>
-					<%-- <s:textfield name="member_id" theme="simple" value="%{ZresultClass.zizum_no}" cssStyle="width:100px" maxlength="20"/>
-				 --%>	
-					<s:property value="%{mresultClass.member_id}"/>
-						
-				</td>
-			</tr>
-		<!-- 대여자명 -->
-			<tr>
-				<td>대여자명</td>
-						<!-- 	<td>상세한 설명을 db에서 어떻게 받아와야할까</td> -->
-				<td><s:property value="%{mresultClass.member_name}"/></td> 
-			</tr>
-		<!-- 대여지점 -->
-			<tr>
-				<td>대여지점</td>
-				<td>
-	
-				 <%-- <s:property value="ZresultClass.admin_no"/> --%>
-							 
-					<s:if test="(TresultClass.zizum_no)==1)">
-						강남점
-					</s:if>
-					<s:elseif test="(TresultClass.zizum_no)==2)">
-						역삼점
-					</s:elseif>
-					<s:elseif test="(TresultClass.zizum_no)==3)">
-						교대점
-					</s:elseif>
-							 
-				</td> 
-			</tr>
 
-</table>
-
-<br>
-<br>
-</br></br>
-
-	<input type="submit" value="예약하기">
-	<input type="button" value="취소" onClick="">
-
+</form>
 </body>
 
 </html>

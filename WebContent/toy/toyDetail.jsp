@@ -9,137 +9,83 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<title>사용자 장난감 상세보기</title>
-	<!-- <link rel="stylesheet" href="/strutsBoard/board/common/css/css.css" type="text/css"> -->
 
 </head>
 
 <body>
 
-<table>
-	<tr>
-		<td height="60" colspan="2">상 세 보 기</td>
-	</tr>
-		<tr>
-			<td width="303" height="223" align="center" valign="middle">
-			<img src="/ToyLibrary/image/<s:property value="resultClass.toy_image"/>" width="300" height="300"/>.
-			</td>
-			<td width="500" align="center" valign="middle">
-				<table width="500" height="200" border="0">
-				<!-- 장난감이름 -->
-					<tr>
-						<!-- <td colspan="2">뽀로로장난감을 db에서 이름을 꺼내야되는데</td> -->
-						<td width="100">장난감이름</td>
-						<td><s:property value="resultClass.toy_name"/></td>
-					</tr>
-				<!-- 장난감영역 -->
-					<tr>
-						<td width="100">장난감구성</td>
-						<td><s:property value="resultClass.toy_gusung"/></td>
-					</tr>
-				<!-- 사용연령 -->
-					<tr>
-						<td width="100">사용연령</td>
-						<td><s:property value="resultClass.toy_age"/></td>
-					</tr>
-				<!-- 상세설명 -->
-					<tr>
-						<td width="100">상세설명</td>
-						<td><s:property value="resultClass.toy_detail"/></td>
-					</tr>
-				</table>
-				<!-- 2번째 td의 테이블의 끝 -->
-			</td>
-		</tr>
-</table>
-<!-- 장난감정보 큰 타이틀 -->
-	<tr>
-		<h2>
-			<td>장난감 정보</td>
-		</h2>
-	</tr>
-<!-- 장난감 바코드|대여자|... 과 같은 정보 -->
-<table width="600">
-	<tr>
-		<th width="120" scope="col" style="text-align:center">
-			<b>바코드</b>
-		</th>
-		<th width="120"  scope="col" style="text-align:center">
-			<b>장난감이름</b>
-		</th>
-		<th width="120"  scope="col" style="text-align:center">
-			<b>대여상태</b>
-		</th>
-		<th width="120"  scope="col" style="text-align:center">
-			<b>대출일</b>
-		</th>
-		<th width="120"  scope="col" style="text-align:center">
-			<b>반납예정일</b>
-		</th>
-	</tr>	
-</table>
-	
-	<!-- 장난감에 해당하는 정보들을 반복을 통해 꺼내와야 하는 부분 -->
-<iterator>
-		<!-- 근데 로직은 몰라 ㅋ-ㅋ -->
-		
-			<s:url id = "viewURL" action="ToyReserveForm">
-					<s:param name="toy_id">
-						<s:property value="toy_id" />
-					</s:param>
+<s:url id = "viewURL" action="ToyReserveForm">
+	<s:param name="toy_id">
+		<s:property value="toy_id" />
+	</s:param>
 					
-			 		<s:param name="zizum_no">
-						<s:property value="zizum_no" />
-					</s:param>
+	<s:param name="zizum_no">
+		<s:property value="zizum_no" />
+	</s:param>
 	
-					<s:param name="currentPage">
-						<s:property value="currentPage" />
-					</s:param>
-				</s:url>
-		
-		
-<table width="600">
-	<tr>
-	
-	<td width="120" scope="col" style="text-align:center">
-		<s:property value="resultClass.toy_id"/>
-	</td>
-	<td width="120" scope="col" style="text-align:center">
-		<s:property value="resultClass.toy_name"/>
-	</td>
-	
-	<!-- 이부분에서 if문으로 상태값을 판별하여 예약중과 대여중일때에는 링크를 막아야 함. -->
-	
-	<td width="120" scope="col" style="text-align:center">
-	<!-- 대여가능한 상태면 링크가 활성화된다. -->
-		<s:if test="(resultClass.state_code).equals('대여가능')">
-			<s:a href="%{viewURL}"><s:property value="resultClass.state_code"/></s:a>
-		</s:if>
-	<!-- 대여블가한 상태면 링크가 비활성화된다.(예약중, 대여중) -->	
-		<s:else>
-			<s:property value="resultClass.state_code"/>
-		</s:else>
-	</td>
-	<!-- 이부분까지 -->
-	
-	<td>
-		<s:property value="resultClass.reserve_date"/>
-	</td>
-	<td>
-		<s:property value="resultClass.return_date"/>
-	</td>
-	
-	</tr>
-</table>
-		
-</iterator>
-	
-
-<table>
-	
-</table>
+	<s:param name="currentPage">
+		<s:property value="currentPage" />
+	</s:param>
+</s:url>
 
 
+<section class="single-product padding-top100">
+            <div class="container">
+                <div class="row">   
+
+                    <div class="col-sm-5 col-md-5 product_page-rigth mt-40">
+                        <div class="product-gallery">
+                            <ul class="thumbnails list-unstyled">
+                                <li class="main-image-set"><a class="thumbnail"><img src="/ToyLibrary/image/<s:property value="resultClass.toy_image"/>" width="300" height="300"/></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4 col-md-5 product_page-left">
+                        <div class="in-stock">
+                            
+
+                            <div class="pro-title" style="margin-left: 100px"><h2><s:property value="resultClass.toy_name"/></h2></div>
+                            <ul class="rating" style="margin-left: 15px">
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                            </ul>
+                           
+                            <div class="product-description">
+                                <div class="col-sm-3">
+                                    <p>장난감 번호</p>
+                                    <p>장난감 이름</p>
+                                    <p>장난감 구성</p>
+                                    <p>사용연령</p>
+                                    <p>상세설명</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p><s:property value="resultClass.toy_id"/></p>
+                                    <p><s:property value="resultClass.toy_name"/></p>
+                                    <p><s:property value="resultClass.toy_gusung"/></p>
+                                    <p><s:property value="resultClass.toy_age"/></p>
+                                    <p><s:property value="resultClass.toy_detail"/></p>
+                                </div>
+                            </div>
+                            <div class="padding-top30"></div>
+                            <div class="stock-btn" style="margin-left: 250px">
+	                            <s:if test="(resultClass.state_code).equals('대여가능')">
+	                            	<s:a href="%{viewURL}"><s:property value="resultClass.state_code"/></s:a>
+	                            </s:if>
+	                            <s:else>
+									<s:property value="resultClass.state_code"/>
+								</s:else>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </section>
 
 
 

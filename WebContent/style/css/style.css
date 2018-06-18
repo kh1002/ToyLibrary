@@ -55,6 +55,10 @@ License URI: http://www.themevault.net/license/
 .site-btn .btn-1 {
     background-color: #87df2d;
 }
+
+.site-btn .btn-2 {
+    opacity: 1;
+}
 .site-btn .btn-1 .round {
     background-color: #35beea;
 }
@@ -1365,6 +1369,35 @@ ul.thumbnails li:nth-child(2) {
     line-height: 24px;
     margin: 15px 0 25px;
 }
+
+.product-description .col-sm-6 > p {
+    font-size: 15x;
+    font-weight: : bold;
+    line-height: 20px;
+    margin: 15px 0 25px;
+}
+
+.product-description .col-sm-3 > p {
+    font-size: 15x;
+    line-height: 20px;
+    font-weight: : bold;
+    margin: 15px 0 25px;
+}
+
+
+.product-reservation .col-md-9 >p {
+    font-size: 15x;
+    line-height: 10px;
+    margin: 15px 0 25px;
+}
+
+.product-reservation .col-md-3 >p {
+    font-size: 15x;
+    line-height: 10px;
+    margin: 15px 0 25px;
+}
+
+
 .product-add label {
     display: inline-block;
     float: left;
