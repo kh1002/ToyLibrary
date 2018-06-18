@@ -29,6 +29,8 @@
         <script src="/ToyLibrary/style/js/bxslider.js" type="text/javascript"></script>
         <script src="/ToyLibrary/style/js/instafeed.min.js" type="text/javascript"></script>
         <script src="/ToyLibrary/style/js/custom.js" type="text/javascript"></script>
+		
+		<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>

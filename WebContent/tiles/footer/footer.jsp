@@ -19,7 +19,7 @@
                                 <ul class="contact-list">
                                     <li>
                                         <i class="fa fa-map-marker fa-lg"></i>
-                                        <p><a href="#"> 701 Old York Drive Richmond USA.242342 701 Old York Drive Richmond USA.242342701 Old York Drive Richmond USA.242342 </a></p>
+                                        <p><a href="#"> 주소 : 서울시 강남구 역삼동 33-33 삼삼빌딩 3층 SS LIBRARY </a></p>
                                     </li>
                                     <li>
                                         <i class="fa fa-phone fa-lg"></i>
@@ -27,7 +27,7 @@
                                     </li>
                                     <li>
                                         <i class="fa fa-envelope-o fa-lg"></i>
-                                        <p><a href="mailto:demo@info.com"> demo@info.com</a></p>
+                                        <p><a href="mailto:demo@info.com"> KH_Academy1002@info.com</a></p>
                                     </li>
                                 </ul>
                                 <div class="footer-social-icon">

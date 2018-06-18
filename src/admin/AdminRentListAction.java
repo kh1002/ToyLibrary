@@ -6,6 +6,9 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 import java.util.*;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import java.io.Reader;
 import java.io.IOException;
 
@@ -13,7 +16,7 @@ import admin.pagingAction2;
 import member.MemberVO;
 import toy.toyReserveVO;
 
-public class AdminRentListAction extends ActionSupport {
+public class AdminRentListAction extends ActionSupport implements SessionAware{
 	
 	public static Reader reader;
 	public static SqlMapClient sqlMapper;
@@ -30,6 +33,12 @@ public class AdminRentListAction extends ActionSupport {
 	private String searchKeyword;
 	private int searchNum;
 	private int num = 0;
+	
+	private toyRentInfoVO paramClass = new toyRentInfoVO(); //파라미터를 저장할 객체
+	private toyRentInfoVO resultClass = new toyRentInfoVO();
+	private Map session;
+	private String zizum_name;
+	private String state_code;
 
 	
 	private List<toyRentInfoVO> RentInfolist = new ArrayList<toyRentInfoVO>();
@@ -50,8 +59,23 @@ public class AdminRentListAction extends ActionSupport {
 			return search();
 		}
 		
+		paramClass.setState_code("예약중");
+		if(session.get("member_id").equals("admin1"))
+		{
+			zizum_name = "강남점";
+		}
+		else if(session.get("member_id").equals("admin2"))
+		{
+			zizum_name = "역삼점";
+		}
+		else if(session.get("member_id").equals("admin3"))
+		{
+			zizum_name = "교대점";
+		}
+		paramClass.setZizum_name(zizum_name);
+		
 		//모든 글을 가져와서 list에 넣는다
-		RentInfolist = sqlMapper.queryForList("rentInfoAll","예약중");
+		RentInfolist = sqlMapper.queryForList("rentInfoAll",paramClass);
 		
 				
 		totalCount = RentInfolist.size(); //전체 글 갯수를 구함
@@ -205,6 +229,56 @@ public class AdminRentListAction extends ActionSupport {
 
 	public void setNum(int num) {
 		this.num = num;
+	}
+
+
+	public toyRentInfoVO getParamClass() {
+		return paramClass;
+	}
+
+
+	public void setParamClass(toyRentInfoVO paramClass) {
+		this.paramClass = paramClass;
+	}
+
+
+	public toyRentInfoVO getResultClass() {
+		return resultClass;
+	}
+
+
+	public void setResultClass(toyRentInfoVO resultClass) {
+		this.resultClass = resultClass;
+	}
+
+
+	public Map getSession() {
+		return session;
+	}
+
+
+	public void setSession(Map session) {
+		this.session = session;
+	}
+
+
+	public String getZizum_name() {
+		return zizum_name;
+	}
+
+
+	public void setZizum_name(String zizum_name) {
+		this.zizum_name = zizum_name;
+	}
+
+
+	public String getState_code() {
+		return state_code;
+	}
+
+
+	public void setState_code(String state_code) {
+		this.state_code = state_code;
 	}
 	
 

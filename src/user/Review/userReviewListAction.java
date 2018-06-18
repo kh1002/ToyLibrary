@@ -1,6 +1,10 @@
 package user.Review;
 
 import com.opensymphony.xwork2.ActionSupport;
+
+import board.Review.creviewVO;
+import board.Review.reviewVO;
+
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
@@ -21,6 +25,7 @@ public class userReviewListAction extends ActionSupport{
 	
 	private List<userReviewVO> list = new ArrayList<userReviewVO>();
 	
+	private List commentCountList = new ArrayList();
 	
 	private String searchKeyword;
 	private int searchNum;
@@ -63,6 +68,20 @@ public class userReviewListAction extends ActionSupport{
 			lastCount = page.getEndCount() + 1;
 		
 		list = list.subList(page.getStartCount(), lastCount);
+		
+		for(int i=0; i<list.size(); i++) {
+			List<userReviewVO> listMap = list;
+			int count = listMap.get(i).getReview_no();
+			
+			List<creviewVO> cList = sqlMapper.queryForList("commentCount",count);
+			
+			System.out.println("아아아아아123123 : "+cList.size());
+			commentCountList.add(cList.size());
+			
+			
+		}
+		
+		
 		return SUCCESS;
 	}
 	
@@ -91,6 +110,19 @@ public class userReviewListAction extends ActionSupport{
 			lastCount = page.getEndCount() + 1;
 		
 		list = list.subList(page.getStartCount(), lastCount);
+		
+		for(int i=0; i<list.size(); i++) {
+			List<userReviewVO> listMap = list;
+			int count = listMap.get(i).getReview_no();
+			
+			List<creviewVO> cList = sqlMapper.queryForList("commentCount",count);
+			
+			System.out.println("아아아아아123123 : "+cList.size());
+			commentCountList.add(cList.size());
+			
+			
+		}
+		
 		return SUCCESS;
 	}
 

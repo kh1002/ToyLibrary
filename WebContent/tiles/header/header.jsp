@@ -42,32 +42,32 @@
                     <div class="container">
                         <nav class="collapse navbar-collapse">    
                             <ul class="nav navbar-nav navbar-right">
-                                <li style="margin-right : 100px;" class="dropdown"><a href="useIntroView.action" class="flip-animate"><span data-hover="Use">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이용안내</span></a>
+                                <li style="margin-right : 100px;" class="dropdown"><a href="useIntroView.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이용안내">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이용안내</span></a>
                                     <div class="dropdown-content">
-                                        <a href="useIntroView.action">이용안내</a>  
-                                        <a href="#">찾아오시는길</a>  
-                                        <a href="#">시설현황</a>  
+                                        <a href="useIntroView.action">소개</a>  
+                                        <a href="useInfoView.action">이용 안내</a>
+			                            <a href="useFacilityView.action">시설 현황</a>
+			                            <a href="useLocationView.action">찾아오시는 길</a>
                                     </div>        
                                 </li>
-                                <li style="margin-right : 130px;" class="dropdown"><a href="ToyListAction.action" class="flip-animate"><span data-hover="Blog">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감목록</span></a>
+                                <li style="margin-right : 130px;" class="dropdown"><a href="ToyListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감목록">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감목록</span></a>
                                     <div class="dropdown-content">
                                         <a href="ToyListAction.action">장난감목록</a>  
-                                        <a href="#">장난감예약</a>  
+                                        <a href="MyReservationListAction.action">장난감예약</a>  
                                     </div> 
                                 </li>
                                 <li style="margin-right : 100px;" class="dropdown">
-                                    <a href="#" class="dropbtn flip-animate"><span data-hover="Pages">아이꿈놀이나라</span></a>
+                                    <a href="userEventListAction.action" class="dropbtn flip-animate"><span data-hover="아이꿈놀이나라">아이꿈놀이나라</span></a>
                                     <div class="dropdown-content">
-                                        <a href="about.html">행사목록</a>
-                                        <a href="404-page.html">404</a>                                       
+                                        <a href="userEventListAction.action">행사목록</a>                                 
                                     </div>
                                 </li>
-                                <li style="margin-right : 130px;" class="dropdown"><a href="contact.html" class="flip-animate"><span data-hover="Contact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;게시판</span></a>
+                                <li style="margin-right : 130px;" class="dropdown"><a href="userNoticeListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;커뮤니티">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;커뮤니티</span></a>
                                     <div class="dropdown-content">
-                                        <a href="#">자유게시판</a>  
-                                        <a href="#">공지사항</a>  
-                                        <a href="#">문의게시판</a> 
-                                        <a href="#">자주묻는질문</a> 
+                                        <a href="userNoticeListAction.action">공지사항</a>  
+                                        <a href="userQnaListAction.action">QNA</a>  
+                                        <a href="userReviewListAction.action">이용 후기</a> 
+                                        <a href="userFaqListAction.action">자주묻는질문</a> 
                                     </div>      
                                 </li>
                             </ul>
