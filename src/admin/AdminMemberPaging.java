@@ -52,7 +52,7 @@ public class AdminMemberPaging {
 		if (currentPage > blockPage) {
 			pagingHtml.append("<a href=adminMemberListForm.action?currentPage="
 					+ (startPage - 1) + ">");
-			pagingHtml.append("����");
+			pagingHtml.append("이전");
 			pagingHtml.append("</a>");
 		}
 
@@ -84,7 +84,7 @@ public class AdminMemberPaging {
 		if (totalPage - startPage >= blockPage) {
 			pagingHtml.append("<a href=adminMemberListForm.action?currentPage="
 					+ (endPage + 1) + ">");
-			pagingHtml.append("����");
+			pagingHtml.append("다음");
 			pagingHtml.append("</a>");
 		}
 	}

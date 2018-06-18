@@ -28,7 +28,7 @@
        		<result property="reserve_date" column="reserve_date"/> 
        		<result property="return_date" column="return_date"/> 
        		
-      <!--  		<result property="member_id" column="member_id"/> -->
+      <!--  	<result property="member_id" column="member_id"/> -->
 			<result property="member_pw" column="member_pw"/>
 			<result property="member_name" column="member_name"/>
 			<result property="member_jumin1" column="member_jumin1"/>
@@ -49,15 +49,12 @@
 		
 		<sql id="myrentwhere-no">
 			where p.toy_id = r.toy_id and r.member_id = m.member_id and p.zizum_no = i.zizum_no
-
-			
 		</sql>
 		
 		<select id="myrentInfoAll" resultMap="myRentRes">
 			<include refid="myrentselect-all"/>
-			<include refid="myrentwhere-no"/> and p.state_code=#state_code#
+			<include refid="myrentwhere-no"/> and p.state_code=#state_code# and m.member_id = #member_id#
 			order by reserve_date asc
-			
 		</select>
 		
 		<select id="myrentInfoOne" resultMap="myRentRes">
