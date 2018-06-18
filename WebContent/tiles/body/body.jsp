@@ -5,7 +5,6 @@
 <html>
 <head>
 
-<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
 
 
 </head>
@@ -62,7 +61,7 @@
 							<img src="/ToyLibrary/style/images/blog2.jpg" alt="blog" class="img-responsive    ">
 						</div>
 						<div class="blog-details">
-						                          <style type="text/css">
+						<style type="text/css">
 						.jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 
 					

@@ -24,6 +24,9 @@ public class AdminToyWriteAction extends ActionSupport implements SessionAware{
 	private toyProductVO paramClass; //파라미터를 저장할 객체. ibatis로 보내기 위함
 	private toyProductVO resultClass; //쿼리 결과 값을 저장할 객체. ibatis에서 실행된 결과를 가져오려고
 
+	private zizumVO zparamClass;
+	private zizumVO zresultClass;
+	
 	private Map session;
 		
 	private int toy_id;
@@ -64,7 +67,10 @@ public class AdminToyWriteAction extends ActionSupport implements SessionAware{
 		//파라미터와 리절트 객체 생성(자바빈 객체 생성)
 		paramClass = new toyProductVO();
 		resultClass = new toyProductVO();
-	
+		
+		zparamClass = new zizumVO();
+		zresultClass = new zizumVO();
+		
 		//장난감의 등록할 항목 설정
 	/*	paramClass.setToy_id(resultClass.getToy_id());*/
 		paramClass.setToy_name(getToy_name());
@@ -72,24 +78,20 @@ public class AdminToyWriteAction extends ActionSupport implements SessionAware{
 		paramClass.setToy_age(getToy_age());
 		paramClass.setToy_gusung(getToy_gusung());
 		
-		if(session.get("member_id").equals("admin1"))
+		for(int i=1; i<=3; i++)
 		{
-			original_zizum = 1;
-		}
-		else if(session.get("member_id").equals("admin2"))
-		{
-			original_zizum = 2;
-		}
-		else if(session.get("member_id").equals("admin3"))
-		{
-			original_zizum = 3;
+			if(session.get("member_id").equals("admin"+i))
+			{
+				zparamClass.setAdmin_no(i);
+			}
 		}
 		
-		System.out.println("오리지날지점번호 : "+original_zizum);
+		zresultClass = (zizumVO) sqlMapper.queryForObject("zizumselectOne",zparamClass.getAdmin_no());
+		
 		
 		//지점컬럼2개는 자동으로 입력되는 방법 찾아야함. 관라자가 어쩌구젂=쩌구.....
-		paramClass.setZizum_no(original_zizum);
-		paramClass.setOriginal_zizum(original_zizum);
+		paramClass.setZizum_no(zresultClass.getZizum_no());
+		paramClass.setOriginal_zizum(zresultClass.getZizum_no());
 		
 		
 		paramClass.setState_code("대여가능");
