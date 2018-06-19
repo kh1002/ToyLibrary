@@ -41,102 +41,121 @@
 </ul>
 
 </table>
+ <div class="container">
+                 <div class="row padding-top30"> 
 
-<table border="0">
-		<tr>	   
-			<s:iterator value="UPlist" status="stat">
-			
-				<s:url id = "viewURL" action="ToyDetailAction" >
-					<s:param name="toy_id">
-						<s:property value="toy_id" />
-					</s:param>
+                    <div class="product-grid-layout">
+                    	
+                        <ul class="toy-products-list">
+                        <div class="col-md-9">
+                        
+                        <s:iterator value="UPlist" status="stat">
+
+						<s:if test="#stat.index % 3 eq 0">
+               			<tr></tr>
+           	 			</s:if>
+
+                        
+                        <s:url id = "viewURL" action="ToyDetailAction" >
+							<s:param name="toy_id">
+								<s:property value="toy_id" />
+							</s:param>
+													
+							<s:param name="zizum_no">
+								<s:property value="zizum_no" />
+							</s:param>
+									
+							<s:param name="currentPage">
+								<s:property value="currentPage" />
+							</s:param>
+						</s:url>
+                        
+                            <li class="col-md-4 col-sm-4 col-xs-6 width-100"> 
+                                <div class="toy-block">
+                                    <div class="baby-image">
+                                        <div class="category-new">
+                                            <div class="green-new-tag new-tag">
+                                                <a class="funky-font" href="#">New</a>
+                                            </div>
+                                        </div>
+                                        <div class="toy-img">
+                                            <s:a href="%{viewURL}">
+                                                <!-- <img src="images/pro1.png" class="img-responsive" alt="toy"> -->
+                                            	<img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" class="img-responsive" alt="toy"/>
+                                            </s:a>
+                                        </div>  
+                                        <div class="toy-details">
+                                            <h4><s:property value="toy_name"/></h4>
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+						</s:iterator>
+						</div>
+                        </ul>
+                    </div>
+                    
+                     <!-- 검색창을 보여주는 jsp코드 -->
+						<form name="search" action="list.jsp" method="post">
+						<table>
+							<tr>										
+								<td>
+									<select name="goods_category" size="1" value="">
+										<option value="zizum">호점</option>
+										<option value="1">강남점</option>
+										<option value="2">역삼점</option>
+										<option value="3">교대점</option>
+									</select>
+								</td>									
+								<td>
+									<select name="goods_category" size="1" value="">
+										<option value="smallclass">소분류</option>
+										<option value="class1">역할놀이</option>
+										<option value="class2">언어/숫자 학습</option>
+										<option value="class3">음악/악기 완구</option>
+										<option value="class4">스포츠 완구</option>
+										<option value="class5">블록/퍼즐/게임</option>
+									</select>
+								</td>							
+								<td>
+									<select name="goods_category" size="1" value="">
+										<option value="toy_age">추천연령</option>
+										<option value="1to6">1개월~6개월</option>
+										<option value="7to12">7개월~12개월</option>
+										<option value="13to18">13개월~18개월</option>
+										<option value="19to24">19개월~24개월</option>
+										<option value="25to36">25개월~36개월</option>
+										<option value="37to48">37개월~48개월</option>
+									</select>
+								</td>
+								<td>
+									<input type="text" name="search_key" value="" size="10">
+								</td>
+								<td>
+									<input type="submit" value="검색">
+								</td>
+							</tr>
+						</form> 	
+						</table>
+
 					
-					<s:param name="zizum_no">
-						<s:property value="zizum_no" />
-					</s:param>
-	
-					<s:param name="currentPage">
-						<s:property value="currentPage" />
-					</s:param>
-				</s:url>
-			
-			
-				<tr bgcolor="#ffffff" align="left">
-					<%-- <td><s:property value="toy_id"/></td>	 --%>
-					<%-- <td><s:property value="toy_image"/></td> --%>
-					<!-- <td><img src="./upload/" width="130" height="130" border="0"/></td> -->
-					<td><img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" width="150" border="0"/></td>				
-			
-				</tr>
-				<tr>	
-					<td align="left"><s:property value="zizum_no"/>
-					&nbsp;<s:a href="%{viewURL}"><s:property value="toy_name"/></s:a></td>
-								 
-									 
-					</td>
-				</tr>
-				<tr>	
-					<%-- <td align="center"><s:property value="toy_age"/></td> --%>
-					<td>전체() | 보유() | 대여()</td>
-					<%-- <td align="center"><s:property value="state_code"/></td> --%>
-				</tr>
-			
-			
-			</s:iterator>
+					<!-- 링크 리스트 1|2|3|4|5 가 나타나는 코드 -->
+						<tr align="center">
+							<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
+						</tr>
+  
+                </div>
+            </div>
+        </div>
 
-		</tr>
-	</table>
-
-
- <!-- 검색창을 보여주는 jsp코드 -->
-<form name="search" action="list.jsp" method="post">
-
-	<tr>										
-		<td>
-			<select name="goods_category" size="1" value="">
-				<option value="zizum">호점</option>
-				<option value="fulldress">강남점</option>
-				<option value="tshirts">역삼점</option>
-				<option value="shirts">교대점</option>
-			</select>
-		</td>									
-		<td>
-			<select name="goods_category" size="1" value="">
-				<option value="smallclass">소분류</option>
-				<option value="fulldress">정장/신사복</option>
-				<option value="tshirts">티셔츠</option>
-				<option value="shirts">와이셔츠</option>
-				<option value="pants">팬츠</option>
-				<option value="shoes">슈즈</option>
-			</select>
-		</td>							
-		<td>
-			<select name="goods_category" size="1" value="">
-				<option value="toyage">추천연령</option>
-				<option value="fulldress">정장/신사복</option>
-				<option value="tshirts">티셔츠</option>
-				<option value="shirts">와이셔츠</option>
-				<option value="pants">팬츠</option>
-				<option value="shoes">슈즈</option>
-			</select>
-		</td>
-	</tr>
-	
-	<input type="text" name="search_key" value="" size="10">
-	<input type="submit" value="검색">
-</form> 	
-
-
-
-<!-- 링크 리스트 1|2|3|4|5 가 나타나는 코드 -->
-	<tr align="center">
-		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
-	</tr>
-		
 
 </body>
 </html>
-
-
-
 
