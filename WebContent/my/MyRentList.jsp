@@ -16,75 +16,56 @@
 
 <body>
 
-
-<h2>대여 내역</h2>
-
-<table width="800" border="0" cellspacing="0" cellpadding="2">
-
-	<tr>
-		<th width="180" scope="col" style="text-align:center">
+<section class="padding-top30">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-12 col-xs-12">
+				<form>
+					<div class="cart-table table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<!-- <th class="text-center"></th> -->
+									<th class="text-center">장난감번호</th>
+									<th class="text-center">장난감이름</th>
+									<th class="text-center">대출지점</th>
+									<th class="text-center">대출일</th>
+									<th class="text-center">반납예정일</th>
+									<th class="text-center">상태</th>
+								</tr>
+							</thead>
+							
+							<!-- 반복문의 시작 -->
+							<s:iterator value="MyRentlist" status="stat">
+														
+							<tbody>
+								<tr>
+									<td class="text-center"><s:property value="toy_id"/></td>
+									<td class="text-center"><s:property value="toy_name"/></td>
+									<td class="text-center"><s:property value="zizum_name"/></td>
+									<td class="text-center"><s:property value="reserve_date"/></td>
+									<td class="text-center"><s:property value="return_date"/></td>
+									<td class="text-center"><s:property value="state_code"/></td>
+								</tr>
+							</tbody>
+							
+							</s:iterator>
+							
+							<s:if test="MyRentlist.size() <=0">
+							
+							<tr bgcolor="#ffffff" align="center">
+								<td colspan="5">등록된 게시물이 없습니다.</td>
+							</tr>
+							</s:if>
 		
-			<b>장난감 번호</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>장난감 이름</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>대출 지점</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>대출일</b>
-		</th>
-		<th width="200"  scope="col" style="text-align:center">
-			<b>반납 예정일</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>상태</b>
-			</th>
-	</tr>	
-</table>
+						</table>
+					</div>
+				</form>
+			</div>
+		</div>
 
-
-
-<!-- 장난감 목록에 대한 리스트를 반복으로 나타내는 코드 -->
- <table width="800">
-
-		<s:iterator value="MyRentlist" status="stat">
-		
-
-
-			<tr align="center">
-				<td width="180"><s:property value="toy_id"/></td>	
-				<td width="180"><s:property value="toy_name"/></td>
-				<td width="180"><s:property value="zizum_name"/></td>
-				<td width="180"><s:property value="reserve_date"/></td>
-				<td width="180"><s:property value="return_date"/></td>
-				<td width="180"><s:property value="state_code"/></td>
-				</td>
-
-			</tr>
-			
-				
-		</s:iterator>
-		
-		<s:if test="MyRentlist.size() <=0">
-		
-		<tr bgcolor="#ffffff" align="center">
-			<td colspan="5">등록된 게시물이 없습니다.</td>
-		</tr>
-		<tr bgcolor="#ffffff">
-			<td height="1" colspan="5"></td>
-		</tr>
-	
-		</s:if>
-		
-
-
-</table>
-
-
-
-
+	</div>
+</section>
 
 
 </body>

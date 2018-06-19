@@ -16,103 +16,74 @@
 
 <body>
 
-<table width="600" border="0" cellspacing="0" cellpadding="2">
-	<tr>
-		<td align="center"><h2>관리자 대여관리</h2></td>
-	</tr>
-	<tr>
-		<td height="20"></td>
-	</tr>
-</table>
-
-<!-- 대여관리 폼 -->
-
-<table width="600" border="1" cellspacing="0" cellpadding="0">
-
 <form action="AdminRentDetailStateAction.action" method="post" enctype="multipart/form-data">
 <!-- 숨겨서 보내는 데이터?? -->
-	<s:hidden name="toy_id" value="%{resultClass.toy_id}"/>
+<s:hidden name="toy_id" value="%{resultClass.toy_id}"/>
 	
-
-<!-- 장난감번호 입력줄 -->
-	<tr>
-		<td align="center" width="150">
-			장난감번호
-		</td>
-		<td><s:property value="resultClass.toy_id"/></td>
-	</tr>
-<!-- 장난감이름 입력줄 -->	
-	<tr>
-		<td align="center" width="150">
-			장난감이름
-		</td>
-		<td><s:property value="resultClass.toy_name"/></td>
-	</tr>
-<!-- 대여자 입력폼-->	
-	<tr>
-		<td align="center" width="150">
-			대여자
-		</td>
-		<td><s:property value="resultClass.member_name"/></td>
-	</tr>
-<!-- 대여지점 입력줄 -->	
-	<tr>
-		<td align="center" width="150">
-			대여지점
-		</td>
-		<td>
-			<s:property value="resultClass.zizum_name"/>
-		</td>
-	</tr>
-<!-- 예약일 입력줄 -->	
-	<tr>
-		<td align="center" width="150">
-			예약일/대여일
-		</td>
-		<td>
-			<s:property value="resultClass.reserve_date"/>
-		</td>
-	</tr>
-	
-<!-- 대여가능일 입력줄 -->	
-	<tr>
-		<td align="center" width="150">
-			대여가능일/반납일
-		</td>
-		<td>
-			<s:property value="resultClass.return_date"/>
-		</td>
-	</tr>	
-	
-<!-- 셀렉트 박스 입력줄 -->	
-	<tr>	
-		<td align="center" width="150">
-			대여정보수정
-		</td>
-		<td>
-			<s:select name="state_code" list="#{'예약중':'예약중','대여중':'대여'}" 
-					  value="%{resultClass.state_code}">
-			</s:select>
-		</td>
-	</tr>		
-	
-	
-	
-</table>	
-
-<!--  -->
-<br/><br/>
-<table align="center" width="600">
-	<tr>
-		<td>
-			<input type="submit" value="확인">
-			&nbsp;&nbsp;
-			<input type="button" value="취소" onclick="javascript:window.location='./AdminRentListAction.action'">	
-		</td>
-	</tr>
-</table>
-
-
+<section class="padding-top30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                            <div class="cart-table table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"  colspan="2">장난감 대여관리</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-left">
+                                            <td><b>장난감번호</b></td>
+                                            <td><s:property value="resultClass.toy_id"/></td>
+                                        </tr>
+                                        <tr class="text-left">
+                                            <td><b>장난감이름</b></td>
+                                            <td><s:property value="resultClass.toy_name"/></td>
+                                        </tr>
+                                        <tr class="text-left">
+                                            <td><b>대여자</b></td>
+                                            <td><s:property value="resultClass.member_name"/></td>
+                                        </tr>
+                                        <tr class="text-left">
+                                            <td><b>대여지점</b></td>
+                                            <td><s:property value="resultClass.zizum_name"/></td>
+                                        </tr>
+                                        <tr class="text-left">
+                                            <td><b>예약일</b></td>
+                                            <td><s:property value="resultClass.reserve_date"/></td>
+                                        </tr>
+                                        <tr class="text-left">
+                                            <td><b>대여가능일</b></td>
+                                            <td><s:property value="resultClass.return_date"/></td>
+                                        </tr>
+                                        <tr class="text-left">
+                                            <!-- <td><b>대여정보수정</b></td> -->
+                                            <s:select name="state_code" list="#{'예약중':'예약중','대여중':'대여'}" 
+												value="%{resultClass.state_code}">
+											</s:select>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+            </div>    
+        <div class="col-md-6 col-md-offset-3">
+            <div class="site-btn">
+                <button class="btn btn-1" type="submit">                                 
+                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">확인</span>
+                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+                </button>                 
+                <button class="btn btn-1" type="button" onclick="javascript:window.location='./AdminRentListAction.action'" style="background-color: #87df2d;">                                   
+                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">취소</span>
+                    <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+                </button>
+            </div>
+        </div>
+       
+    </section>
+    
+</form> 
 </body>
 
 </html>
