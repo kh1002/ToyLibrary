@@ -7,16 +7,14 @@
 <html>
 <head>
 <title>문의사항</title>
+<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+          <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 </head>
 
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>문의사항</h2></td>
-		</tr>
-	</table>
-
-	<section class="padding-top100">
+<span class="jua" style="font-size:24pt; color:#00BFFF;">Q&nbsp;&nbsp;&&nbsp;&nbsp;A</span>
+	<section class="padding-top50">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
@@ -26,11 +24,11 @@
 							<thead>
 								<tr>
 									<th class="text-center"></th>
-									<th class="text-left">DESCRIPTION</th>
-									<th class="text-left">MODEL NUMBER</th>
-									<th class="text-left">DESCRIPTION</th>
-									<th class="text-left">MODEL NUMBER</th>
-									<th class="text-left">MODEL NUMBER</th>
+									<th class="text-left">번호</th>
+									<th class="text-left">제목</th>
+									<th class="text-left">작성자</th>
+									<th class="text-left">등록날짜</th>
+									<th class="text-left">조회수</th>
 
 								</tr>
 							</thead>

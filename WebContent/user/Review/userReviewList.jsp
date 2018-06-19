@@ -7,47 +7,79 @@
 <html>
 <head>
 <title>이용후기</title>
+<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+          <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 </head>
 
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>이용후기</h2></td>
-		</tr>
-	</table>
-	
-	<table width="600" border="1">
-		<tr align="center" bgcolor="#f3f3f3">
-			<td width="50"><strong>번호</strong></td>
-			<td width="350"><strong>제목</strong></td>
-			<td width="70"><strong>글쓴이</strong></td>
-			<td width="80"><strong>날짜</strong></td>
-			<td width="50"><strong>조회</strong></td>
-		</tr>
+	<span class="jua" style="font-size:24pt; color:#00BFFF;">이&nbsp;용&nbsp;후&nbsp;기</span>
+     <section class="padding-top50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-12 col-xs-12">
+                <form>
+                    <div class="cart-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-left">번호</th>
+                                    <th class="text-left">제목</th>
+                                    <th class="text-left">작성자</th>
+                                    <th class="text-left">날짜</th>
+                                    <th class="text-left">조회</th>
+
+                                </tr>
+                            </thead>
+                            <s:iterator value="list" status="stat">
+                                <s:url id="viewURL" action="userReviewViewAction">
+                                <s:param name="review_no">
+                                    <s:property value="review_no" />
+                                </s:param>
+                                <s:param name="currentPage">
+                                    <s:property value="currentPage" />
+                                </s:param>
+                            </s:url>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left"></td>
+
+                                        
+                                        <td class="text-left"><br>
+                                       <s:property value="review_no" /></td>
+
+                                        <td class="text-left cart-product-title"><br>
+                                       <s:a href="%{viewURL}"><s:property value="review_subject" /></s:a>
+                                            <hr></td>
+                                        <td class="text-left"><br>
+                                        <s:property value="review_name" /></td>
+
+                                        <td class="text-left"><br>
+                                       <s:property value="review_regdate" /></td>
 
 
-	<s:iterator value="list" status="stat">
-		<s:url id="viewURL" action="userReviewViewAction">
-			<s:param name="review_no">
-				<s:property value="review_no" />
-			</s:param>
-			<s:param name="currentPage">
-				<s:property value="currentPage" />
-			</s:param>
-		</s:url>
-	
-		<tr>
-			<td><s:property value="review_no" /></td>
-			<td align="left">
- 				<s:a href="%{viewURL}"><s:property value="review_subject" /></s:a>
- 			</td>
-			<td><s:property value="review_name" /></td>
-			<td><s:property value="review_regdate" /></td>
-			<td><s:property value="review_readcount" /></td>
-		</tr>
+                                        <td class="text-left"><br>
+                                        <s:property value="review_readcount" /></td>
+
+                                        <td class="text-left"><br>
+                                        <div style="max-width: 200px;" class="input-group btn-block">
 
 
-	</s:iterator>
+                                            </div></td>
+
+                                    </tr>
+                                </tbody>
+                            </s:iterator>
+
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    </section>
 
 	<s:if test="list.size() <= 0">
 		<tr>

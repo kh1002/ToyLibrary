@@ -130,6 +130,9 @@ table {
 /*-----------------------------------------------------------------------------------*/
 /*	2.	GENERAL
 /*-----------------------------------------------------------------------------------*/
+.abc {
+	font-size:50px;
+}
 
 body {
 	font-family:"Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", Helvetica, Arial, sans-serif;

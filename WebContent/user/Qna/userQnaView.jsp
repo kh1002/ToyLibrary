@@ -15,51 +15,79 @@
 </head>
 
 <body>
-	<table width="600" border="1">
-	<tr>
-		<td align="center"><h2>문의사항 상세보기</h2></td>
-	</tr>
-	</table>
+	  <section class="padding-top100">
+            <div class="container">           
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <form>
+                            <div class="cart-table table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"  colspan="2">상세보기</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>Number</b>
+                                            </td>
+                                            <td>               
+                                           <s:property value="resultClass.qna_no" />
+                                            </td>
+                                        </tr>
 
-	<table width="600" border="1">
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>Subject</b>
+                                            </td>
+                                            <td>               
+                                            <s:property value="resultClass.qna_subject" />
+                                            </td>
+                                        </tr>
 
-		<tr>
-			<td width="100">번호</td>
-			<td width="500">
-				<s:property value="resultClass.qna_no" />
-			</td>
-		</tr>
-		<tr>
-			<td width="100">제목</td>
-			<td width="500">
-				<s:property value="resultClass.qna_subject" />
-			</td>
-		</tr>
-		<tr>
-			<td width="100">이름</td>
-			<td width="500">
-				<s:property value="resultClass.qna_name" />
-			</td>
-		</tr>
-		
-		<tr>
-			<td width="100">내용</td>
-			<td width="500">
-				${resultClass.qna_content }
-			</td>
-		</tr>
-		<tr>
-			<td width="100">조회수</td>
-			<td width="500">
-				<s:property value="resultClass.qna_readcount" />
-			</td>
-		</tr>
-		<tr>
-			<td width="100">등록날짜</td>
-			<td width="500">
-				<s:property value="resultClass.qna_regdate" />
-			</td>
-		</tr>
+                                         <tr class="text-left">
+                                            <td>               
+                                                <b>Name</b>
+                                            </td>
+                                            <td>               
+                                           <s:property value="resultClass.qna_name" />
+                                            </td>
+                                        </tr>
+
+                                         <tr class="text-left">
+                                            <td>               
+                                                <b>Content</b>
+                                            </td>
+                                            <td>               
+                                           ${resultClass.qna_content }
+                                            </td>
+                                        </tr>
+
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>readcount</b>
+                                            </td>
+                                            <td>               
+                                           <s:property value="resultClass.qna_readcount" />
+                                            </td>
+                                        </tr>
+
+                                         <tr class="text-left">
+                                            <td>               
+                                                <b>regdate</b>
+                                            </td>
+                                            <td>               
+                                            <s:property value="resultClass.qna_regdate" />
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>                    
+        </section>   
 		
 
 		
@@ -77,10 +105,41 @@
 						<s:property value="qna_no" />
 					</s:param>
 				</s:url>
+			</td>
 				
-				<input name="list" type="button" value="수정" onClick="javascript:open_win_noresizable('userQnaCheckForm.action?qna_no=<s:property value="resultClass.qna_no" />&currentPage=<s:property value="currentPage" />','modify')">
+				
+			<td align="right">			
+				<button class="btn" type="button" 
+				onclick="javascript:open_win_noresizable('userQnaCheckForm.action?qna_no=<s:property value="resultClass.qna_no" />&currentPage=<s:property value="currentPage" />','modify')"
+				class="btn_small3" style="background-color: #87df2d;">
+				<span class="txt"
+					style="color: #fff; font-family: sans-serif; font-weight: bold;">수정</span>
+				<span class="round" style="background-color: #35beea;"><i
+					class="fa fa-chevron-right" style="color: white;"></i></span>
+				</button>
+				
+				<button class="btn" type="button"
+				onclick="javascript:open_win_noresizable('userQnaCheckForm.action?qna_no=<s:property value="resultClass.qna_no" />&currentPage=<s:property value="currentPage" />','delete')"
+				class="btn_small3" style="background-color: #87df2d;">
+				<span class="txt"
+					style="color: #fff; font-family: sans-serif; font-weight: bold;">삭제</span>
+				<span class="round" style="background-color: #35beea;"><i
+					class="fa fa-chevron-right" style="color: white;"></i></span>
+				</button>
+						
+				<button class="btn" type="button"
+				onclick="javascript:location.href='userQnaListAction.action?currentPage=<s:property value="currentPage" />'"
+				class="btn_small3" style="background-color: #87df2d;">
+				<span class="txt"
+					style="color: #fff; font-family: sans-serif; font-weight: bold;">목록</span>
+				<span class="round" style="background-color: #35beea;"><i
+					class="fa fa-chevron-right" style="color: white;"></i></span>
+				</button>
+				
+				
+				<%-- <input name="list" type="button" value="수정" onClick="javascript:open_win_noresizable('userQnaCheckForm.action?qna_no=<s:property value="resultClass.qna_no" />&currentPage=<s:property value="currentPage" />','modify')">
 				<input name="list" type="button" value="삭제" onClick="javascript:open_win_noresizable('userQnaCheckForm.action?qna_no=<s:property value="resultClass.qna_no" />&currentPage=<s:property value="currentPage" />','delete')">
-				<input name="list" type="button" value="목록" onClick="javascript:location.href='userQnaListAction.action?currentPage=<s:property value="currentPage" />'">
+				<input name="list" type="button" value="목록" onClick="javascript:location.href='userQnaListAction.action?currentPage=<s:property value="currentPage" />'"> --%>
 			</td>
 		</tr>
 	</table>

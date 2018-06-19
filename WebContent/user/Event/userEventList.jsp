@@ -5,17 +5,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>자주묻는질문</title>
+	<title>행사</title>
+	<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+	          <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 </head>
 
 
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>event</h2></td>
-		</tr>
-	</table>
-	 <section class="padding-top100">
+<span class="jua" style="font-size:24pt; color:#00BFFF;">행&nbsp;&nbsp;&nbsp;사</span>
+	 <section class="padding-top50">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 col-sm-12 col-xs-12">
