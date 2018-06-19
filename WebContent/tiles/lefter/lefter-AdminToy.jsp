@@ -10,7 +10,7 @@
 <body>
 	<lefter>
 		<div class="lefter-menu">
-			<h3>마이페이지</h3>
+			<h3>장난감</h3>
 				<ul>
 					<li><a href="AdminToyListAction.action">장난감목록</a></li>
 					<li><a href="AdminRentListAction.action">대여관리</a></li>
