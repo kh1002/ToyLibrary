@@ -18,7 +18,7 @@
                                 <ul class="contact-list">
                                     <li>
                                         <i class="fa fa-map-marker fa-lg"></i>
-                                        <p><a href="#"> 주소 : 서울시 강남구 역삼동 33-33 삼삼빌딩 3층 SS LIBRARY </a></p>
+                                        <p><a href="#"> 주소 : 서울시 강남구 역삼동 33-33 삼삼빌딩 3층 TOY LIBRARY </a></p>
                                     </li>
                                     <li>
                                         <i class="fa fa-phone fa-lg"></i>

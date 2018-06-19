@@ -85,7 +85,7 @@
                                             </s:a>
                                         </div>  
                                         <div class="toy-details">
-                                            <h4><s:property value="toy_name"/></h4>
+                                            <h4><span class="jua" style="font-size:20";><s:property value="toy_name"/></span></h4>
                                             <ul class="rating">
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>

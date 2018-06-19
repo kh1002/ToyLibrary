@@ -7,14 +7,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>공지사항</title>
+<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+          <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 </head>
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>공지사항</h2></td>
-		</tr>
-	</table>
-	<section class="padding-top100">
+<span class="jua" style="font-size:24pt; color:#00BFFF;">공&nbsp;지&nbsp;사&nbsp;항</span>
+	<section class="padding-top50">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">

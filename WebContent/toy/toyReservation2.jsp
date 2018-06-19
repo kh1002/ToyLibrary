@@ -7,155 +7,81 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-	<title>스트러츠2 게시판</title>
+	<title>장난감 대여 내역</title>
+
+
 </head>
 
-<!-- 탭메뉴를 위한 css소스코드 -->
-<style>
-#tabmenu{ position:relative; height:29px; background:url(images/tab_menu.gif) repeat-x 0 100%; font-family:'돋움',dotum; font-size:12px }
-#tabmenu ul,#tabmenu ul li{margin:0;padding:0}
-#tabmenu ul li{list-style:none}
-#tabmenu ul li,#tabmenu ul li a{background:url(images/bg_tab2_off.gif) no-repeat}
-#tabmenu ul li{float:left;margin-right:-1px;line-height:26px}
-#tabmenu ul li a{display:inline-block;padding:2px 16px 1px;_padding:3px 16px 0;background-position: 100% 0;font-weight:bold;color:#666;cursor:pointer;text-decoration:none !important}
-#tabmenu ul li a:hover{color:#000}
-#tabmenu ul li.on,#tabmenu ul li.on a{background-image:url(images/bg_tab2_on.gif)}
-#tabmenu ul li.on a{color:#3376b8}
-
-#tabcontent1{}
-#tabcontent2{}
-</style>
-
-<!-- 탭을 적용한 소스코드 -->
 <body>
-<!-- 아마도 css를 입혀서 홈페이지에서 탭처럼 보이게 하는게 아닐까?? -->
-<table>
-<div id="tabmenu">
-<ul>
-	<li class="on"> <a href="ToyListAction.action" onClick="show_leemocon(0);">전체</a> </li>
-	<li class=""> <a href="ToyZizum1ListAction.action" onClick="show_leemocon(1);">강남점</a> </li>
-	<li class=""> <a href="ToyZizum2ListAction.action" onClick="show_leemocon(2);">역삼점</a> </li>
-	<li class=""> <a href="ToyZizum3ListAction.action" onClick="show_leemocon(3);">교대점</a> </li>
-</ul>
+
+
+<h2>대여 내역</h2>
+
+<table width="800" border="0" cellspacing="0" cellpadding="2">
+
+	<tr>
+		<th width="180" scope="col" style="text-align:center">
+		
+			<b>장난감 번호</b>
+		</th>
+		<th width="180"  scope="col" style="text-align:center">
+			<b>장난감 이름</b>
+		</th>
+		<th width="180"  scope="col" style="text-align:center">
+			<b>대출 지점</b>
+		</th>
+		<th width="180"  scope="col" style="text-align:center">
+			<b>대출일</b>
+		</th>
+		<th width="200"  scope="col" style="text-align:center">
+			<b>반납 예정일</b>
+		</th>
+		<th width="180"  scope="col" style="text-align:center">
+			<b>상태</b>
+			</th>
+	</tr>	
+</table>
+
+
+
+<!-- 장난감 목록에 대한 리스트를 반복으로 나타내는 코드 -->
+ <table width="800">
+
+		<s:iterator value="MyRentlist" status="stat">
+		
+
+
+			<tr align="center">
+				<td width="180"><s:property value="toy_id"/></td>	
+				<td width="180"><s:property value="toy_name"/></td>
+				<td width="180"><s:property value="zizum_name"/></td>
+				<td width="180"><s:property value="reserve_date"/></td>
+				<td width="180"><s:property value="return_date"/></td>
+				<td width="180"><s:property value="state_code"/></td>
+				</td>
+
+			</tr>
+			
+				
+		</s:iterator>
+		
+		<s:if test="MyRentlist.size() <=0">
+		
+		<tr bgcolor="#ffffff" align="center">
+			<td colspan="5">등록된 게시물이 없습니다.</td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<td height="1" colspan="5"></td>
+		</tr>
+	
+		</s:if>
+		
+
 
 </table>
 
-            <div class="container">
-                 <div class="row padding-top30"> 
-
-                    <div class="product-grid-layout">
-                    	
-                        <ul class="toy-products-list">
-                        <div class="col-md-9">
-                        
-                        <s:iterator value="UPlist" status="stat">
-
-						<s:if test="#stat.index % 3 eq 0">
-               			<tr></tr>
-           	 			</s:if>
-
-                        
-                        <s:url id = "viewURL" action="ToyDetailAction" >
-							<s:param name="toy_id">
-								<s:property value="toy_id" />
-							</s:param>
-													
-							<s:param name="zizum_no">
-								<s:property value="zizum_no" />
-							</s:param>
-									
-							<s:param name="currentPage">
-								<s:property value="currentPage" />
-							</s:param>
-						</s:url>
-                        
-                            <li class="col-md-4 col-sm-4 col-xs-6 width-100"> 
-                                <div class="toy-block">
-                                    <div class="baby-image">
-                                        <div class="category-new">
-                                            <div class="green-new-tag new-tag">
-                                                <a class="funky-font" href="#">New</a>
-                                            </div>
-                                        </div>
-                                        <div class="toy-img">
-                                            <s:a href="%{viewURL}">
-                                                <!-- <img src="images/pro1.png" class="img-responsive" alt="toy"> -->
-                                            	<img id="imglink" src="/ToyLibrary/image/<s:property value="toy_image"/>" class="img-responsive" alt="toy"/>
-                                            </s:a>
-                                        </div>  
-                                        <div class="toy-details">
-                                            <h4><s:property value="toy_name"/></h4>
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-						</s:iterator>
-						</div>
-                        </ul>
-                    </div>
-                    
-                     <!-- 검색창을 보여주는 jsp코드 -->
-						<form name="search" action="list.jsp" method="post">
-						<table>
-							<tr>										
-								<td>
-									<select name="goods_category" size="1" value="">
-										<option value="zizum">호점</option>
-										<option value="1">강남점</option>
-										<option value="2">역삼점</option>
-										<option value="3">교대점</option>
-									</select>
-								</td>									
-								<td>
-									<select name="goods_category" size="1" value="">
-										<option value="smallclass">소분류</option>
-										<option value="class1">역할놀이</option>
-										<option value="class2">언어/숫자 학습</option>
-										<option value="class3">음악/악기 완구</option>
-										<option value="class4">스포츠 완구</option>
-										<option value="class5">블록/퍼즐/게임</option>
-									</select>
-								</td>							
-								<td>
-									<select name="goods_category" size="1" value="">
-										<option value="toy_age">추천연령</option>
-										<option value="1to6">1개월~6개월</option>
-										<option value="7to12">7개월~12개월</option>
-										<option value="13to18">13개월~18개월</option>
-										<option value="19to24">19개월~24개월</option>
-										<option value="25to36">25개월~36개월</option>
-										<option value="37to48">37개월~48개월</option>
-									</select>
-								</td>
-								<td>
-									<input type="text" name="search_key" value="" size="10">
-								</td>
-								<td>
-									<input type="submit" value="검색">
-								</td>
-							</tr>
-						</form> 	
-						</table>
-
-					
-					<!-- 링크 리스트 1|2|3|4|5 가 나타나는 코드 -->
-						<tr align="center">
-							<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
-						</tr>
-  
-                </div>
-            </div>
-        </div>
-
-
 </body>
-</html>
 
+</html>

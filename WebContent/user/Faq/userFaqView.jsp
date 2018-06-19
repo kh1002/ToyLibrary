@@ -7,41 +7,64 @@
 	<title>자주묻는질문 상세보기</title>
 </head>
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>자주묻는질문 상세보기</h2></td>
-		</tr>
-	</table>
-	
-	<table width="600" border="1">
-      
-      <tr>
-      	<td>번호 </td>
-      	<td>
-      		&nbsp;&nbsp;<s:property value="resultClass.faq_no "/>
-      	</td>
-      </tr>
+     <section class="padding-top100">
+            <div class="container">           
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <form>
+                            <div class="cart-table table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center"  colspan="2">상세보기</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>Number</b>
+                                            </td>
+                                            <td>               
+                                            <s:property value="resultClass.faq_no "/>
+                                            </td>
+                                        </tr>
 
-      <tr>
-        <td width="100">제목</td>
-        <td width="500">
-          &nbsp;&nbsp;<s:property value="resultClass.faq_subject" />
-        </td>
-      </tr>
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>Subject</b>
+                                            </td>
+                                            <td>               
+                                             <s:property value="resultClass.faq_subject" />
+                                            </td>
+                                        </tr>
 
-      <tr>
-        <td>내용 </td>
-        <td>
-          &nbsp;&nbsp;<s:property value="resultClass.faq_content" />
-        </td>
-      </tr>
+                                         <tr class="text-left">
+                                            <td>               
+                                                <b>Content</b>
+                                            </td>
+                                            <td>               
+                                            <s:property value="resultClass.faq_content" />
+                                            </td>
+                                        </tr>
 
-   
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>                    
+        </section>   
       <tr>
       	<td align="right" colspan="2">
-      		
-      		<input name="list" type="button" value="목록" onclick="javascript:location.href='userFaqListAction.action?currentPage=<s:property value="currentPage" />'" />
-      		
+      		<button class="btn" type="button"
+				onclick="javascript:location.href='userFaqListAction.action?currentPage=<s:property value="currentPage" />'"
+				class="btn_small3" style="background-color: #87df2d;">
+				<span class="txt"
+					style="color: #fff; font-family: sans-serif; font-weight: bold;">목록</span>
+				<span class="round" style="background-color: #35beea;"><i
+					class="fa fa-chevron-right" style="color: white;"></i></span>
+			</button>
+<%--       		<input name="list" type="button" value="목록" onclick="javascript:location.href='userFaqListAction.action?currentPage=<s:property value="currentPage" />'" />
+ --%>      		
       	</td>
       </tr>
       

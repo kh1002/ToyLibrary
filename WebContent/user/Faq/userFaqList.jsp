@@ -7,15 +7,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>자주묻는질문</title>
+<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+          <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 </head>
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>자주묻는질문</h2></td>
-		</tr>
-	</table>
-
-	<section class="padding-top100">
+<span class="jua" style="font-size:24pt; color:#00BFFF;">자&nbsp;주&nbsp;묻&nbsp;는&nbsp;질&nbsp;문</span>
+	<section class="padding-top50">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
@@ -25,8 +23,8 @@
 							<thead>
 								<tr>
 									<th class="text-center"></th>
-									<th class="text-left">DESCRIPTION</th>
-									<th class="text-left">MODEL NUMBER</th>
+									<th class="text-left">번호</th>
+									<th class="text-left">제목</th>
 
 								</tr>
 							</thead>
@@ -62,7 +60,7 @@
 			</div>
 		</div>
 	</div>
-	</section>
+	
 
 	<s:if test="list.size() <= 0">
 		<tr align="center">
@@ -94,5 +92,6 @@
 
 
 	</table>
+	</section>
 </body>
 </html>

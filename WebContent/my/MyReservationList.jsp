@@ -16,84 +16,67 @@
 
 <body>
 
-<h2>예약내역</h2>
-
-<table width="800" border="0" cellspacing="0" cellpadding="2">
-
-	<tr>
-		<th width="180" scope="col" style="text-align:center">
+<section class="padding-top30">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-12 col-xs-12">
+				<form>
+					<div class="cart-table table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<!-- <th class="text-center"></th> -->
+									<th class="text-center">장난감번호</th>
+									<th class="text-center">장난감이름</th>
+									<th class="text-center">예약지점</th>
+									<th class="text-center">예약일</th>
+									<th class="text-center">대여가능기한</th>
+									<th class="text-center">상태</th>
+									<th class="text-center">예약취소</th>
+								</tr>
+							</thead>
+							
+							<!-- 반복문의 시작 -->
+							<s:iterator value="MyReservationlist" status="stat">
 		
-			<b>장난감 번호</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>장난감 이름</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>예약 지점</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>예약일</b>
-		</th>
-		<th width="200"  scope="col" style="text-align:center">
-			<b>대여 가능 기한</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>상태</b>
-		</th>	
-		<th width="180"  scope="col" style="text-align:center">
-			<b>예약 취소</b>
-		</th>	
-	</tr>	
-</table>
-
- <table width="800">
-
-		<s:iterator value="MyReservationlist" status="stat">
+							<s:url id = "myReserveCancleURL" action="MyReservationModifyStateAction" >
+								<s:param name="toy_id">
+									<s:property value="toy_id" />
+								</s:param>
+								<s:param name="member_id">
+									<s:property value="member_id" />
+								</s:param>
+							</s:url>
+							
+							<tbody>
+								<tr>
+									<td class="text-center"><s:property value="toy_id"/></td>
+									<td class="text-center"><s:property value="toy_name"/></td>
+									<td class="text-center"><s:property value="zizum_name"/></td>
+									<td class="text-center"><s:property value="reserve_date"/></td>
+									<td class="text-center"><s:property value="return_date"/></td>
+									<td class="text-center"><s:property value="state_code"/></td>
+									<td class="text-center"><s:a href="%{myReserveCancleURL}">예약 취소</s:a></td>
+								</tr>
+							</tbody>
+							
+							</s:iterator>
+							
+							<s:if test="MyReservationlist.size() <=0">
+							
+							<tr bgcolor="#ffffff" align="center">
+								<td colspan="5">등록된 게시물이 없습니다.</td>
+							</tr>
+							</s:if>
 		
-			<s:url id = "myReserveCancleURL" action="MyReservationModifyStateAction" >
-				<s:param name="toy_id">
-					<s:property value="toy_id" />
-				</s:param>
-				<s:param name="member_id">
-					<s:property value="member_id" />
-				</s:param>
-			</s:url>
+						</table>
+					</div>
+				</form>
+			</div>
+		</div>
 
-			<tr align="center">
-				<td width="180" align="center"><s:property value="toy_id"/></td>	
-				<td width="180" align="center"><s:property value="toy_name"/></td>
-				<td width="180" align="center"><s:property value="zizum_name"/></td>
-				<td width="180" align="center"><s:property value="reserve_date"/></td>
-				<td width="200" align="center"><s:property value="return_date"/></td>
-				<td width="180" align="center"><s:property value="state_code"/></td>
-				<td width="180" scope="col" style="text-align:center">
-					<s:a href="%{myReserveCancleURL}">예약 취소</s:a>
-				</td>
-			</tr>
-			
-				
-		</s:iterator>
-		
-		<s:if test="MyReservationlist.size() <=0">
-		
-		<tr bgcolor="#ffffff" align="center">
-			<td colspan="5">등록된 게시물이 없습니다.</td>
-		</tr>
-		<tr bgcolor="#ffffff">
-			<td height="1" colspan="5"></td>
-		</tr>
-	
-		</s:if>
-		
-
-
-</table>
-
-
-
-
-
-
+	</div>
+</section>
 
 </body>
 

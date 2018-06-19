@@ -15,15 +15,17 @@
 		<div class="row">
 			<div class="border-title text-center padding-bottom80">
 				<h2 class="section-header__title" style="color:#000;">
-					<span style="color: rgb(255, 51, 102);">O</span>
-					<span style="color: rgb(247,173,10);">u</span>
-					<span style="color: rgb(119, 75, 233);">r</span>
+					<span style="color: rgb(255, 51, 102);">T</span>
+					<span style="color: rgb(247,173,10);">o</span>
+					<span style="color: rgb(119, 75, 233);">y</span>
 					<span style="color: rgb(253, 90, 15);">&nbsp;</span>
-					<span style="color: rgb(53, 190, 234);">B</span>
-					<span style="color: rgb(253, 90, 15);">l</span>
- 					<span style="color: rgb(119, 75, 233);">o</span>
-					<span style="color: rgb(253, 90, 15);">g</span>
-					<span style="color: rgb(53, 190, 234);">s</span>
+					<span style="color: rgb(53, 190, 234);">L</span>
+					<span style="color: rgb(253, 90, 15);">i</span>
+ 					<span style="color: rgb(119, 75, 233);">b</span>
+					<span style="color: rgb(253, 90, 15);">r</span>
+					<span style="color: rgb(53, 190, 234);">a</span>
+					<span style="color: rgb(255, 51, 102);">r</span>
+					<span style="color: rgb(247,173,10);">y</span>
 				</h2>
 				<p>환영합니다 ???지점 관리자님!</p>
 				<p>장난감 도서관의 관리자 페이지입니다.</p>

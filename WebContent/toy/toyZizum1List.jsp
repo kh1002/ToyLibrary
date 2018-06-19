@@ -41,8 +41,7 @@
 	<li class=""> <a href="ToyZizum3ListAction.action" onClick="show_leemocon(3);">교대점</a> </li>
 </ul>
 </table>
-
-            <div class="container">
+<div class="container">
                  <div class="row padding-top30"> 
 
                     <div class="product-grid-layout">
@@ -102,9 +101,8 @@
 						</div>
                         </ul>
                     </div>
-
-
-        <!-- 검색창을 보여주는 jsp코드 -->
+                    
+                     <!-- 검색창을 보여주는 jsp코드 -->
 						<form name="search" action="list.jsp" method="post">
 						<table>
 							<tr>										
@@ -144,16 +142,20 @@
 									<input type="submit" value="검색">
 								</td>
 							</tr>
-						</form> 
-<!-- 링크 리스트 1|2|3|4|5 가 나타나는 코드 -->
-	<tr align="center">
-		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
-	</tr>
-		
+						</form> 	
+						</table>
+
+					
+					<!-- 링크 리스트 1|2|3|4|5 가 나타나는 코드 -->
+						<tr align="center">
+							<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
+						</tr>
+  
+                </div>
+            </div>
+        </div>
+
 
 </body>
 </html>
-
-
-
 

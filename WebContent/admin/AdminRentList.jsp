@@ -16,104 +16,88 @@
 
 <body>
 
+<section class="padding-top30">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-12 col-xs-12">
+				<form>
+					<div class="cart-table table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th class="text-center">장난감번호</th>
+									<th class="text-center">장난감이름</th>
+									<th class="text-center">대여자</th>
+									<th class="text-center">대여지점</th>
+									<th class="text-center">예약일</th>
+									<th class="text-center">대여가능기한</th>
+									<th class="text-center">대여상태</th>
+									<th class="text-center">상태수정</th>
+								</tr>
+							</thead>
+							
+							<s:iterator value="RentInfolist" status="stat">
+										
+							<s:url id = "viewURL" action="AdminRentDetailForm.action" >
+								<s:param name="toy_id">
+									<s:property value="toy_id" />
+								</s:param>
+							</s:url>
+							
+							<tbody>
+								<tr>
+									<td class="text-center"><s:property value="toy_id"/></td>
+									<td class="text-center"><s:property value="toy_name"/></td>
+									<td class="text-center"><s:property value="member_name"/></td>
+									<td class="text-center"><s:property value="zizum_name"/></td>
+									<td class="text-center"><s:property value="reserve_date"/></td>
+									<td class="text-center"><s:property value="return_date"/></td>
+									<td class="text-center"><s:property value="state_code"/></td>
+									<td class="text-center"><s:a href="%{viewURL}">상태변경</s:a></td>
+								</tr>
+							</tbody>
+							</s:iterator>
+						</table>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	</section>
+	
+<section class="padding-top30">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-12 col-xs-12">
+			<s:if test="RentInfolist.size() <=0">
+		
+			<tr bgcolor="#ffffff" align="center">
+				<td colspan="5">등록된 게시물이 없습니다.</td>
+			</tr>
+			</s:if>
+			</div>	
+		</div>
+	</div>
+</section>	
+
+
 <table align="center">
 		<tr>															
 			<td>
-			
 			<form>
-					<select name="searchNum" >
-						<option value="0">이름</option>
-					</select>
+				<select name="searchNum" >
+					<option value="0">이름</option>
+				</select>
 					
-					<s:textfield name="searchKeyword" theme="simple" value="" cssStyle="width:120px" maxlength="20"/>
-					<input name="submit" type="submit" value="검색" class="inputb"/>
-				</form>
-				
+				<s:textfield name="searchKeyword" theme="simple" value="" cssStyle="width:120px" maxlength="20"/>
+				<input name="submit" type="submit" value="검색" class="inputb"/>
+			</form>
 			</td>
 		</tr>
-		
-		
-	
-</table>
-
-	<table width="800">
-	<tr bgcolor="aa223e">
-		<th width="100" scope="col" style="text-align:center">
-			<b>장난감번호</b>
-		</th>
-		<th width="100" scope="col" style="text-align:center">
-			<b>장난감이름</b>
-		</th>
-		<th width="100" scope="col" style="text-align:center">
-			<b>대여자</b>
-		</th>
-		<th width="100" scope="col" style="text-align:center">
-			<b>대여지점</b>
-		</th>
-		<th width="100" scope="col" style="text-align:center">
-			<b>예약일</b>
-		</th>
-		<th width="100" scope="col" style="text-align:center">
-			<b>대여가능기한</b>
-		</th>
-		<th width="100" scope="col" style="text-align:center">
-			<b>대여상태</b>
-		</th>
-		<th width="100" scope="col" style="text-align:center">
-			<b>상태수정</b>
-		</th>
-	</tr>	
-</table>
-
-
-<!-- 장난감 목록에 대한 리스트를 반복으로 나타내는 코드 -->
- <table width="800">
-
-		<s:iterator value="RentInfolist" status="stat">
-		
-				<s:url id = "viewURL" action="AdminRentDetailForm.action" >
-					<s:param name="toy_id">
-						<s:property value="toy_id" />
-					</s:param>
-				</s:url>
-
-			<tr bgcolor="#e2341f" align="center">
-				<td width="100"><s:property value="toy_id"/></td>	
-				<td width="100"><s:property value="toy_name"/></td>
-				<td width="100"><s:property value="member_name"/></td>
-				<td width="100"><s:property value="zizum_name"/></td>
-				<td width="100"><s:property value="reserve_date"/></td>
-				<td width="100"><s:property value="return_date"/></td>
-				<td width="100"><s:property value="state_code"/></td>
-				<td width="100" scope="col" style="text-align:center">
-					<s:a href="%{viewURL}">상태변경</s:a>
-				</td>
-
-			</tr>
-			
-			<tr bgcolor="#777777">
-				<td height="1" colspan="5"></td>
-			</tr>					
-		</s:iterator>
-		
-		<s:if test="RentInfolist.size() <=0">
-		
-		<tr bgcolor="#ffffff" align="center">
-			<td colspan="5">등록된 게시물이 없습니다.</td>
-		</tr>
-		<tr bgcolor="#777777">
-			<td height="1" colspan="5"></td>
-		</tr>
-	
-		</s:if>
-		
 		<tr align="center">
 			<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
 		</tr>
-
 </table>
-
-
 </body>
-
 </html>
