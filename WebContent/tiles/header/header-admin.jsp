@@ -38,24 +38,23 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li style="margin-right : 100px;" class="dropdown"><a href="AdminToyListAction.action" class="flip-animate"><span data-hover="장난감">장난감</span></a>
                                     <div class="dropdown-content">
-                                        <a href="useIntroView.action">소개</a>  
-                                        <a href="useInfoView.action">이용 안내</a>
-			                            <a href="useFacilityView.action">시설 현황</a>
-			                            <a href="useLocationView.action">찾아오시는 길</a>
+                                        <a href="AdminToyListAction.action">장난감목록</a>  
+                                        <a href="AdminRentListAction.action">대여관리</a>
+			                            <a href="AdminReturnListAction.action">반납관리</a>
                                     </div>        
                                 </li>
                                 <li style="margin-right : 130px;" class="dropdown"><a href="noticeListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감목록">게시판</span></a>
                                     <div class="dropdown-content">
-                                        <a href="ToyListAction.action">장난감목록</a>  
-                                        <a href="MyReservationListAction.action">장난감예약</a>  
+                                        <a href="noticeListAction.action">공지사항</a>  
+                                        <a href="qnaListAction.action">QNA</a>  
+                                        <a href="reviewListAction.action">이용 후기</a> 
+                                        <a href="faqListAction.action">자주묻는질문</a>
+                                         <a href="eventListAction.action">행사</a> 
                                     </div> 
                                 </li>
                                 <li style="margin-right : 130px;" class="dropdown"><a href="adminMemberListForm.action" class="flip-animate"><span data-hover="회원관리">회원관리</span></a>
                                     <div class="dropdown-content">
-                                        <a href="userNoticeListAction.action">공지사항</a>  
-                                        <a href="userQnaListAction.action">QNA</a>  
-                                        <a href="userReviewListAction.action">이용 후기</a> 
-                                        <a href="userFaqListAction.action">자주묻는질문</a> 
+                                        <a href="adminMemberListForm.action">회원목록</a>  
                                     </div>      
                                 </li>
                             </ul>

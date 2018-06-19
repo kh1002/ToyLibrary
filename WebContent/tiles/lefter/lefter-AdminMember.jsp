@@ -10,7 +10,7 @@
 <body>
 	<lefter>
 		<div class="lefter-menu">
-			<h3>마이페이지</h3>
+			<h3>회원관리</h3>
 				<ul>
 					<li><a href="adminMemberListForm.action">회원목록</a></li>
 				</ul>

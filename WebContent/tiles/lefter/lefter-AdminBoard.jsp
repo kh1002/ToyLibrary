@@ -10,7 +10,7 @@
 <body>
 	<lefter>
 		<div class="lefter-menu">
-			<h3>마이페이지</h3>
+			<h3>게시판</h3>
 				<ul>
 					<li><a href="noticeListAction.action">공지사항</a></li>
 					<li><a href="qnaListAction.action">문의게시판</a></li>
