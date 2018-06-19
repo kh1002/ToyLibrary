@@ -5,6 +5,10 @@
 <head>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <title>회원정보수정</title>
+
+<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+
+
 <script language="javascript">
 
 function check() {
@@ -151,48 +155,162 @@ function openIdCheck(){
 </head>
 <body>
 
+<form name="joinModify" action="joinModify.action" method="post"  onsubmit="return check()">
 
-
-	<section class="padding-top100">
+	<section class="">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-9">
+<!-- 			 <div class="login-content"> -->
+			 <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+
+                           <span class="jua" style="font-size:24pt; color:#774be9;">회원 정보 수정</span>
+<!--                            </div> -->
+			
+			
 				<form>
 					<div class="cart-table table-responsive">
 						<table class="table">
 							<thead>
 								<tr>
-									<th class="text-center" colspan="2">회원 정보 수정</th>
+									<th class="text-center" colspan="2"></th>
 
 
 								</tr>
 							</thead>
-							<s:iterator value="list" status="stat">
-								<s:url id="viewURL" action="userFaqViewAction">
-									<s:param name="faq_no">
-										<s:property value="faq_no" />
-									</s:param>
+                                    <tbody>
+                                    
 
-									<s:param name="currentPage">
-										<s:property value="currentPage" />
-									</s:param>
+                                    
+                                    
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>아이디</b>
+                                            </td>
+                                            <td>               
+                                                <input type="text" name="member_id" id="member_id" size="13" value="${resultClass.member_id }" readonly/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     
 
-								</s:url>
-								<tbody>
-									<tr>
-										<td class="text-left"></td>
-										<td class="text-left cart-product-title"><br><a
-												href="single-details.html"><s:property value="faq_no" /></a>
-												<hr></td>
-										<td class="text-left"><br><s:a href="%{viewURL}">
-													<s:property value="faq_subject" />
-												</s:a></td>
-										<td class="text-left"><br><div
-													style="max-width: 200px;" class="input-group btn-block">
-												</div></td>
-									</tr>
+                                   
+                                            </td>
+                                        </tr>
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>비밀번호</b>
+                                            </td>
+                                            <td><input type=password name="member_pw" id="member_pw" size="14" maxlength="20">
+                                            </td>
+                                            </tr>
+                                        <tr class="text-left">
+                                            <td>               
+                                                <b>비밀번호 확인</b>
+                                            </td>
+                                            <td><input type=password name="pwcheck" id="pwcheck" size="14" maxlength="20" onkeyup="pwCheck();"/>&nbsp;<span id="passwordCheckText"></span>
+                                            </td>
+                                            </tr>
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>이름</b>      
+                                         </td>
+                                         <td><input type="text" name="member_name" size="14" maxlength="20" value="${resultClass.member_name }"/>
+                                         </td>
+                                         </tr>
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>휴대폰 번호</b>      
+                                         </td>
+                                         <td><input type="text" name="member_phone" size="14" maxlength="11" value="${resultClass.member_phone }"/>
+                                         </td>
+                                         </tr>
+                          				<tr class="text-left">
+                                         <td>
+                                         <b>주민번호</b>      
+                                         </td>
+                                         <td>
+<input type="text" name="member_jumin1" size="8" maxlength="6" value="${resultClass.member_jumin1 }"/>&nbsp;&nbsp;-&nbsp;&nbsp;
+						<input type="text" name="member_jumin2" size="8" maxlength="7" value="${resultClass.member_jumin2 }"/>
+					</td>                                                                                                              
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>이메일</b>      
+                                         </td>
+                                         <td><input type="text" name="member_mail" size="14" maxlength="20" value="${resultClass.member_mail }"/>
+                                         </td>
+                                         </tr>
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>우편번호</b>      
+                                         </td>
+                                         <td>
+<input type="text" id="member_zipcode" name="member_zipcode" size="10"  value="${resultClass.member_zipcode }" readonly/>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    <button class="btn" type="button" onclick="javascript:postcode()" class="btn_small3" style="background-color: #87df2d;">                                   
+                                        <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">우편번호 찾기</span>
+                                        <span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+                                    </button>
+                                    
+					</td>
+					</tr>
+					<tr class="text-left">
+                                         <td>
+                                         <b>주소</b>      
+                                         </td>
+                                         <td><input type="text" id="member_addr1" name="member_addr1" size="35" maxlength="35" value="${resultClass.member_addr1 }"/>
+                                         </td>
+                                         </tr> 
+                                         <tr class="text-left">
+                                         <td>
+                                         <b>상세 주소</b>      
+                                         </td>
+                                         <td><input type="text" id="member_addr2" name="member_addr2" size="35" maxlength="35" value="${resultClass.member_addr2 }"/>
+                                         </td>
+                                         </tr>                                                                              
+                                 				<tr>
+					<td height="30" colspan="6" align="right">
+
+                                    <button class="btn" type="submit" onclick="return check();" class="btn_small3" style="background-color: #87df2d;">                                   
+                                        <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">정보 수정</span>
+                                        <span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+                                    </button>
+                                    
+                        <button class="btn" type="button" onclick="javascript:window.location='MyReservationListAction.action'" class="btn_small3" style="background-color: #87df2d;">                                   
+                                        <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">취소</span>
+                                        <span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+                                    </button>                          
+                                    
+
+
+
+
+
+					</td>
+			</tr>           
+    
+
+                                         
+                                                                                   
+                                     
+                                    </tbody>
+                                </table>
+ 
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+
+
+
+
+
+
 								</tbody>
-							</s:iterator>
+							
 						</table>
 					</div>
 				</form>
@@ -201,36 +319,6 @@ function openIdCheck(){
 	</div>
 	</section>
 
-	<s:if test="list.size() <= 0">
-		<tr align="center">
-			<td colspan="5">등록된 게시물이 없습니다.</td>
-		</tr>
-	</s:if>
-
-	<tr align="center">
-		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
-	</tr>
-
-	<tr align="right">
-		<td colspan="5"></td>
-	</tr>
-
-	<tr align="center">
-		<td colspan="5">
-			<form>
-				<select name="searchNum">
-					<option value="0">제목</option>
-					<option value="1">내용</option>
-				</select>
-				<s:textfield name="searchKeyword" theme="simple" value=""
-					maxlength="20" />
-				<input name="submit" type="submit" value="검색">
-			</form>
-		</td>
-	</tr>
-
-
-	</table>
 
 
 </body>

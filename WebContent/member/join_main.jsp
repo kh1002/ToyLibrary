@@ -171,7 +171,7 @@ function openIdCheck(){
 
                                     
 
-        <section class="padding-top100">
+        <section class="">
             <div class="container">
     <div class="row">
                     <div class="col-md-6 col-md-offset-3">
@@ -190,7 +190,7 @@ function openIdCheck(){
                                     
                                         <tr class="text-left">
                                             <td>               
-                                                <b>아이디</b>
+                                                <b>&nbsp;&nbsp;&nbsp;아이디</b>
                                             </td>
                                             <td>               
                                                 <input type="text" name="member_id" id="member_id" size="13">
@@ -206,35 +206,35 @@ function openIdCheck(){
                                         </tr>
                                         <tr class="text-left">
                                             <td>               
-                                                <b>비밀번호</b>
+                                                <b>&nbsp;&nbsp;&nbsp;비밀번호</b>
                                             </td>
                                             <td><input type=password name="member_pw" id="member_pw" size="14" maxlength="20">
                                             </td>
                                             </tr>
                                         <tr class="text-left">
                                             <td>               
-                                                <b>비밀번호 확인</b>
+                                                <b>&nbsp;&nbsp;&nbsp;비밀번호 확인</b>
                                             </td>
                                             <td><input type=password name="pwcheck" id="pwcheck" size="14" maxlength="20" onkeyup="pwCheck();"/>&nbsp;<span id="passwordCheckText"></span>
                                             </td>
                                             </tr>
                                          <tr class="text-left">
                                          <td>
-                                         <b>이름</b>      
+                                         <b>&nbsp;&nbsp;&nbsp;이름</b>      
                                          </td>
                                          <td><input type="text" name="member_name" size="14" maxlength="20">
                                          </td>
                                          </tr>
                                          <tr class="text-left">
                                          <td>
-                                         <b>휴대폰 번호</b>      
+                                         <b>&nbsp;&nbsp;&nbsp;휴대폰 번호</b>      
                                          </td>
                                          <td><input type="text" name="member_phone" size="14" maxlength="11">
                                          </td>
                                          </tr>
                           				<tr class="text-left">
                                          <td>
-                                         <b>주민번호</b>      
+                                         <b>&nbsp;&nbsp;&nbsp;주민번호</b>      
                                          </td>
                                          <td>
 <input type="text" name="member_jumin1" size="8" maxlength="6">&nbsp;&nbsp;-&nbsp;&nbsp;
@@ -242,14 +242,14 @@ function openIdCheck(){
 					</td>                                                                                                              
                                          <tr class="text-left">
                                          <td>
-                                         <b>이메일</b>      
+                                         <b>&nbsp;&nbsp;&nbsp;이메일</b>      
                                          </td>
                                          <td><input type="text" name="member_mail" size="14" maxlength="20">
                                          </td>
                                          </tr>
                                          <tr class="text-left">
                                          <td>
-                                         <b>우편번호</b>      
+                                         <b>&nbsp;&nbsp;&nbsp;우편번호</b>      
                                          </td>
                                          <td>
 <input type="text" id="member_zipcode" name="member_zipcode" size="10">
@@ -264,14 +264,14 @@ function openIdCheck(){
 					</tr>
 					<tr class="text-left">
                                          <td>
-                                         <b>주소</b>      
+                                         <b>&nbsp;&nbsp;&nbsp;주소</b>      
                                          </td>
-                                         <td><input type="text" id="member_addr1" name="member_addr1" size="35" maxlength="35">
+                                         <td alingn="center"><input type="text" id="member_addr1" name="member_addr1" size="35" maxlength="35">
                                          </td>
                                          </tr> 
-                                         <tr class="text-left">
+                               
                                          <td>
-                                         <b>상세 주소</b>      
+                                         <b>&nbsp;&nbsp;&nbsp;상세 주소</b>      
                                          </td>
                                          <td><input type="text" id="member_addr2" name="member_addr2" size="35" maxlength="35">
                                          </td>
