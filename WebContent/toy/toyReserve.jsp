@@ -16,6 +16,7 @@
 <form action="ToyReserveAction.action" method="post" enctype="multipart/form-data">
     <s:hidden name="toy_id" value="%{toy_id}"/>
     <s:hidden name="zizum_no" value="%{zizum_no}"/>
+   
     <section class="padding-top30">
             <div class="container">
                 <div class="row">
@@ -26,7 +27,7 @@
                                     <h2><a href="blog-single.html">장난감 예약하기</a></h2>
                                 </div>
                                 <div class="blog-img">
-                                    <img id="imglink" src="/ToyLibrary/image/<s:property value="TresultClass.toy_image"/>" width="600" height="300"/>
+                                    <img id="imglink" src="/ToyLibrary/image/<s:property value="TresultClass.toy_image"/>" width="500" height="400"/>
                                 </div>
                                 <div class="blog-desc">
                                     <div class="col-md-9 product-reservation">
@@ -52,7 +53,7 @@
 										<div class="stock-btn">예약하기</div>
                                     </button>
                                    
-                                    <button class="btn btn-2" type="button" onclick="javascript:window.location='./mainAction.action'"> 
+                                    <button class="btn btn-2" type="button" onclick="javascript:window.location='./ToyListAction.action'"> 
 										<div class="stock-btn">취소</div> 
                                     </button>
                                 </div>     

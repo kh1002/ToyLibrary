@@ -61,9 +61,9 @@
 								<s:property value="toy_id" />
 							</s:param>
 													
-							<%-- <s:param name="zizum_no">
+							<s:param name="zizum_no">
 								<s:property value="zizum_no" />
-							</s:param> --%>
+							</s:param>
 									
 							<s:param name="currentPage">
 								<s:property value="currentPage" />

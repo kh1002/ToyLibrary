@@ -71,11 +71,6 @@ public class ToyReserveAction extends ActionSupport implements SessionAware {
 	
 	//등록 폼
 	public String form() throws Exception {
-
-/*		System.out.println("form이 수행?");
-		System.out.println(getZizum_no());
-		System.out.println("form이 수행?");
-*/
 		
 		TparamClass = new toyProductVO();
 		TresultClass = new toyProductVO();

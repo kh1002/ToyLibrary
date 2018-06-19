@@ -18,10 +18,6 @@
 		<put-attribute name="body-admin" value="/tiles/body/body-admin.jsp" />	
 		<put-attribute name="footer-admin" value="/tiles/footer/footer-admin.jsp" />
 	</definition>		 
-	
-
-
-	
 </tiles-definitions>
 
 

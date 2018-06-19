@@ -30,13 +30,6 @@
                                         <p><a href="mailto:demo@info.com"> KH_Academy1002@info.com</a></p>
                                     </li>
                                 </ul>
-                                <div class="footer-social-icon">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>                           
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-youtube-play"></i></a>
-                                </div>
                             </div>                        
                         <div class="col-md-3 col-sm-6 col-xs-6 width-100">
 

@@ -4,32 +4,41 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<title>SSLibrary</title>
-<link rel="stylesheet" type="text/css" href="style.css" media="all" />
-<link rel="stylesheet" media="all" href="style/type/folks.css" />
-
 
 </head>
 
 
 <body> 
-<div class="line">
-         </div>
-   <div id="footer-wrapper">
-  <div id="footer">
-    <div id="footer-content"> 
-      
-      <!-- Begin Copyright -->
-      <div id="copyright">
+        <footer class="padding-top100">
+            <div class="footer-block">
+                <div class="container">
+                    <div class="row">
+                            <div class="footer-links">
+                                <h3>Contact Us</h3>
+                                <ul class="contact-list">
+                                    <li>
+                                        <i class="fa fa-map-marker fa-lg"></i>
+                                        <p><a href="#"> 주소 : 서울시 강남구 역삼동 33-33 삼삼빌딩 3층 SS LIBRARY </a></p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-phone fa-lg"></i>
+                                        <p><a href="tel:+1-202-555-0100"> +1-202-555-0100</a></p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-envelope-o fa-lg"></i>
+                                        <p><a href="mailto:demo@info.com"> KH_Academy1002@info.com</a></p>
+                                    </li>
+                                </ul>
+                            </div>                        
+                        <div class="col-md-3 col-sm-6 col-xs-6 width-100">
 
-            <p>관리자 타일즈의 푸터 연습용으로 해봄 
-      </div>
-      <!-- End Copyright --> 
-      
-    </div>
-  </div>
-</div>
-
+                        </div>
+                    </div>
+                    <hr>
+                  
+                </div>
+            </div>
+  	  </footer>
 
 </body>
 
