@@ -20,6 +20,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
+			
+			<style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+                           <span class="jua" style="font-size:24pt; color:#774be9;">반납 관리</span>
+			
+			
+			
 				<form>
 					<div class="cart-table table-responsive">
 						<table class="table">
@@ -67,14 +74,21 @@
 	</section>
 
 
+
+				
+				
 <section class="padding-top30">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
 			<s:if test="ReturnInfolist.size() <=0">
 		
-			<tr bgcolor="#ffffff" align="center">
-				<td colspan="5">등록된 게시물이 없습니다.</td>
+			<tr bgcolor="#ffffff;" align="center">
+				<td colspan="5">
+				
+				
+				
+				<span style="font-size: 13px;">등록된 게시물이 없습니다.</td>
 			</tr>
 			</s:if>
 			</div>

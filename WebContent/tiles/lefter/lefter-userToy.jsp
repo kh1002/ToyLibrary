@@ -10,10 +10,15 @@
 <body>
 	<lefter>
 		<div class="lefter-menu">
-			<h3>장난감목록</h3>
+		<style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+
+                           <span class="jua" style="font-size:24pt; color:#ff3366;
+;">장난감 목록</span>
+			
 				<ul>
-					<li><a href="ToyListAction.action">장난감목록</a></li>
-					<li><a href="MyReservationListAction.action">장난감예약</a></li>                           
+					<li><a href="ToyListAction.action">장난감 목록</a></li>
+					<li><a href="MyReservationListAction.action">장난감 예약</a></li>                           
 				</ul>
 		</div>
 	</lefter>

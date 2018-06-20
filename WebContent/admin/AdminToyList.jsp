@@ -22,6 +22,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
+			
+			<style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+                           <span class="jua" style="font-size:24pt; color:#774be9;">장난감 목록</span>
+			
+			
+			
 				<form>
 					<div class="cart-table table-responsive">
 						<table class="table">
