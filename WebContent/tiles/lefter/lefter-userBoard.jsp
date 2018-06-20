@@ -13,9 +13,9 @@
 			<h3>커뮤니티</h3>
 				<ul>
 					<li><a href="userNoticeListAction.action">공지사항</a></li>
-					<li><a href="userFaqListAction.action">QNA</a></li>
+					<li><a href="userQnaListAction.action">QNA</a></li>
 					<li><a href="userReviewListAction.action">이용후기</a></li>
-					<li><a href="userQnaListAction.action">자주묻는질문</a></li>                         
+					<li><a href="userFaqListAction.action">자주묻는질문</a></li>                         
 				</ul>
 		</div>
 	</lefter>

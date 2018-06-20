@@ -20,6 +20,7 @@
 		<action name="userReviewWriteForm" class="user.Review.userReviewWriteAction" method="form">
 			<!-- <result>/user/Review/userReviewWrite.jsp</result> -->
 			<result type="tiles">userReviewWriteForm</result>
+			<result name="login" type="tiles">memberLoginMain</result>
 		</action>
 
 		<action name="userReviewWriteAction" class="user.Review.userReviewWriteAction">

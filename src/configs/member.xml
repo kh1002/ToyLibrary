@@ -35,7 +35,7 @@
 		<action name="login" class ="member.loginAction">
 			<result name ="success" type="tiles">main</result>
 			<result name ="input" type="tiles">main2</result>
-			<result name ="login" type="tiles">memberLoginMain</result>
+			<result name ="login" type="tiles">memberLoginError</result>
 		</action>
 				
 		
