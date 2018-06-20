@@ -11,16 +11,15 @@
 		var oWin = window
 				.open(url, name,
 						"scrollbars=no, status=no, resizable=no, width=300, height=150");
-
 	}
 </script>
 </head>
 
 <body>
-	<section class="padding-top100">
+	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="col-md-9 col-sm-6 col-xs-12">
 				<form>
 					<div class="cart-table table-responsive">
 						<table class="table">
@@ -62,87 +61,95 @@
 
 								<tr class="text-left">
 									<td><b>이미지</b></td>
-									<td><s:if test="resultClass.file_savname == null">
-                                             			       이미지가 없습니다.
-                                                </s:if> <s:else>
-											<img id="imglink"
-												src="/AdminBoard/reviewImage/<s:property value="file_names[0]"/> "
-												width="150" border="0">
-											<img id="imglink"
-												src="/AdminBoard/reviewImage/<s:property value="file_names[1]"/> "
-												width="150" border="0">
-											<img id="imglink"
-												src="/AdminBoard/reviewImage/<s:property value="file_names[2]"/> "
-												width="150" border="0">
-										</s:else></td>
+									<td>
+										<s:if test="resultClass.file_savname == null">
+                                         	 이미지가 없습니다.
+                                        </s:if>
+                                        <s:else>
+											<img id="imglink" src="/ToyLibrary/image/<s:property value="file_names[0]"/> " width="150" border="0">
+											<img id="imglink" src="/ToyLibrary/image/<s:property value="file_names[1]"/> " width="150" border="0">
+											<img id="imglink" src="/ToyLibrary/image/<s:property value="file_names[2]"/> " width="150" border="0">
+										</s:else>
+									</td>
 								</tr>
+								
 							<form action="userWriteCommentAction.action" method="post">
 								<table>
-								<tr class="text-left">
-									<td><b>작성자<s:textfield name="creview_name"
-												theme="simple" value="" maxlength="16" /> 
-									비밀번호<s:textfield name="creview_password" theme="simple" value=""
-												maxlength="16" /></b></td>
-									<s:hidden name="review_no" value="%{resultClass.review_no}" />
-									<s:hidden name="creview_no" value="%{resultClass.creview_no}" />
-									<s:hidden name="currentPage" value="%{currentPage}" />
-									<td><b><s:textarea name="creview_content" theme="simple"
-											value="" cols="50" rows="4" /></b></td>
-								<tr class="text-left">
-									<td colspan="2" align="right"><input name="submit"
-										type="submit" value="작성완료"></td>
-								</tr>
-							</table>
-						</form>	
+									<tr class="text-left">
+										<td><b>작성자&nbsp;&nbsp;&nbsp;<s:textfield name="creview_name" theme="simple" value="" maxlength="16" /></b></td>
+										<td rowspan="2"><b><s:textarea name="creview_content" theme="simple" value="" cols="50" rows="6" /></b></td>
+										
+									</tr>	
+									<tr class="text-left">	
+										<td><b>비밀번호<s:textfield name="creview_password" theme="simple" value="" maxlength="16" /></b></td>
+										<td colspan="2" align="right"><input name="submit" type="submit" value="작성완료"></td>
+									</tr>	
+										<s:hidden name="review_no" value="%{resultClass.review_no}" />
+										<s:hidden name="creview_no" value="%{resultClass.creview_no}" />
+										<s:hidden name="currentPage" value="%{currentPage}" />
+	
+									<s:iterator value="commentlist" status="stat">
+									<tr>
+										<td height="10" width="130" align="center">
+											<s:property value="creview_name" /><br> 
+											<s:property value="creview_regdate"/><br>
+											<br>
+										</td>
+										<td>
+											<s:property value="creview_content" /><a href="javascript:open_win_noresizable('userCheckForm2.action?creview_no=<s:property 
+											value="creview_no" />&review_no=<s:property value="review_no" />&currentPage=<s:property value="currentPage" />','cdelete')">x</a>
+										</td>
+									</tr>
+									</s:iterator>
+									
+									<s:if test="commentlist.size() <= 0">
+										<tr><td colspan="2" height="10">댓글없음</td></tr>
+									</s:if>
+	
+								</table>
+							</form>	
+							
 							</tbody>
+						</table>
+						
+						
+						<table>
+							<tr>
+								<td colspan="2" align="right">
+									<s:url id="modifyURL" action="userReviewModifyForm">
+										<s:param name="review_no">
+											<s:property value="review_no" />
+										</s:param>
+									</s:url> 
+									<s:url id="deleteURL" action="userReviewDeleteAction">
+										<s:param name="review_no">
+											<s:property value="review_no" />
+										</s:param>
+									</s:url> 
+				
+									<div class="site-btn">
+						                <button class="btn btn-1" type="button" onclick="javascript:open_win_noresizable('userCheckForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','modify')">                                 
+						                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">수정</span>
+						                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+						                </button>                 
+						                <button class="btn btn-1" type="button" onClick="javascript:open_win_noresizable('userCheckForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','delete')">                               
+						                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">삭제</span>
+						                    <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+						                </button>
+						                 <button class="btn btn-1" type="button" onClick="javascript:location.href='userReviewListAction.action?currentPage=<s:property value="currentPage" />'">                              
+						                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">목록</span>
+						                    <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+						                </button>
+					           		</div>
+								</td>
+							</tr>
 						</table>
 					</div>
 				</form>
 			</div>
-	
-
-
-
-	<s:iterator value="commentlist" status="stat">
-		<tr>
-			<td height="10" width="130" align="center"><s:property
-					value="creview_name" /><br> <s:property
-					value="creview_regdate" /><br>
-			<br></td>
-			<td>
-				<!-- @@@@@@@@@@@@코멘트 삭제@@@@@@@@@@@@ --> <s:property
-					value="creview_content" /> <a
-				href="javascript:open_win_noresizable('userCheckForm2.action?creview_no=<s:property value="creview_no" />&review_no=<s:property value="review_no" />&currentPage=<s:property value="currentPage" />','cdelete')">x</a>
-			</td>
-		</tr>
-	</s:iterator>
-	<tr>
-		<td colspan="2" height="10"><s:if test="commentlist.size() <= 0">
-				댓글없음
-			</td>
-	</tr>
-	</s:if>
-
-
-	<tr>
-		<td colspan="2" align="right"><s:url id="modifyURL"
-				action="userReviewModifyForm">
-				<s:param name="review_no">
-					<s:property value="review_no" />
-				</s:param>
-			</s:url> <s:url id="deleteURL" action="userReviewDeleteAction">
-				<s:param name="review_no">
-					<s:property value="review_no" />
-				</s:param>
-			</s:url> <input name="list" type="button" value="수정"
-			onClick="javascript:open_win_noresizable('userCheckForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','modify')">
-			<input name="list" type="button" value="삭제"
-			onClick="javascript:open_win_noresizable('userCheckForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','delete')">
-			<input name="list" type="button" value="목록"
-			onClick="javascript:location.href='userReviewListAction.action?currentPage=<s:property value="currentPage" />'">
-		</td>
-	</tr>
-	</table>
+		</div>
+	</div>
+</section>
 </body>
 </html>
 

@@ -14,7 +14,7 @@
 
 <body>
 	<span class="jua" style="font-size:24pt; color:#00BFFF;">이&nbsp;용&nbsp;후&nbsp;기</span>
-     <section class="padding-top50">
+     <section class="padding-top30">
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-sm-12 col-xs-12">
@@ -23,51 +23,41 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="text-center"></th>
-                                    <th class="text-left">번호</th>
+                                    <th class="text-center">번호</th>
                                     <th class="text-left">제목</th>
                                     <th class="text-left">작성자</th>
                                     <th class="text-left">날짜</th>
-                                    <th class="text-left">조회</th>
+                                    <th class="text-center">조회</th>
 
                                 </tr>
                             </thead>
                             <s:iterator value="list" status="stat">
                                 <s:url id="viewURL" action="userReviewViewAction">
-                                <s:param name="review_no">
-                                    <s:property value="review_no" />
-                                </s:param>
-                                <s:param name="currentPage">
-                                    <s:property value="currentPage" />
-                                </s:param>
-                            </s:url>
+	                                <s:param name="review_no">
+	                                    <s:property value="review_no" />
+	                                </s:param>
+	                                <s:param name="currentPage">
+	                                    <s:property value="currentPage" />
+	                                </s:param>
+	                            </s:url>
                                 <tbody>
                                     <tr>
-                                        <td class="text-left"></td>
-
-                                        
-                                        <td class="text-left">
-                                       <s:property value="review_no" /></td>
-
+                                        <td class="text-center"><s:property value="review_no" /></td>
                                         <td class="text-left cart-product-title">
-                                       <s:a href="%{viewURL}"><s:property value="review_subject" /></s:a>
-                                            </td>
-                                        <td class="text-left">
-                                        <s:property value="review_name" /></td>
-
-                                        <td class="text-left">
-                                       <s:property value="review_regdate" /></td>
-
-
-                                        <td class="text-left">
-                                        <s:property value="review_readcount" /></td>
-
-                                            </div></td>
-
+                                      		<s:a href="%{viewURL}"><s:property value="review_subject" /></s:a>
+                                        </td>
+                                        <td class="text-left"><s:property value="review_name" /></td>
+                                        <td class="text-left"><s:property value="review_regdate" /></td>
+                                        <td class="text-center"><s:property value="review_readcount" /></td>
                                     </tr>
                                 </tbody>
                             </s:iterator>
-
+                            
+							<s:if test="list.size() <= 0">
+								<tr>
+									<td colspan="5" align="center">등록된 게시물이 없습니다</td>
+								</tr>
+							</s:if>
                         </table>
                     </div>
                 </form>
@@ -77,24 +67,20 @@
     </div>
     </section>
 
-	<s:if test="list.size() <= 0">
-		<tr>
-			<td colspan="5" align="center">등록된 게시물이 없습니다</td>
-		</tr>
-	</s:if>
 
+<table align="center">
 	<tr align="center">
 		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
 	</tr>
 
-	<tr align="right">
-		<td colspan="5">
-			<input type="button" value="글쓰기" onClick="javascript:location.href='userReviewWriteForm.action?currentPage=<s:property value="currentPage" />';" />
-		</td>
-	</tr>
-
-	<tr align="center">
-		<td colspan="5">
+  	<div class="site-btn" align="right">         
+		<button class="btn btn-1" type="button" onclick="javascript:window.location='./userReviewWriteForm.action'">                                   
+			<span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">글쓰기</span>
+			<span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+		</button>
+	</div>
+	<tr>
+		<td>
 			<form>
 				<select name="searchNum" >
 					<option value="0">작성자</option>
@@ -105,8 +91,10 @@
 				<input name="submit" type="submit" value="검색">
 			</form>
 		</td>
-	</tr>
+	</tr>	
 </table>
+
+
 </body>
 </html>
 

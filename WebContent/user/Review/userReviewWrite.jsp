@@ -7,8 +7,6 @@
 <head>
 <title>이용후기</title>
 
-
-
 <script type="text/javascript">
 	function validation()
 	{
@@ -44,60 +42,47 @@
 </script>
 </head>
 <body>
-    <section class="padding-top100">
+    <section class="padding-top30">
             <div class="container">           
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <form>
+                    <div class="col-md-9 col-sm-6 col-xs-12">
+                        <form action="userReviewWriteAction.action" method="post" enctype="multipart/form-data">
                             <div class="cart-table table-responsive">
                                 <table class="table">
                                     <thead>
-                                        <tr>
-                                            <th class="text-center"  colspan="2">Write</th>
-                                        </tr>
+                                        <tr><th class="text-center"  colspan="2">이용후기</th></tr>
                                     </thead>
                                     <tbody>
                                         <tr class="text-left">
+                                            <td><b>제목</b></td>
                                             <td>               
-                                                <b>제목</b>
-                                            </td>
-                                            <td>               
-                                                <s:textfield name="review_subject" theme="simple" value="%{resultClass.review_subject}" maxlength="50"/>
-
+                                                <s:textfield name="review_subject" theme="simple" value="%{resultClass.review_subject}" maxlength="50"></s:textfield>
                                             </td>
                                         </tr>
 
                                         <tr class="text-left">
-                                            <td>               
-                                                <b>이름</b>
-                                            </td>
+                                            <td><b>이름</b></td>
                                             <td>               
                                                 <s:textfield name="review_name" theme="simple" value="%{mresultClass.member_name }" maxlength="20"/>
                                             </td>
                                         </tr>
 
                                          <tr class="text-left">
-                                            <td>               
-                                                <b>비밀번호</b>
-                                            </td>
+                                            <td><b>비밀번호</b></td>
                                             <td>               
                                                 <s:textfield name="review_password" theme="simple" value="%{resultClass.review_password}" maxlength="20"/>
                                             </td>
                                         </tr>
 
                                          <tr class="text-left">
-                                            <td>               
-                                                <b>내용</b>
-                                            </td>
+                                            <td><b>내용</b></td>
                                             <td>               
                                                <s:textarea name="review_content" theme="simple" value="%{resultClass.review_content}" cols="50" rows="10" />
                                             </td>
                                         </tr>
 
                                         <tr class="text-left">
-                                            <td>               
-                                                <b>이미지</b>
-                                            </td>
+                                            <td><b>이미지</b></td>
                                             <td>               
                                                 <s:file label="File(1)" name="uploads" />
                                                 <s:file label="File(2)" name="uploads" />
@@ -106,30 +91,53 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                
+                                <div class="site-btn">
+					                <button class="btn btn-1" type="submit">                                 
+					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">작성완료</span>
+					                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+					                </button>                 
+					                <button class="btn btn-1" type="button" onclick="javascript:location.href='userReviewListAction.action?currentPage=<s:property value="currentPage" />'">                                   
+					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">목록</span>
+					                    <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+					                </button>
+					            </div>
+                                
+                                
                             </div>
                         </form>
-                    </div>                    
+                    </div> 
+				</div> 
+			</div>	                     
         </section>  
-        <tr>
+<%--         <tr>
         
         
         
         <tr>
           <td align="right" colspan="2">
           	<input name="submit" type="submit" value="작성완료">
-          	<button class="btn" type="button"
+          	
+          	<div class="site-btn">
+                <button class="btn btn-1" type="submit">                                 
+                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">작성완료</span>
+                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+                </button>                 
+                <button class="btn btn-1" type="button" onclick="javascript:location.href='userReviewListAction.action?currentPage=<s:property value="currentPage" />'">                                   
+                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">목록</span>
+                    <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+                </button>
+            </div> --%>
+          	
+          	
+       <%--    	<button class="btn" type="button"
 				onclick="javascript:location.href='userReviewListAction.action?currentPage=<s:property value="currentPage" />'"
 				class="btn_small3" style="background-color: #87df2d;">
 				<span class="txt"
 					style="color: #fff; font-family: sans-serif; font-weight: bold;">목록</span>
 				<span class="round" style="background-color: #35beea;"><i
 					class="fa fa-chevron-right" style="color: white;"></i></span>
-			</button>
-<%--             <input name="list" type="button" value="목록" onClick="javascript:location.href='userReviewListAction.action?currentPage=<s:property value="currentPage" />'">
- --%>          </td>
-        </tr>
+			</button> --%>
 
-    </table>
-</form>
 </body>
 </html>

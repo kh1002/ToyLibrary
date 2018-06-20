@@ -13,7 +13,7 @@
 </head>
 <body>
 <span class="jua" style="font-size:24pt; color:#00BFFF;">공&nbsp;지&nbsp;사&nbsp;항</span>
-	<section class="padding-top50">
+	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
@@ -22,14 +22,14 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th class="text-center"></th>
-									<th class="text-left">번호</th>
+									<th class="text-center">번호</th>
 									<th class="text-left">제목</th>
 									<th class="text-left">날짜</th>
-									<th class="text-left">조회수</th>
+									<th class="text-center">조회수</th>
 
 								</tr>
 							</thead>
+							
 							<s:iterator value="list" status="stat">
 								<s:url id="viewURL" action="userNoticeViewAction">
 									<s:param name="notice_no">
@@ -39,28 +39,22 @@
 									<s:param name="currentPage">
 										<s:property value="currentPage" />
 									</s:param>
-
 								</s:url>
+								
+								
 								<tbody>
 									<tr>
-										<td class="text-left"></td>
-										<td class="text-left cart-product-title"><s:property
-													value="notice_no" />
-												</td>
-										<td class="text-left"><s:a href="%{viewURL}">
-													<s:property value="notice_subject" />
-												</s:a></td>
-
-										<td class="text-left"><s:property
-													value="notice_regdate" /></td>
-
-
-										<td class="text-left"><s:property
-													value="notice_readcount" /></td>
-												</div></td>
-
+										<td class="text-center cart-product-title"><s:property value="notice_no" /></td>
+										<td class="text-left">
+											<s:a href="%{viewURL}"><s:property value="notice_subject" /></s:a>
+										</td>
+										<td class="text-left"><s:property value="notice_regdate" /></td>
+										<td class="text-center"><s:property value="notice_readcount" /></td>
 									</tr>
+									
+									
 								</tbody>
+								
 							</s:iterator>
 
 						</table>
@@ -68,16 +62,10 @@
 				</form>
 			</div>
 		</div>
-
 	</div>
 	</section>
-
-	<s:if test="list.size() <= 0">
-		<tr align="center">
-			<td colspan="5">등록된 게시물이 없습니다.</td>
-		</tr>
-	</s:if>
-
+	
+<table align="center">
 	<tr align="center">
 		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
 	</tr>
@@ -93,16 +81,12 @@
 					<option value="0">제목</option>
 					<option value="1">내용</option>
 				</select>
-				<s:textfield name="searchKeyword" theme="simple" value=""
-					maxlength="20" />
-				<input name="submit" type="submit" value="검색">
+				<s:textfield name="searchKeyword" theme="simple" value="" maxlength="20" />
+				<input name="submit" type="submit" value="검색"></input>
 			</form>
 		</td>
 	</tr>
-
-
-
-	</table>
+</table>
 
 
 </body>
