@@ -43,62 +43,46 @@
 </script>
 </head>
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>문의사항 쓰기</h2></td>
-		</tr>
-	</table>
-	
-	<s:if test="reply">
-		<form action="qnaReplyAction.action" method="post" onsubmit="return validation();">
-			<s:hidden name="qna_ref" value="%{resultClass.qna_ref}" />
-			<s:hidden name="qna_re_level" value="%{resultClass.qna_re_level}" />
-			<s:hidden name="qna_re_step" value="%{resultClass.qna_re_step}" />
-	</s:if>
-	
-	<s:elseif test="resultClass == NULL">
-		<form action="qnaWriteAction.action" method="post" onsubmit="return validation();">
-	</s:elseif>
-	
-	<s:else>
-		<form action="qnaModifyAction.action" method="post">
-			<s:hidden name="qna_no" value="%{resultClass.qna_no}" />
-			<s:hidden name="currentPage" value="%{currentPage}" />
-	</s:else>
-	<table width="600" border="1">
+ <section class="padding-top50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form>
+                    <div class="cart-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" colspan="2">Write</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                <tr class="text-left">
+                                    <td><b>제목</b></td>
+                                    <td><s:textfield name="qna_subject" theme="simple" value="%{resultClass.qna_subject}" maxlength="50"/></td>
+                                </tr>
 
+                                <tr class="text-left">
+                                    <td><b>이름</b></td>
+                                    <td><s:textfield name="qna_name" theme="simple" value="관리자" maxlength="20"/></td>
+                                </tr>
 
-				
-        <tr>
-          <td width="100">제목</td>
-          <td width="500">
-            <s:textfield name="qna_subject" theme="simple" value="%{resultClass.qna_subject}" maxlength="50"/>
-          </td>
-        </tr>
-        							
-        
-        <tr>
-          <td>이름 </td>
-          <td>
-            <s:textfield name="qna_name" theme="simple" value="관리자" maxlength="20"/>
-          </td>
-        </tr>
+                                 <tr class="text-left">
+                                    <td><b>비밀번호</b></td>
+                                    <td><s:textfield name="qna_password" theme="simple" value="%{resultClass.qna_password}" maxlength="20"/></td>
+                                </tr>
 
- 
-        <tr>
-          <td>비밀번호 </td>
-          <td>
-            <s:textfield name="qna_password" theme="simple" value="%{resultClass.qna_password}" maxlength="20"/>
-          </td>
-        </tr>
+                                 <tr class="text-left">
+                                    <td><b>내용</b></td>
+                                    <td><s:textarea name="qna_content" theme="simple" value="%{resultClass.qna_content}" cols="50" rows="10" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-        
-	<tr>
-          <td>내용 </td>
-          <td>
-            <s:textarea name="qna_content" theme="simple" value="%{resultClass.qna_content}" cols="50" rows="10" />
-          </td>
-        </tr>
+                    </div>
+                </form>
+            </div>
+    </section>
 
         
         

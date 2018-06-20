@@ -7,34 +7,40 @@
 	<title>자주묻는질문 상세보기</title>
 </head>
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>자주묻는질문 상세보기</h2></td>
-		</tr>
-	</table>
-	
-	<table width="600" border="1">
-      
-      <tr>
-      	<td>번호 </td>
-      	<td>
-      		&nbsp;&nbsp;<s:property value="resultClass.faq_no "/>
-      	</td>
-      </tr>
+	 <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form>
+                    <div class="cart-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" colspan="2">상세보기</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-left">
+                                    <td><b>번호</b></td>
+                                    <td><s:property value="resultClass.faq_no "/></td>
+                                </tr>
 
-      <tr>
-        <td width="100">제목</td>
-        <td width="500">
-          &nbsp;&nbsp;<s:property value="resultClass.faq_subject" />
-        </td>
-      </tr>
+                                <tr class="text-left">
+                                    <td><b>제목</b></td>
+                                    <td><s:property value="resultClass.faq_subject" /></td>
+                                </tr>
 
-      <tr>
-        <td>내용 </td>
-        <td>
-          &nbsp;&nbsp;<s:property value="resultClass.faq_content" />
-        </td>
-      </tr>
+                                <tr class="text-left">
+                                    <td><b>내용</b></td>
+                                    <td><s:property value="resultClass.faq_content" /></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+    </section>
 
    
       <tr>

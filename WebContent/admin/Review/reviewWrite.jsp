@@ -44,66 +44,54 @@
 </script>
 </head>
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>스트럿츠 게시판</h2></td>
-		</tr>
-	</table>
-	
-	
-	<s:if test="resultClass == NULL">
-		<form action="reviewWriteAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
-	</s:if>
-	
-	<s:else>
-		<form action="reviewModifyAction.action" method="post" enctype="multipart/form-data">
-			<s:hidden name="review_no" value="%{resultClass.review_no}" />
-			<s:hidden name="currentPage" value="%{currentPage}" />
-	</s:else>
-	<table width="600" border="1">
-        
-				
-        <tr>
-          <td width="100">제목</td>
-          <td width="500">
-            <s:textfield name="review_subject" theme="simple" value="%{resultClass.review_subject}" maxlength="50"/>
-          </td>
-        </tr>
-        							
-        <tr>
-          <td>이름 </td>
-          <td>
-            <s:textfield name="review_name" theme="simple" value="관리자" maxlength="20"/>
-          </td>
-        </tr>
- 
-        <tr>
-          <td>비밀번호 </td>
-          <td>
-            <s:textfield name="review_password" theme="simple" value="%{resultClass.review_password}" maxlength="20"/>
-          </td>
-        </tr>
-     
-        
-	<tr>
-          <td>내용 </td>
-          <td>
-            <s:textarea name="review_content" theme="simple" value="%{resultClass.review_content}" cols="50" rows="10" />
-          </td>
-        </tr>
-        
-        <tr>
-			<td width="600" align="center" colspan="2">이미지</td>
-		</tr>
-				
-			<s:file label="File(1)" name="uploads" />
-			<s:file label="File(2)" name="uploads" />
-			<s:file label="File(3)" name="uploads" />
-		
+ <section class="padding-top50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form>
+                    <div class="cart-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" colspan="2">Write</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                <tr class="text-left">
+                                    <td><b>제목</b></td>
+                                    <td><s:textfield name="review_subject" theme="simple" value="%{resultClass.review_subject}" maxlength="50"/>></td>
+                                </tr>
 
-        
-        <tr>
-        
+                                <tr class="text-left">
+                                    <td><b>이름</b></td>
+                                    <td><s:textfield name="review_name" theme="simple" value="관리자" maxlength="20"/></td>
+                                </tr>
+
+                                 <tr class="text-left">
+                                    <td><b>비밀번호</b></td>
+                                    <td><s:textfield name="review_password" theme="simple" value="%{resultClass.review_password}" maxlength="20"/></td>
+                                </tr>
+
+                                 <tr class="text-left">
+                                    <td><b>내용</b></td>
+                                    <td><s:textarea name="review_content" theme="simple" value="%{resultClass.review_content}" cols="50" rows="10" /></td>
+                                </tr>
+
+                                  <tr class="text-left">
+                                    <td><b>이미지</b></td>
+                                    <td>
+                                        <s:file label="File(1)" name="uploads" />
+                                         <s:file label="File(2)" name="uploads" />
+                                          <s:file label="File(3)" name="uploads" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </form>
+            </div>
+    </section>
         
         
         <tr>
