@@ -27,7 +27,7 @@
 					<span style="color: rgb(255, 51, 102);">r</span>
 					<span style="color: rgb(247,173,10);">y</span>
 				</h2>
-				<p>환영합니다 ???지점 관리자님!</p>
+				<p>환영합니다 ${name}<%-- <s:property value="%{name}"/> --%> 관리자님!</p>
 				<p>장난감 도서관의 관리자 페이지입니다.</p>
 			</div>
 		</div>
