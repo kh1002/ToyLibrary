@@ -10,6 +10,7 @@
    		<action name="ToyReserveForm" class="toy.ToyReserveAction" method="form">
 		 	 <!-- <result>/toy/toyReserve.jsp</result> -->
 		 	<result type="tiles">ToyReserveForm</result>
+		 	<result name="login" type="tiles">memberLoginMain</result>
 		</action>  	
 	<!-- 장난감 예약하기 액션 -->	
    		<action name="ToyReserveAction" class="toy.ToyReserveAction">
