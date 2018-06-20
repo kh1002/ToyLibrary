@@ -1365,7 +1365,7 @@ ul.thumbnails li:nth-child(2) {
     text-transform: capitalize;
 }
 .product-description > p {
-    font-size: 14px;
+    font-size: 25px;
     line-height: 24px;
     margin: 15px 0 25px;
 }
@@ -1378,7 +1378,7 @@ ul.thumbnails li:nth-child(2) {
 }
 
 .product-description .col-sm-3 > p {
-    font-size: 15x;
+    font-size: 20px;
     line-height: 20px;
     font-weight: : bold;
     margin: 15px 0 25px;

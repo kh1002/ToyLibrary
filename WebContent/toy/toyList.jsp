@@ -11,6 +11,34 @@
 	<title>스트러츠2 게시판</title>
 </head>
 
+
+            <div class="container">
+                 <div class="row padding-top30"> 
+
+                    <div class="product-grid-layout">
+                    	
+                        <ul class="toy-products-list">
+                        <div class="col-md-9">
+
+
+
+
+                           
+
+					<div class="cart-table table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+<th class="text-center" colspan="2" style="color: #ff3366;">가</th>
+								</tr>
+							</thead>
+							</table>
+							</div>	
+
+
+
+
+
 <!-- 탭메뉴를 위한 css소스코드 -->
 <style>
 #tabmenu{ position:relative; height:29px; background:url(images/tab_menu.gif) repeat-x 0 100%; font-family:'돋움',dotum; font-size:12px }
@@ -41,13 +69,13 @@
 
 </table>
 
-            <div class="container">
+<!--             <div class="container">
                  <div class="row padding-top30"> 
 
                     <div class="product-grid-layout">
                     	
                         <ul class="toy-products-list">
-                        <div class="col-md-9">
+                        <div class="col-md-9"> -->
                         
                         <s:iterator value="UPlist" status="stat">
 

@@ -174,7 +174,7 @@ function openIdCheck(){
 						<table class="table">
 							<thead>
 								<tr>
-									<th class="text-center" colspan="2"></th>
+									<th class="text-center" colspan="2" style="color: #ff3366;">가</th>
 
 
 								</tr>
