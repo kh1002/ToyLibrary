@@ -180,6 +180,8 @@ public class userQnaWriteAction extends ActionSupport implements SessionAware {
 
 	public String form() throws Exception {
 		
+		if (session.get("member_id") != null){
+		
 		mparamClass = new MemberVO();
 		mresultClass = new MemberVO();
 		
@@ -191,6 +193,9 @@ public class userQnaWriteAction extends ActionSupport implements SessionAware {
 		mresultClass = (MemberVO) sqlMapper.queryForObject("member.boardSelectOne", mparamClass);
 		
 		return SUCCESS;
+		} else {
+			return LOGIN;
+		}
 
 	}
 

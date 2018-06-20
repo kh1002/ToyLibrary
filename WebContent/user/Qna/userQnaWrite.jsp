@@ -69,7 +69,7 @@
 								<tr class="text-left">
 									<td><b>Name</b></td>
 									<td><s:textfield name="qna_name" theme="simple"
-											value="%{resultClass.member_name}" maxlength="20" /></td>
+											value="%{mresultClass.member_name}" maxlength="20" /></td>
 								</tr>
 
 								<tr class="text-left">

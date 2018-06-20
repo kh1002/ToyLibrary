@@ -17,6 +17,7 @@
 		<action name="userQnaWriteForm" class="user.Qna.userQnaWriteAction" method="form">
 			<!-- <result>/user/Qna/userQnaWrite.jsp</result> -->
 			<result type="tiles">userQnaWriteForm</result>
+			<result name="login" type="tiles">memberLoginMain</result>
 		</action>
 
 		<action name="userQnaWriteAction" class="user.Qna.userQnaWriteAction">

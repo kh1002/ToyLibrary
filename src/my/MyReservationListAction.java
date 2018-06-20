@@ -44,6 +44,9 @@ public class MyReservationListAction extends ActionSupport implements SessionAwa
 
 	public String execute() throws Exception {
 		
+		if (session.get("member_id") != null){
+			
+		
 		mparamClass.setState_code("예약중");		
 		mparamClass.setMember_id(session.get("member_id").toString());
 		
@@ -54,6 +57,9 @@ public class MyReservationListAction extends ActionSupport implements SessionAwa
 		totalCount = MyReservationlist.size(); //전체 글 갯수를 구함
 	
 		return SUCCESS;
+		} else {
+			return LOGIN; 
+		}
 	}
 
 

@@ -53,7 +53,7 @@
 				<div class="col-md-4 col-sm-4 col-xs-6 width-100">
 					<div class="blog-list">
 						<div class="blog-img">
-							<img src="/ToyLibrary/style/images/main2.jpg" alt="blog" class="img-responsive    ">
+							<img src="/ToyLibrary/style/images/main4.jpg" alt="blog" class="img-responsive    ">
 						</div>
 						<div class="blog-details">
 						<style type="text/css">
