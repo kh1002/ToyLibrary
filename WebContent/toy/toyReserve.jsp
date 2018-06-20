@@ -18,6 +18,7 @@
     <s:hidden name="zizum_no" value="%{zizum_no}"/>
    
     <section class="padding-top30">
+    
             <div class="container">
                 <div class="row">
                     <ul class="col-md-9 col-xs-12 blog-block">

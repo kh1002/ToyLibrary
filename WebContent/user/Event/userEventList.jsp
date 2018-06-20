@@ -21,7 +21,7 @@
 	font-family: 'BM JUA', '배달의민족 주아', sans-serif;
 }
 </style>
-				<span class="jua" style="font-size: 24pt; color: #774be9;">회원목록</span>
+				<span class="jua" style="font-size: 24pt; color: #774be9;">행사 목록</span>
 
 
 
