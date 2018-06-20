@@ -72,6 +72,8 @@ public class ToyReserveAction extends ActionSupport implements SessionAware {
 	//등록 폼
 	public String form() throws Exception {
 		
+		if (session.get("member_id") != null){
+		
 		TparamClass = new toyProductVO();
 		TresultClass = new toyProductVO();
 		
@@ -92,6 +94,9 @@ public class ToyReserveAction extends ActionSupport implements SessionAware {
 		mresultClass = (MemberVO) sqlMapper.queryForObject("member.boardSelectOne", mparamClass);
 		
 		return SUCCESS;
+	} else {
+		return LOGIN;
+		}
 	}
 	
 	public String execute() throws Exception {

@@ -71,6 +71,20 @@ public class loginAction extends ActionSupport implements SessionAware{
 			System.out.println("세션pw");
 			System.out.println(member_pw);
 			
+			
+			
+			//hello 강남 역삼 교대 지점님 출력하기
+			if(session.get("member_id").equals("admin1")) {
+				session.put("name","강남점");
+			}
+			else if(session.get("member_id").equals("admin2")) {
+				session.put("name","역삼점");
+			}
+			else if(session.get("member_id").equals("admin3")) {
+				session.put("name","교대점");
+			}
+			
+
 			if(session.get("member_id").equals("admin1") || session.get("member_id").equals("admin2") || session.get("member_id").equals("admin3"))
 			{
 				return INPUT;
