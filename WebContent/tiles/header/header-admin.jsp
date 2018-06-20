@@ -16,7 +16,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
 
                             <div class="logo">
-                            	 <a href="mainAction2.action">장난감도서관</a>
+                            	<a href="mainAction2.action"><img src="/ToyLibrary/style/images/mainLogo0.png" height="50px"></a>
                             </div>	 
                             	 
                         </div>
@@ -36,14 +36,14 @@
                     <div class="container">
                         <nav class="collapse navbar-collapse">    
                             <ul class="nav navbar-nav navbar-right">
-                                <li style="margin-right : 100px;" class="dropdown"><a href="AdminToyListAction.action" class="flip-animate"><span data-hover="장난감">장난감</span></a>
+                                <li style="margin-right : 100px;" class="dropdown"><a href="AdminToyListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감</span></a>
                                     <div class="dropdown-content">
                                         <a href="AdminToyListAction.action">장난감목록</a>  
                                         <a href="AdminRentListAction.action">대여관리</a>
 			                            <a href="AdminReturnListAction.action">반납관리</a>
                                     </div>        
                                 </li>
-                                <li style="margin-right : 130px;" class="dropdown"><a href="noticeListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감목록">게시판</span></a>
+                                <li style="margin-right : 130px;" class="dropdown"><a href="noticeListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;게시판">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;게시판</span></a>
                                     <div class="dropdown-content">
                                         <a href="noticeListAction.action">공지사항</a>  
                                         <a href="qnaListAction.action">QNA</a>  
