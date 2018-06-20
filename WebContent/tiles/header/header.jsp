@@ -15,6 +15,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
 
                             <div class="logo">
+                            <img src="/ToyLibrary/style/images/baby_toy.png" alt="logo" class="img-responsive"> 
                             	 <a href="mainAction.action">장난감도서관</a>
                             </div>	 
                             	 

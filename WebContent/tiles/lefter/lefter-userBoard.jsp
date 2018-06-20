@@ -10,7 +10,11 @@
 <body>
 	<lefter>
 		<div class="lefter-menu">
-			<h3>커뮤니티</h3>
+		<style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+
+                           <span class="jua" style="font-size:24pt; color:#ff3366;
+;">커뮤니티</span>
 				<ul>
 					<li><a href="userNoticeListAction.action">공지사항</a></li>
 					<li><a href="userFaqListAction.action">QNA</a></li>

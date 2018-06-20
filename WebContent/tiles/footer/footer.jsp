@@ -23,11 +23,11 @@
                                     </li>
                                     <li>
                                         <i class="fa fa-phone fa-lg"></i>
-                                        <p><a href="tel:+1-202-555-0100"> +1-202-555-0100</a></p>
+                                        <p><a href="#"> +1-202-555-0100</a></p>
                                     </li>
                                     <li>
                                         <i class="fa fa-envelope-o fa-lg"></i>
-                                        <p><a href="mailto:demo@info.com"> KH_Academy1002@info.com</a></p>
+                                        <p><a href="#"> KH_Academy1002@info.com</a></p>
                                     </li>
                                 </ul>
                             </div>                        

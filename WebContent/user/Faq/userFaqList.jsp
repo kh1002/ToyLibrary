@@ -22,7 +22,7 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th class="text-center"></th>
+									<!-- <th class="text-center"></th> -->
 									<th class="text-left">번호</th>
 									<th class="text-left">제목</th>
 
@@ -41,7 +41,7 @@
 								</s:url>
 								<tbody>
 									<tr>
-										<td class="text-left"></td>
+										<td class="text-left"></td> 
 										<td class="text-left cart-product-title"><br><a
 												href="single-details.html"><s:property value="faq_no" /></a>
 												<hr></td>

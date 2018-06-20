@@ -10,7 +10,11 @@
 <body>
 	<lefter>
 		<div class="lefter-menu">
-			<h3>행사</h3>
+					<style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+
+                           <span class="jua" style="font-size:24pt; color:#ff3366;
+;">행사</span>
 				<ul>
 					<li><a href="userEventListAction.action">행사목록</a></li>                          
 				</ul>

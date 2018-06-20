@@ -388,6 +388,7 @@ function openIdCheck(){
        <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">회원가입</span>
        <span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color:white;"></i></span>
        </button>      
+
        
        <button class="btn" type="button" onclick="javascript:window.location='./mainAction.action'" style="background-color: #87df2d;">                                   
        <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">취소</span>
