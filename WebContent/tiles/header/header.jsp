@@ -15,7 +15,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
 
                             <div class="logo">
-                            	 <a href="mainAction.action">장난감도서관</a>
+                            	 <a href="mainAction.action"><img src="/ToyLibrary/style/images/mainLogo0.png" height="50px"></a>
                             </div>	 
                             	 
                         </div>
@@ -25,7 +25,7 @@
                                     	<li><a href="mainAction.action"> <i class="fa fa-tag" aria-hidden="true"></i> Home</a> </li>
                                    	<s:if test="#session.member_id == null">
 	                                    <li><a href="joinMain.action"> <i class="fa fa-user" aria-hidden="true"></i> Register</a> </li>
-	                                    <li><a href="login.action"><i class="fa fa-heart-o" aria-hidden="true"></i> Login</a></li>
+	                                    <li><a href="loginMain.action"><i class="fa fa-heart-o" aria-hidden="true"></i> Login</a></li>
                                 	</s:if>
                                 	<s:else>
 	                                	<li><a href="MyReservationListAction.action"><i class="fa fa-user" aria-hidden="true"></i>MyPage</a></li>

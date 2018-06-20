@@ -10,7 +10,11 @@
 <body>
 	<lefter>
 		<div class="lefter-menu">
-			<h3>게시판</h3>
+					<style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+
+                           <span class="jua" style="font-size:24pt; color:#ff3366;
+;">게시판 관리</span></style>
 				<ul>
 					<li><a href="noticeListAction.action">공지사항</a></li>
 					<li><a href="qnaListAction.action">문의게시판</a></li>

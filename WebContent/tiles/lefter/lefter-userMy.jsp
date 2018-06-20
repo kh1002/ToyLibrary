@@ -10,7 +10,11 @@
 <body>
 	<lefter>
 		<div class="lefter-menu">
-			<h3>마이페이지</h3>
+					<style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+
+                           <span class="jua" style="font-size:24pt; color:#ff3366;
+;">마이페이지</span></style>
 				<ul>
 					<li><a href="MyReservationListAction.action">예약목록</a></li>
 					<li><a href="MyRentListAction.action">대여목록</a></li>

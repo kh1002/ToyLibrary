@@ -16,6 +16,7 @@
 		<action name="MyReservationListAction" class="my.MyReservationListAction">
 			<!-- <result>/my/MyReservationList.jsp</result> -->
 			<result type="tiles">MyReservationListAction</result>
+			<result name="login" type="tiles">memberLoginMain</result>
 		</action> 	
 		
 		<action name="MyReservationModifyStateAction" class="my.MyReservationDeleteAction" method="stateModify">

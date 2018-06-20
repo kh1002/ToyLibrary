@@ -37,7 +37,96 @@ function check() {
 	}
 }
 </script>
+<style type="text/css">
+input.form_jumin{
+	height: 34px;
+	font-size: 14px;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ff3366;
+	border-radius: 4px;
+}
+</style>
 </head>
+	<form action="loginPwSearch.action" method="post" name="pwsearchform" id="pwsearchform" onsubmit="return check()"> 
+			
+			
+           <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="login-content">
+                                                    <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+
+                           <h4><span class="jua" style="font-size:24pt; <%-- color:#00BFFF; --%>">비밀번호 찾기</h4></span>
+                           
+
+<div class="form-group">
+                                    <label for="input-email" class="control-label">아이디<span>*</span></label>
+                                    <input type="text" class="form-control" name="member_id" maxlength="10" style="width:150px;">
+                                </div>
+
+
+
+								<div class="form-group">
+                                    <label for="input-email" class="control-label">이름<span>*</span></label>
+                                    <input type="text" class="form-control" name="member_name" maxlength="10" style="width:150px;">
+                                </div>
+                                
+
+
+     
+     
+                                
+                                <div class="form-group">
+                                    <label for="input-password" class="control-label">주민번호<span>*</span></label>
+                                    <br>
+                                    <input type="password" class="form_jumin" name="member_jumin1" maxlength="6" style="width:100px;">
+                                    &nbsp;-&nbsp;
+                                    <input type="password" class="form_jumin" name="member_jumin2" maxlength="7" style="width:100px;">
+                                   </div>
+
+
+<div class="button">
+
+<br>
+
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+        
+		<button class="btn" type="submit" onclick="return check();" style="background-color: #87df2d;">                                   
+       <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">비밀번호 찾기</span>
+       <span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+       </button>  
+       
+
+
+</div>
+
+
+
+
+
+			</tr>
+			</form>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+
+
+
+<!-- </head>
 <body>
 <table width="960" cellspacing="0" cellpadding="10" border="2" align="center">
 	<tr>
@@ -83,4 +172,4 @@ function check() {
 </table>
 
 </body>
-</html>
+</html> -->
