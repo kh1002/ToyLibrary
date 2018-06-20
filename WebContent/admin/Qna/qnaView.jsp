@@ -14,55 +14,55 @@
 </head>
 
 <body>
-	<table width="600" border="1">
-	<tr>
-		<td align="center"><h2>문의사항 상세보기</h2></td>
-	</tr>
-	</table>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form>
+                    <div class="cart-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" colspan="2">상세보기</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-left">
+                                    <td><b>번호</b></td>
+                                    <td><s:property value="resultClass.qna_no" /></td>
+                                </tr>
 
-	<table width="600" border="1">
+                                <tr class="text-left">
+                                    <td><b>제목</b></td>
+                                    <td><s:property value="resultClass.qna_subject" /></td>
+                                </tr>
 
-		<tr>
-			<td width="100">번호</td>
-			<td width="500">
-				<s:property value="resultClass.qna_no" />
-			</td>
-		</tr>
-		<tr>
-			<td width="100">제목</td>
-			<td width="500">
-				<s:property value="resultClass.qna_subject" />
-			</td>
-		</tr>
-		<tr>
-			<td width="100">이름</td>
-			<td width="500">
-				<s:property value="resultClass.qna_name" />
-			</td>
-		</tr>
-		
-		<tr>
-			<td width="100">내용</td>
-			<td width="500">
-				${resultClass.qna_content }
-			</td>
-		</tr>
-		<tr>
-			<td width="100">조회수</td>
-			<td width="500">
-				<s:property value="resultClass.qna_readcount" />
-			</td>
-		</tr>
-		<tr>
-			<td width="100">등록날짜</td>
-			<td width="500">
-				<s:property value="resultClass.qna_regdate" />
-			</td>
-		</tr>
-		
+                                <tr class="text-left">
+                                    <td><b>이름</b></td>
+                                    <td><s:property value="resultClass.qna_name" /></td>
+                                </tr>
 
-		
-	
+                                <tr class="text-left">
+                                    <td><b>내용</b></td>
+                                    <td>${resultClass.qna_content }</td>
+                                </tr>
+
+                                <tr class="text-left">
+                                    <td><b>조회수</b></td>
+                                    <td><s:property value="resultClass.qna_readcount" /></td>
+                                </tr>
+
+                                 <tr class="text-left">
+                                    <td><b>등록날짜</b></td>
+                                    <td><s:property value="resultClass.qna_regdate" /></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+    </section>
 	
 		<tr>
 			<td colspan="2" align="right">

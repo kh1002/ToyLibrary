@@ -3,6 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 	<head>
+	<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+          <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif; text-align: center;}</style>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="Content-Style-Type" content="text/css" />
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
@@ -20,20 +23,21 @@ $(function(){
 	});
 });
 		</script>
-		<table>
-			<tr><center><h1>찾아오시는 길</h1></center></tr>
-		</table>	
+	<span class="jua" style="font-size:24pt; color:#00BFFF;"  >찾&nbsp;&nbsp;아&nbsp;&nbsp;오&nbsp;&nbsp;시&nbsp;&nbsp;는&nbsp;&nbsp;길</span>
+
 		<style type="text/css">
 *{
 	margin:0;
 	padding:0;
 }
-/* #container{
+ #container{
 	width:600px;
 	margin:30px auto;
-} */
+}
 ul.tab{
 	padding:0;
+	font-size:13px;
+	
 }
 ul.tab li{
 	list-style-type:none;
@@ -43,23 +47,27 @@ ul.tab li{
 }
 ul.tab li a{
 	outline:none;
-	background:url("http://cfile25.uf.tistory.com/image/17710F454FEE42C1326F65");
-	display:block;
+
+/* 	background:url("http://cfile25.uf.tistory.com/image/17710F454FEE42C1326F65");
+ */	display:block;
 	color:blue;
 	line-height:40px;
 	text-align:center;
+	background-color:#F5A9E1;	
 }
 ul.tab li a.selected{
-	background:url("http://cfile7.uf.tistory.com/image/18710F454FEE42C133F20E");
-	text-decoration:none;
+/* 	background:url("http://cfile7.uf.tistory.com/image/18710F454FEE42C133F20E");
+ */	text-decoration:none;
 	color:#333;
 	cursor:default;
+	background-color:#F5A9E1;	
 }
 ul.panel{
 	clear:both;
-	border:1px solid #9FB7D4;
+	border:3px solid #9FB7D4;
 	border-top:none;
 	padding:0;
+	width:600px;
 }
 ul.panel li{
 	list-style-type:none;
@@ -69,16 +77,16 @@ ul.panel li{
 }
 		</style>
 	</head>
-	<body>
+	<body><table><tr></tr></table>
 		<div id="container">
 			<ul class="tab">
-				<li><a href="#tab1" class="selected">강남점</a></li>
-				<li><a href="#tab2">역삼점</a></li>
-				<li><a href="#tab3">교대점</a></li>
+				<li><b><a href="#tab1" class="selected">강남점</a></b></li>
+				<li><b><a href="#tab2">역삼점</a></b></li>
+				<li><b><a href="#tab3">교대점</a></b></li>
 			</ul>
 			<ul class="panel">
 				<li id="tab1">
-	<div id="map" style="width:550px;height:250px;"></div>
+	<div id="map" style="width:580px;height:250px; align:center"></div>
 
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=182b6f4e39732b838518611442a33740"></script>
 	<script>
@@ -186,7 +194,7 @@ ul.panel li{
 
 				</li>
 				<li id="tab2">
-<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png" width="550" height="200"><br>
+<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png" width=580px; height=250px;><br>
 	<br>● 주소 및 연락처<br>
 	＊ 주소 : 서울시 강남구 역삼1동 논현로 93길<br>
 	＊ 연락처 : 02) 012-3456<br><br>
@@ -198,7 +206,7 @@ ul.panel li{
 
 				</li>
 				<li id="tab3">
-<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png" width="550" height="200"><br>
+<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png"width=580px; height=250px;><br>
 	<br>● 주소 및 연락처<br>
 	＊ 주소 : 위치 : 서울시 서초구 서초3동 법원로2길<br>
 	＊ 연락처 : 02) 012-3456<br><br>

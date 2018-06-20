@@ -27,65 +27,56 @@
 	</script>
 </head>
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>event 쓰기</h2></td>
-		</tr>
-	</table>
-	
-	<s:if test="resultClass == null">
-		<form action="eventWriteAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
-	</s:if>
-	<s:else>
-		<form action="eventModifyAction.action" method="post" enctype="multipart/form-data">
-		<s:hidden name="event_no" value="%{resultClass.event_no}"/>
-		<s:hidden name="currentPage" value="%{currentPage}"/>
-	</s:else>
-	
-	<table width="600" border="1">
+ <section class="padding-top50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form>
+                    <div class="cart-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" colspan="2">Write</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-left">
+                                    <td><b>제목</b></td>
+                                    <td><s:textfield name="event_subject" theme="simple" value="%{resultClass.event_subject}" maxlength="50" /></td>
+                                </tr>
 
-			
-		<tr>
-			<td width="100">제목</td>
-			<td width="500">
-				<s:textfield name="event_subject" theme="simple" value="%{resultClass.event_subject}" maxlength="50" />
-			</td>
-		</tr>
-		
-		<tr>
-			<td>내용</td>
-			
-			<td>
-				<s:textarea name="event_content" theme="simple" value="%{resultClass.event_content}" cols="50" rows="10" /> 
-			</td>
-		</tr>
-		
-		<tr>
-			<td width="100">행사날짜</td>
-			<td width="500">
-				<s:textfield name="event_startday" theme="simple" value="%{resultClass.event_startday}" maxlength="50" /> ~
-				<s:textfield name="event_endday" theme="simple" value="%{resultClass.event_endday}" maxlength="50" />
-			</td>
-		</tr>
-		
-		<tr>
-			<td width="100">행사장소</td>
-			<td width="500">
-				<s:textfield name="event_position" theme="simple" value="%{resultClass.event_position}" maxlength="50" />
-			</td>
-		</tr>
-		
-		<tr>
-			<td width="600" align="center" colspan="2">이미지</td>
-		</tr>
-				
-			<s:file label="File(1)" name="uploads" />
-			<s:file label="File(2)" name="uploads" />
-			<s:file label="File(3)" name="uploads" />
-		
+                                <tr class="text-left">
+                                    <td><b>내용</b></td>
+                                    <td><s:textarea name="event_content" theme="simple" value="%{resultClass.event_content}" cols="50" rows="10" /></td>
+                                </tr>
 
-        
-        <tr>
+                                <tr class="text-left">
+                                    <td><b>행사날짜</b></td>
+                                    <td><s:textfield name="event_startday" theme="simple" value="%{resultClass.event_startday}" maxlength="50" /> ~
+                                     <s:textfield name="event_endday" theme="simple" value="%{resultClass.event_endday}" maxlength="50" /></td>
+                                </tr>
+
+                                <tr class="text-left">
+                                    <td><b>행사장소</b></td>
+                                    <td><s:textfield name="event_position" theme="simple" value="%{resultClass.event_position}" maxlength="50" /></td>
+                                </tr>
+
+                                <tr class="text-left">
+                                    <td><b>이미지</b></td>
+                                    <td>
+                                        <s:file label="File(1)" name="uploads" />
+                                         <s:file label="File(2)" name="uploads" />
+                                        <s:file label="File(3)" name="uploads" /></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </form>
+            </div>
+    </section>
           <td align="right" colspan="2">
           	<input name="submit" type="submit" value="작성완료"/>
             <input name="list" type="button" value="목록" onClick="javascript:location.href='eventListAction.action?currentPage=<s:property value="currentPage" />'"/>

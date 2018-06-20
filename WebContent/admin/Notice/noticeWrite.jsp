@@ -27,48 +27,42 @@
 	</script>
 </head>
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>공지사항 글쓰기</h2></td>
-		</tr>
-	</table>
-	
-	<s:if test="resultClass == null">
-		<form action="noticeWriteAction.action" method="post" onsubmit="return validation();">
-	</s:if>
-	<s:else>
-		<form action="noticeModifyAction.action" method="post">
-		<s:hidden name="notice_no" value="%{resultClass.notice_no}"/>
-		<s:hidden name="currentPage" value="%{currentPage}"/>
-	</s:else>
-	
-	<table width="600" border="1">
-		<tr>
-			<td align="right" colspan="2">
-				<font color="#FF0000">*</font>
-				는 필수 입력사항입니다.
-			</td>
-		</tr>
-			
-		<tr>
-			<td width="100">
-				<font color="#FF0000">*</font> 제목
-			</td>
-			<td width="500">
-				<s:textfield name="notice_subject" theme="simple" value="%{resultClass.notice_subject}" maxlength="50" />
-			</td>
-		</tr>
-		
-		<tr>
-			<td>
-				<font color="#FF0000">*</font>
-				내용
-			</td>
-			
-			<td>
-				<s:textarea name="notice_content" theme="simple" value="%{resultClass.notice_content}" cols="50" rows="10" />
-			</td>
-		</tr>
+ <section class="padding-top50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form>
+                    <div class="cart-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" colspan="2">Write</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="right" colspan="2">
+                                        <font color="#FF0000">*</font>
+                                   			     는 필수 입력사항입니다.
+                                    </td>
+                                </tr>
+                                <tr class="text-left">
+                                    <td><b>제목</b></td>
+                                    <td><s:textfield name="notice_subject" theme="simple" value="%{resultClass.notice_subject}" maxlength="50" /></td>
+                                </tr>
+
+                                <tr class="text-left">
+                                    <td><font color="#FF0000">*</font><b>내용</b></td>
+                                    <td><s:textarea name="notice_content" theme="simple" value="%{resultClass.notice_content}" cols="50" rows="10" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </form>
+            </div>
+    </section>
+
         
         <tr>
           <td align="right" colspan="2">
