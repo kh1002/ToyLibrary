@@ -44,4 +44,8 @@
 		<put-attribute name="body" value="/member/join_success.jsp" />
 	</definition>
 	
+	<definition name="memberLoginError" extends="memberLoginMain">
+		<put-attribute name="body" value="/member/login_error.jsp" />
+	</definition>
+	
 </tiles-definitions>
