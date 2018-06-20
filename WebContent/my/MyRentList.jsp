@@ -54,7 +54,7 @@
 							<s:if test="MyRentlist.size() <=0">
 							
 							<tr bgcolor="#ffffff" align="center">
-								<td colspan="5">등록된 게시물이 없습니다.</td>
+								<td colspan="5">대여한 장난감이 없습니다.</td>
 							</tr>
 							</s:if>
 		
