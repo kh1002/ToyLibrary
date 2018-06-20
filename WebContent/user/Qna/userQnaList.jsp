@@ -44,26 +44,23 @@
 								<tbody>
 									<tr>
 										<td class="text-left"></td>
-										<td class="text-left cart-product-title"><br>
+										<td class="text-left cart-product-title">
 										<s:property value="qna_no" />
-											<hr></td>
-										<td class="text-left"><br>
+											</td>
+										<td class="text-left">
 										<s:a href="%{viewURL}">
 												<s:property value="qna_subject" />
 											</s:a></td>
 
-										<td class="text-left"><br>
+										<td class="text-left">
 										<s:property value="qna_name" /></td>
 
 
-										<td class="text-left"><br>
+										<td class="text-left">
 										<s:property value="qna_regdate" /></td>
 
-										<td class="text-left"><br>
+										<td class="text-left">
 										<s:property value="qna_readcount" /></td>
-
-										<td class="text-left"><br>
-										<div style="max-width: 200px;" class="input-group btn-block">
 
 
 											</div></td>

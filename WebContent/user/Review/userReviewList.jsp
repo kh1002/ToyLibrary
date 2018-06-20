@@ -46,25 +46,21 @@
                                         <td class="text-left"></td>
 
                                         
-                                        <td class="text-left"><br>
+                                        <td class="text-left">
                                        <s:property value="review_no" /></td>
 
-                                        <td class="text-left cart-product-title"><br>
+                                        <td class="text-left cart-product-title">
                                        <s:a href="%{viewURL}"><s:property value="review_subject" /></s:a>
-                                            <hr></td>
-                                        <td class="text-left"><br>
+                                            </td>
+                                        <td class="text-left">
                                         <s:property value="review_name" /></td>
 
-                                        <td class="text-left"><br>
+                                        <td class="text-left">
                                        <s:property value="review_regdate" /></td>
 
 
-                                        <td class="text-left"><br>
+                                        <td class="text-left">
                                         <s:property value="review_readcount" /></td>
-
-                                        <td class="text-left"><br>
-                                        <div style="max-width: 200px;" class="input-group btn-block">
-
 
                                             </div></td>
 

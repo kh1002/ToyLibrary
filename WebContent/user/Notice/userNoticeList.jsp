@@ -44,26 +44,19 @@
 								<tbody>
 									<tr>
 										<td class="text-left"></td>
-										<td class="text-left cart-product-title"><br><s:property
+										<td class="text-left cart-product-title"><s:property
 													value="notice_no" />
-												<hr></td>
-										<td class="text-left"><br><s:a href="%{viewURL}">
+												</td>
+										<td class="text-left"><s:a href="%{viewURL}">
 													<s:property value="notice_subject" />
 												</s:a></td>
 
-										<td class="text-left"><br><s:property
+										<td class="text-left"><s:property
 													value="notice_regdate" /></td>
 
 
-										<td class="text-left"><br><s:property
+										<td class="text-left"><s:property
 													value="notice_readcount" /></td>
-
-
-
-										<td class="text-left"><br><div
-													style="max-width: 200px;" class="input-group btn-block">
-
-
 												</div></td>
 
 									</tr>

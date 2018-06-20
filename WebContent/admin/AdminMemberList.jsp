@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<section class="">
+	<section>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 md-offset-3">
@@ -26,11 +26,11 @@
 						<table class="table">
 							<thead>
 								<tr>
-									
+
 									<th class="text-left">&nbsp;&nbsp;&nbsp;회원 아이디</th>
 									<th class="text-left">회원 이름</th>
 									<th class="text-left">가입일</th>
-				</tr>
+								</tr>
 							</thead>
 
 

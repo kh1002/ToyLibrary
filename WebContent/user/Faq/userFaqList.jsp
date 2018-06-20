@@ -42,15 +42,13 @@
 								<tbody>
 									<tr>
 										<td class="text-left"></td>
-										<td class="text-left cart-product-title"><br><a
+										<td class="text-left cart-product-title"><a
 												href="single-details.html"><s:property value="faq_no" /></a>
-												<hr></td>
-										<td class="text-left"><br><s:a href="%{viewURL}">
+												</td>
+										<td class="text-left"><s:a href="%{viewURL}">
 													<s:property value="faq_subject" />
 												</s:a></td>
-										<td class="text-left"><br><div
-													style="max-width: 200px;" class="input-group btn-block">
-												</div></td>
+									
 									</tr>
 								</tbody>
 							</s:iterator>

@@ -31,37 +31,37 @@
 							</thead>
 							<tbody>
 								<tr class="text-left">
-									<td><b>Number</b></td>
+									<td><b>번호</b></td>
 									<td><s:property value="resultClass.review_no" /></td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>Subject</b></td>
+									<td><b>제목</b></td>
 									<td><s:property value="resultClass.review_subject" /></td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>Name</b></td>
+									<td><b>작성자</b></td>
 									<td><s:property value="resultClass.review_name" /></td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>Content</b></td>
+									<td><b>내용</b></td>
 									<td>${resultClass.review_content }</td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>readcount</b></td>
+									<td><b>조회수</b></td>
 									<td><s:property value="resultClass.review_readcount" /></td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>regdate</b></td>
+									<td><b>등록날짜</b></td>
 									<td><s:property value="resultClass.review_regdate" /></td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>fileupload</b></td>
+									<td><b>이미지</b></td>
 									<td><s:if test="resultClass.file_savname == null">
                                              			       이미지가 없습니다.
                                                 </s:if> <s:else>
@@ -79,16 +79,16 @@
 							<form action="userWriteCommentAction.action" method="post">
 								<table>
 								<tr class="text-left">
-									<td><b>Name <s:textfield name="creview_name"
-												theme="simple" value="" maxlength="16" /><br> password
-											<s:textfield name="creview_password" theme="simple" value=""
+									<td><b>작성자<s:textfield name="creview_name"
+												theme="simple" value="" maxlength="16" /> 
+									비밀번호<s:textfield name="creview_password" theme="simple" value=""
 												maxlength="16" /></b></td>
 									<s:hidden name="review_no" value="%{resultClass.review_no}" />
 									<s:hidden name="creview_no" value="%{resultClass.creview_no}" />
 									<s:hidden name="currentPage" value="%{currentPage}" />
-									<td><s:textarea name="creview_content" theme="simple"
-											value="" cols="50" rows="3" /></td>
-								<tr>
+									<td><b><s:textarea name="creview_content" theme="simple"
+											value="" cols="50" rows="4" /></b></td>
+								<tr class="text-left">
 									<td colspan="2" align="right"><input name="submit"
 										type="submit" value="작성완료"></td>
 								</tr>
@@ -99,7 +99,7 @@
 					</div>
 				</form>
 			</div>
-	</section>
+	
 
 
 

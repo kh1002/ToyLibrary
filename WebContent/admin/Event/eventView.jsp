@@ -7,65 +7,64 @@
 	<title>event 상세보기</title>
 </head>
 <body>
-	<table width="600" border="1">
-		<tr>
-			<td align="center"><h2>event 상세보기</h2></td>
-		</tr>
-	</table>
-	
-	<table width="600" border="1">
-      
-      <tr>
-      	<td>번호 </td>
-      	<td>
-      		&nbsp;&nbsp;<s:property value="resultClass.event_no "/>
-      	</td>
-      </tr>
+  <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form>
+                    <div class="cart-table table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" colspan="2">상세보기</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-left">
+                                    <td><b>번호</b></td>
+                                    <td><s:property value="resultClass.event_no "/></td>
+                                </tr>
 
-      <tr>
-        <td width="100">제목</td>
-        <td width="500">
-          &nbsp;&nbsp;<s:property value="resultClass.event_subject" />
-        </td>
-      </tr>
+                                <tr class="text-left">
+                                    <td><b>제목</b></td>
+                                    <td><s:property value="resultClass.event_subject" /></td>
+                                </tr>
 
-      <tr>
-        <td>내용 </td>
-        <td>
-          &nbsp;&nbsp;<s:property value="resultClass.event_content" />
-        </td>
-      </tr>
-      
-      <tr>
-			<td width="100">행사날짜</td>
-			<td width="500">
-				&nbsp;&nbsp;<s:property value="%{resultClass.event_startday}" /> ~
-				<s:property value="%{resultClass.event_endday}" />
-			</td>
-		</tr>
-		
-		<tr>
-			<td width="100">행사장소</td>
-			<td width="500">
-				&nbsp;&nbsp;<s:property value="%{resultClass.event_position}" />
-			</td>
-		</tr>
-		
-		
-      <tr>
-			<td width="100">첨부파일</td>
-			<td width="500">
-				&nbsp;&nbsp;
-				<s:if test="resultClass.file_savname == null">
-					이미지가 없습니다.
-				</s:if>
-				<s:else>
-					<img id="imglink" src="/AdminBoard/image/<s:property value="file_names[0]"/> " width="150" border="0">
-					<img id="imglink" src="/AdminBoard/image/<s:property value="file_names[1]"/> " width="150" border="0">
-					<img id="imglink" src="/AdminBoard/image/<s:property value="file_names[2]"/> " width="150" border="0">
-				</s:else>
-			</td>
-		</tr>
+                                <tr class="text-left">
+                                    <td><b>내용</b></td>
+                                    <td><s:property value="resultClass.event_content" /></td>
+                                </tr>
+
+                                <tr class="text-left">
+                                    <td><b>날짜</b></td>
+                                    <td><s:property value="%{resultClass.event_startday}" /> ~
+                                          <s:property value="%{resultClass.event_endday}" /></td>
+                                </tr>
+
+                                <tr class="text-left">
+                                    <td><b>장소</b></td>
+                                    <td><s:property value="%{resultClass.event_position}" />
+
+                                    </td>
+                                </tr>
+
+                                <tr class="text-left">
+                                    <td><b>이미지</b></td>
+                                    <td><s:if test="resultClass.file_savname == null">
+                                  			      이미지가 없습니다.
+                                        </s:if>
+                                        <s:else>
+                                            <img id="imglink" src="/AdminBoard/image/<s:property value="file_names[0]"/> " width="150" border="0">
+                                            <img id="imglink" src="/AdminBoard/image/<s:property value="file_names[1]"/> " width="150" border="0">
+                                            <img id="imglink" src="/AdminBoard/image/<s:property value="file_names[2]"/> " width="150" border="0">
+                                        </s:else></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+    </section>
 
    
       <tr>

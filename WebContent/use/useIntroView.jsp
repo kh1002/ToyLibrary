@@ -9,12 +9,12 @@
 <link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
           <style type="text/css">
                         .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}
-                        .abc {font-size:50px;}
+                     	
           </style>
 </head>
 
 <body>
-<span class="jua" style="font-size:24pt; color:#00BFFF;">장난감도서관&nbsp;&nbsp;소개</span>
+<span class="jua" style="font-size:24pt; color:#774be9;">장난감도서관&nbsp;&nbsp;소개</span>
 
 	<section class="padding-top50">
 	<div class="container">
@@ -29,31 +29,36 @@
 								</tr>
 							</thead>
 							<tbody>
+							
 								<tr class="text-left">
-								<td class="jua" style="font-size:24pt; color:#00BFFF;">소개</td>
+									<td class="jua" style="font-size:20pt; color:#00BFFF;">소개</td>
 								</tr>
+								
 								<tr>
-									<td><b> 영유아들이 가지고 놀 수 있는 장난감을 대여하고, 몸으로 체험할 수 있는
-											교육프로그램 등을 제공하는 공공기관입니다. </b></td>
+									<td><span class="jua" style="font-size:12pt; color:#000000;"> 영유아들이 가지고 놀 수 있는 장난감을 대여하고, 몸으로 체험할 수 있는
+											교육프로그램 등을 제공하는 공공기관입니다.</span></td>
 								</tr>
 
 								<tr class="text-left">
-									<td class="jua" style="font-size:24pt; color:#00BFFF;">목적</td>
+									<td class="jua" style="font-size:20pt; color:#00BFFF;">목적</td>
 								</tr>
+								
 								<tr>
-									<td><b>하나, 자녀의 육아비용 절감에 도움을 드립니다. 영유아의 발달과 흥미를 고려한
+									<td><span class="jua" style="font-size:12pt; color:#000000;">하나, 자녀의 육아비용 절감에 도움을 드립니다. 영유아의 발달과 흥미를 고려한
 											장난감을 무료로 대여함으로써 가정의 육아 비용 절감에 도움을 주고자 합니다.<br> 둘, 건전한
 											가족문화 형성에 기여합니다. 영유아발달에 적합한 다양한 놀잇감을 대여함으로써 영유아와 부모 간의 놀이기회를
 											증대시키므로 건전한 가족문화 형성에 기여합니다.
-									</b></td>
+									</span></td>
 								</tr>
 
 								<tr class="text-left">
-									<td class="jua" style="font-size:24pt; color:#00BFFF;">운영</td>
+									<td class="jua" style="font-size:20pt; color:#00BFFF;">운영</td>
 								</tr>
+								
 								<tr>
-									<td><b>서울시에서 설치하고, 보육 및 양육 전문기관이 위탁, 운영하고 있습니다.</b></td>
+									<td><span class="jua" style="font-size:12pt; color:#000000;">서울시에서 설치하고, 보육 및 양육 전문기관이 위탁, 운영하고 있습니다.</span></td>
 								</tr>
+								
 							</tbody>
 						</table>
 
