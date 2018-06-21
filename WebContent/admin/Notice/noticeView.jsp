@@ -41,7 +41,7 @@
 
 								<tr class="text-left">
 									<td><b>작성자</b></td>
-									<td><s:property value="resultClass.notice_name" /></td>
+									<td>관리자</td>
 								</tr>
 
 								<tr class="text-left">
