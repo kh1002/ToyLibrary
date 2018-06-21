@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>스트럿츠 2 게시판</title>
+<title>이용후기</title>
 
 
 
@@ -44,23 +44,23 @@
 </script>
 </head>
 <body>
- <section class="padding-top50">
+ <section class="padding-top30">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <form>
+            <div class="col-md-9 col-sm-6 col-xs-12">
+                <form action="reviewWriteAction.action" method="post" enctype="multipart/form-data" >
                     <div class="cart-table table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="text-center" colspan="2">Write</th>
+                                    <th class="text-center" colspan="2">글쓰기</th>
                                 </tr>
                             </thead>
                             <tbody>
                                
                                 <tr class="text-left">
                                     <td><b>제목</b></td>
-                                    <td><s:textfield name="review_subject" theme="simple" value="%{resultClass.review_subject}" maxlength="50"/>></td>
+                                    <td><s:textfield name="review_subject" theme="simple" value="%{resultClass.review_subject}" maxlength="50"/></td>
                                 </tr>
 
                                 <tr class="text-left">
@@ -87,21 +87,27 @@
                                 </tr>
                             </tbody>
                         </table>
+                        
+                              <div class="site-btn">
+					                <button class="btn btn-1" type="submit">                                 
+					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">작성완료</span>
+					                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+					                </button>                 
+					                <button class="btn btn-1" type="button" onClick="javascript:location.href='reviewListAction.action?currentPage=<s:property value="currentPage" />'">                                   
+					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">목록</span>
+					                    <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+					                </button>
+					            </div>
 
                     </div>
                 </form>
             </div>
+           </div>
+        </div>
     </section>
         
         
-        <tr>
-          <td align="right" colspan="2">
-          	<input name="submit" type="submit" value="작성완료">
-            <input name="list" type="button" value="목록" onClick="javascript:location.href='reviewListAction.action?currentPage=<s:property value="currentPage" />'">
-          </td>
-        </tr>
+     
 
-    </table>
-</form>
 </body>
 </html>

@@ -159,8 +159,8 @@
                                     <s:property value="notice_no"/></a>
                                             </td>
                                     <td class="text-left"><s:a href="%{viewURL}"><s:property value="notice_subject"/></s:a></td>
-                                    <td class="text-left cart-product-title"><a href="single-details.html">
-                                    <s:property value="notice_readcount"/></a>
+                                   <td class="text-left cart-product-title"><s:property value="notice_regdate"/></a>
+                                    <td class="text-left cart-product-title"><s:property value="notice_readcount"/></a>
                                             </td>
                             
                                 </tr>

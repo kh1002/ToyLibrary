@@ -7,34 +7,26 @@
 <html>
 <head>
 <title>이용후기</title>
+<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
+          <style type="text/css">
+                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 </head>
-
 <body>
-	<section>
+	<span class="jua" style="font-size:24pt; color:#00BFFF;">이&nbsp;용&nbsp;후&nbsp;기</span>
+	<section class="padding-top30">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 md-offset-3">
-
-
-                <style type="text/css">
-.jua {
-    font-family: 'BM JUA', '배달의민족 주아', sans-serif;
-}
-</style>
-                <span class="jua" style="font-size: 24pt; color: #774be9;">이용후기</span>
-
-
-
+            <div class="col-md-9 col-sm-12 col-xs-12">
                 <form>
                     <div class="cart-table table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="text-left">번호</th>
+                                    <th class="text-center">번호</th>
                                     <th class="text-left">제목</th>
                                     <th class="text-left">글쓴이</th>
                                     <th class="text-left">날짜</th>
-                                    <th class="text-left">조회</th>
+                                    <th class="text-center">조회</th>
                                 </tr>
                             </thead>
 
@@ -66,29 +58,36 @@
                                 </tr>
 
                             </s:iterator>
-
-
-
-                            <s:if test="list.size() <= 0">
-                                <tr align="center">
-                                    <td colspan="5">등록된 게시물이 없습니다.</td>
-                                </tr>
-                            </s:if>
-
-                            <tr align="center">
-                                <td colspan="5"><s:property value="pagingHtml"
-                                        escape="false" /></td>
-                            </tr>
-
-                            <tr align="right">
-                                <td colspan="5">
-                                    <input type="button" value="글쓰기" onclick="javascript:location.href='reviewWriteForm.action?currentPage=<s:property value="currentPage" />';" />
-                                </td>
-                            </tr>
                             
-                            <tr align="center">
-                                <td colspan="5">
-                                    <form>
+                            					<s:if test="list.size() <= 0">
+								<tr>
+									<td colspan="5" align="center">등록된 게시물이 없습니다</td>
+								</tr>
+							</s:if>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    </section>
+    
+    <table align="center">
+	<tr align="center">
+		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
+	</tr>
+
+  	<div class="site-btn" align="right">         
+		<button class="btn btn-1" type="button" onclick="javascript:location.href='reviewWriteForm.action?currentPage=<s:property value="currentPage" />';" />                                   
+			<span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">글쓰기</span>
+			<span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+		</button>
+	</div>
+	<tr>
+		<td>
+			<form>
+                          
                                         <select name="searchNum">
                                         <option value="0">작성자</option>
                                         <option value="0">제목</option>
@@ -97,18 +96,12 @@
                                         <s:textfield name="searchKeyword" theme="simple" value=""
                                             maxlength="20" />
                                         <input name="submit" type="submit" value="검색">
-                                    </form>
-                                </td>
-                            </tr>
-                        </table>
-                        <br> </br>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    </section>
+        			</form>
+		</td>
+	</tr>	
 </table>
+
+
 </body>
 </html>
 

@@ -1,17 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>event 상세보기</title>
+<title>상세보기</title>
+
+<script type="text/javascript">
+	function open_win_noresizable(url, name) {
+		var oWin = window
+				.open(url, name,
+						"scrollbars=no, status=no, resizable=no, width=300, height=150");
+	}
+</script>
 </head>
 <body>
-	<section class="padding-top100">
+	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="col-md-9 col-sm-6 col-xs-12">
 				<form>
 					<div class="cart-table table-responsive">
 						<table class="table">
@@ -22,35 +29,35 @@
 							</thead>
 							<tbody>
 								<tr class="text-left">
-									<td><b>Number</b></td>
+									<td><b>번호</b></td>
 									<td><s:property value="resultClass.event_no " /></td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>Subject</b></td>
+									<td><b>제목</b></td>
 									<td><s:property value="resultClass.event_subject" /></td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>Content</b></td>
+									<td><b>내용</b></td>
 									<td><s:property value="resultClass.event_content" /></td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>date</b></td>
+									<td><b>날짜</b></td>
 									<td><s:property value="%{resultClass.event_startday}" />
 										~ <s:property value="%{resultClass.event_endday}" /></td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>place</b></td>
+									<td><b>행사장소</b></td>
 									<td><s:property value="%{resultClass.event_position}" />
 
 									</td>
 								</tr>
 
 								<tr class="text-left">
-									<td><b>uploadfile</b></td>
+									<td><b>이미지</b></td>
 									<td><s:if test="resultClass.file_savname == null">
                                          			    이미지가 없습니다.
                                              </s:if> <s:else>
@@ -71,8 +78,9 @@
 	</section>
 
 	<tr>
+	<div class="site-btn" style="margin-left: 800px;">
 		<td align="right" colspan="2">
-			<button class="btn" type="button"
+			<button class="btn" type="button" 
 				onclick="javascript:location.href='userEventListAction.action?currentPage=<s:property value="currentPage" />'"
 				class="btn_small3" style="background-color: #87df2d;">
 				<span class="txt"

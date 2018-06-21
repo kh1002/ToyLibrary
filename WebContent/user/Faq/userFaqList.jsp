@@ -12,7 +12,7 @@
                         .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 </head>
 <body>
-<span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;자주묻는질문</span>
+<span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;FAQ</span>
 	<section class="padding-top50">
 	<div class="container">
 		<div class="row">

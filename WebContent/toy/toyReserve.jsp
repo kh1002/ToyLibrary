@@ -25,7 +25,7 @@
                         <li class="blog-box">
                             <div class="in-stock">
                                 <div class="blog-title">
-                                    <h2><a href="blog-single.html">장난감 예약하기</a></h2>
+                                    <h2><span class="jua" style="font-size:25pt; color:#ff3366;">장난감 예약하기</h2></span>
                                 </div>
                                 <div class="blog-img">
                                     <img id="imglink" src="/ToyLibrary/image/<s:property value="TresultClass.toy_image"/>" width="500" height="400"/>
@@ -33,31 +33,39 @@
                                 <div class="blog-desc">
                                     <div class="col-md-9 product-reservation">
                                         <div class="col-md-3" style="margin-left: 200px">
-                                            <p>장난감 번호</p>
-                                            <p>장난감 이름</p>
-                                            <p>대여자 ID</p>
-                                            <p>대여자 이름</p>
-                                            <p>대여 지점</p>
+ 
+                                     <p><span style="font-size: 16px; color:#ff3366;"><b>장난감 번호</b></p></span>
+                                    <p><span style="font-size: 16px; color:#ff3366;"><b>장난감 이름</b></p></span>
+                                    <p><span style="font-size: 16px; color:#ff3366;"><b>대여자 ID</b></p></span>
+                                    <p><span style="font-size: 16px; color:#ff3366;"><b>대여자 이름</b></p></span>
+                                    <p><span style="font-size: 16px; color:#ff3366;"><b>대여 지점</b></p></span>
+ 
+ 
+ 
+
                                         </div>
                                         <div class="col-md-3">
-                                            <p><s:property value="TresultClass.toy_id"/></p>
-                                            <p><s:property value="TresultClass.toy_name"/></p>
-                                            <p><s:property value="%{mresultClass.member_id}"/></p>
-                                            <p><s:property value="%{mresultClass.member_name}"/></p>
-                                            <p><s:property value="TresultClass.zizum_no"/></p>
+                                            <p><span style="font-size: 16px;"><s:property value="TresultClass.toy_id"/></p>
+                                            <p><span style="font-size: 16px;"><s:property value="TresultClass.toy_name"/></p>
+                                            <p><span style="font-size: 16px;"><s:property value="%{mresultClass.member_id}"/></p>
+                                            <p><span style="font-size: 16px;"><s:property value="%{mresultClass.member_name}"/></p>
+                                            <p><span style="font-size: 16px;"><s:property value="TresultClass.zizum_no"/></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-9 product-reservation" > 
-                                <div class="site-btn">
-                                	<button class="btn btn-2" type="submit"> 
-										<div class="stock-btn">예약하기</div>
-                                    </button>
-                                   
-                                    <button class="btn btn-2" type="button" onclick="javascript:window.location='./ToyListAction.action'"> 
-										<div class="stock-btn">취소</div> 
-                                    </button>
-                                </div>     
+                             
+                                <div class="site-btn" style="margin-left:100px">
+					                <button class="btn btn-1" type="submit">                                 
+					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">예약하기</span>
+					                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+					                </button>                 
+					                <button class="btn btn-1" type="button" onclick="javascript:window.location='./ToyListAction.action'">                                   
+					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">취소</span>
+					                    <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+					                </button>
+					            </div>
+                                
                                 </div>
                             </div>    
                         </li> 

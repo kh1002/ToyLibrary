@@ -18,7 +18,7 @@
 <body>
 <span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;이용 안내</span>
 
-	<section class="padding-top50">
+	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-6 col-xs-12">
@@ -26,10 +26,8 @@
 					<div class="cart-table table-responsive">
 						<table class="table">
 							<thead>
-								<tr>
-									<th class="text-center" colspan="2">
-									<span style="color:#ff3366;">가</span>
-									</th>
+								<tr height="51px">
+									<th class="text-center" colspan="2"></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -49,7 +47,7 @@
 								</tr>
 								
 								<tr>
-									<td><span> 홈페이지 상단에 로그인/회원가입 누르세요
+									<td><span>홈페이지 상단에 로그인/회원가입 누르세요
 									</span></td>
 								</tr>
 

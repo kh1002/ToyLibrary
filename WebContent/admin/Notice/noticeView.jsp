@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>이용후기</title>
+<title>공지사항</title>
 
 <script type="text/javascript">
 	function open_win_noresizable(url, name) {
