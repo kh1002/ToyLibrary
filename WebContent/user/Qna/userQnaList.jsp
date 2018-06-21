@@ -7,14 +7,18 @@
 <html>
 <head>
 <title>문의사항</title>
-<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css" rel="stylesheet" type="text/css" />
-          <style type="text/css">
-                        .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
+<link href="https://cdn.rawgit.com/YJSoft/Webfonts/0.1/BM_JUA.css"
+	rel="stylesheet" type="text/css" />
+<style type="text/css">
+.jua {
+	font-family: 'BM JUA', '배달의민족 주아', sans-serif;
+}
+</style>
 </head>
 
 <body>
-<span class="jua" style="font-size:24pt; color:#00BFFF;">Q&nbsp;&nbsp;&&nbsp;&nbsp;A</span>
-	<section class="padding-top50">
+	<span class="jua" style="font-size: 24pt; color: #00BFFF;">Q&nbsp;&nbsp;&&nbsp;&nbsp;A</span>
+	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
@@ -44,70 +48,64 @@
 								<tbody>
 									<tr>
 										<td class="text-left"></td>
-										<td class="text-left cart-product-title">
-										<s:property value="qna_no" />
-											</td>
-										<td class="text-left">
-										<s:a href="%{viewURL}">
+										<td class="text-left cart-product-title"><s:property
+												value="qna_no" /></td>
+										<td class="text-left"><s:a href="%{viewURL}">
 												<s:property value="qna_subject" />
 											</s:a></td>
-
-										<td class="text-left">
-										<s:property value="qna_name" /></td>
-
-
-										<td class="text-left">
-										<s:property value="qna_regdate" /></td>
-
-										<td class="text-left">
-										<s:property value="qna_readcount" /></td>
-
-
-											</div></td>
-
+										<td class="text-left"><s:property value="qna_name" /></td>
+										<td class="text-left"><s:property value="qna_regdate" /></td>
+										<td class="text-left"><s:property value="qna_readcount" /></td>
 									</tr>
 								</tbody>
 							</s:iterator>
-
+							<s:if test="list.size() <= 0">
+								<tr>
+									<td colspan="5" align="center">등록된 게시물이 없습니다</td>
+								</tr>
+							</s:if>
 						</table>
 					</div>
 				</form>
 			</div>
 		</div>
-
 	</div>
 	</section>
 
-	<s:if test="list.size() <= 0">
-		<tr>
-			<td colspan="5" align="center">등록된 게시물이 없습니다</td>
+	<table align="center">
+		<tr align="center">
+			<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
 		</tr>
-	</s:if>
 
-	<tr align="center">
-		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
-	</tr>
+		<div class="site-btn" align="right">
+			<button class="btn btn-1" type="button"
+				onclick="javascript:location.href='userQnaWriteForm.action?currentPage=<s:property value="currentPage" />';" />
+				<span class="txt"
+					style="color: #fff; font-family: sans-serif; font-weight: bold;">글쓰기</span>
+				<span class="round"><i class="fa fa-chevron-right"
+					style="color: white;"></i></span>
+			</button>
+		</div>
+		<%-- <tr align="right">
+			<td colspan="5"><input type="button" value="글쓰기"
+				onClick="javascript:location.href='userQnaWriteForm.action?currentPage=<s:property value="currentPage" />';" />
+			</td>
+		</tr> --%>
 
-	<tr align="right">
-		<td colspan="5"><input type="button" value="글쓰기"
-			onClick="javascript:location.href='userQnaWriteForm.action?currentPage=<s:property value="currentPage" />';" />
-		</td>
-	</tr>
-
-	<tr align="center">
-		<td colspan="5">
-			<form>
-				<select name="searchNum">
-					<option value="0">작성자</option>
-					<option value="1">제목</option>
-					<option value="2">내용</option>
-				</select>
-				<s:textfield name="searchKeyword" theme="simple" value=""
-					maxlength="20" />
-				<input name="submit" type="submit" value="검색" />
-			</form>
-		</td>
-	</tr>
+		<tr>
+			<td>
+				<form>
+					<select name="searchNum">
+						<option value="0">작성자</option>
+						<option value="1">제목</option>
+						<option value="2">내용</option>
+					</select>
+					<s:textfield name="searchKeyword" theme="simple" value=""
+						maxlength="20" />
+					<input name="submit" type="submit" value="검색" />
+				</form>
+			</td>
+		</tr>
 	</table>
 </body>
 </html>
