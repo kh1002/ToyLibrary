@@ -254,7 +254,102 @@ ul.panel li{
 
 				</li>
 				<li id="tab2">
-<img src="/ToyLibrary/use/location4.PNG" width=540px; height=250px;><br>
+	 <div id="map2"  style="width:580px;height:250px; align:center"></div> 
+
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=182b6f4e39732b838518611442a33740"></script>
+	<script>
+		var mapContainer2 = document.getElementById('map2'), // 지도를 표시할 div 
+		    mapOption2 = {
+		        center: new daum.maps.LatLng(37.5011013, 127.037082), // 지도의 중심좌표
+		        level: 2, // 지도의 확대 레벨
+		        mapTypeId : daum.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
+
+		// 지도를 생성한다 
+		var map2 = new daum.maps.Map(mapContainer2, mapOption2); 
+
+		// 지도 타입 변경 컨트롤을 생성한다
+		var mapTypeControl2 = new daum.maps.MapTypeControl();
+
+		// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+		map2.addControl(mapTypeControl2, daum.maps.ControlPosition.TOPRIGHT);	
+
+		// 지도에 확대 축소 컨트롤을 생성한다
+		var zoomControl = new daum.maps.ZoomControl();
+
+		// 지도의 우측에 확대 축소 컨트롤을 추가한다
+		map2.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+
+		// 지도 중심 좌표 변화 이벤트를 등록한다
+		daum.maps.event.addListener(map2, 'center_changed', function () {
+			console.log('지도의 중심 좌표는 ' + map2.getCenter().toString() +' 입니다.');
+		});
+
+		// 지도 확대 레벨 변화 이벤트를 등록한다
+		daum.maps.event.addListener(map2, 'zoom_changed', function () {
+			console.log('지도의 현재 확대레벨은 ' + map2.getLevel() +'레벨 입니다.');
+		});
+
+		// 지도 영역 변화 이벤트를 등록한다
+		daum.maps.event.addListener(map2, 'bounds_changed', function () {
+			var mapBounds = map2.getBounds(),
+				message = '지도의 남서쪽, 북동쪽 영역좌표는 ' +
+							mapBounds.toString() + '입니다.';
+
+			console.log(message);	
+		});
+
+		// 지도 시점 변화 완료 이벤트를 등록한다
+		daum.maps.event.addListener(map2, 'idle', function () {
+			var message = '지도의 중심좌표는 ' + map2.getCenter().toString() + ' 이고,' + 
+							'확대 레벨은 ' + map2.getLevel() + ' 레벨 입니다.';
+			console.log(message);
+		});
+
+		// 지도 클릭 이벤트를 등록한다 (좌클릭 : click, 우클릭 : rightclick, 더블클릭 : dblclick)
+		daum.maps.event.addListener(map2, 'click', function (mouseEvent) {
+			console.log('지도에서 클릭한 위치의 좌표는 ' + mouseEvent.latLng.toString() + ' 입니다.');
+		});	
+
+		// 지도 드래깅 이벤트를 등록한다 (드래그 시작 : dragstart, 드래그 종료 : dragend)
+		daum.maps.event.addListener(map2, 'drag', function () {
+			var message = '지도를 드래그 하고 있습니다. ' + 
+							'지도의 중심 좌표는 ' + map2.getCenter().toString() +' 입니다.';
+			console.log(message);
+		});
+
+		// 지도에 마커를 생성하고 표시한다
+		var marker2 = new daum.maps.Marker({
+		    position: new daum.maps.LatLng(37.5011013, 127.037082), // 마커의 좌표
+		    draggable : true, // 마커를 드래그 가능하도록 설정한다
+		    map: map2 // 마커를 표시할 지도 객체
+		});
+
+		// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
+		daum.maps.event.addListener(marker, 'click', function() {
+		    alert('마커를 클릭했습니다!');
+		});
+
+		// 마커에 mouseover 이벤트를 등록한다
+		daum.maps.event.addListener(marker, 'mouseover', function() {
+		    console.log('마커에 mouseover 이벤트가 발생했습니다!');
+		});
+
+		// 마커에 mouseout 이벤트 등록
+		daum.maps.event.addListener(marker, 'mouseout', function() {
+		    console.log('마커에 mouseout 이벤트가 발생했습니다!');
+		});
+
+		// 마커에 dragstart 이벤트 등록
+		daum.maps.event.addListener(marker, 'dragstart', function() {
+		    console.log('마커에 dragstart 이벤트가 발생했습니다!');
+		});
+
+		// 마커에 dragend 이벤트 등록
+		daum.maps.event.addListener(marker, 'dragend', function() {
+		    console.log('마커에 dragend 이벤트가 발생했습니다!');
+		});
+	</script><br>
 	<span style="font-size: 13px;">
 	<br>● 주소 및 연락처<br>
 	＊ 주소 : 서울시 강남구 역삼1동 논현로 93길<br>
@@ -267,7 +362,102 @@ ul.panel li{
 
 				</li>
 				<li id="tab3">
-<img src="/ToyLibrary/use/location5.PNG"width=540px; height=250px;><br>
+<div id="map3"  style="width:580px;height:250px; align:center"></div> 
+
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=182b6f4e39732b838518611442a33740"></script>
+	<script>
+		var mapContainer = document.getElementById('map3'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new daum.maps.LatLng(37.4943217,127.014033), // 지도의 중심좌표
+		        level: 2, // 지도의 확대 레벨, 북위
+		        mapTypeId : daum.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
+
+		// 지도를 생성한다 
+		var map = new daum.maps.Map(mapContainer, mapOption); 
+
+		// 지도 타입 변경 컨트롤을 생성한다
+		var mapTypeControl = new daum.maps.MapTypeControl();
+
+		// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);	
+
+		// 지도에 확대 축소 컨트롤을 생성한다
+		var zoomControl = new daum.maps.ZoomControl();
+
+		// 지도의 우측에 확대 축소 컨트롤을 추가한다
+		map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+
+		// 지도 중심 좌표 변화 이벤트를 등록한다
+		daum.maps.event.addListener(map, 'center_changed', function () {
+			console.log('지도의 중심 좌표는 ' + map.getCenter().toString() +' 입니다.');
+		});
+
+		// 지도 확대 레벨 변화 이벤트를 등록한다
+		daum.maps.event.addListener(map, 'zoom_changed', function () {
+			console.log('지도의 현재 확대레벨은 ' + map.getLevel() +'레벨 입니다.');
+		});
+
+		// 지도 영역 변화 이벤트를 등록한다
+		daum.maps.event.addListener(map, 'bounds_changed', function () {
+			var mapBounds = map.getBounds(),
+				message = '지도의 남서쪽, 북동쪽 영역좌표는 ' +
+							mapBounds.toString() + '입니다.';
+
+			console.log(message);	
+		});
+
+		// 지도 시점 변화 완료 이벤트를 등록한다
+		daum.maps.event.addListener(map, 'idle', function () {
+			var message = '지도의 중심좌표는 ' + map.getCenter().toString() + ' 이고,' + 
+							'확대 레벨은 ' + map.getLevel() + ' 레벨 입니다.';
+			console.log(message);
+		});
+
+		// 지도 클릭 이벤트를 등록한다 (좌클릭 : click, 우클릭 : rightclick, 더블클릭 : dblclick)
+		daum.maps.event.addListener(map, 'click', function (mouseEvent) {
+			console.log('지도에서 클릭한 위치의 좌표는 ' + mouseEvent.latLng.toString() + ' 입니다.');
+		});	
+
+		// 지도 드래깅 이벤트를 등록한다 (드래그 시작 : dragstart, 드래그 종료 : dragend)
+		daum.maps.event.addListener(map, 'drag', function () {
+			var message = '지도를 드래그 하고 있습니다. ' + 
+							'지도의 중심 좌표는 ' + map.getCenter().toString() +' 입니다.';
+			console.log(message);
+		});
+
+		// 지도에 마커를 생성하고 표시한다
+		var marker = new daum.maps.Marker({
+		    position: new daum.maps.LatLng(37.4943217, 127.014033), // 마커의 좌표
+		    draggable : true, // 마커를 드래그 가능하도록 설정한다
+		    map: map // 마커를 표시할 지도 객체
+		});
+
+		// 마커에 클릭 이벤트를 등록한다 (우클릭 : rightclick)
+		daum.maps.event.addListener(marker, 'click', function() {
+		    alert('마커를 클릭했습니다!');
+		});
+
+		// 마커에 mouseover 이벤트를 등록한다
+		daum.maps.event.addListener(marker, 'mouseover', function() {
+		    console.log('마커에 mouseover 이벤트가 발생했습니다!');
+		});
+
+		// 마커에 mouseout 이벤트 등록
+		daum.maps.event.addListener(marker, 'mouseout', function() {
+		    console.log('마커에 mouseout 이벤트가 발생했습니다!');
+		});
+
+		// 마커에 dragstart 이벤트 등록
+		daum.maps.event.addListener(marker, 'dragstart', function() {
+		    console.log('마커에 dragstart 이벤트가 발생했습니다!');
+		});
+
+		// 마커에 dragend 이벤트 등록
+		daum.maps.event.addListener(marker, 'dragend', function() {
+		    console.log('마커에 dragend 이벤트가 발생했습니다!');
+		});
+	</script><br>
 	<span style="font-size: 13px;">
 	<br>● 주소 및 연락처<br>
 	＊ 주소 : 위치 : 서울시 서초구 서초3동 법원로2길<br>
