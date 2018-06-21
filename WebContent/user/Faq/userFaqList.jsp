@@ -13,7 +13,7 @@
 </head>
 <body>
 <span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;FAQ</span>
-	<section class="padding-top50">
+	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-12 col-xs-12">
@@ -22,8 +22,7 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th class="text-center"></th>
-									<th class="text-left">번호</th>
+									<th class="text-center">번호</th>
 									<th class="text-left">제목</th>
 
 								</tr>
@@ -41,8 +40,7 @@
 								</s:url>
 								<tbody>
 									<tr>
-										<td class="text-left"></td>
-										<td class="text-left cart-product-title"><a
+										<td class="text-center cart-product-title"><a
 												href="single-details.html"><s:property value="faq_no" /></a>
 												</td>
 										<td class="text-left"><s:a href="%{viewURL}">
@@ -66,6 +64,8 @@
 		</tr>
 	</s:if>
 
+
+
 <table align="center">
 	<tr align="center">
 		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
@@ -82,15 +82,15 @@
 					<option value="0">제목</option>
 					<option value="1">내용</option>
 				</select>
-				<s:textfield name="searchKeyword" theme="simple" value=""
-					maxlength="20" />
-				<input name="submit" type="submit" value="검색">
+				<s:textfield name="searchKeyword" theme="simple" value="" maxlength="20" />
+				<input name="submit" type="submit" value="검색"></input>
 			</form>
 		</td>
 	</tr>
+</table>
 
 
-	</table>
+
 	</section>
 </body>
 </html>

@@ -44,7 +44,6 @@
                                         <td class="text-left cart-product-title">
                                       		<s:a href="%{viewURL}"><s:property value="notice_subject" /></s:a>
                                         </td>
-                                        <td class="text-left"><s:property value="notice_name" /></td>
                                         <td class="text-left"><s:property value="notice_regdate" /></td>
                                         <td class="text-center"><s:property value="notice_readcount" /></td>
                                     </tr>
