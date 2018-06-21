@@ -55,7 +55,7 @@
                             
 							<s:if test="list.size() <= 0">
 								<tr>
-									<td colspan="5" align="center">등록된 게시물이 없습니다</td>
+									<td colspan="5">등록된 게시물이 없습니다</td>
 								</tr>
 							</s:if>
                         </table>
@@ -68,7 +68,7 @@
     </section>
 
 
-<table align="center">
+<table>
 	<tr align="center">
 		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
 	</tr>
