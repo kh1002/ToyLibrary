@@ -254,7 +254,7 @@ ul.panel li{
 
 				</li>
 				<li id="tab2">
-<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png" width=580px; height=250px;><br>
+<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location4.PNG" width=580px; height=250px;><br>
 	<span style="font-size: 13px;">
 	<br>● 주소 및 연락처<br>
 	＊ 주소 : 서울시 강남구 역삼1동 논현로 93길<br>
@@ -267,7 +267,7 @@ ul.panel li{
 
 				</li>
 				<li id="tab3">
-<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png"width=580px; height=250px;><br>
+<img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location5.PNG"width=580px; height=250px;><br>
 	<span style="font-size: 13px;">
 	<br>● 주소 및 연락처<br>
 	＊ 주소 : 위치 : 서울시 서초구 서초3동 법원로2길<br>
