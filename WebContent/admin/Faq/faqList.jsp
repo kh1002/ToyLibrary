@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;자주묻는질문</span>
+	<span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;FAQ</span>
      <section class="padding-top30">
     <div class="container">
         <div class="row">

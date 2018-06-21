@@ -86,7 +86,9 @@
 							</tbody>
 						</table>
 
-						<div class="site-btn">
+
+
+						<div class="site-btn" style="margin-left: 600px;">
 							<button class="btn btn-1" type="submit">
 								<span class="txt"
 									style="color: #fff; font-family: sans-serif; font-weight: bold;">작성완료</span>
@@ -102,7 +104,8 @@
 								<span class="round" style="background-color: #35beea;"><i
 									class="fa fa-chevron-right" style="color: white;"></i></span>
 							</button>
-
+							</div>
+						
 
 							<%-- <tr>
 							<td align="right" colspan="2"><input name="submit"

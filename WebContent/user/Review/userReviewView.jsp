@@ -25,7 +25,7 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th class="text-center" colspan="2">상세보기</th>
+									<th class="text-center" colspan="2">이용후기</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -79,6 +79,7 @@
             </div>
     </section>				
     
+    <table  style="margin-left: 30px;">
     				<tr>
     					<td colspan="2" height="10">
 							<form action="userWriteCommentAction.action" method="post">
@@ -144,7 +145,7 @@
 										</s:param>
 									</s:url> 
 				
-									<div class="site-btn">
+									<div class="site-btn"  style="margin-left: 500px;">
 						                <button class="btn btn-1" type="button" onclick="javascript:open_win_noresizable('userCheckForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','modify')">                                 
 						                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">수정</span>
 						                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>

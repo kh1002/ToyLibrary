@@ -90,7 +90,7 @@
       		</s:url>
       		<tr>
 				<td align="right" colspan="2">	
-				<div class="site-btn">	
+				<div class="site-btn" style="margin-left: 450px;">	
       				  <button class="btn btn-1" type="button" onclick="javascript:location.href='eventModifyForm.action?event_no=<s:property value="resultClass.event_no"/>&currentPage=<s:property value="currentPage"/>'"/>                                   
 					       <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">수정</span>
 					       <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>

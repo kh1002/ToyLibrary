@@ -77,14 +77,14 @@
 									</s:elseif>  
 									<td class="text-center">
 										<s:if test="zresultClass.admin_no == zizum_no">
-									 		<s:a href="%{modifyURL}">수정</s:a>
+									 		<s:a href="%{modifyURL}"><span style="color: #ff3366;">수정</s:a><span>
 											/
-											<s:a href="%{deleteURL}">삭제</s:a>
+											<s:a href="%{deleteURL}"><span style="color: #ff3366;">삭제</s:a></span>
 									 	</s:if>
 									 	<s:else>
-									 		수정
+									 		<span style="color: #ff3366;">수정</span>
 									 		/
-									 		삭제
+									 		<span style="color: #ff3366;">삭제</span>
 									 	</s:else>
 									</td>
 								</tr>
@@ -125,11 +125,17 @@
 </table>
 
 <!-- 장난감등록 링크를 나타내는 소스. (버튼으로 바꿀까??) -->
-<table align="right">
+<table  style="margin-left: 700px;">
 	<tr>
 		<td>
-			<input type="button" value="장난감등록" class="inputb"
-				onclick="javascript:location.href='AdminToyWriteForm.action';">
+		
+		 <button class="btn btn-1" type="button" onclick="javascript:location.href='AdminToyWriteForm.action';" style="background-color: #87df2d;">                                   
+				       <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">장난감 등록</span>
+				       <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+			       </button>
+		
+		
+
 		</td>
 	</tr>
 </table>

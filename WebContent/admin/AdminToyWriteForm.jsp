@@ -85,14 +85,12 @@
                         </div>
                     </div>
                 </div>    
-        <div class="col-md-6 col-md-offset-3">
-                              
-	  		<tr>
-				<td height="30" colspan="6" align="right">
+
+
 				
+	
 				
-				
-				<div class="site-btn">
+				<div class="site-btn"  style="margin-left: 350px;">
 					<button class="btn btn-1" type="submit">                                 
 						<span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">등록하기</span>
 						<span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
@@ -109,6 +107,7 @@
 				</td>
 			</tr>
 		
+		</table>
     </div>
 	</section>
 </form>	

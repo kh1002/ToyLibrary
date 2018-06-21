@@ -143,7 +143,7 @@
 					</s:param>
 				</s:url>
 				
-				<div class="site-btn">
+				<div class="site-btn" style="margin-left: 400px;">
 				      <button class="btn btn-1" type="button" onClick="javascript:open_win_noresizable('checkForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','modify')">                                 
 				            <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">수정</span>
 					        <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
