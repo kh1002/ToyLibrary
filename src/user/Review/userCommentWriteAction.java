@@ -49,6 +49,11 @@ public class userCommentWriteAction extends ActionSupport{
 		paramClass = new userCreviewVO();
 		resultClass = new userCreviewVO();
 		
+		System.out.println(getReview_no());
+		System.out.println(getCreview_name());
+		System.out.println(getCreview_password());
+		System.out.println(getCreview_content());
+		
 		paramClass.setReview_no(getReview_no());
 		paramClass.setCreview_name(getCreview_name());
 		paramClass.setCreview_password(getCreview_password());
