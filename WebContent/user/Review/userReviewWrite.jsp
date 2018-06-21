@@ -46,8 +46,18 @@
             <div class="container">           
                 <div class="row">
                     <div class="col-md-9 col-sm-6 col-xs-12">
-                        <form action="userReviewWriteAction.action" method="post" enctype="multipart/form-data">
-                            <div class="cart-table table-responsive">
+                    <s:if test="resultClass == NULL">
+		<form action="userReviewWriteAction.action" method="post"
+			onsubmit="return validation();">
+	</s:if>
+
+	<s:else>
+		<form action="userReviewModifyAction.action" method="post">
+			<s:hidden name="review_no" value="%{resultClass.review_no}" />
+			<s:hidden name="currentPage" value="%{currentPage}" />
+	</s:else>
+                    
+                         <div class="cart-table table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr><th class="text-center"  colspan="2">이용후기</th></tr>
