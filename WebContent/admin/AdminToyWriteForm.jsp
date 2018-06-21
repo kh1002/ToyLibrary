@@ -52,7 +52,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th class="text-center"  colspan="2">장난감 수정</th>
+                                            <th class="text-center"  colspan="2">장난감 등록</th>
                                         </tr>
                                     </thead>
                                     <tbody>

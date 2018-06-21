@@ -105,7 +105,7 @@
 			<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
 		</tr>
 
-		<div class="site-btn" align="right">
+		<div class="site-btn" style="margin-left: 780px;">
 	<button class="btn btn-1" type="button" onclick="javascript:window.location='./userReviewWriteForm.action'">                                   
 			<span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">글쓰기</span>
 			<span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
