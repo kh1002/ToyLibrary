@@ -120,6 +120,12 @@
 	</select>
 	
 	
+	<select id="userCommentCount" resultClass="userReview" parameterClass="int">
+		<include refid="Creview-select-all"/>
+		 where review_no=#review_no#
+	
+	</select>
+	
 	
 	
 	<!-- insert Äõ¸®¹® Á¤ÀÇ -->
