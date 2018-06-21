@@ -102,7 +102,7 @@
     font-family: 'BM JUA', '배달의민족 주아', sans-serif;
 }
 </style>
-                <span class="jua" style="font-size: 24pt; color: #774be9;">자주묻는질문</span>
+                <span class="jua" style="font-size: 24pt; color: #774be9;">FAQ</span>
 
 
 

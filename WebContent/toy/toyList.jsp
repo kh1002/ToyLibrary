@@ -11,6 +11,33 @@
 	<title>스트러츠2 게시판</title>
 </head>
 
+<body>
+
+<span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;장난감 목록</span>
+	<section class="">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-6 col-xs-12">
+				<form>
+					<div class="cart-table table-responsive">
+
+						<table class="table">
+
+							<thead>
+								<tr>
+									<th class="text-center" colspan="2" height="51px"><span
+										style="color: #ff3366;"></span></th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+	</section>
+
+
+
+
+
+
 
             <div class="container">
                  <div class="row padding-top30"> 
@@ -25,15 +52,7 @@
 
                            
 
-					<div class="cart-table table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-<th class="text-center" colspan="2" style="color: #ff3366;">가</th>
-								</tr>
-							</thead>
-							</table>
-							</div>	
+
 
 
 

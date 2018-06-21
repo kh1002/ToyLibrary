@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-	<span class="jua" style="font-size: 24pt; color: #774be9;">문의사항</span>
+	<span class="jua" style="font-size: 24pt; color: #774be9;">문의게시판</span>
 	<section class="padding-top30">
 	<div class="container">
 		<div class="row">

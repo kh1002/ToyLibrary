@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<span class="jua" style="font-size:24pt; color:#00BFFF;">이&nbsp;용&nbsp;후&nbsp;기</span>
+	<span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;이용후기</span>
      <section class="padding-top30">
     <div class="container">
         <div class="row">
@@ -44,7 +44,7 @@
                                     <tr>
                                         <td class="text-center"><s:property value="review_no" /></td>
                                         <td class="text-left cart-product-title">
-                                      		<s:a href="%{viewURL}"><s:property value="review_subject" /></s:a>
+                                      		<s:a href="%{viewURL}"><s:property value="review_subject" />(<s:property value="commentCountList[#stat.index]"/>)</s:a>
                                         </td>
                                         <td class="text-left"><s:property value="review_name" /></td>
                                         <td class="text-left"><s:property value="review_regdate" /></td>
@@ -97,6 +97,18 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

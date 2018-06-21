@@ -18,15 +18,15 @@
 <body>
 <span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;이&nbsp;용&nbsp;안&nbsp;내</span>
 
-	<section class="padding-top50">
+	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="col-md-9 col-sm-6 col-xs-12">
 				<form>
 					<div class="cart-table table-responsive">
 						<table class="table">
 							<thead>
-								<tr>
+								<tr height="51px">
 									<th class="text-center" colspan="2"></th>
 								</tr>
 							</thead>

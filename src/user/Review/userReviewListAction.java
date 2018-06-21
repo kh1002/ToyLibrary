@@ -73,7 +73,7 @@ public class userReviewListAction extends ActionSupport{
 			List<userReviewVO> listMap = list;
 			int count = listMap.get(i).getReview_no();
 			
-			List<creviewVO> cList = sqlMapper.queryForList("commentCount",count);
+			List<creviewVO> cList = sqlMapper.queryForList("userCommentCount",count);
 			
 			System.out.println("아아아아아123123 : "+cList.size());
 			commentCountList.add(cList.size());
@@ -204,6 +204,14 @@ public class userReviewListAction extends ActionSupport{
 
 	public void setNum(int num) {
 		this.num = num;
+	}
+
+	public List getCommentCountList() {
+		return commentCountList;
+	}
+
+	public void setCommentCountList(List commentCountList) {
+		this.commentCountList = commentCountList;
 	}
 
 

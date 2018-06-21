@@ -1,16 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-	<title>event 상세보기</title>
+<title>상세보기</title>
+
+<script type="text/javascript">
+	function open_win_noresizable(url, name) {
+		var oWin = window
+				.open(url, name,
+						"scrollbars=no, status=no, resizable=no, width=300, height=150");
+	}
+</script>
 </head>
 <body>
-  <section>
+  <section class="padding-top30">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-9 col-sm-6 col-xs-12">
                 <form>
                     <div class="cart-table table-responsive">
                         <table class="table">
@@ -42,7 +50,7 @@
                                 </tr>
 
                                 <tr class="text-left">
-                                    <td><b>장소</b></td>
+                                    <td><b>행사장소</b></td>
                                     <td><s:property value="%{resultClass.event_position}" />
 
                                     </td>
@@ -80,10 +88,24 @@
       				<s:property value="event_no"/>
       			</s:param>
       		</s:url>
-      		
-      		<input name="list" type="button" value="수정" onclick="javascript:location.href='eventModifyForm.action?event_no=<s:property value="resultClass.event_no"/>&currentPage=<s:property value="currentPage"/>'"/>
-      		<input name="list" type="button" value="삭제" onclick="javascript:location.href='eventDeleteAction.action?event_no=<s:property value="resultClass.event_no"/>&currentPage=<s:property value="currentPage"/>'"/>
-      		<input name="list" type="button" value="목록" onclick="javascript:location.href='eventListAction.action?currentPage=<s:property value="currentPage" />'" />
+      		<tr>
+				<td align="right" colspan="2">	
+				<div class="site-btn">	
+      				  <button class="btn btn-1" type="button" onclick="javascript:location.href='eventModifyForm.action?event_no=<s:property value="resultClass.event_no"/>&currentPage=<s:property value="currentPage"/>'"/>                                   
+					       <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">수정</span>
+					       <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+					   </button>
+					   <button class="btn btn-1" type="button" onclick="javascript:location.href='eventDeleteAction.action?event_no=<s:property value="resultClass.event_no"/>&currentPage=<s:property value="currentPage"/>'"/>                                   
+					       <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">삭제</span>
+					       <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+					   </button>
+					   <button class="btn btn-1" type="button" onclick="javascript:location.href='eventListAction.action?currentPage=<s:property value="currentPage" />'" />                                   
+					       <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">목록</span>
+					       <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+					   </button>
+					</div>
+      			</td>
+			</tr>
       		
       	</td>
       </tr>
