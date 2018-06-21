@@ -90,8 +90,8 @@
                           
                                         <select name="searchNum">
                                         <option value="0">작성자</option>
-                                        <option value="0">제목</option>
-                                        <option value="1">내용</option>
+                                        <option value="1">제목</option>
+                                        <option value="2">내용</option>
                                         </select>
                                         <s:textfield name="searchKeyword" theme="simple" value=""
                                             maxlength="20" />
