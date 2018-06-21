@@ -20,7 +20,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-6 col-xs-12">
-				<form>
+				
 					<div class="cart-table table-responsive">
 						<table class="table">
 							<thead>
@@ -74,6 +74,7 @@
 								</tr>
 								
 							<form action="userWriteCommentAction.action" method="post">
+
 								<table>
 									<tr class="text-left">
 										<td><b>작성자&nbsp;&nbsp;&nbsp;<s:textfield name="creview_name" theme="simple" value="" maxlength="16" /></b></td>
@@ -145,7 +146,7 @@
 							</tr>
 						</table>
 					</div>
-				</form>
+		
 			</div>
 		</div>
 	</div>
