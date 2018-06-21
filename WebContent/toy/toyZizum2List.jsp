@@ -140,6 +140,7 @@
                     </div>
                     
                      <!-- 검색창을 보여주는 jsp코드 -->
+					<div class="s" style="margin-left: 200px;">
 						<form name="search" action="list.jsp" method="post">
 						<table>
 							<tr>										
@@ -184,9 +185,11 @@
 
 					
 					<!-- 링크 리스트 1|2|3|4|5 가 나타나는 코드 -->
+					<table style="margin-left: 100px; margin-top: 20px;">
 						<tr align="center">
 							<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
 						</tr>
+						</table>
   
                 </div>
             </div>

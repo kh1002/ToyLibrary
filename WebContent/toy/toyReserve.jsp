@@ -44,7 +44,7 @@
  
 
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3" style="width: 190px;">
                                             <p><span style="font-size: 16px;"><s:property value="TresultClass.toy_id"/></p>
                                             <p><span style="font-size: 16px;"><s:property value="TresultClass.toy_name"/></p>
                                             <p><span style="font-size: 16px;"><s:property value="%{mresultClass.member_id}"/></p>
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="col-md-9 product-reservation" > 
                              
-                                <div class="site-btn" style="margin-left:100px">
+                                <div class="site-btn" style="margin-left:400px;">
 					                <button class="btn btn-1" type="submit">                                 
 					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">예약하기</span>
 					                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>

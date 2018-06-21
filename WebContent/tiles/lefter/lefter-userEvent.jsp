@@ -16,7 +16,7 @@
                            <span class="jua" style="font-size:24pt; color:#ff3366;
 ;">행사</span>
 				<ul>
-					<li><a href="userEventListAction.action">행사목록</a></li>                          
+					<li><a href="userEventListAction.action">행사 목록</a></li>                          
 				</ul>
 		</div>
 	</lefter>
