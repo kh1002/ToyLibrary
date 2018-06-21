@@ -1,87 +1,75 @@
-<%@ page contentType="text/html; charset=utf-8" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-	<title>장난감 대여 내역</title>
-
-
+<title>공지사항 상세보기</title>
 </head>
-
 <body>
+	<section class="padding-top100">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-6 col-xs-12">
+				<form>
+					<div class="cart-table table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th class="text-center" colspan="2">상세보기</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="text-left">
+									<td><b>번호</b></td>
+									<td><s:property value="resultClass.faq_no " /></td>
+								</tr>
 
+								<tr class="text-left">
+									<td><b>제목</b></td>
+									<td><s:property value="resultClass.faq_subject" /></td>
+								</tr>
 
-<h2>대여 내역</h2>
+								<tr class="text-left">
+									<td><b>내용</b></td>
+									<td><s:property value="resultClass.notice_content" /></td>
+								</tr>
 
-<table width="800" border="0" cellspacing="0" cellpadding="2">
+								<tr class="text-left">
+									<td><b>조회수</b></td>
+									<td><s:property value="resultClass.notice_readcount" /></td>
+								</tr>
 
-	<tr>
-		<th width="180" scope="col" style="text-align:center">
-		
-			<b>장난감 번호</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>장난감 이름</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>대출 지점</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>대출일</b>
-		</th>
-		<th width="200"  scope="col" style="text-align:center">
-			<b>반납 예정일</b>
-		</th>
-		<th width="180"  scope="col" style="text-align:center">
-			<b>상태</b>
-			</th>
-	</tr>	
-</table>
-
-
-
-<!-- 장난감 목록에 대한 리스트를 반복으로 나타내는 코드 -->
- <table width="800">
-
-		<s:iterator value="MyRentlist" status="stat">
-		
-
-
-			<tr align="center">
-				<td width="180"><s:property value="toy_id"/></td>	
-				<td width="180"><s:property value="toy_name"/></td>
-				<td width="180"><s:property value="zizum_name"/></td>
-				<td width="180"><s:property value="reserve_date"/></td>
-				<td width="180"><s:property value="return_date"/></td>
-				<td width="180"><s:property value="state_code"/></td>
-				</td>
-
-			</tr>
-			
-				
-		</s:iterator>
-		
-		<s:if test="MyRentlist.size() <=0">
-		
-		<tr bgcolor="#ffffff" align="center">
-			<td colspan="5">등록된 게시물이 없습니다.</td>
-		</tr>
-		<tr bgcolor="#ffffff">
-			<td height="1" colspan="5"></td>
-		</tr>
+								<tr class="text-left">
+									<td><b>등록날짜</b></td>
+									<td><s:property value="resultClass.notice_regdate" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</form>
+			</div>
+	</section>
 	
-		</s:if>
-		
+	<table>
+	<tr>
+		<td align="right" colspan="2">
+			<button class="btn" type="button"
+				onclick="javascript:location.href='userNoticeListAction.action?currentPage=<s:property value="currentPage" />'"
+				class="btn_small3" style="background-color: #87df2d;">
+				<span class="txt" style="color: #fff; font-family: sans-serif; font-weight: bold;">목록</span>
+				<span class="round" style="background-color: #35beea;"><i class="fa fa-chevron-right" style="color: white;"></i></span>
+			</button>		
+		<%-- <input name="list" type="button"
+			value="목록"
+			onclick="javascript:location.href='userNoticeListAction.action?currentPage=<s:property value="currentPage" />'" /> --%>
 
+		</td>
+	</tr>
 
-</table>
+	</table>
+
 
 </body>
-
 </html>

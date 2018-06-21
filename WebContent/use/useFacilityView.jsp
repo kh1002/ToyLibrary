@@ -104,20 +104,6 @@ ul.panel li{
 					</div>
 	</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<table><tr></tr></table>
 		<div id="containContent" style="margin-left: 100px;">
 			<ul class="tab " >
@@ -139,7 +125,7 @@ ul.panel li{
 							<td><span style="font-size: 13px;"> 수용 인원 : 30명 </td>
 						</tr>
 							
-						<img src="/ToyLibrary/use/030100_07.gif" width="550" height="300">
+						<img src="/ToyLibrary/use/facility_zizum1.jpg" width="550" height="300">
 	
 					</table>
 
@@ -156,7 +142,7 @@ ul.panel li{
 							<td><span style="font-size: 13px;"> 수용 인원 : 20명 </span></td>
 						</tr>
 					
-						<img src="/ToyLibrary/use/030100_07.gif" width="550" height="300">
+						<img src="/ToyLibrary/use/facility_zizum2.jpg" width="550" height="300">
 					</table>	
 				</li>
 				
@@ -173,7 +159,7 @@ ul.panel li{
 						<td> <span style="font-size: 13px;">수용 인원 : 30명 </span></td>
 					</tr>
 						
-					<img src="/ToyLibrary/use/030100_07.gif" width="550" height="300">
+					<img src="/ToyLibrary/use/facility_zizum3.jpg" width="550" height="300">
 				</table>
 				</li>
 				

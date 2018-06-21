@@ -31,8 +31,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-sm-6 col-xs-12">
-                <form action="eventWriteAction.action" method="post" enctype="multipart/form-data">
-                    <div class="cart-table table-responsive">
+            
+             <s:if test="resultClass ==null">
+                <form action="eventWriteAction.action" method="post" enctype="multipart/form-data" >
+                 </s:if>  
+                 <s:else>
+                 <form action="eventModifyAction.action" method="post" enctype="multipart/form-data" >
+                       <s:hidden name="event_no" value="%{resultClass.event_no}"/>
+     				   <s:hidden name="currentPage" value="%{currentPage}"/>
+                 </s:else>
+                     <div class="cart-table table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
