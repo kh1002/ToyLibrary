@@ -17,7 +17,8 @@
 			alert('코멘트가 삭제 되었습니다.');
 			window.opener.parent.location.href="creviewDeleteAction.action?creview_no=<s:property value="creview_no" />&review_no=<s:property value="review_no" />&currentPage=<s:property value="currentPage" />";
 		}
-		window.close();	
+		window.opener = self; 
+		self.close();
 	}
 </script>
 </head>
