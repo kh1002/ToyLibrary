@@ -72,23 +72,40 @@
 										</s:else>
 									</td>
 								</tr>
-								
+				             </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+    </section>				
+    
+    				<tr>
+    					<td colspan="2" height="10">
 							<form action="userWriteCommentAction.action" method="post">
 
 								<table>
-									<tr class="text-left">
-										<td><b>작성자&nbsp;&nbsp;&nbsp;<s:textfield name="creview_name" theme="simple" value="" maxlength="16" /></b></td>
-										<td rowspan="2"><b><s:textarea name="creview_content" theme="simple" value="" cols="50" rows="6" /></b></td>
-										
-									</tr>	
-									<tr class="text-left">	
-										<td><b>비밀번호<s:textfield name="creview_password" theme="simple" value="" maxlength="16" /></b></td>
-										<td colspan="2" align="right"><input name="submit" type="submit" value="작성완료"></td>
-									</tr>	
+									<tr>
+										<td width="170">
+											이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;름<s:textfield name="creview_name" theme="simple" value="" maxlength="20" /><br>
+											비밀번호<s:textfield name="creview_password" theme="simple" value="" maxlength="20" />
+										</td>
+							
 										<s:hidden name="review_no" value="%{resultClass.review_no}" />
 										<s:hidden name="creview_no" value="%{resultClass.creview_no}" />
 										<s:hidden name="currentPage" value="%{currentPage}" />
-	
+										<td align="left">
+											<s:textarea name="creview_content" theme="simple" value="" cols="60" rows="3" />
+										</td>
+										</tr>
+										<tr>
+											<td colspan="2" align="right">
+												<input name="submit" type="submit" value="작성완료">
+											</td>
+										</tr>
+									</table>
+								</form>
+							</td>
+						</tr>
 									<s:iterator value="commentlist" status="stat">
 									<tr>
 										<td height="10" width="130" align="center">
@@ -107,11 +124,10 @@
 										<tr><td colspan="2" height="10">댓글없음</td></tr>
 									</s:if>
 	
-								</table>
-							</form>	
+							
 							
 							</tbody>
-						</table>
+					
 						
 						
 						<table>
@@ -145,12 +161,7 @@
 								</td>
 							</tr>
 						</table>
-					</div>
-		
-			</div>
-		</div>
-	</div>
-</section>
+
 </body>
 </html>
 

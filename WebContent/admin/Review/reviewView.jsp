@@ -129,7 +129,7 @@
 		</tr>
 				</s:if>	
 	
-	
+		<table>
 		<tr>
 			<td colspan="2" align="right">
 				<s:url id="modifyURL" action="reviewModifyForm">
@@ -142,12 +142,25 @@
 						<s:property value="review_no" />
 					</s:param>
 				</s:url>
-				<input name="list" type="button" value="수정" onClick="javascript:open_win_noresizable('checkForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','modify')">
-				<input name="list" type="button" value="삭제" onClick="javascript:open_win_noresizable('checkForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','delete')">
-				<input name="list" type="button" value="목록" onClick="javascript:location.href='reviewListAction.action?currentPage=<s:property value="currentPage" />'">
+				
+				<div class="site-btn">
+				      <button class="btn btn-1" type="button" onClick="javascript:open_win_noresizable('checkForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','modify')">                                 
+				            <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">수정</span>
+					        <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+					  </button>                 
+					  <button class="btn btn-1" type="button" onClick="javascript:open_win_noresizable('checkForm.action?review_no=<s:property value="resultClass.review_no" />&currentPage=<s:property value="currentPage" />','delete')">                               
+						     <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">삭제</span>
+				             <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+					  </button>
+				      <button class="btn btn-1" type="button" onClick="javascript:location.href='reviewListAction.action?currentPage=<s:property value="currentPage" />'">                              
+					         <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">목록</span>
+				  		     <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+			          </button>
+		   		</div>
 			</td>
 		</tr>
 	</table>
+
 </body>
 </html>
 

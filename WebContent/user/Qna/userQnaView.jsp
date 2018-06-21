@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	  <section class="padding-top100">
+	  <section class="padding-top30">
             <div class="container">           
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -87,12 +87,8 @@
                             </div>
                         </form>
                     </div>                    
-        </section>   
-		
-
-		
-	
-	
+        </section>
+           
 		<tr>
 			<td colspan="2" align="right">
 				<s:url id="modifyURL" action="userQnaModifyForm">

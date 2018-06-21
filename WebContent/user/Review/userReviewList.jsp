@@ -44,7 +44,7 @@
                                     <tr>
                                         <td class="text-center"><s:property value="review_no" /></td>
                                         <td class="text-left cart-product-title">
-                                      		<s:a href="%{viewURL}"><s:property value="review_subject" /></s:a>
+                                      		<s:a href="%{viewURL}"><s:property value="review_subject" />(<s:property value="commentCountList[#stat.index]"/>)</s:a>
                                         </td>
                                         <td class="text-left"><s:property value="review_name" /></td>
                                         <td class="text-left"><s:property value="review_regdate" /></td>
