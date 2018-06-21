@@ -22,7 +22,7 @@
                                     <tbody>
                                         <tr class="text-left">
                                             <td>               
-                                                <b>Number</b>
+                                                <b>번호</b>
                                             </td>
                                             <td>               
                                             <s:property value="resultClass.faq_no "/>
@@ -31,7 +31,7 @@
 
                                         <tr class="text-left">
                                             <td>               
-                                                <b>Subject</b>
+                                                <b>제목</b>
                                             </td>
                                             <td>               
                                              <s:property value="resultClass.faq_subject" />
@@ -40,7 +40,7 @@
 
                                          <tr class="text-left">
                                             <td>               
-                                                <b>Content</b>
+                                                <b>내용</b>
                                             </td>
                                             <td>               
                                             <s:property value="resultClass.faq_content" />

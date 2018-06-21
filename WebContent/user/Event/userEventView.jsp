@@ -78,8 +78,9 @@
 	</section>
 
 	<tr>
+	<div class="site-btn" style="margin-left: 800px;">
 		<td align="right" colspan="2">
-			<button class="btn" type="button"
+			<button class="btn" type="button" 
 				onclick="javascript:location.href='userEventListAction.action?currentPage=<s:property value="currentPage" />'"
 				class="btn_small3" style="background-color: #87df2d;">
 				<span class="txt"

@@ -30,7 +30,7 @@
                                     <tbody>
                                         <tr class="text-left">
                                             <td>               
-                                                <b>Number</b>
+                                                <b>번호</b>
                                             </td>
                                             <td>               
                                            <s:property value="resultClass.qna_no" />
@@ -39,7 +39,7 @@
 
                                         <tr class="text-left">
                                             <td>               
-                                                <b>Subject</b>
+                                                <b>제목</b>
                                             </td>
                                             <td>               
                                             <s:property value="resultClass.qna_subject" />
@@ -48,7 +48,7 @@
 
                                          <tr class="text-left">
                                             <td>               
-                                                <b>Name</b>
+                                                <b>작성자</b>
                                             </td>
                                             <td>               
                                            <s:property value="resultClass.qna_name" />
@@ -57,7 +57,7 @@
 
                                          <tr class="text-left">
                                             <td>               
-                                                <b>Content</b>
+                                                <b>내용</b>
                                             </td>
                                             <td>               
                                            ${resultClass.qna_content }
@@ -66,7 +66,7 @@
 
                                         <tr class="text-left">
                                             <td>               
-                                                <b>readcount</b>
+                                                <b>조회수</b>
                                             </td>
                                             <td>               
                                            <s:property value="resultClass.qna_readcount" />
@@ -75,7 +75,7 @@
 
                                          <tr class="text-left">
                                             <td>               
-                                                <b>regdate</b>
+                                                <b>등록날짜</b>
                                             </td>
                                             <td>               
                                             <s:property value="resultClass.qna_regdate" />

@@ -8,6 +8,7 @@
 </head>
 <body>
 <section>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -21,8 +22,8 @@
                             </thead>
                             <tbody>
                                 <tr class="text-left">
-                                    <td><b>번호</b></td>
-                                    <td><s:property value="resultClass.notice_no "/></td>
+                                    <td width="70px"><b>번호</b></td>
+                                   <td><s:property value="resultClass.notice_no "/></td>
                                 </tr>
 
                                 <tr class="text-left">
