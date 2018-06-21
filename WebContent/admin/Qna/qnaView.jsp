@@ -19,7 +19,7 @@
 	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="col-md-9 col-sm-6 col-xs-12">
 				<form>
 					<div class="cart-table table-responsive">
 						<table class="table">
@@ -67,20 +67,20 @@
 	</section>
 
 	<tr>
-		<td colspan="2" align="right"><s:url id="modifyURL"
-				action="qnaModifyForm">
+		<td colspan="2" align="right">
+			<s:url id="modifyURL" action="qnaModifyForm">
 				<s:param name="qna_no">
 					<s:property value="qna_no" />
 				</s:param>
-			</s:url> <s:url id="deleteURL" action="qnaDeleteAction">
+			</s:url> 
+			
+			<s:url id="deleteURL" action="qnaDeleteAction">
 				<s:param name="qna_no">
 					<s:property value="qna_no" />
 				</s:param>
-			</s:url></td>
-
+			</s:url>
+		</td>
 		
-			
-			
 		<td align="right">
 			<button class="btn" type="button"
 				onclick="javascript:location.href='qnaReplyForm.action?qna_no=<s:property value="qna_no" />&currentPage=<s:property value="currentPage" />'"

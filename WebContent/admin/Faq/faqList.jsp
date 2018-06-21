@@ -102,13 +102,10 @@
     font-family: 'BM JUA', '배달의민족 주아', sans-serif;
 }
 </style>
-                <span class="jua" style="font-size: 24pt; color: #774be9;">FAQ</span>
-
-
-
-                <form>
-                    <div class="cart-table table-responsive">
-                        <table class="table">
+    <span class="jua" style="font-size: 24pt; color: #774be9;">FAQ</span>
+          <form>
+               <div class="cart-table table-responsive">
+                    <table class="table">
                             <thead>
                                 <tr>
                                     <th class="text-left">번호</th>

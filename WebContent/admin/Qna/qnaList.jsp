@@ -17,7 +17,7 @@
 	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 md-offset-3">
+			<div class="col-md-9 col-sm-12 col-xs-12">
 				<form>
 					<div class="cart-table table-responsive">
 						<table class="table">
