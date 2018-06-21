@@ -13,7 +13,8 @@
 			alert('삭제 되었습니다.');
 			window.opener.parent.location.href="qnaDeleteAction.action?qna_no=<s:property value="qna_no" />&currentPage=<s:property value="currentPage" />";
 		}
-		window.close();	
+		window.opener = self; 
+		self.close();
 	}
 </script>
 </head>
