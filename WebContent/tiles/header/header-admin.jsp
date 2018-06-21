@@ -48,7 +48,7 @@
                                         <a href="noticeListAction.action">공지사항</a>  
                                         <a href="qnaListAction.action">QNA</a>  
                                         <a href="reviewListAction.action">이용 후기</a> 
-                                        <a href="faqListAction.action">자주묻는질문</a>
+                                        <a href="faqListAction.action">FAQ</a>
                                          <a href="eventListAction.action">행사</a> 
                                     </div> 
                                 </li>

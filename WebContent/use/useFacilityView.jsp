@@ -24,7 +24,7 @@ $(function(){
 	});
 });
 		</script>
-		<span class="jua" style="font-size:24pt; color:#00BFFF;"  >시&nbsp;&nbsp;설&nbsp;&nbsp;현&nbsp;&nbsp;황</span>
+		<span class="jua" style="font-size:24pt; color:#774be9;"  >&nbsp;&nbsp;시설 현황</span>
 		
 		<style type="text/css">
 *{
@@ -83,8 +83,43 @@ ul.panel li{
 
 		</style>
 	</head>
-	<body><table><tr></tr></table>
-		<div id="containContent" >
+	<body>
+
+	<section class="">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-6 col-xs-12">
+				<form>
+					<div class="cart-table table-responsive">
+
+						<table class="table">
+
+							<thead>
+								<tr>
+									<th class="text-center" colspan="2"><span
+										style="color: #ff3366;">가</span></th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<table><tr></tr></table>
+		<div id="containContent" style="margin-left: 100px;">
 			<ul class="tab " >
 				<li><b><a href="#tab1" class="selected">강남점</a></b></li>
 				<li><b><a href="#tab2">역삼점</a></b></li>
@@ -95,13 +130,13 @@ ul.panel li{
 		
 					<table>
 						<tr>
-							<td> 위치 : 서울시 강남구 서초4동 강남대로61길 </td>
+							<td><span style="font-size: 13px;">위치 : 서울시 강남구 서초4동 강남대로61길</span> </td>
 						</tr>
 						<tr>
-							<td> 면적 : 80평 </td>
+							<td><span style="font-size: 13px;"> 면적 : 80평 </td>
 						</tr>
 						<tr>
-							<td> 수용 인원 : 30명 </td>
+							<td><span style="font-size: 13px;"> 수용 인원 : 30명 </td>
 						</tr>
 							
 						<img src="/ToyLibrary/use/030100_07.gif" width="550" height="300">
@@ -112,13 +147,13 @@ ul.panel li{
 				<li id="tab2">
 					<table>
 						<tr>
-							<td> 위치 : 서울시 강남구 역삼1동 논현로 93길 </td>
+							<td><span style="font-size: 13px;"> 위치 : 서울시 강남구 역삼1동 논현로 93길</span> </td>
 						</tr>
 						<tr>
-							<td> 면적 : 70평 </td>
+							<td> <span style="font-size: 13px;">면적 : 70평 </span></td>
 						</tr>
 						<tr>
-							<td> 수용 인원 : 20명 </td>
+							<td><span style="font-size: 13px;"> 수용 인원 : 20명 </span></td>
 						</tr>
 					
 						<img src="/ToyLibrary/use/030100_07.gif" width="550" height="300">
@@ -129,13 +164,13 @@ ul.panel li{
 				<li id="tab3">
 				<table>
 					<tr>
-						<td> 위치 : 서울시 서초구 서초3동 법원로2길 </td>
+						<td><span style="font-size: 13px;"> 위치 : 서울시 서초구 서초3동 법원로2길 </span></td>
 					</tr>
 					<tr>
-						<td> 면적 : 90평 </td>
+						<td><span style="font-size: 13px;"> 면적 : 90평 </span></td>
 					</tr>
 					<tr>
-						<td> 수용 인원 : 30명 </td>
+						<td> <span style="font-size: 13px;">수용 인원 : 30명 </span></td>
 					</tr>
 						
 					<img src="/ToyLibrary/use/030100_07.gif" width="550" height="300">
