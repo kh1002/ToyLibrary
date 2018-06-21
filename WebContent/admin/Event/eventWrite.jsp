@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>    
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-	<title>event 쓰기</title>
+<title>행사 쓰기</title>
 		<script type="text/javascript">
 		function validation()
 		{
@@ -27,16 +27,16 @@
 	</script>
 </head>
 <body>
- <section class="padding-top50">
+ <section class="padding-top30">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <form>
+            <div class="col-md-9 col-sm-6 col-xs-12">
+                <form action="eventWriteAction.action" method="post" enctype="multipart/form-data">
                     <div class="cart-table table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="text-center" colspan="2">Write</th>
+                                    <th class="text-center" colspan="2">글쓰기</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,18 +73,21 @@
                             </tbody>
                         </table>
 
+					   <div class="site-btn">
+					           <button class="btn btn-1" type="submit">                                 
+					                <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">작성완료</span>
+					                <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+					           </button> 
+                  		       <button class="btn btn-1" type="button" onClick="javascript:location.href='eventListAction.action?currentPage=<s:property value="currentPage" />'"/>                                   
+					                 <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">목록</span>
+					                 <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+					            </button>
+					    </div>
                     </div>
                 </form>
             </div>
     </section>
-          <td align="right" colspan="2">
-          	<input name="submit" type="submit" value="작성완료"/>
-            <input name="list" type="button" value="목록" onClick="javascript:location.href='eventListAction.action?currentPage=<s:property value="currentPage" />'"/>
-          </td>
-        </tr>
-        
-	</table>
-	
+    </table>
 	</form>
 </body>
 </html>

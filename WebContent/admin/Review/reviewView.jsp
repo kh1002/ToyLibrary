@@ -1,25 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>스트럿츠 2 게시판</title>
+<title>이용후기</title>
 
 <script type="text/javascript">
-	function open_win_noresizable(url, name)
-	{
-		var oWin = window.open(url, name, "scrollbars=no, status=no, resizable=no, width=300, height=150");
-		
+	function open_win_noresizable(url, name) {
+		var oWin = window
+				.open(url, name,
+						"scrollbars=no, status=no, resizable=no, width=300, height=150");
 	}
 </script>
 </head>
 
 <body id="myPage">
- <section >
+ <section class="padding-top30">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-9 col-sm-6 col-xs-12">
                 <form>
                     <div class="cart-table table-responsive">
                         <table class="table">
@@ -60,7 +60,7 @@
                                 </tr>
 
                                  <tr class="text-left">
-                                    <td><b>첨부파일</b></td>
+                                    <td><b>이미지</b></td>
                                     <td><s:if test="resultClass.file_savname == null">
                                  			       이미지가 없습니다.
                                     </s:if>
