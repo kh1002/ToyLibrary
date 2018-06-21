@@ -60,7 +60,7 @@
                                
                                 <tr class="text-left">
                                     <td><b>제목</b></td>
-                                    <td><s:textfield name="review_subject" theme="simple" value="%{resultClass.review_subject}" maxlength="50"/>></td>
+                                    <td><s:textfield name="review_subject" theme="simple" value="%{resultClass.review_subject}" maxlength="50"/></td>
                                 </tr>
 
                                 <tr class="text-left">
