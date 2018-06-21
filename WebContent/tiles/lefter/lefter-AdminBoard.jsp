@@ -17,7 +17,7 @@
 ;">게시판 관리</span></style>
 				<ul>
 					<li><a href="noticeListAction.action">공지사항</a></li>
-					<li><a href="qnaListAction.action">문의게시판</a></li>
+					<li><a href="qnaListAction.action">Q&A</a></li>
 					<li><a href="faqListAction.action">FAQ</a></li>
 					<li><a href="eventListAction.action">행사일정</a></li>
 					<li><a href="reviewListAction.action">이용후기</a></li>

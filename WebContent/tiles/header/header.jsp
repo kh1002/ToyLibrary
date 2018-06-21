@@ -65,9 +65,9 @@
                                 <li style="margin-right : 130px;" class="dropdown"><a href="userNoticeListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;커뮤니티">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;커뮤니티</span></a>
                                     <div class="dropdown-content">
                                         <a href="userNoticeListAction.action">공지사항</a>  
-                                        <a href="userQnaListAction.action">QNA</a>  
+                                        <a href="userQnaListAction.action">Q&A</a>  
                                         <a href="userReviewListAction.action">이용 후기</a> 
-                                        <a href="userFaqListAction.action">자주묻는질문</a> 
+                                        <a href="userFaqListAction.action">FAQ</a> 
                                     </div>      
                                 </li>
                             </ul>
