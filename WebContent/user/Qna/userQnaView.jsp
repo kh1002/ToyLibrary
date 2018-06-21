@@ -102,8 +102,8 @@
 					</s:param>
 				</s:url>
 			</td>
-				
-				
+		
+				<div class="a" style="margin-left: 500px;">
 			<td align="right">			
 				<button class="btn" type="button" 
 				onclick="javascript:open_win_noresizable('userQnaCheckForm.action?qna_no=<s:property value="resultClass.qna_no" />&currentPage=<s:property value="currentPage" />','modify')"
@@ -137,6 +137,8 @@
 				<input name="list" type="button" value="삭제" onClick="javascript:open_win_noresizable('userQnaCheckForm.action?qna_no=<s:property value="resultClass.qna_no" />&currentPage=<s:property value="currentPage" />','delete')">
 				<input name="list" type="button" value="목록" onClick="javascript:location.href='userQnaListAction.action?currentPage=<s:property value="currentPage" />'"> --%>
 			</td>
+			</div>
+			
 		</tr>
 	</table>
 </body>

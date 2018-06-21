@@ -68,12 +68,13 @@
     </section>
 
 
-<table>
+<%-- <table align="center">
 	<tr align="center">
 		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
 	</tr>
+</table>
 
-  	<div class="site-btn" style="margin-left: 780px;">         
+  	<div class="site-btn" style="margin-left: 780px;">        
 		<button class="btn btn-1" type="button" onclick="javascript:window.location='./userReviewWriteForm.action'">                                   
 			<span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">글쓰기</span>
 			<span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
@@ -81,7 +82,7 @@
 	</div>
 	
 	
-	<div class="s" style="margin-top: 50px;">
+	<div class="s" style="margin-top: 30px; margin-left: 300px;">
 	<tr>
 		<td>
 			<form>
@@ -96,7 +97,41 @@
 		</td>
 	</tr>	
 </div>
-</table>
+</table> --%>
+
+
+	<table align="center">
+		<tr align="center">
+			<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
+		</tr>
+
+		<div class="site-btn" align="right">
+	<button class="btn btn-1" type="button" onclick="javascript:window.location='./userReviewWriteForm.action'">                                   
+			<span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">글쓰기</span>
+			<span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+		</button>
+		</div>
+		<%-- <tr align="right">
+			<td colspan="5"><input type="button" value="글쓰기"
+				onClick="javascript:location.href='userQnaWriteForm.action?currentPage=<s:property value="currentPage" />';" />
+			</td>
+		</tr> --%>
+
+		<tr>
+			<td>
+				<form>
+					<select name="searchNum">
+						<option value="0">작성자</option>
+						<option value="1">제목</option>
+						<option value="2">내용</option>
+					</select>
+					<s:textfield name="searchKeyword" theme="simple" value=""
+						maxlength="20" />
+					<input name="submit" type="submit" value="검색" />
+				</form>
+			</td>
+		</tr>
+	</table>
 
 
 

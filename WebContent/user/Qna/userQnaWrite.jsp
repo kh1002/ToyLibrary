@@ -87,7 +87,7 @@
 
 
 
-						<div class="site-btn">
+						<div class="site-btn"  style="margin-left: 600px;">
 							<button class="btn btn-1" type="submit">
 								<span class="txt"
 									style="color: #fff; font-family: sans-serif; font-weight: bold;">작성완료</span>
