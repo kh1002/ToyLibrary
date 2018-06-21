@@ -46,7 +46,15 @@
             <div class="container">           
                 <div class="row">
                     <div class="col-md-9 col-sm-6 col-xs-12">
-                        <form action="noticeWriteAction.action" method="post" enctype="multipart/form-data">
+                     <s:if test="resultClass ==null">
+                		<form action="noticeWriteAction.action" method="post" enctype="multipart/form-data" >
+                 	</s:if>  
+                 	<s:else>
+                		 <form action="noticeModifyAction.action" method="post" enctype="multipart/form-data" >
+                    	   <s:hidden name="notice_no" value="%{resultClass.notice_no}"/>
+     				 	  <s:hidden name="currentPage" value="%{currentPage}"/>
+                		 </s:else>
+                                                   
                             <div class="cart-table table-responsive">
                                 <table class="table">
                                     <thead>

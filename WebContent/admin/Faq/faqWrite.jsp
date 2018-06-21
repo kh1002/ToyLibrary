@@ -36,7 +36,16 @@
             <div class="container">           
                 <div class="row">
                     <div class="col-md-9 col-sm-6 col-xs-12">
-                        <form action="faqWriteAction.action" method="post" enctype="multipart/form-data">
+                    
+                     <s:if test="resultClass ==null">
+                <form action="faqWriteAction.action" method="post" enctype="multipart/form-data" >
+                 </s:if>  
+                 <s:else>
+                 <form action="faqModifyAction.action" method="post" enctype="multipart/form-data" >
+                       <s:hidden name="faq_no" value="%{resultClass.faq_no}"/>
+     				   <s:hidden name="currentPage" value="%{currentPage}"/>
+                 </s:else>
+                                            
                             <div class="cart-table table-responsive">
                                 <table class="table">
                                     <thead>
@@ -62,7 +71,7 @@
                                 
                                 <div class="site-btn" style="margin-left: 600px;">
 					                <button class="btn btn-1" type="submit">                                 
-					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">작성완료</span>
+					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">작성완료</span>	
 					                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
 					                </button>                 
 						                 <button class="btn btn-1" type="button" onClick="javascript:location.href='faqListAction.action?currentPage=<s:property value="currentPage" />'">                              
