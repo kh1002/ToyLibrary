@@ -36,10 +36,17 @@
 </script>
 </head>
 <body>
-	<s:if test="resultClass == NULL">
+
+	<s:if test="reply">
+		<form action="qnaReplyAction.action" method="post" onsubmit="return validation();">
+			<s:hidden name="qna_ref" value="%{resultClass.qna_ref}" />
+			<s:hidden name="qna_re_level" value="%{resultClass.qna_re_level}" />
+			<s:hidden name="qna_re_step" value="%{resultClass.qna_re_step}" />
+	</s:if>
+	<s:elseif test="resultClass == NULL">
 		<form action="qnaWriteAction.action" method="post"
 			onsubmit="return validation();">
-	</s:if>
+	</s:elseif>
 
 	<s:else>
 		<form action="qnaModifyAction.action" method="post">

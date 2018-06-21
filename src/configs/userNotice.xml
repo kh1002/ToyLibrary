@@ -6,12 +6,12 @@
 	<struts>
 		<package name="userNotice" extends="struts-default, tiles-default">
 		
-		<action name="userNoticeListAction" class="board.Notice.noticeListAction">
+		<action name="userNoticeListAction" class="user.Notice.userNoticeListAction">
 			<!-- <result>/user/Notice/userNoticeList.jsp</result> -->
 			<result type="tiles">userNoticeListAction</result>
 		</action>
 		
-		<action name="userNoticeViewAction" class="board.Notice.noticeViewAction">
+		<action name="userNoticeViewAction" class="user.Notice.userNoticeViewAction">
 			<!-- <result>/user/Notice/userNoticeView.jsp</result> -->
 			<result type="tiles">userNoticeViewAction</result>
 		</action>
