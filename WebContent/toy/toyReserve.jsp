@@ -49,7 +49,17 @@
                                             <p><span style="font-size: 16px;"><s:property value="TresultClass.toy_name"/></p>
                                             <p><span style="font-size: 16px;"><s:property value="%{mresultClass.member_id}"/></p>
                                             <p><span style="font-size: 16px;"><s:property value="%{mresultClass.member_name}"/></p>
-                                            <p><span style="font-size: 16px;"><s:property value="TresultClass.zizum_no"/></p>
+                                            
+                                            <s:if test="TresultClass.zizum_no == 1">
+                                               <p><span style="font-size: 16px;">강남점</p>
+                                            </s:if>
+                                            <s:elseif test="TresultClass.zizum_no == 2">
+                                               <p><span style="font-size: 16px;">역삼점</p>
+                                            </s:elseif>
+                                            <s:elseif test="TresultClass.zizum_no == 3">
+                                               <p><span style="font-size: 16px;">교대점</p>
+                                            </s:elseif>
+
                                         </div>
                                     </div>
                                 </div>

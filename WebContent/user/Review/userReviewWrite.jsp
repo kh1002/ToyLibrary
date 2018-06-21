@@ -14,22 +14,22 @@
 
 		if(frm.review_subject.value == "")
 		{
-			alert("입력해주세요");
+			alert("제목 입력해주세요");
 			return false;
 		}
 		else if(frm.review_name.value == "")
 		{
-			alert("입력해주세요");
+			alert("이름 입력해주세요");
 			return false;
 		}
 		else if(frm.review_password.value == "")
 		{
-			alert("입력해주세요");
+			alert("비밀번호 입력해주세요");
 			return false;
 		}
 		else if(frm.review_content.value == "")
 		{
-			alert("입력해주세요");
+			alert("내용 입력해주세요");
 			return false;
 		}
 
@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-9 col-sm-6 col-xs-12">
  				<s:if test="resultClass ==null">
-                <form action="reviewWriteAction.action" method="post" enctype="multipart/form-data" >
+                <form action="reviewWriteAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
                  </s:if>  
                  <s:else>
                  <form action="reviewModifyAction.action" method="post" enctype="multipart/form-data" >

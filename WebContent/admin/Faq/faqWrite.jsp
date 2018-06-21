@@ -38,7 +38,7 @@
                     <div class="col-md-9 col-sm-6 col-xs-12">
                     
                      <s:if test="resultClass ==null">
-                <form action="faqWriteAction.action" method="post" enctype="multipart/form-data" >
+                <form action="faqWriteAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
                  </s:if>  
                  <s:else>
                  <form action="faqModifyAction.action" method="post" enctype="multipart/form-data" >
