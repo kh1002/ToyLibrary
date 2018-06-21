@@ -31,6 +31,42 @@
 <!-- 탭을 적용한 소스코드 -->
 
 <!-- 아마도 css를 입혀서 홈페이지에서 탭처럼 보이게 하는게 아닐까?? -->
+
+<span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;장난감 목록</span>
+	<section class="">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-6 col-xs-12">
+				<form>
+					<div class="cart-table table-responsive">
+
+						<table class="table">
+
+							<thead>
+								<tr>
+									<th class="text-center" colspan="2" height="51px"><span
+										style="color: #ff3366;"></span></th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+	</section>
+
+
+
+
+
+
+
+            <div class="container">
+                 <div class="row padding-top30"> 
+
+                    <div class="product-grid-layout">
+                    	
+                        <ul class="toy-products-list">
+                        <div class="col-md-9">
+
+
 <table>
 <div id="tabmenu">
 <ul>
@@ -85,7 +121,8 @@
                                             </s:a>
                                         </div>  
                                         <div class="toy-details">
-                                            <h4><s:property value="toy_name"/></h4>
+                                         <h4><span class="jua" style="font-size:20";><s:property value="toy_name"/></span></h4>
+                                            
                                             <ul class="rating">
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
