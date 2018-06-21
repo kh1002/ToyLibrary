@@ -14,12 +14,12 @@
                         .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 
                            <span class="jua" style="font-size:24pt; color:#ff3366;
-;">회원 정보 수정</span>
+;">이용 안내</span>
 			
 				<ul>
 					<li><a href="useIntroView.action">소개</a></li>
-					<li><a href="useInfoView.action">이용안내</a></li>
-					<li><a href="useFacilityView.action">시설현황</a></li>     
+					<li><a href="useInfoView.action">이용 안내</a></li>
+					<li><a href="useFacilityView.action">시설 현황</a></li>     
 					<li><a href="useLocationView.action">찾아오시는 길</a></li>                               
 				</ul>
 		</div>

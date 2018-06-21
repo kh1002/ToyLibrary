@@ -23,9 +23,68 @@ $(function(){
 	});
 });
 		</script>
-	<span class="jua" style="font-size:24pt; color:#00BFFF;"  >찾&nbsp;&nbsp;아&nbsp;&nbsp;오&nbsp;&nbsp;시&nbsp;&nbsp;는&nbsp;&nbsp;길</span>
+		<span class="jua" style="font-size:24pt; color:#774be9;"  >&nbsp;&nbsp;찾아오시는 길</span>
 
-		<style type="text/css">
+
+
+
+
+	</head>
+	<body>
+	
+	<section class="">
+	<div class="container">
+	<div class="row">
+	<div class="col-md-9 col-sm-6 col-xs-12">
+	<form>
+					<div class="cart-table table-responsive">
+					
+						<table class="table">
+							
+							<thead>
+								<tr>
+									<th class="text-center" colspan="2">
+									<span style="color:#ff3366;">가</span>
+									</th>
+								</tr>
+							</thead>
+							</table>
+	</div>
+	</section>
+	
+	
+	
+
+<!-- 	<div class="container">
+		<div class="row">
+			<div class="col-md-9 col-sm-6 col-xs-12">
+				<form>
+					<div class="cart-table table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th class="text-center" colspan="2">
+									<span style="color:#ff3366;">가</span>
+									</th>
+								</tr>
+							</thead>
+							<tbody> -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<style type="text/css">
 *{
 	margin:0;
 	padding:0;
@@ -76,9 +135,9 @@ ul.panel li{
 	color:#333;
 }
 		</style>
-	</head>
-	<body><table><tr></tr></table>
-		<div id="container">
+		
+	<table><tr></tr></table>
+		<div id="containContent" style="margin-left: 100px;">
 			<ul class="tab">
 				<li><b><a href="#tab1" class="selected">강남점</a></b></li>
 				<li><b><a href="#tab2">역삼점</a></b></li>
@@ -86,7 +145,7 @@ ul.panel li{
 			</ul>
 			<ul class="panel">
 				<li id="tab1">
-	<div id="map" style="width:580px;height:250px; align:center"></div>
+	 <div id="map"  style="width:580px;height:250px; align:center"></div> 
 
 	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=182b6f4e39732b838518611442a33740"></script>
 	<script>
@@ -182,6 +241,7 @@ ul.panel li{
 		    console.log('마커에 dragend 이벤트가 발생했습니다!');
 		});
 	</script>
+	<span style="font-size: 13px;">
 	<br>● 주소 및 연락처<br>
 	＊ 주소 : 서울시 강남구 서초4동 강남대로61길<br>
 	＊ 연락처 : 02) 012-3456<br><br>
@@ -189,12 +249,13 @@ ul.panel li{
 	＊ 버스 : 470번, 471번, 740번, 360번<br>
 	＊ 지하철 : 2호선<br><br>
 	● 주차 안내<br>
-	불가
+	불가</span>
 	
 
 				</li>
 				<li id="tab2">
 <img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png" width=580px; height=250px;><br>
+	<span style="font-size: 13px;">
 	<br>● 주소 및 연락처<br>
 	＊ 주소 : 서울시 강남구 역삼1동 논현로 93길<br>
 	＊ 연락처 : 02) 012-3456<br><br>
@@ -202,11 +263,12 @@ ul.panel li{
 	＊ 버스 : 146번, 	240번, 243번<br>
 	＊ 지하철 : 2호선<br><br>
 	● 주차 안내<br>
-	불가
+	불가</span>
 
 				</li>
 				<li id="tab3">
 <img src="C:\Users\user\git\ToyLibrary2\WebContent\use\location.png"width=580px; height=250px;><br>
+	<span style="font-size: 13px;">
 	<br>● 주소 및 연락처<br>
 	＊ 주소 : 위치 : 서울시 서초구 서초3동 법원로2길<br>
 	＊ 연락처 : 02) 012-3456<br><br>
@@ -214,7 +276,13 @@ ul.panel li{
 	＊ 버스 : 340번, 341번, 342번<br>
 	＊ 지하철 : 2호선, 3호선<br><br>
 	● 주차 안내<br>
-	불가		
+	불가		</span>
 				</li>
+	
+	</ul>
+
+	
 	</body>
+	
+	
 </html>
