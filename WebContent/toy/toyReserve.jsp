@@ -49,15 +49,18 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9 product-reservation" > 
-                                <div class="site-btn">
-                                	<button class="btn btn-2" type="submit"> 
-										<div class="stock-btn">예약하기</div>
-                                    </button>
-                                   
-                                    <button class="btn btn-2" type="button" onclick="javascript:window.location='./ToyListAction.action'"> 
-										<div class="stock-btn">취소</div> 
-                                    </button>
-                                </div>     
+                             
+                                <div class="site-btn" style="margin-left:100px">
+					                <button class="btn btn-1" type="submit">                                 
+					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">예약하기</span>
+					                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
+					                </button>                 
+					                <button class="btn btn-1" type="button" onclick="javascript:window.location='./ToyListAction.action'">                                   
+					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">취소</span>
+					                    <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+					                </button>
+					            </div>
+                                
                                 </div>
                             </div>    
                         </li> 
