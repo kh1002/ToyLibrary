@@ -7,10 +7,10 @@
 	<title>자주묻는질문 상세보기</title>
 </head>
 <body>
-     <section class="padding-top100">
+     <section class="padding-top30">
             <div class="container">           
                 <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-9 col-sm-6 col-xs-12">
                         <form>
                             <div class="cart-table table-responsive">
                                 <table class="table">
@@ -52,23 +52,21 @@
                             </div>
                         </form>
                     </div>                    
-        </section>   
-      <tr>
-      	<td align="right" colspan="2">
-      		<button class="btn" type="button"
-				onclick="javascript:location.href='userFaqListAction.action?currentPage=<s:property value="currentPage" />'"
-				class="btn_small3" style="background-color: #87df2d;">
-				<span class="txt"
-					style="color: #fff; font-family: sans-serif; font-weight: bold;">목록</span>
-				<span class="round" style="background-color: #35beea;"><i
-					class="fa fa-chevron-right" style="color: white;"></i></span>
-			</button>
-<%--       		<input name="list" type="button" value="목록" onclick="javascript:location.href='userFaqListAction.action?currentPage=<s:property value="currentPage" />'" />
- --%>      		
-      	</td>
-      </tr>
-      
-	</table>
+        </section> 
+       <table>   
+	      <tr>
+	      	<td align="right" colspan="2">
+	      		<button class="btn" type="button"
+					onclick="javascript:location.href='userFaqListAction.action?currentPage=<s:property value="currentPage" />'"
+					class="btn_small3" style="background-color: #87df2d;">
+					<span class="txt"
+						style="color: #fff; font-family: sans-serif; font-weight: bold;">목록</span>
+					<span class="round" style="background-color: #35beea;"><i
+						class="fa fa-chevron-right" style="color: white;"></i></span>
+				</button>
+	      	</td>
+	      </tr>
+		</table>
 	
 	
 </body>

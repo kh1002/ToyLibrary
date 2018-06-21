@@ -36,12 +36,21 @@
 </script>
 </head>
 <body>
+	<s:if test="resultClass == NULL">
+		<form action="qnaWriteAction.action" method="post"
+			onsubmit="return validation();">
+	</s:if>
+
+	<s:else>
+		<form action="qnaModifyAction.action" method="post">
+			<s:hidden name="qna_no" value="%{resultClass.qna_no}" />
+			<s:hidden name="currentPage" value="%{currentPage}" />
+	</s:else>
 	<section class="padding-top30">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-12">
-				<form action="qnaWriteAction.action" method="post"
-						onsubmit="return validation();">
+			<div class="col-md-9 col-sm-6 col-xs-12">
+				<form>
 					<div class="cart-table table-responsive">
 						<table class="table">
 							<thead>
@@ -84,7 +93,7 @@
 								<span class="round"><i class="fa fa-chevron-right"
 									style="color: white"></i></span>
 							</button>
-						
+
 							<button class="btn" type="button"
 								onclick="javascript:location.href='qnaListAction.action?currentPage=<s:property value="currentPage" />'"
 								class="btn_small3" style="background-color: #87df2d;">
@@ -93,8 +102,8 @@
 								<span class="round" style="background-color: #35beea;"><i
 									class="fa fa-chevron-right" style="color: white;"></i></span>
 							</button>
-							
-							
+
+
 							<%-- <tr>
 							<td align="right" colspan="2"><input name="submit"
 								type="submit" value="작성완료"> <input name="list"
