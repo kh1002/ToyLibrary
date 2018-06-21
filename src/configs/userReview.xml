@@ -42,7 +42,7 @@
 		</action>
 
 		<action name="userReviewModifyAction" class="user.Review.userReviewModifyAction">
-			<result type="chain">userReviewViewAction</result>
+			<result type="chain">userReviewListAction</result>
 		</action>
 
 		<!-- 비밀번호 체크 액션 -->
