@@ -106,6 +106,10 @@
 <!-- 검색창을 보여주는 jsp코드 -->
 
 <table align="center">
+
+		<tr align="center">
+			<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
+		</tr>
 		<tr>															
 			<td>
 			
@@ -115,6 +119,8 @@
 					<option value="1">현재지점</option>
 					<option value="2">현재상태</option>
 				</select>
+				
+			
 					
 				<s:textfield name="searchKeyword" theme="simple" value="" cssStyle="width:120px" maxlength="20"/>
 				<input name="submit" type="submit" value="검색" class="inputb"/>
