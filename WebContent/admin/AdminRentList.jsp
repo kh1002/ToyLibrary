@@ -60,7 +60,7 @@
 									<td class="text-center"><s:property value="reserve_date"/></td>
 									<td class="text-center"><s:property value="return_date"/></td>
 									<td class="text-center"><s:property value="state_code"/></td>
-									<td class="text-center"><s:a href="%{viewURL}">상태변경</s:a></td>
+									<td class="text-center"><s:a href="%{viewURL}"><span style="color: #ff3366;">상태변경</span></s:a></td>
 								</tr>
 							</tbody>
 							</s:iterator>

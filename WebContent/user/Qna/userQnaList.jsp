@@ -17,7 +17,7 @@
 </head>
 
 <body>
-	<span class="jua" style="font-size: 24pt; color: #00BFFF;">Q&nbsp;&nbsp;&&nbsp;&nbsp;A</span>
+	<span class="jua" style="font-size: 24pt; color:  #774be9;">&nbsp;&nbsp;Q&A</span>
 	<section class="padding-top30">
 	<div class="container">
 		<div class="row">

@@ -44,18 +44,28 @@
  
 
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3" style="width: 190px;">
                                             <p><span style="font-size: 16px;"><s:property value="TresultClass.toy_id"/></p>
                                             <p><span style="font-size: 16px;"><s:property value="TresultClass.toy_name"/></p>
                                             <p><span style="font-size: 16px;"><s:property value="%{mresultClass.member_id}"/></p>
                                             <p><span style="font-size: 16px;"><s:property value="%{mresultClass.member_name}"/></p>
-                                            <p><span style="font-size: 16px;"><s:property value="TresultClass.zizum_no"/></p>
+                                            
+                                            <s:if test="TresultClass.zizum_no == 1">
+                                               <p><span style="font-size: 16px;">강남점</p>
+                                            </s:if>
+                                            <s:elseif test="TresultClass.zizum_no == 2">
+                                               <p><span style="font-size: 16px;">역삼점</p>
+                                            </s:elseif>
+                                            <s:elseif test="TresultClass.zizum_no == 3">
+                                               <p><span style="font-size: 16px;">교대점</p>
+                                            </s:elseif>
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-9 product-reservation" > 
                              
-                                <div class="site-btn" style="margin-left:100px">
+                                <div class="site-btn" style="margin-left:400px;">
 					                <button class="btn btn-1" type="submit">                                 
 					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">예약하기</span>
 					                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>

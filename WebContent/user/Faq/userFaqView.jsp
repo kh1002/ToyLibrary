@@ -53,10 +53,10 @@
                         </form>
                     </div>                    
         </section> 
-       <table>   
+       <table style="margin-left: 750px;">   
 	      <tr>
 	      	<td align="right" colspan="2">
-	      		<button class="btn" type="button"
+	      		<button class="btn" type="button" 
 					onclick="javascript:location.href='userFaqListAction.action?currentPage=<s:property value="currentPage" />'"
 					class="btn_small3" style="background-color: #87df2d;">
 					<span class="txt"

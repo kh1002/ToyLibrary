@@ -18,7 +18,7 @@
 				<ul>
 					<li><a href="userNoticeListAction.action">공지사항</a></li>
 					<li><a href="userQnaListAction.action">Q&A</a></li>
-					<li><a href="userReviewListAction.action">이용후기</a></li>
+					<li><a href="userReviewListAction.action">이용 후기</a></li>
 					<li><a href="userFaqListAction.action">FAQ</a></li>                         
 				</ul>
 		</div>

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;이용후기</span>
+	<span class="jua" style="font-size:24pt; color:#774be9;">&nbsp;&nbsp;이용 후기</span>
      <section class="padding-top30">
     <div class="container">
         <div class="row">
@@ -55,7 +55,7 @@
                             
 							<s:if test="list.size() <= 0">
 								<tr>
-									<td colspan="5" align="center">등록된 게시물이 없습니다</td>
+									<td colspan="5">등록된 게시물이 없습니다</td>
 								</tr>
 							</s:if>
                         </table>
@@ -68,17 +68,21 @@
     </section>
 
 
-<table align="center">
+<%-- <table align="center">
 	<tr align="center">
 		<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
 	</tr>
+</table>
 
-  	<div class="site-btn" align="right">         
+  	<div class="site-btn" style="margin-left: 780px;">        
 		<button class="btn btn-1" type="button" onclick="javascript:window.location='./userReviewWriteForm.action'">                                   
 			<span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">글쓰기</span>
 			<span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
 		</button>
 	</div>
+	
+	
+	<div class="s" style="margin-top: 30px; margin-left: 300px;">
 	<tr>
 		<td>
 			<form>
@@ -92,7 +96,43 @@
 			</form>
 		</td>
 	</tr>	
-</table>
+</div>
+</table> --%>
+
+
+	<table align="center">
+		<tr align="center">
+			<td colspan="5"><s:property value="pagingHtml" escape="false" /></td>
+		</tr>
+
+		<div class="site-btn" style="margin-left: 780px;">
+	<button class="btn btn-1" type="button" onclick="javascript:window.location='./userReviewWriteForm.action'">                                   
+			<span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">글쓰기</span>
+			<span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
+		</button>
+		</div>
+		<%-- <tr align="right">
+			<td colspan="5"><input type="button" value="글쓰기"
+				onClick="javascript:location.href='userQnaWriteForm.action?currentPage=<s:property value="currentPage" />';" />
+			</td>
+		</tr> --%>
+
+		<tr>
+			<td>
+				<form>
+					<select name="searchNum">
+						<option value="0">작성자</option>
+						<option value="1">제목</option>
+						<option value="2">내용</option>
+					</select>
+					<s:textfield name="searchKeyword" theme="simple" value=""
+						maxlength="20" />
+					<input name="submit" type="submit" value="검색" />
+				</form>
+			</td>
+		</tr>
+	</table>
+
 
 
 </body>

@@ -14,7 +14,7 @@
                         .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 
                            <span class="jua" style="font-size:24pt; color:#ff3366;
-;">게시판 관리</span></style>
+;">게시판</span></style>
 				<ul>
 					<li><a href="noticeListAction.action">공지사항</a></li>
 					<li><a href="qnaListAction.action">Q&A</a></li>

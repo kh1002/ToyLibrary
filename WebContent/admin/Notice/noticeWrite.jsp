@@ -14,22 +14,12 @@
 
 		if(frm.notice_subject.value == "")
 		{
-			alert("입력해주세요");
-			return false;
-		}
-		else if(frm.notice_name.value == "")
-		{
-			alert("입력해주세요");
-			return false;
-		}
-		else if(frm.notice_password.value == "")
-		{
-			alert("입력해주세요");
+			alert("제목 입력해주세요");
 			return false;
 		}
 		else if(frm.notice_content.value == "")
 		{
-			alert("입력해주세요");
+			alert("내용 입력해주세요");
 			return false;
 		}
 
@@ -47,7 +37,7 @@
                 <div class="row">
                     <div class="col-md-9 col-sm-6 col-xs-12">
                      <s:if test="resultClass ==null">
-                		<form action="noticeWriteAction.action" method="post" enctype="multipart/form-data" >
+                		<form action="noticeWriteAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
                  	</s:if>  
                  	<s:else>
                 		 <form action="noticeModifyAction.action" method="post" enctype="multipart/form-data" >

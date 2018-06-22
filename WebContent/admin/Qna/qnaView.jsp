@@ -81,6 +81,9 @@
 			</s:url>
 		</td>
 		
+		<table style="margin-left: 400px;">
+		
+		
 		<td align="right">
 			<button class="btn" type="button"
 				onclick="javascript:location.href='qnaReplyForm.action?qna_no=<s:property value="qna_no" />&currentPage=<s:property value="currentPage" />'"
@@ -117,6 +120,8 @@
 				<span class="round" style="background-color: #35beea;"><i
 					class="fa fa-chevron-right" style="color: white;"></i></span>
 			</button> 
+			
+			</table>
 		<%-- 
 			<input name="list" type="button" value="답변달기"
 			onClick="javascript:location.href='qnaReplyForm.action?qna_no=<s:property value="qna_no" />&currentPage=<s:property value="currentPage" />'">	

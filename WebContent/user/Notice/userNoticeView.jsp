@@ -55,6 +55,7 @@
 	<table>
 	<tr>
 		<td align="right" colspan="2">
+		<div class="b"  style="margin-left: 780px;">
 			<button class="btn" type="button"
 				onclick="javascript:location.href='userNoticeListAction.action?currentPage=<s:property value="currentPage" />'"
 				class="btn_small3" style="background-color: #87df2d;">
@@ -67,7 +68,7 @@
 
 		</td>
 	</tr>
-
+</div>
 	</table>
 
 

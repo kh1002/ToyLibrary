@@ -42,7 +42,7 @@
                     <div class="container">
                         <nav class="collapse navbar-collapse">    
                             <ul class="nav navbar-nav navbar-right">
-                                <li style="margin-right : 100px;" class="dropdown"><a href="useIntroView.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이용안내">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이용안내</span></a>
+                                <li style="margin-right : 100px;" class="dropdown"><a href="useIntroView.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이용 안내">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이용 안내</span></a>
                                     <div class="dropdown-content">
                                         <a href="useIntroView.action">소개</a>  
                                         <a href="useInfoView.action">이용 안내</a>
@@ -50,16 +50,16 @@
 			                            <a href="useLocationView.action">찾아오시는 길</a>
                                     </div>        
                                 </li>
-                                <li style="margin-right : 130px;" class="dropdown"><a href="ToyListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감목록">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감목록</span></a>
+                                <li style="margin-right : 130px;" class="dropdown"><a href="ToyListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감 목록">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장난감 목록</span></a>
                                     <div class="dropdown-content">
-                                        <a href="ToyListAction.action">장난감목록</a>  
-                                        <a href="MyReservationListAction.action">장난감예약</a>  
+                                        <a href="ToyListAction.action">장난감 목록</a>  
+                                        <a href="MyReservationListAction.action">장난감 예약</a>  
                                     </div> 
                                 </li>
                                 <li style="margin-right : 100px;" class="dropdown">
-                                    <a href="userEventListAction.action" class="dropbtn flip-animate"><span data-hover="아이꿈놀이나라">아이꿈놀이나라</span></a>
+                                    <a href="userEventListAction.action" class="dropbtn flip-animate"><span data-hover="아이꿈 놀이나라">아이꿈 놀이나라</span></a>
                                     <div class="dropdown-content">
-                                        <a href="userEventListAction.action">행사목록</a>                                 
+                                        <a href="userEventListAction.action">행사 목록</a>                                 
                                     </div>
                                 </li>
                                 <li style="margin-right : 130px;" class="dropdown"><a href="userNoticeListAction.action" class="flip-animate"><span data-hover="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;커뮤니티">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;커뮤니티</span></a>

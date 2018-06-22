@@ -14,16 +14,16 @@
 		var frm = document.forms(0);
 
 		if (frm.qna_subject.value == "") {
-			alert("입력해주세요");
+			alert("제목 입력해주세요");
 			return false;
 		} else if (frm.qna_name.value == "") {
-			alert("입력해주세요");
+			alert("이름 입력해주세요");
 			return false;
 		} else if (frm.qna_password.value == "") {
-			alert("입력해주세요");
+			alert("비밀번호 입력해주세요");
 			return false;
 		} else if (frm.qna_content.value == "") {
-			alert("입력해주세요");
+			alert("내용 입력해주세요");
 			return false;
 		}
 
@@ -36,10 +36,17 @@
 </script>
 </head>
 <body>
-	<s:if test="resultClass == NULL">
+
+	<s:if test="reply">
+		<form action="qnaReplyAction.action" method="post" onsubmit="return validation();">
+			<s:hidden name="qna_ref" value="%{resultClass.qna_ref}" />
+			<s:hidden name="qna_re_level" value="%{resultClass.qna_re_level}" />
+			<s:hidden name="qna_re_step" value="%{resultClass.qna_re_step}" />
+	</s:if>
+	<s:elseif test="resultClass == NULL">
 		<form action="qnaWriteAction.action" method="post"
 			onsubmit="return validation();">
-	</s:if>
+	</s:elseif>
 
 	<s:else>
 		<form action="qnaModifyAction.action" method="post">
@@ -86,7 +93,9 @@
 							</tbody>
 						</table>
 
-						<div class="site-btn">
+
+
+						<div class="site-btn" style="margin-left: 600px;">
 							<button class="btn btn-1" type="submit">
 								<span class="txt"
 									style="color: #fff; font-family: sans-serif; font-weight: bold;">작성완료</span>
@@ -102,7 +111,8 @@
 								<span class="round" style="background-color: #35beea;"><i
 									class="fa fa-chevron-right" style="color: white;"></i></span>
 							</button>
-
+							</div>
+						
 
 							<%-- <tr>
 							<td align="right" colspan="2"><input name="submit"

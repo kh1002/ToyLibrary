@@ -27,7 +27,7 @@
 				
 							<style type="text/css">
                         .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
-                           <span class="jua" style="font-size:24pt; color:#774be9;">예약 목록</span>
+                           <span class="jua" style="font-size:24pt; color:#774be9;">예약목록</span>
 					<div class="cart-table table-responsive">
 						<table class="table">
 							<thead>
@@ -63,7 +63,7 @@
 									<td class="text-center"><s:property value="reserve_date"/></td>
 									<td class="text-center"><s:property value="return_date"/></td>
 									<td class="text-center"><s:property value="state_code"/></td>
-									<td class="text-center"><s:a href="%{myReserveCancleURL}">예약 취소</s:a></td>
+									<td class="text-center"><s:a href="%{myReserveCancleURL}"><span style="color:#ff3366;">예약 취소</span></s:a></td>
 								</tr>
 							</tbody>
 							

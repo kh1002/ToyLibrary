@@ -16,22 +16,22 @@
 
 		if(frm.review_subject.value == "")
 		{
-			alert("입력해주세요");
+			alert("제목 입력해주세요");
 			return false;
 		}
 		else if(frm.review_name.value == "")
 		{
-			alert("입력해주세요");
+			alert("이름 입력해주세요");
 			return false;
 		}
 		else if(frm.review_password.value == "")
 		{
-			alert("입력해주세요");
+			alert("비밀번호 입력해주세요");
 			return false;
 		}
 		else if(frm.review_content.value == "")
 		{
-			alert("입력해주세요");
+			alert("내용 입력해주세요");
 			return false;
 		}
 
@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-md-9 col-sm-6 col-xs-12">
             	 <s:if test="resultClass ==null">
-                <form action="reviewWriteAction.action" method="post" enctype="multipart/form-data" >
+                <form action="reviewWriteAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
                  </s:if>  
                  <s:else>
                  <form action="reviewModifyAction.action" method="post" enctype="multipart/form-data" >
@@ -95,7 +95,7 @@
                             </tbody>
                         </table>
                         
-                              <div class="site-btn">
+                              <div class="site-btn" style="margin-left: 600px;">
 					                <button class="btn btn-1" type="submit">                                 
 					                    <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">작성완료</span>
 					                    <span class="round"><i class="fa fa-chevron-right" style="color:white"></i></span>
@@ -108,6 +108,7 @@
 
                     </div>
                 </form>
+                
             </div>
            </div>
         </div>

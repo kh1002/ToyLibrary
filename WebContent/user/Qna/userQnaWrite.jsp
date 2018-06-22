@@ -14,16 +14,16 @@
 		var frm = document.forms(0);
 
 		if (frm.qna_subject.value == "") {
-			alert("입력해주세요");
+			alert("제목 입력해주세요");
 			return false;
 		} else if (frm.qna_name.value == "") {
-			alert("입력해주세요");
+			alert("이름 입력해주세요");
 			return false;
 		} else if (frm.qna_password.value == "") {
-			alert("입력해주세요");
+			alert("비밀번호 입력해주세요");
 			return false;
 		} else if (frm.qna_content.value == "") {
-			alert("입력해주세요");
+			alert("내용 입력해주세요");
 			return false;
 		}
 
@@ -87,7 +87,7 @@
 
 
 
-						<div class="site-btn">
+						<div class="site-btn"  style="margin-left: 600px;">
 							<button class="btn btn-1" type="submit">
 								<span class="txt"
 									style="color: #fff; font-family: sans-serif; font-weight: bold;">작성완료</span>

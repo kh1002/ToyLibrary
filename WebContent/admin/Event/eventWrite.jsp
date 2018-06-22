@@ -20,6 +20,16 @@
 			{
 				alert("내용을 입력해주세요.");
 				return false;			
+			}
+			else if(frm.event_startday.value == "" || frm.event_endday.value == "" ) 
+			{
+				alert("행사 날짜을 입력해주세요.");
+				return false;			
+			} 
+			else if(frm.event_position.value == "") 
+			{
+				alert("행사 장소을 입력해주세요.");
+				return false;			
 			} 
 			
 			return true;
@@ -33,7 +43,7 @@
             <div class="col-md-9 col-sm-6 col-xs-12">
             
              <s:if test="resultClass ==null">
-                <form action="eventWriteAction.action" method="post" enctype="multipart/form-data" >
+                <form action="eventWriteAction.action" method="post" enctype="multipart/form-data" onsubmit="return validation();">
                  </s:if>  
                  <s:else>
                  <form action="eventModifyAction.action" method="post" enctype="multipart/form-data" >
