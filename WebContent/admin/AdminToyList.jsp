@@ -132,10 +132,7 @@
 		 <button class="btn btn-1" type="button" onclick="javascript:location.href='AdminToyWriteForm.action';" style="background-color: #87df2d;">                                   
 				       <span class="txt" style="color:#fff; font-family:sans-serif; font-weight: bold;">장난감 등록</span>
 				       <span class="round"><i class="fa fa-chevron-right" style="color:white;"></i></span>
-			       </button>
-		
-		
-
+		</button>
 		</td>
 	</tr>
 </table>
