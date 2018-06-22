@@ -2,6 +2,7 @@ package user.Review;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import board.Event.eventVO;
 import user.Review.userReviewVO;
 
 import com.ibatis.common.resources.Resources;
