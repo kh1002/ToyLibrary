@@ -47,12 +47,12 @@
                 <div class="row">
                     <div class="col-md-9 col-sm-6 col-xs-12">
                     <s:if test="resultClass == NULL">
-		<form action="userReviewWriteAction.action" method="post"
+		<form action="userReviewWriteAction.action" method="post" enctype="multipart/form-data"
 			onsubmit="return validation();">
 	</s:if>
 
 	<s:else>
-		<form action="userReviewModifyAction.action" method="post">
+		<form action="userReviewModifyAction.action" method="post" enctype="multipart/form-data">
 			<s:hidden name="review_no" value="%{resultClass.review_no}" />
 			<s:hidden name="currentPage" value="%{currentPage}" />
 	</s:else>
