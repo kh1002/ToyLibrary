@@ -59,16 +59,26 @@
 								<tr class="text-left">
 									<td><b>이미지</b></td>
 									<td><s:if test="resultClass.file_savname == null">
-                                         			    이미지가 없습니다.
-                                             </s:if> <s:else>
-											<img id="imglink"
-												src="/AdminBoard/image/<s:property value="file_names[0]"/> "
-												width="150" border="0"> <img id="imglink"
-												src="/AdminBoard/image/<s:property value="file_names[1]"/> "
-												width="150" border="0"> <img id="imglink"
-													src="/AdminBoard/image/<s:property value="file_names[2]"/> "
-													width="150" border="0">
-										</s:else></td>
+                                  			      이미지가 없습니다.
+                                        </s:if>
+                                        <s:else>
+                                             <s:if test="file_names[0] == null">
+                                            </s:if>
+                                            <s:else>
+                                            	<img id="imglink" src="/ToyLibrary/image/<s:property value="file_names[0]"/> " width="500" border="0">
+                                            </s:else><br>
+                                            <s:if test="file_names[1] == null">
+                                            </s:if>
+                                            <s:else>
+                                            	<img id="imglink" src="/ToyLibrary/image/<s:property value="file_names[1]"/> " width="500" border="0">
+                                            </s:else>
+                                            <br>
+                                             <s:if test="file_names[2] == null">
+                                            </s:if>
+                                            <s:else>
+                                            	<img id="imglink" src="/ToyLibrary/image/<s:property value="file_names[2]"/> " width="500" border="0">
+                                            </s:else>
+                                        </s:else></td>
 								</tr>
 							</tbody>
 						</table>
