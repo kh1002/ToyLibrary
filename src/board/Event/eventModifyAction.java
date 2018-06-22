@@ -37,7 +37,7 @@ public class eventModifyAction extends ActionSupport
 	private List<File> uploads = new ArrayList<File>();
 	private List<String> uploadsFileName = new ArrayList<String>();
 	private List<String> uploadsContentType = new ArrayList<String>();
-	private String fileUploadPath="C:\\Users\\황의겸\\Desktop\\Java\\AdminBoard\\WebContent\\image\\";
+	private String fileUploadPath="C:\\Users\\황의겸\\git\\ToyLibrary\\WebContent\\image";
 	
 	
 	public eventModifyAction() throws IOException
