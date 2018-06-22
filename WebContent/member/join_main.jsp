@@ -309,7 +309,7 @@ function openIdCheck(){
 					<p><p><p>
 					<textarea rows="20" cols="70" readonly >
 									
-									제1장 총칙
+						 	  제1장 총칙
 
 
 
@@ -342,7 +342,7 @@ function openIdCheck(){
 
 
 
-								 2장 서비스 이용계약
+						 2장 서비스 이용계약
 
 
 

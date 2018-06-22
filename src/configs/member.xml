@@ -8,7 +8,7 @@
 		
 	 	<action name="joinModify" class="member.joinAction" method="modify">
 				<!-- <result>/member/join_modify.jsp</result> -->
-				<result type="tiles">main</result>
+				<result type="tiles">MyReservationListAction</result>
 		</action>
 
 	 	<action name="joinMain" class="member.joinAction" method="form">
