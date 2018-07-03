@@ -60,7 +60,7 @@ input.form_jumin{
                                                     <style type="text/css">
                         .jua {font-family:'BM JUA','배달의민족 주아',sans-serif;}</style>
 
-                           <h4><span class="jua" style="font-size:24pt; <%-- color:#00BFFF; --%>">비밀번호 찾기</span></h4>
+                           <h4><span class="jua" style="font-size:24pt; <%-- color:#00BFFF; --%>">비밀번호 찾기</h4></span>
                            
 
 <div class="form-group">

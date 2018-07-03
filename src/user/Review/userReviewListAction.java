@@ -75,6 +75,7 @@ public class userReviewListAction extends ActionSupport{
 			
 			List<creviewVO> cList = sqlMapper.queryForList("userCommentCount",count);
 			
+			System.out.println("아아아아아123123 : "+cList.size());
 			commentCountList.add(cList.size());
 			
 			
@@ -116,7 +117,9 @@ public class userReviewListAction extends ActionSupport{
 			
 			List<creviewVO> cList = sqlMapper.queryForList("commentCount",count);
 			
+			System.out.println("아아아아아123123 : "+cList.size());
 			commentCountList.add(cList.size());
+			
 			
 		}
 		

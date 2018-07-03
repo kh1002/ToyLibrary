@@ -155,7 +155,7 @@ function openIdCheck(){
 	      member_id.focus();
 	      return false;
 	   }
-	   var idUrl = '/ToyLibrary/idCheck.action?member_id='+ id;
+	   var idUrl = 'http://192.168.30.210:8080/ToyLibrary/idCheck.action?member_id='+ id;
 	   window.open(idUrl,"confirm", "toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=no, width=603, height=236");
 	   
 }
